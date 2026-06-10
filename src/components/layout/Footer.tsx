@@ -3,24 +3,12 @@ import Image from "next/image"
 import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
 
 export function Footer() {
-  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
-
   return (
     <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-6">
-            <Link href="/" className="flex items-center group">
-              <div className="relative h-28 w-[350px] md:w-[400px] overflow-hidden transition-all bg-white rounded-lg p-3 shadow-lg">
-                <Image 
-                  src={logoUrl} 
-                  alt="Siddhi Industrial Services" 
-                  fill 
-                  unoptimized
-                  className="object-contain object-left px-2"
-                />
-              </div>
-            </Link>
+            <h2 className="text-2xl font-bold font-headline text-white">Siddhi Industrial Services</h2>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-sm">
               Industrial & Infrastructure Contractors building excellence with engineering precision. Over 13 years of expertise in turnkey industrial solutions.
             </p>
