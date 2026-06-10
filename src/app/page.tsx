@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -60,7 +61,7 @@ export default function Home() {
 
       {/* Stats Section - Centered */}
       <section className="bg-white py-16 border-b">
-        <div className="container px-4 mx-auto">
+        <div className="container px-4 mx-auto text-center">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {stats.map((stat, i) => (
@@ -80,8 +81,8 @@ export default function Home() {
 
       {/* Services Overview - Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4">
-          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
+        <div className="container px-4 text-center">
+          <div className="max-w-4xl mx-auto mb-16 space-y-6">
             <div className="space-y-4">
               <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
@@ -110,49 +111,54 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Centered Layout */}
+      {/* Why Choose Us - Side by Side Layout */}
       <section className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="container px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12 mb-16">
-            <div className="space-y-4">
-              <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
-              <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
-              <p className="text-white/70 text-lg max-w-2xl mx-auto">
-                We combine technical expertise with rigorous safety standards to deliver world-class infrastructure.
-              </p>
-            </div>
-            
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-4xl mx-auto">
-              {[
-                { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
-                { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
-                { title: "Safety Compliance", desc: "Rigorous HSE protocols protecting our people and your assets." },
-                { title: "Reliable Workforce", desc: "Skilled labor management ensuring consistent progress." }
-              ].map((item, i) => (
-                <div key={i} className="flex flex-col items-center text-center space-y-4">
-                  <div className="bg-accent/20 p-3 rounded-full">
-                    <CheckCircle2 className="h-8 w-8 text-accent" />
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Text side */}
+            <div className="space-y-12">
+              <div className="space-y-6">
+                <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
+                <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
+                <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
+                  We combine technical expertise with rigorous safety standards to deliver world-class infrastructure. Our commitment is to technical precision and operational excellence.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+                {[
+                  { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
+                  { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
+                  { title: "Safety Compliance", desc: "Rigorous HSE protocols protecting our people and your assets." },
+                  { title: "Reliable Workforce", desc: "Skilled labor management ensuring consistent progress." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start group">
+                    <div className="bg-accent/20 p-2 rounded-lg shrink-0">
+                      <CheckCircle2 className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold mb-1 font-headline">{item.title}</h4>
+                      <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="text-xl font-bold mb-2 font-headline">{item.title}</h4>
-                    <p className="text-white/70 text-sm leading-relaxed max-w-xs">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
-          </div>
 
-          <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl max-w-5xl mx-auto">
-            <Image 
-              src="https://picsum.photos/seed/construction/1200/600" 
-              alt="Construction Site" 
-              fill 
-              className="object-cover"
-              data-ai-hint="construction site"
-            />
-            <div className="absolute bottom-8 left-1/2 -translate-x-1/2 bg-accent p-8 rounded-xl text-primary w-[calc(100%-4rem)] max-w-xs shadow-xl text-center">
-              <p className="text-4xl font-bold font-headline mb-2">100%</p>
-              <p className="font-bold text-sm uppercase tracking-wider">Quality Assurance in every square foot delivered</p>
+            {/* Image side */}
+            <div className="relative h-[500px] md:h-[600px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group">
+              <Image 
+                src="https://picsum.photos/seed/construction/1200/800" 
+                alt="Construction Site" 
+                fill 
+                className="object-cover transition-transform duration-700 group-hover:scale-110"
+                data-ai-hint="construction site"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+              <div className="absolute bottom-8 left-8 right-8 bg-accent p-8 rounded-xl text-primary shadow-xl text-center">
+                <p className="text-4xl font-bold font-headline mb-2">100%</p>
+                <p className="font-bold text-sm uppercase tracking-wider">Quality Assurance in every square foot delivered</p>
+              </div>
             </div>
           </div>
         </div>
@@ -160,8 +166,8 @@ export default function Home() {
 
       {/* Featured Projects - Centered Cards */}
       <section className="py-24 bg-background">
-        <div className="container px-4">
-          <div className="text-center mb-16 space-y-4">
+        <div className="container px-4 text-center">
+          <div className="max-w-4xl mx-auto mb-16 space-y-4">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
           </div>
@@ -202,7 +208,7 @@ export default function Home() {
 
       {/* Contact CTA - Centered */}
       <section className="py-20">
-        <div className="container px-4">
+        <div className="container px-4 text-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
