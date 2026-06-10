@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -56,7 +57,7 @@ export default function ContactPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header */}
+      {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
         <div className="container px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
@@ -66,11 +67,11 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Grid */}
+      {/* Main Grid - Centered Content */}
       <section className="py-24 bg-background">
         <div className="container px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 max-w-7xl mx-auto">
-            {/* Left Col: Form */}
+            {/* Left Col: Form - Centered content inside */}
             <div className="space-y-12">
               <div className="bg-white p-10 rounded-3xl shadow-xl border relative overflow-hidden flex flex-col items-center">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full" />
@@ -133,7 +134,7 @@ export default function ContactPage() {
                 </form>
               </div>
 
-              {/* Project Advisor Tool */}
+              {/* Project Advisor Tool - Centered */}
               <div className="bg-secondary/50 p-10 rounded-3xl border border-accent/20 space-y-8 flex flex-col items-center text-center">
                 <div className="space-y-2">
                   <h3 className="text-2xl font-bold text-primary font-headline flex items-center justify-center gap-2">
@@ -170,7 +171,7 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Right Col: Info */}
+            {/* Right Col: Info - Centered items */}
             <div className="space-y-12">
               <div className="space-y-8 text-center flex flex-col items-center">
                 <h2 className="text-3xl font-bold text-primary font-headline">Office Information</h2>

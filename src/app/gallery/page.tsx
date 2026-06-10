@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -26,7 +27,7 @@ export default function GalleryPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header */}
+      {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
         <div className="container px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
@@ -36,7 +37,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Filter Bar */}
+      {/* Filter Bar - Centered */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b overflow-x-auto">
         <div className="container px-4">
           <div className="flex justify-center gap-2 min-w-max pb-2">
@@ -55,7 +56,7 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Masonry Grid */}
+      {/* Grid - Centered */}
       <section className="py-24 bg-background">
         <div className="container px-4">
           <div className="masonry-grid max-w-7xl mx-auto">
