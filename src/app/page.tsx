@@ -83,7 +83,7 @@ export default function Home() {
         <div className="container px-4">
           <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
             <div className="space-y-4">
-              <h2 className="text-accent font-bold uppercase tracking-wider">What We Do</h2>
+              <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
             </div>
             <div className="pt-2">
@@ -93,7 +93,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
             {coreServices.map((service, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group text-center flex flex-col items-center">
                 <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
@@ -103,7 +103,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {service.desc}
                 </p>
-                <div className="h-1 w-12 bg-accent group-hover:w-full transition-all duration-300" />
+                <div className="h-1.5 w-12 bg-accent group-hover:w-full transition-all duration-300" />
               </div>
             ))}
           </div>
@@ -115,14 +115,14 @@ export default function Home() {
         <div className="container px-4">
           <div className="max-w-4xl mx-auto text-center space-y-12 mb-16">
             <div className="space-y-4">
-              <h2 className="text-accent font-bold uppercase tracking-wider">Our Edge</h2>
+              <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
               <p className="text-white/70 text-lg max-w-2xl mx-auto">
                 We combine technical expertise with rigorous safety standards to deliver world-class infrastructure.
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-4xl mx-auto">
               {[
                 { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
                 { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
@@ -162,11 +162,11 @@ export default function Home() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           <div className="text-center mb-16 space-y-4">
-            <h2 className="text-accent font-bold uppercase tracking-wider">Latest Work</h2>
+            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-7xl mx-auto">
             {projects.slice(0, 3).map((project) => (
               <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all flex flex-col">
                 <div className="relative h-64 overflow-hidden">
@@ -203,7 +203,7 @@ export default function Home() {
       {/* Contact CTA - Centered */}
       <section className="py-20">
         <div className="container px-4">
-          <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group">
+          <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             
