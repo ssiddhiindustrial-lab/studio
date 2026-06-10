@@ -124,8 +124,8 @@ export default function ServicesPage() {
 
       {/* Process CTA */}
       <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center space-y-12">
+        <div className="container mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto space-y-12">
             <div className="space-y-4">
               <h2 className="text-accent font-bold uppercase tracking-wider text-sm">The Siddhi Approach</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Uncompromising Quality Management</h3>
@@ -135,7 +135,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {['Planning', 'Sourcing', 'Building', 'HSE Audit'].map((step, i) => (
                 <div key={i} className="bg-white p-8 rounded-xl shadow-sm border border-accent/20 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                  <span className="text-4xl font-black text-accent/20 font-headline mb-2">{i+1}</span>
+                  <span className="text-5xl font-black text-accent/60 font-headline mb-2">{i+1}</span>
                   <span className="font-bold text-primary text-lg">{step}</span>
                 </div>
               ))}
