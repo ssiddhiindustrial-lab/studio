@@ -16,6 +16,7 @@ export function Footer() {
                   src={logoUrl} 
                   alt="Siddhi Build Logo" 
                   fill 
+                  unoptimized
                   className="object-contain p-1"
                 />
               </div>
