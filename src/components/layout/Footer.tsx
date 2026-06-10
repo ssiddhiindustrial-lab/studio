@@ -11,13 +11,13 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-6">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-20 w-80 overflow-hidden">
+              <div className="relative h-24 w-full max-w-[320px] overflow-hidden bg-white rounded-lg p-2">
                 <Image 
                   src={logoUrl} 
                   alt="Siddhi Industrial Services" 
                   fill 
                   unoptimized
-                  className="object-contain object-left"
+                  className="object-contain"
                 />
               </div>
             </Link>
