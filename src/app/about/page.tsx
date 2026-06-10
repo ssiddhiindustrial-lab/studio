@@ -13,27 +13,28 @@ export default function AboutPage() {
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-primary py-24 text-white">
-        <div className="container px-4">
-          <div className="max-w-3xl space-y-4">
+        <div className="container px-4 text-center">
+          <div className="max-w-3xl mx-auto space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Engineering Trust Since 1997</h1>
             <p className="text-xl text-white/70">From site engineer roots to becoming a premier industrial contractor in India.</p>
           </div>
         </div>
       </section>
 
-      {/* Story & Timeline */}
+      {/* Story & Evolution */}
       <section className="py-24 bg-background">
         <div className="container px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <div className="space-y-12">
-              <div className="space-y-4">
-                <h2 className="text-accent font-bold uppercase tracking-wider">Our Evolution</h2>
-                <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">A Legacy of Hard Work & Technical Precision</h3>
-                <p className="text-muted-foreground leading-relaxed text-lg">
-                  Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. With a history spanning over two decades of technical expertise, we have evolved from site-level management to complex turnkey project delivery.
-                </p>
-              </div>
+          <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
+            <h2 className="text-accent font-bold uppercase tracking-wider">Our Evolution</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">A Legacy of Hard Work & Technical Precision</h3>
+            <p className="text-muted-foreground leading-relaxed text-lg max-w-3xl mx-auto">
+              Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. With a history spanning over two decades of technical expertise, we have evolved from site-level management to complex turnkey project delivery.
+            </p>
+          </div>
 
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+            {/* Timeline Column */}
+            <div className="space-y-12">
               <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent/30 before:to-transparent">
                 {timeline.map((item, i) => (
                   <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
@@ -52,12 +53,13 @@ export default function AboutPage() {
               </div>
             </div>
 
+            {/* Founder & Vision Column */}
             <div className="space-y-12">
               {/* Founder Section */}
               <div className="bg-white p-12 rounded-2xl border shadow-xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-bl-full" />
-                <div className="flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-                  <div className="relative w-48 h-48 rounded-2xl overflow-hidden shrink-0 shadow-lg ring-4 ring-accent/10">
+                <div className="flex flex-col items-center text-center">
+                  <div className="relative w-48 h-48 rounded-2xl overflow-hidden shrink-0 shadow-lg ring-4 ring-accent/10 mb-8">
                     <Image 
                       src="https://picsum.photos/seed/founder/400/400" 
                       alt="Shailesh Patel" 
@@ -65,8 +67,8 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="space-y-4">
-                    <Quote className="h-10 w-10 text-accent mb-2" />
+                  <div className="space-y-4 max-w-lg">
+                    <Quote className="h-10 w-10 text-accent mx-auto mb-2" />
                     <h4 className="text-2xl font-bold text-primary font-headline">Shailesh Patel</h4>
                     <p className="text-accent font-bold uppercase tracking-widest text-sm">Founder & Managing Director</p>
                     <p className="text-muted-foreground italic leading-relaxed">
@@ -78,21 +80,21 @@ export default function AboutPage() {
 
               {/* Vision & Mission */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-primary p-10 rounded-2xl text-white space-y-4">
-                  <div className="bg-accent p-3 w-fit rounded-xl">
+                <div className="bg-primary p-10 rounded-2xl text-white space-y-4 text-center flex flex-col items-center">
+                  <div className="bg-accent p-3 w-fit rounded-xl mb-2">
                     <Target className="h-8 w-8 text-accent-foreground" />
                   </div>
                   <h4 className="text-2xl font-bold font-headline">Our Vision</h4>
-                  <p className="text-white/70 leading-relaxed">
+                  <p className="text-white/70 leading-relaxed text-sm">
                     To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth.
                   </p>
                 </div>
-                <div className="bg-secondary p-10 rounded-2xl space-y-4">
-                  <div className="bg-primary p-3 w-fit rounded-xl">
+                <div className="bg-secondary p-10 rounded-2xl space-y-4 text-center flex flex-col items-center">
+                  <div className="bg-primary p-3 w-fit rounded-xl mb-2">
                     <Lightbulb className="h-8 w-8 text-white" />
                   </div>
                   <h4 className="text-2xl font-bold font-headline text-primary">Our Mission</h4>
-                  <p className="text-muted-foreground leading-relaxed">
+                  <p className="text-muted-foreground leading-relaxed text-sm">
                     To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction and long-term partnerships.
                   </p>
                 </div>
