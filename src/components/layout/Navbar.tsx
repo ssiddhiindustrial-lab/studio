@@ -22,7 +22,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  const logoUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc"
+  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
@@ -30,10 +30,10 @@ export function Navbar() {
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-14 w-48 overflow-hidden transition-all">
+              <div className="relative h-16 w-64 md:w-80 overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
-                  alt="Siddhi Build" 
+                  alt="Siddhi Industrial Services" 
                   fill 
                   unoptimized
                   className="object-contain object-left"

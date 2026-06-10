@@ -3,7 +3,7 @@ import Image from "next/image"
 import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
 
 export function Footer() {
-  const logoUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc"
+  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
     <footer className="bg-primary text-primary-foreground">
@@ -11,10 +11,10 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-6">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-16 w-56 overflow-hidden">
+              <div className="relative h-20 w-80 overflow-hidden">
                 <Image 
                   src={logoUrl} 
-                  alt="Siddhi Build" 
+                  alt="Siddhi Industrial Services" 
                   fill 
                   unoptimized
                   className="object-contain object-left"
