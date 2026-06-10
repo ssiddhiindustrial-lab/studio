@@ -41,21 +41,21 @@ export default function ProjectsPage() {
       {/* Filters & Search - Centered */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b">
         <div className="container px-4">
-          <div className="flex flex-col gap-8 items-center justify-center max-w-4xl mx-auto">
-            <div className="relative w-full">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
+          <div className="flex flex-col gap-8 items-center justify-center max-w-4xl mx-auto text-center">
+            <div className="relative w-full max-w-2xl">
+              <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 placeholder="Search projects by name or client..."
-                className="pl-10 h-12 text-center"
+                className="pl-12 h-12 text-center border-accent/20 focus:border-accent"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
 
-            <div className="flex flex-wrap gap-6 items-center justify-center w-full">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col items-center gap-6 w-full">
+              <div className="flex items-center gap-2 justify-center">
                 <Filter className="h-5 w-5 text-accent" />
-                <span className="text-sm font-bold text-primary uppercase tracking-widest">Filters:</span>
+                <span className="text-sm font-bold text-primary uppercase tracking-widest">Filters</span>
               </div>
               
               <div className="flex flex-wrap gap-2 justify-center">
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
                     key={cat}
                     variant={filterCategory === cat ? "default" : "outline"}
                     size="sm"
-                    className={filterCategory === cat ? "bg-accent text-accent-foreground" : ""}
+                    className={filterCategory === cat ? "bg-accent text-accent-foreground" : "border-primary/20"}
                     onClick={() => setFilterCategory(cat)}
                   >
                     {cat}
@@ -72,15 +72,13 @@ export default function ProjectsPage() {
                 ))}
               </div>
 
-              <div className="h-6 w-[1px] bg-border hidden sm:block mx-2" />
-
               <div className="flex flex-wrap gap-2 justify-center">
                 {statuses.map((status) => (
                   <Button
                     key={status}
                     variant={filterStatus === status ? "default" : "outline"}
                     size="sm"
-                    className={filterStatus === status ? "bg-primary text-white" : ""}
+                    className={filterStatus === status ? "bg-primary text-white" : "border-primary/20"}
                     onClick={() => setFilterStatus(status)}
                   >
                     {status}
@@ -96,12 +94,12 @@ export default function ProjectsPage() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
               {filteredProjects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
                   key={project.slug}
-                  className="group bg-white rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center"
+                  className="group bg-white rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center w-full max-w-sm"
                 >
                   <div className="relative h-64 w-full overflow-hidden">
                     <Image
@@ -111,10 +109,10 @@ export default function ProjectsPage() {
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute top-4 left-0 right-0 flex justify-center gap-2 px-4">
-                      <Badge className="bg-accent text-accent-foreground hover:bg-accent font-bold uppercase text-[10px]">
+                      <Badge className="bg-accent text-accent-foreground hover:bg-accent font-bold uppercase text-[10px] shadow-sm">
                         {project.status}
                       </Badge>
-                      <Badge className="bg-primary text-white hover:bg-primary font-bold uppercase text-[10px]">
+                      <Badge className="bg-primary text-white hover:bg-primary font-bold uppercase text-[10px] shadow-sm">
                         {project.category}
                       </Badge>
                     </div>
@@ -153,7 +151,7 @@ export default function ProjectsPage() {
               </div>
               <h3 className="text-2xl font-bold text-primary font-headline">No projects found</h3>
               <p className="text-muted-foreground">Try adjusting your filters or search query.</p>
-              <Button variant="outline" onClick={() => { setFilterCategory("All"); setFilterStatus("All"); setSearchQuery(""); }}>
+              <Button variant="outline" className="border-primary text-primary" onClick={() => { setFilterCategory("All"); setFilterStatus("All"); setSearchQuery(""); }}>
                 Reset All Filters
               </Button>
             </div>
