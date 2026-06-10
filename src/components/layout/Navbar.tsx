@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -26,10 +27,10 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-28 items-center justify-between">
-          <div className="flex items-center">
+        <div className="flex h-28 items-center justify-start gap-8 lg:gap-16">
+          <div className="flex items-center shrink-0">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-24 w-[350px] md:w-[450px] overflow-hidden transition-all">
+              <div className="relative h-24 w-[250px] md:w-[320px] overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
                   alt="Siddhi Industrial Services Logo" 
@@ -44,15 +45,15 @@ export function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-6">
+            <div className="flex items-baseline space-x-4 xl:space-x-8">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3 py-2 rounded-md text-base font-semibold transition-colors uppercase tracking-wider",
+                    "px-2 py-2 rounded-md text-base font-bold transition-colors uppercase tracking-tight",
                     pathname === link.href
-                      ? "text-accent font-bold"
+                      ? "text-accent"
                       : "text-foreground/80 hover:text-accent hover:bg-accent/5"
                   )}
                 >
@@ -63,7 +64,7 @@ export function Navbar() {
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex lg:hidden">
+          <div className="flex lg:hidden ml-auto">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
