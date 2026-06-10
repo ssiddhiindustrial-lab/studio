@@ -58,7 +58,7 @@ export default function GalleryPage() {
       {/* Masonry Grid */}
       <section className="py-24 bg-background">
         <div className="container px-4">
-          <div className="masonry-grid">
+          <div className="masonry-grid max-w-7xl mx-auto">
             {filteredImages.map((img) => (
               <div key={img.id} className="masonry-item group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all">
                 <div className="relative w-full h-full">
@@ -69,7 +69,7 @@ export default function GalleryPage() {
                     height={1000}
                     className="object-cover w-full h-auto group-hover:scale-110 transition-transform duration-700"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8">
+                  <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 text-center items-center">
                     <Badge className="bg-accent text-accent-foreground w-fit mb-3">{img.category}</Badge>
                     <h3 className="text-xl font-bold text-white font-headline">{img.title}</h3>
                   </div>

@@ -29,8 +29,8 @@ export default function ProjectsPage() {
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-primary py-24 text-white">
-        <div className="container px-4">
-          <div className="max-w-3xl space-y-6">
+        <div className="container px-4 text-center">
+          <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Project Portfolio</h1>
             <p className="text-xl text-white/70">A showcase of our industrial engineering excellence across India.</p>
           </div>
@@ -40,24 +40,24 @@ export default function ProjectsPage() {
       {/* Filters & Search */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b">
         <div className="container px-4">
-          <div className="flex flex-col lg:flex-row gap-6 items-center justify-between">
-            <div className="relative w-full lg:max-w-md">
+          <div className="flex flex-col gap-8 items-center justify-center">
+            <div className="relative w-full max-w-2xl">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 placeholder="Search projects by name or client..."
-                className="pl-10 h-12"
+                className="pl-10 h-12 text-center"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
             </div>
 
-            <div className="flex flex-wrap gap-4 items-center w-full lg:w-auto">
+            <div className="flex flex-wrap gap-6 items-center justify-center w-full">
               <div className="flex items-center gap-2">
                 <Filter className="h-5 w-5 text-accent" />
                 <span className="text-sm font-bold text-primary uppercase tracking-widest">Filters:</span>
               </div>
               
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {categories.map((cat) => (
                   <Button
                     key={cat}
@@ -73,7 +73,7 @@ export default function ProjectsPage() {
 
               <div className="h-6 w-[1px] bg-border hidden sm:block mx-2" />
 
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap gap-2 justify-center">
                 {statuses.map((status) => (
                   <Button
                     key={status}
@@ -95,7 +95,7 @@ export default function ProjectsPage() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {filteredProjects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
@@ -119,15 +119,15 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   
-                  <div className="p-8 flex-grow space-y-4">
+                  <div className="p-8 flex-grow space-y-4 text-center flex flex-col items-center">
                     <h3 className="text-2xl font-bold text-primary font-headline group-hover:text-accent transition-colors">
                       {project.name}
                     </h3>
                     <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex justify-between items-center pt-4 border-t border-secondary">
-                      <div className="space-y-1">
+                    <div className="flex justify-between items-center w-full pt-4 border-t border-secondary mt-auto">
+                      <div className="space-y-1 text-left">
                         <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Project Value</p>
                         <p className="font-bold text-primary">{project.value}</p>
                       </div>
@@ -138,7 +138,7 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   
-                  <div className="p-6 bg-secondary/20 border-t flex items-center justify-between group-hover:bg-accent/10 transition-colors">
+                  <div className="p-6 bg-secondary/20 border-t flex items-center justify-center gap-2 group-hover:bg-accent/10 transition-colors">
                     <span className="text-sm font-bold text-primary">View Case Study</span>
                     <ArrowRight className="h-5 w-5 text-accent group-hover:translate-x-2 transition-transform" />
                   </div>
