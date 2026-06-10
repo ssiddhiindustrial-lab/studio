@@ -45,16 +45,16 @@ export function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden lg:block">
-            <div className="ml-10 flex items-baseline space-x-4">
+            <div className="ml-10 flex items-baseline space-x-6">
               {navLinks.map((link) => (
                 <Link
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3 py-2 rounded-md text-sm font-medium transition-colors",
+                    "px-3 py-2 rounded-md text-base font-semibold transition-colors uppercase tracking-wider",
                     pathname === link.href
                       ? "text-accent font-bold"
-                      : "text-foreground/70 hover:text-accent hover:bg-accent/5"
+                      : "text-foreground/80 hover:text-accent hover:bg-accent/5"
                   )}
                 >
                   {link.name}
@@ -64,7 +64,7 @@ export function Navbar() {
           </div>
 
           <div className="hidden lg:block">
-            <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90">
+            <Button asChild variant="default" size="default" className="bg-primary hover:bg-primary/90 font-bold px-6">
               <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>
@@ -95,7 +95,7 @@ export function Navbar() {
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "block rounded-md px-3 py-4 text-base font-medium",
+                  "block rounded-md px-3 py-4 text-lg font-bold uppercase tracking-widest",
                   pathname === link.href
                     ? "text-accent bg-accent/5"
                     : "text-foreground/70 hover:bg-accent/10 hover:text-accent"
@@ -105,7 +105,7 @@ export function Navbar() {
               </Link>
             ))}
             <div className="pt-4 pb-2 px-3">
-              <Button asChild className="w-full bg-accent hover:bg-accent/90 text-accent-foreground">
+              <Button asChild className="w-full h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
                 <Link href="/contact">Get a Quote</Link>
               </Button>
             </div>
