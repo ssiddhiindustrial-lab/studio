@@ -6,7 +6,7 @@ import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Siddhi Build - Industrial & Infrastructure Contractors',
+  title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
   description: 'Premium industrial and infrastructure contractors. Building excellence with engineering precision.',
   icons: {
     icon: 'https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn',
