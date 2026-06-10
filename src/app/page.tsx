@@ -30,22 +30,23 @@ export default function Home() {
             fill
             className="object-cover opacity-40 grayscale"
             priority
+            data-ai-hint="industrial construction"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
         </div>
         
         <div className="container relative z-10 px-4 md:px-8">
-          <div className="max-w-3xl space-y-6 animate-reveal">
-            <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base">
+          <div className="max-w-3xl animate-reveal">
+            <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
               Industrial & Infrastructure Contractors
             </h4>
-            <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline">
+            <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline mb-6">
               Building Excellence With <span className="text-accent">Engineering Precision</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
+            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed mb-8">
               We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-8">
                 <Link href="/projects">View Projects</Link>
               </Button>
@@ -78,14 +79,16 @@ export default function Home() {
       {/* Services Overview */}
       <section className="py-24 bg-background">
         <div className="container px-4">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
-            <div className="space-y-4 max-w-2xl">
+          <div className="text-center max-w-4xl mx-auto mb-16 space-y-6">
+            <div className="space-y-4">
               <h2 className="text-accent font-bold uppercase tracking-wider">What We Do</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
             </div>
-            <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group">
-              Explore All Services <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Link>
+            <div className="pt-2">
+              <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group text-lg">
+                Explore All Services <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -141,6 +144,7 @@ export default function Home() {
                 alt="Construction Site" 
                 fill 
                 className="object-cover"
+                data-ai-hint="construction site"
               />
               <div className="absolute bottom-8 left-8 bg-accent p-8 rounded-xl text-primary max-w-xs shadow-xl">
                 <p className="text-4xl font-bold font-headline mb-2">100%</p>
