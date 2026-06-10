@@ -1,7 +1,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { HardHat, Activity, ShieldCheck, Factory, Warehouse, Construction, ArrowRight, CheckCircle2, Users } from "lucide-react"
+import { Activity, Factory, Warehouse, Construction, ArrowRight, CheckCircle2 } from "lucide-react"
 import { projects } from "@/lib/projects-data"
 
 export default function Home() {
