@@ -27,26 +27,24 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-20 items-center justify-between">
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-white p-1 ring-1 ring-border group-hover:ring-accent transition-all">
+            <Link href="/" className="flex items-center group">
+              <div className="relative h-14 w-48 overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
-                  alt="Siddhi Build Logo" 
+                  alt="Siddhi Build" 
                   fill 
                   unoptimized
-                  className="object-contain p-1"
+                  className="object-contain object-left"
+                  priority
                 />
               </div>
-              <span className="text-xl font-bold tracking-tight text-primary font-headline">
-                SIDDHI <span className="text-accent">BUILD</span>
-              </span>
             </Link>
           </div>
 
           {/* Desktop Links */}
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navLinks.map((link) => (
                 <Link
@@ -65,14 +63,14 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="hidden md:block">
+          <div className="hidden lg:block">
             <Button asChild variant="default" size="sm" className="bg-primary hover:bg-primary/90">
               <Link href="/contact">Get a Quote</Link>
             </Button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="flex md:hidden">
+          <div className="flex lg:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
@@ -89,7 +87,7 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden animate-in slide-in-from-top duration-300">
+        <div className="lg:hidden animate-in slide-in-from-top duration-300">
           <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 bg-background border-b shadow-lg">
             {navLinks.map((link) => (
               <Link

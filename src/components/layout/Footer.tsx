@@ -9,25 +9,22 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2 group">
-              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-white p-1">
+          <div className="space-y-6">
+            <Link href="/" className="flex items-center group">
+              <div className="relative h-16 w-56 overflow-hidden">
                 <Image 
                   src={logoUrl} 
-                  alt="Siddhi Build Logo" 
+                  alt="Siddhi Build" 
                   fill 
                   unoptimized
-                  className="object-contain p-1"
+                  className="object-contain object-left"
                 />
               </div>
-              <span className="text-2xl font-bold tracking-tight font-headline">
-                SIDDHI <span className="text-accent">BUILD</span>
-              </span>
             </Link>
             <p className="text-primary-foreground/70 text-sm leading-relaxed">
               Industrial & Infrastructure Contractors building excellence with engineering precision. Over 13 years of expertise in turnkey industrial solutions.
             </p>
-            <div className="flex space-x-4 pt-4">
+            <div className="flex space-x-4 pt-2">
               <Link href="#" className="hover:text-accent transition-colors"><Linkedin className="h-5 w-5" /></Link>
               <Link href="#" className="hover:text-accent transition-colors"><Twitter className="h-5 w-5" /></Link>
               <Link href="#" className="hover:text-accent transition-colors"><Facebook className="h-5 w-5" /></Link>
