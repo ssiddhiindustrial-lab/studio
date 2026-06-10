@@ -1,9 +1,10 @@
 "use client"
 
 import * as React from "react"
-import Link from "next/link"
+import Link from "link/link"
+import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X, HardHat } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
 
@@ -21,14 +22,21 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
+  const logoUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc"
+
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="bg-primary p-1.5 rounded-md group-hover:bg-accent transition-colors">
-                <HardHat className="h-6 w-6 text-primary-foreground group-hover:text-accent-foreground" />
+              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-white p-1 ring-1 ring-border group-hover:ring-accent transition-all">
+                <Image 
+                  src={logoUrl} 
+                  alt="Siddhi Build Logo" 
+                  fill 
+                  className="object-contain p-1"
+                />
               </div>
               <span className="text-xl font-bold tracking-tight text-primary font-headline">
                 SIDDHI <span className="text-accent">BUILD</span>

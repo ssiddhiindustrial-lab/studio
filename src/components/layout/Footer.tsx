@@ -1,14 +1,24 @@
 import Link from "next/link"
-import { Phone, Mail, MapPin, HardHat, Linkedin, Twitter, Facebook } from "lucide-react"
+import Image from "next/image"
+import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
 
 export function Footer() {
+  const logoUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc"
+
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="space-y-4">
-            <Link href="/" className="flex items-center gap-2">
-              <HardHat className="h-8 w-8 text-accent" />
+            <Link href="/" className="flex items-center gap-2 group">
+              <div className="relative h-10 w-10 overflow-hidden rounded-md bg-white p-1">
+                <Image 
+                  src={logoUrl} 
+                  alt="Siddhi Build Logo" 
+                  fill 
+                  className="object-contain p-1"
+                />
+              </div>
               <span className="text-2xl font-bold tracking-tight font-headline">
                 SIDDHI <span className="text-accent">BUILD</span>
               </span>

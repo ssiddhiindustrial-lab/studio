@@ -8,6 +8,9 @@ import { Toaster } from '@/components/ui/toaster';
 export const metadata: Metadata = {
   title: 'Siddhi Build - Industrial & Infrastructure Contractors',
   description: 'Premium industrial and infrastructure contractors. Building excellence with engineering precision.',
+  icons: {
+    icon: 'https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc',
+  },
 };
 
 export default function RootLayout({
