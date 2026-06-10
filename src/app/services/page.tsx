@@ -1,4 +1,4 @@
-import { Factory, Construction, Warehouse, Roads, Landmark, HardHat, Settings, Activity, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Factory, Construction, Warehouse, Roads, Landmark, HardHat, Settings, ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 
@@ -30,7 +30,7 @@ const services = [
   {
     id: 4,
     title: "RCC Construction",
-    icon: Activity,
+    icon: ActivityIcon,
     desc: "Premium reinforced cement concrete works specifically engineered for the high vibration and stress of industrial use.",
     benefits: ["VDF flooring experts", "Cracked-resistance slabs", "Heavy machine bases"],
     cta: "Inquire RCC Work"
@@ -135,7 +135,7 @@ export default function ServicesPage() {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
               {['Planning', 'Sourcing', 'Building', 'HSE Audit'].map((step, i) => (
                 <div key={i} className="bg-white p-8 rounded-xl shadow-sm border border-accent/20 flex flex-col items-center text-center transition-transform hover:-translate-y-1">
-                  <span className="text-5xl font-black text-accent/60 font-headline mb-2">{i+1}</span>
+                  <span className="text-5xl font-black text-accent font-headline mb-2">{i+1}</span>
                   <span className="font-bold text-primary text-lg">{step}</span>
                 </div>
               ))}
@@ -144,5 +144,24 @@ export default function ServicesPage() {
         </div>
       </section>
     </div>
+  )
+}
+
+function ActivityIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
   )
 }
