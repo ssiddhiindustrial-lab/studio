@@ -1,3 +1,220 @@
+import Link from "next/link"
+import Image from "next/image"
+import { Button } from "@/components/ui/button"
+import { HardHat, Activity, ShieldCheck, Factory, Warehouse, Construction, ArrowRight, CheckCircle2, Users } from "lucide-react"
+import { projects } from "@/lib/projects-data"
+
 export default function Home() {
-  return <></>;
+  const coreServices = [
+    { title: "Industrial Construction", icon: Factory, desc: "End-to-end development of manufacturing units and plants." },
+    { title: "Structural Steel Works", icon: Construction, desc: "High-precision steel fabrication and erection for industrial sheds." },
+    { title: "RCC Works", icon: Activity, desc: "Specialized reinforced cement concrete works for heavy machinery." },
+    { title: "Warehousing", icon: Warehouse, desc: "Large-scale modern logistics and storage infrastructure." }
+  ]
+
+  const stats = [
+    { label: "Years Experience", value: "13+" },
+    { label: "Projects Completed", value: "20+" },
+    { label: "Expert Engineers", value: "15+" },
+    { label: "Safety Rating", value: "100%" }
+  ]
+
+  return (
+    <div className="flex flex-col w-full">
+      {/* Hero Section */}
+      <section className="relative h-[90vh] flex items-center overflow-hidden bg-primary">
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="https://picsum.photos/seed/hero/1920/1080"
+            alt="Industrial Construction"
+            fill
+            className="object-cover opacity-40 grayscale"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+        </div>
+        
+        <div className="container relative z-10 px-4 md:px-8">
+          <div className="max-w-3xl space-y-6 animate-reveal">
+            <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base">
+              Industrial & Infrastructure Contractors
+            </h4>
+            <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline">
+              Building Excellence With <span className="text-accent">Engineering Precision</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed">
+              We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-8">
+                <Link href="/projects">View Projects</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-14 px-8">
+                <Link href="/contact">Contact Us</Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="bg-white py-12 border-b">
+        <div className="container px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            {stats.map((stat, i) => (
+              <div key={i} className="text-center group">
+                <p className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:text-accent transition-colors font-headline">
+                  {stat.value}
+                </p>
+                <p className="text-sm md:text-base text-muted-foreground uppercase tracking-widest font-semibold">
+                  {stat.label}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services Overview */}
+      <section className="py-24 bg-background">
+        <div className="container px-4">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+            <div className="space-y-4 max-w-2xl">
+              <h2 className="text-accent font-bold uppercase tracking-wider">What We Do</h2>
+              <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
+            </div>
+            <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group">
+              Explore All Services <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {coreServices.map((service, i) => (
+              <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group">
+                <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                  <service.icon className="h-8 w-8" />
+                </div>
+                <h4 className="text-xl font-bold mb-3 text-primary font-headline">{service.title}</h4>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+                  {service.desc}
+                </p>
+                <div className="h-1 w-12 bg-accent group-hover:w-full transition-all duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-24 bg-primary text-white overflow-hidden relative">
+        <div className="container px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div className="space-y-8">
+              <div className="space-y-4">
+                <h2 className="text-accent font-bold uppercase tracking-wider">Our Edge</h2>
+                <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
+              </div>
+              
+              <div className="grid grid-cols-1 gap-6">
+                {[
+                  { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
+                  { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
+                  { title: "Safety Compliance", desc: "Rigorous HSE protocols protecting our people and your assets." },
+                  { title: "Reliable Workforce", desc: "Skilled labor management ensuring consistent progress." }
+                ].map((item, i) => (
+                  <div key={i} className="flex gap-4 items-start">
+                    <div className="bg-accent/20 p-2 rounded-full">
+                      <CheckCircle2 className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="text-xl font-bold mb-1 font-headline">{item.title}</h4>
+                      <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl">
+              <Image 
+                src="https://picsum.photos/seed/construction/800/1000" 
+                alt="Construction Site" 
+                fill 
+                className="object-cover"
+              />
+              <div className="absolute bottom-8 left-8 bg-accent p-8 rounded-xl text-primary max-w-xs shadow-xl">
+                <p className="text-4xl font-bold font-headline mb-2">100%</p>
+                <p className="font-bold text-sm uppercase tracking-wider">Quality Assurance in every square foot delivered</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Projects */}
+      <section className="py-24 bg-background">
+        <div className="container px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-accent font-bold uppercase tracking-wider">Latest Work</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            {projects.slice(0, 3).map((project) => (
+              <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all">
+                <div className="relative h-64 overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    alt={project.name}
+                    fill
+                    className="object-cover group-hover:scale-110 transition-transform duration-500"
+                  />
+                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold uppercase">
+                    {project.status}
+                  </div>
+                </div>
+                <div className="p-6">
+                  <p className="text-accent font-bold text-xs uppercase mb-2">{project.category}</p>
+                  <h4 className="text-xl font-bold text-primary font-headline mb-3 group-hover:text-accent transition-colors">{project.name}</h4>
+                  <div className="flex justify-between items-center text-sm text-muted-foreground border-t pt-4">
+                    <span>{project.year}</span>
+                    <span className="font-bold text-primary">{project.value}</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-12">
+              <Link href="/projects">View All Projects</Link>
+            </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Contact CTA */}
+      <section className="py-20">
+        <div className="container px-4">
+          <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group">
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+            
+            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+              <h2 className="text-4xl md:text-6xl font-bold text-accent-foreground font-headline">Ready to Start Your Next Industrial Project?</h2>
+              <p className="text-lg md:text-xl text-accent-foreground/80">Get a free consultation and project scope analysis from our expert engineers.</p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-12 h-14 text-lg">
+                  <Link href="/contact">Get in Touch</Link>
+                </Button>
+                <Button asChild variant="ghost" size="lg" className="text-primary font-bold hover:bg-white/20 h-14 text-lg">
+                  <Link href="/about">Learn More About Us</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
 }
