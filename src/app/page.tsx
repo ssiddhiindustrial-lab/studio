@@ -58,20 +58,22 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section */}
-      <section className="bg-white py-12 border-b">
-        <div className="container px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center group">
-                <p className="text-4xl md:text-5xl font-bold text-primary mb-2 group-hover:text-accent transition-colors font-headline">
-                  {stat.value}
-                </p>
-                <p className="text-sm md:text-base text-muted-foreground uppercase tracking-widest font-semibold">
-                  {stat.label}
-                </p>
-              </div>
-            ))}
+      {/* Stats Section - Centered */}
+      <section className="bg-white py-16 border-b">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+              {stats.map((stat, i) => (
+                <div key={i} className="text-center group">
+                  <p className="text-4xl md:text-6xl font-bold text-primary mb-2 group-hover:text-accent transition-colors font-headline">
+                    {stat.value}
+                  </p>
+                  <p className="text-xs md:text-sm text-muted-foreground uppercase tracking-[0.2em] font-bold">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -198,7 +200,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA - Already Centered */}
+      {/* Contact CTA - Centered */}
       <section className="py-20">
         <div className="container px-4">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group">
