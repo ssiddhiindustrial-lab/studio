@@ -32,10 +32,10 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Timeline Column */}
-            <div className="space-y-12">
-              <div className="relative space-y-8 before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent/30 before:to-transparent">
+          <div className="flex flex-col items-center gap-20">
+            {/* Timeline Column - Centered Stack */}
+            <div className="w-full max-w-3xl mx-auto">
+              <div className="relative space-y-12 before:absolute before:inset-0 before:ml-5 md:before:mx-auto before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-accent/30 before:to-transparent">
                 {timeline.map((item, i) => (
                   <div key={i} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group">
                     <div className="flex items-center justify-center w-10 h-10 rounded-full border border-accent bg-white text-accent font-bold shadow-sm shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10">
@@ -53,9 +53,8 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Founder & Vision Column */}
-            <div className="space-y-12">
-              {/* Founder Section */}
+            {/* Founder Section - Centered */}
+            <div className="w-full max-w-3xl mx-auto">
               <div className="bg-white p-12 rounded-2xl border shadow-xl relative overflow-hidden group">
                 <div className="absolute top-0 right-0 w-24 h-24 bg-accent/10 rounded-bl-full" />
                 <div className="flex flex-col items-center text-center">
@@ -67,37 +66,37 @@ export default function AboutPage() {
                       className="object-cover"
                     />
                   </div>
-                  <div className="space-y-4 max-w-lg">
+                  <div className="space-y-4">
                     <Quote className="h-10 w-10 text-accent mx-auto mb-2" />
                     <h4 className="text-2xl font-bold text-primary font-headline">Shailesh Patel</h4>
                     <p className="text-accent font-bold uppercase tracking-widest text-sm">Founder & Managing Director</p>
-                    <p className="text-muted-foreground italic leading-relaxed">
+                    <p className="text-muted-foreground italic leading-relaxed max-w-xl mx-auto">
                       "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth. Our commitment is to deliver excellence every single time."
                     </p>
                   </div>
                 </div>
               </div>
+            </div>
 
-              {/* Vision & Mission */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div className="bg-primary p-10 rounded-2xl text-white space-y-4 text-center flex flex-col items-center">
-                  <div className="bg-accent p-3 w-fit rounded-xl mb-2">
-                    <Target className="h-8 w-8 text-accent-foreground" />
-                  </div>
-                  <h4 className="text-2xl font-bold font-headline">Our Vision</h4>
-                  <p className="text-white/70 leading-relaxed text-sm">
-                    To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth.
-                  </p>
+            {/* Vision & Mission - Centered Grid */}
+            <div className="w-full max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="bg-primary p-10 rounded-2xl text-white space-y-4 text-center flex flex-col items-center">
+                <div className="bg-accent p-3 w-fit rounded-xl mb-2">
+                  <Target className="h-8 w-8 text-accent-foreground" />
                 </div>
-                <div className="bg-secondary p-10 rounded-2xl space-y-4 text-center flex flex-col items-center">
-                  <div className="bg-primary p-3 w-fit rounded-xl mb-2">
-                    <Lightbulb className="h-8 w-8 text-white" />
-                  </div>
-                  <h4 className="text-2xl font-bold font-headline text-primary">Our Mission</h4>
-                  <p className="text-muted-foreground leading-relaxed text-sm">
-                    To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction and long-term partnerships.
-                  </p>
+                <h4 className="text-2xl font-bold font-headline">Our Vision</h4>
+                <p className="text-white/70 leading-relaxed text-sm">
+                  To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth.
+                </p>
+              </div>
+              <div className="bg-secondary p-10 rounded-2xl space-y-4 text-center flex flex-col items-center">
+                <div className="bg-primary p-3 w-fit rounded-xl mb-2">
+                  <Lightbulb className="h-8 w-8 text-white" />
                 </div>
+                <h4 className="text-2xl font-bold font-headline text-primary">Our Mission</h4>
+                <p className="text-muted-foreground leading-relaxed text-sm">
+                  To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction and long-term partnerships.
+                </p>
               </div>
             </div>
           </div>
