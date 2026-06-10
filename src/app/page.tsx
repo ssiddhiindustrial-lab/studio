@@ -120,20 +120,20 @@ export default function Home() {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-8 text-left max-w-3xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-12 max-w-3xl mx-auto">
               {[
                 { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
                 { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
                 { title: "Safety Compliance", desc: "Rigorous HSE protocols protecting our people and your assets." },
                 { title: "Reliable Workforce", desc: "Skilled labor management ensuring consistent progress." }
               ].map((item, i) => (
-                <div key={i} className="flex gap-4 items-start">
-                  <div className="bg-accent/20 p-2 rounded-full">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
+                <div key={i} className="flex flex-col items-center text-center space-y-4">
+                  <div className="bg-accent/20 p-3 rounded-full">
+                    <CheckCircle2 className="h-8 w-8 text-accent" />
                   </div>
                   <div>
-                    <h4 className="text-xl font-bold mb-1 font-headline">{item.title}</h4>
-                    <p className="text-white/70 text-sm leading-relaxed">{item.desc}</p>
+                    <h4 className="text-xl font-bold mb-2 font-headline">{item.title}</h4>
+                    <p className="text-white/70 text-sm leading-relaxed max-w-xs">{item.desc}</p>
                   </div>
                 </div>
               ))}
