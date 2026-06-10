@@ -30,10 +30,10 @@ export function Navbar() {
         <div className="flex h-24 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-20 w-72 md:w-96 overflow-hidden transition-all">
+              <div className="relative h-20 w-[300px] md:w-[400px] overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
-                  alt="Siddhi Industrial Services" 
+                  alt="Siddhi Industrial Services Logo" 
                   fill 
                   unoptimized
                   className="object-contain object-left"
