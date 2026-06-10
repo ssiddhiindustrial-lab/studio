@@ -6,7 +6,6 @@ import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
 
 const navLinks = [
   { name: "Home", href: "/" },
@@ -63,12 +62,6 @@ export function Navbar() {
             </div>
           </div>
 
-          <div className="hidden lg:block">
-            <Button asChild variant="default" size="default" className="bg-primary hover:bg-primary/90 font-bold px-6">
-              <Link href="/contact">Get a Quote</Link>
-            </Button>
-          </div>
-
           {/* Mobile menu button */}
           <div className="flex lg:hidden">
             <button
@@ -104,11 +97,6 @@ export function Navbar() {
                 {link.name}
               </Link>
             ))}
-            <div className="pt-4 pb-2 px-3">
-              <Button asChild className="w-full h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-bold">
-                <Link href="/contact">Get a Quote</Link>
-              </Button>
-            </div>
           </div>
         </div>
       )}
