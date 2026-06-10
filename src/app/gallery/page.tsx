@@ -59,10 +59,10 @@ export default function GalleryPage() {
       {/* Grid - Centered */}
       <section className="py-24 bg-background">
         <div className="container px-4">
-          <div className="masonry-grid max-w-7xl mx-auto">
+          <div className="masonry-grid max-w-6xl mx-auto">
             {filteredImages.map((img) => (
               <div key={img.id} className="masonry-item group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all">
-                <div className="relative w-full h-full">
+                <div className="relative w-full h-full flex flex-col items-center">
                   <Image
                     src={img.src}
                     alt={img.title}

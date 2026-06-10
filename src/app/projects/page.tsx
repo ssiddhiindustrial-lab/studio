@@ -41,8 +41,8 @@ export default function ProjectsPage() {
       {/* Filters & Search - Centered */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b">
         <div className="container px-4">
-          <div className="flex flex-col gap-8 items-center justify-center">
-            <div className="relative w-full max-w-2xl mx-auto">
+          <div className="flex flex-col gap-8 items-center justify-center max-w-4xl mx-auto">
+            <div className="relative w-full">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 placeholder="Search projects by name or client..."
@@ -96,21 +96,21 @@ export default function ProjectsPage() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
               {filteredProjects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
                   key={project.slug}
-                  className="group bg-white rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col"
+                  className="group bg-white rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center"
                 >
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 w-full overflow-hidden">
                     <Image
                       src={project.imageUrl}
                       alt={project.name}
                       fill
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute top-4 left-4 flex gap-2">
+                    <div className="absolute top-4 left-0 right-0 flex justify-center gap-2 px-4">
                       <Badge className="bg-accent text-accent-foreground hover:bg-accent font-bold uppercase text-[10px]">
                         {project.status}
                       </Badge>
@@ -120,26 +120,26 @@ export default function ProjectsPage() {
                     </div>
                   </div>
                   
-                  <div className="p-8 flex-grow space-y-4 text-center flex flex-col items-center">
+                  <div className="p-8 flex-grow space-y-4 text-center flex flex-col items-center w-full">
                     <h3 className="text-2xl font-bold text-primary font-headline group-hover:text-accent transition-colors">
                       {project.name}
                     </h3>
                     <p className="text-muted-foreground text-sm line-clamp-2 leading-relaxed">
                       {project.description}
                     </p>
-                    <div className="flex justify-between items-center w-full pt-4 border-t border-secondary mt-auto">
-                      <div className="space-y-1 text-left">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Project Value</p>
-                        <p className="font-bold text-primary">{project.value}</p>
+                    <div className="flex flex-col items-center gap-4 w-full pt-6 border-t border-secondary mt-auto">
+                      <div className="text-center">
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-1">Project Value</p>
+                        <p className="font-bold text-primary text-lg">{project.value}</p>
                       </div>
-                      <div className="space-y-1 text-right">
-                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold">Year</p>
+                      <div className="text-center">
+                        <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-bold mb-1">Year</p>
                         <p className="font-bold text-primary">{project.year}</p>
                       </div>
                     </div>
                   </div>
                   
-                  <div className="p-6 bg-secondary/20 border-t flex items-center justify-center gap-2 group-hover:bg-accent/10 transition-colors">
+                  <div className="p-6 bg-secondary/20 border-t w-full flex items-center justify-center gap-2 group-hover:bg-accent/10 transition-colors">
                     <span className="text-sm font-bold text-primary">View Case Study</span>
                     <ArrowRight className="h-5 w-5 text-accent group-hover:translate-x-2 transition-transform" />
                   </div>
