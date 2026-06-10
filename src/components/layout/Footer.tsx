@@ -11,7 +11,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           <div className="space-y-6">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-20 w-[300px] md:w-[350px] overflow-hidden transition-all bg-white rounded-lg p-2 shadow-lg">
+              <div className="relative h-28 w-[350px] md:w-[400px] overflow-hidden transition-all bg-white rounded-lg p-3 shadow-lg">
                 <Image 
                   src={logoUrl} 
                   alt="Siddhi Industrial Services" 

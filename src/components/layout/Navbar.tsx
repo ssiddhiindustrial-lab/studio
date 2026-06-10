@@ -27,10 +27,10 @@ export function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-24 items-center justify-between">
+        <div className="flex h-28 items-center justify-between">
           <div className="flex items-center">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-20 w-[300px] md:w-[400px] overflow-hidden transition-all">
+              <div className="relative h-24 w-[350px] md:w-[450px] overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
                   alt="Siddhi Industrial Services Logo" 
