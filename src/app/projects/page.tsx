@@ -4,7 +4,7 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { Search, Filter, ArrowRight } from "lucide-react"
-import { projects, Project } from "@/lib/projects-data"
+import { projects } from "@/lib/projects-data"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Badge } from "@/components/ui/badge"
@@ -27,7 +27,7 @@ export default function ProjectsPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header */}
+      {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
         <div className="container px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
@@ -37,11 +37,11 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Filters & Search */}
+      {/* Filters & Search - Centered */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b">
         <div className="container px-4">
           <div className="flex flex-col gap-8 items-center justify-center">
-            <div className="relative w-full max-w-2xl">
+            <div className="relative w-full max-w-2xl mx-auto">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
               <Input
                 placeholder="Search projects by name or client..."
@@ -91,7 +91,7 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Grid */}
+      {/* Grid - Centered */}
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
@@ -146,8 +146,8 @@ export default function ProjectsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 space-y-6">
-              <div className="bg-secondary p-8 rounded-full w-24 h-24 mx-auto flex items-center justify-center">
+            <div className="text-center py-20 space-y-6 flex flex-col items-center">
+              <div className="bg-secondary p-8 rounded-full w-24 h-24 flex items-center justify-center">
                 <Search className="h-10 w-10 text-muted-foreground" />
               </div>
               <h3 className="text-2xl font-bold text-primary font-headline">No projects found</h3>
