@@ -36,7 +36,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
         </div>
         
-        <div className="container relative z-10 px-4 md:px-8">
+        <div className="container mx-auto relative z-10 px-4 md:px-8">
           <div className="max-w-3xl animate-reveal">
             <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
               Industrial & Infrastructure Contractors
@@ -61,7 +61,7 @@ export default function Home() {
 
       {/* Stats Section - Centered */}
       <section className="bg-white py-16 border-b">
-        <div className="container px-4 mx-auto text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
               {stats.map((stat, i) => (
@@ -81,7 +81,7 @@ export default function Home() {
 
       {/* Services Overview - Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-6">
             <div className="space-y-4">
               <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
@@ -104,23 +104,23 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {service.desc}
                 </p>
-                <div className="h-1.5 w-12 bg-accent group-hover:w-full transition-all duration-300" />
+                <div className="h-1.5 w-12 bg-accent group-hover:w-full transition-all duration-300 mx-auto" />
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Why Choose Us - Side by Side Layout */}
+      {/* Why Choose Us - Side by Side Layout with Centered Container */}
       <section className="py-24 bg-primary text-white overflow-hidden relative">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             {/* Text side */}
             <div className="space-y-12">
               <div className="space-y-6">
                 <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
-                <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
-                <p className="text-white/70 text-lg leading-relaxed max-w-2xl">
+                <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight text-center lg:text-left">Setting New Standards in Industrial Contracting</h3>
+                <p className="text-white/70 text-lg leading-relaxed max-w-2xl text-center lg:text-left">
                   We combine technical expertise with rigorous safety standards to deliver world-class infrastructure. Our commitment is to technical precision and operational excellence.
                 </p>
               </div>
@@ -164,9 +164,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects - Centered Cards */}
+      {/* Featured Projects - Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-4">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
@@ -208,7 +208,7 @@ export default function Home() {
 
       {/* Contact CTA - Centered */}
       <section className="py-20">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
