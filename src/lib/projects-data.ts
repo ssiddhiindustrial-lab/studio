@@ -9,6 +9,7 @@ export interface Project {
   client: string;
   scope: string[];
   imageUrl: string;
+  gallery?: string[];
 }
 
 export const projects: Project[] = [
@@ -22,7 +23,12 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Hitachi Hi-Rel',
     scope: ['RCC Works', 'Structural Steel', 'Flooring', 'MEP Coordination'],
-    imageUrl: 'https://picsum.photos/seed/hitachi/800/600',
+    imageUrl: '/projects/hitachi/cover.jpg',
+    gallery: [
+      '/projects/hitachi/gallery-1.jpg',
+      '/projects/hitachi/gallery-2.jpg',
+      '/projects/hitachi/gallery-3.jpg',
+    ],
   },
   {
     slug: 'nectar-engineering',
@@ -34,7 +40,11 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Nectar Engineering',
     scope: ['Foundation', 'Structural Steel Fabrication', 'Roofing'],
-    imageUrl: 'https://picsum.photos/seed/nectar/800/600',
+    imageUrl: '/projects/nectar/cover.jpg',
+    gallery: [
+      '/projects/nectar/gallery-1.jpg',
+      '/projects/nectar/gallery-2.jpg',
+    ],
   },
   {
     slug: 'plot-20-sanand',
@@ -46,7 +56,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Private Client',
     scope: ['Earthwork', 'PCC/RCC', 'Structural Shed'],
-    imageUrl: 'https://picsum.photos/seed/sanand/800/600',
+    imageUrl: '/projects/plot-20-sanand/cover.jpg',
   },
   {
     slug: 'siddhi-premises',
@@ -58,7 +68,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Siddhi Industrial Services',
     scope: ['Internal Roads', 'Drainage', 'Office Interior Construction'],
-    imageUrl: 'https://picsum.photos/seed/siddhi/800/600',
+    imageUrl: '/projects/siddhi-premises/cover.jpg',
   },
   {
     slug: 'uneco',
@@ -70,7 +80,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'UNECO',
     scope: ['Civil Works', 'Steel Structure'],
-    imageUrl: 'https://picsum.photos/seed/uneco/800/600',
+    imageUrl: '/projects/uneco/cover.jpg',
   },
   {
     slug: 'supreme-power',
@@ -82,7 +92,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Supreme Power',
     scope: ['Specialized Foundations', 'Safety Walls'],
-    imageUrl: 'https://picsum.photos/seed/supreme/800/600',
+    imageUrl: '/projects/supreme-power/cover.jpg',
   },
   {
     slug: 'energy-mission',
@@ -94,7 +104,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Energy Mission',
     scope: ['Civil Construction', 'Utility Lines'],
-    imageUrl: 'https://picsum.photos/seed/energy/800/600',
+    imageUrl: '/projects/energy-mission/cover.jpg',
   },
   {
     slug: 'johnson-screens',
@@ -106,7 +116,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Johnson Screens',
     scope: ['RCC Flooring', 'Extension shed'],
-    imageUrl: 'https://picsum.photos/seed/johnson/800/600',
+    imageUrl: '/projects/johnson-screens/cover.jpg',
   },
   {
     slug: 'vital-wellness',
@@ -118,7 +128,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Vital Wellness',
     scope: ['VDF Flooring', 'Steel Racks foundation', 'Warehousing shed'],
-    imageUrl: 'https://picsum.photos/seed/vital/800/600',
+    imageUrl: '/projects/vital-wellness/cover.jpg',
   },
   {
     slug: 'alp-nishikawa',
@@ -130,7 +140,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'ALP Nishikawa',
     scope: ['Industrial Shed', 'Machine Foundations'],
-    imageUrl: 'https://picsum.photos/seed/alp/800/600',
+    imageUrl: '/projects/alp-nishikawa/cover.jpg',
   },
   {
     slug: 'sharda-motors',
@@ -142,7 +152,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Sharda Motors',
     scope: ['High-load Foundations', 'Internal Paving'],
-    imageUrl: 'https://picsum.photos/seed/sharda/800/600',
+    imageUrl: '/projects/sharda-motors/cover.jpg',
   },
   {
     slug: 'mahle-anand',
@@ -154,6 +164,6 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Mahle Anand',
     scope: ['RCC Slabs', 'Utility Trenches'],
-    imageUrl: 'https://picsum.photos/seed/mahle/800/600',
+    imageUrl: '/projects/mahle-anand/cover.jpg',
   }
 ];

@@ -3,7 +3,7 @@
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { Search, Filter, ArrowRight } from "lucide-react"
+import { Search, Filter, ArrowRight, Construction } from "lucide-react"
 import { projects } from "@/lib/projects-data"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -100,13 +100,8 @@ export default function ProjectsPage() {
                   key={project.slug}
                   className="group bg-white rounded-2xl border shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 overflow-hidden flex flex-col items-center w-full max-w-sm"
                 >
-                  <div className="relative h-64 w-full overflow-hidden">
-                    <Image
-                      src={project.imageUrl}
-                      alt={project.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
+                  <div className="relative h-64 w-full overflow-hidden bg-secondary/30 flex items-center justify-center">
+                    <ProjectImage src={project.imageUrl} alt={project.name} />
                     <div className="absolute top-4 left-0 right-0 flex justify-center gap-2 px-4">
                       <Badge className="bg-accent text-accent-foreground hover:bg-accent font-bold uppercase text-[10px] shadow-sm">
                         {project.status}
@@ -158,5 +153,29 @@ export default function ProjectsPage() {
         </div>
       </section>
     </div>
+  )
+}
+
+function ProjectImage({ src, alt }: { src: string; alt: string }) {
+  const [error, setError] = React.useState(false)
+
+  if (error || !src) {
+    return (
+      <div className="flex flex-col items-center justify-center p-6 text-center space-y-3">
+        <Construction className="h-12 w-12 text-accent/40" />
+        <span className="text-xs font-bold text-primary/40 uppercase tracking-widest px-4">{alt}</span>
+      </div>
+    )
+  }
+
+  return (
+    <Image
+      src={src}
+      alt={alt}
+      fill
+      className="object-cover group-hover:scale-110 transition-transform duration-700"
+      onError={() => setError(true)}
+      unoptimized
+    />
   )
 }
