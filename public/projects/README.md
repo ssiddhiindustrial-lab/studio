@@ -1,21 +1,12 @@
-# Project Images Structure
+# Project Images Repository
+Place your construction site photos and project images in the corresponding folders below.
 
-Please upload your construction site photos and project images into the corresponding folders.
-Refer to these images in the code using absolute paths.
+Referencing in code:
+- Cover Image: `/projects/[folder-name]/cover.jpg`
+- Gallery Images: `/projects/[folder-name]/gallery-1.jpg`, etc.
 
-## Folders:
-- /projects/hitachi/
-- /projects/nectar/
-- /projects/uneco/
-- /projects/siddhi-premises/
-- /projects/supreme-power/
-- /projects/energy-mission/
-- /projects/johnson-screens/
-- /projects/vital-wellness/
-- /projects/alp-nishikawa/
-- /projects/sharda-motors/
-- /projects/mahle-anand/
-
-## Example usage:
-- Cover image: `/projects/hitachi/cover.jpg`
-- Gallery image: `/projects/hitachi/gallery-1.jpg`
+Structure:
+- public/projects/hitachi/
+- public/projects/nectar/
+- public/projects/uneco/
+- ... and others as listed in the directory.

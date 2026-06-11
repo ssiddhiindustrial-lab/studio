@@ -1,0 +1,1 @@
+Place Vital Wellness images here. (e.g., cover.jpg)

@@ -1,0 +1,1 @@
+Place Supreme Power images here. (e.g., cover.jpg)

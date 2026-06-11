@@ -1,0 +1,1 @@
+Place Sharda Motors images here. (e.g., cover.jpg)
