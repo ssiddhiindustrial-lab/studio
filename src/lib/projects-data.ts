@@ -38,7 +38,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Nectar Engineering',
     scope: ['Foundation', 'Structural Steel Fabrication', 'Roofing'],
-    imageUrl: '/projects/nectar/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1wVevZ8XrtD-0fDvvcYUlsSzrSEQMeCIu',
   },
   {
     slug: 'plot-20-sanand',

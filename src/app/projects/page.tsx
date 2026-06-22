@@ -100,7 +100,7 @@ export default function ProjectsPage() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-center justify-items-center">
               {filteredProjects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
@@ -168,9 +168,6 @@ export default function ProjectsPage() {
 function ProjectImage({ src, alt }: { src: string; alt: string }) {
   const [error, setError] = React.useState(false)
 
-  // Standard direct link handling
-  const imageUrl = src;
-
   if (error || !src || src.startsWith('/projects')) {
     return (
       <div className="flex flex-col items-center justify-center p-6 text-center space-y-4 bg-secondary/50 h-full w-full">
@@ -182,7 +179,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
 
   return (
     <Image
-      src={imageUrl}
+      src={src}
       alt={alt}
       fill
       className="object-cover group-hover:scale-110 transition-transform duration-700"
