@@ -20,16 +20,21 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
     notFound()
   }
 
-  // Generate gallery items: use actual gallery if exists, otherwise repeat main image with different seeds for variety
+  // Generate gallery items from the projects list to show real work site photos
   const galleryItems = project.gallery && project.gallery.length > 0 
     ? project.gallery 
-    : [project.imageUrl, project.imageUrl, project.imageUrl, project.imageUrl];
+    : [
+        'https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B',
+        'https://lh3.googleusercontent.com/d/1wVevZ8XrtD-0fDvvcYUlsSzrSEQMeCIu',
+        'https://lh3.googleusercontent.com/d/1kl3dHBSRwodlJvKk7VBYrva2O0NaG98Q',
+        'https://lh3.googleusercontent.com/d/1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'
+      ];
 
   return (
     <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
       <section className="bg-primary py-16 text-white text-center w-full">
-        <div className="container px-4 flex flex-col items-center">
+        <div className="container px-4 flex flex-col items-center mx-auto">
           <Link href="/projects" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors mb-8 font-bold text-sm uppercase tracking-widest">
             <ArrowLeft className="h-4 w-4" /> Back to Portfolio
           </Link>
@@ -53,8 +58,8 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
 
       {/* Main Content - Strictly Centered */}
       <section className="py-24 bg-background w-full">
-        <div className="container px-4 flex flex-col items-center">
-          <div className="max-w-5xl mx-auto space-y-24 flex flex-col items-center text-center">
+        <div className="container px-4 flex flex-col items-center mx-auto">
+          <div className="max-w-5xl mx-auto space-y-24 flex flex-col items-center text-center w-full">
             
             {/* Main Image */}
             <div className="w-full relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
@@ -66,9 +71,6 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
               <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline text-center">Project Overview</h2>
               <p className="text-lg text-muted-foreground leading-relaxed text-center">
                 {project.description} We utilized advanced construction methodologies to ensure the structural integrity and longevity of the {project.name} project. Our approach prioritized safety, efficiency, and precise adherence to engineering specifications.
-              </p>
-              <p className="text-muted-foreground leading-relaxed text-center">
-                This facility was designed to handle high-load industrial operations with specialized flooring and reinforced structural elements as part of the core scope of work provided by Siddhi Industrial Services.
               </p>
             </div>
 
@@ -108,7 +110,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
               </div>
             </div>
 
-            {/* Project Data Cards */}
+            {/* Technical Data Cards */}
             <div className="w-full space-y-12 flex flex-col items-center">
               <h3 className="text-3xl font-bold text-primary font-headline text-center">Technical Data</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
@@ -130,7 +132,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             </div>
 
             {/* CTA */}
-            <div className="max-w-2xl w-full">
+            <div className="max-w-2xl w-full flex justify-center">
               <Button asChild className="w-full h-16 bg-primary hover:bg-accent text-xl font-bold rounded-2xl shadow-lg">
                 <Link href="/contact" className="flex items-center justify-center gap-3">
                   Inquire Similar Project <ChevronRight className="h-6 w-6" />
@@ -143,11 +145,11 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
 
       {/* Gallery - Strictly Centered */}
       <section className="py-24 bg-primary text-white w-full">
-        <div className="container px-4 text-center flex flex-col items-center">
+        <div className="container px-4 text-center flex flex-col items-center mx-auto">
           <div className="max-w-4xl mx-auto space-y-6 mb-16 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Visual Assets</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-center">Work Site Gallery</h3>
-            <p className="text-white/60 text-center">Candid photos from the various stages of project execution.</p>
+            <p className="text-white/60 text-center">Actual photos from the various stages of project execution.</p>
           </div>
           
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto w-full">

@@ -22,7 +22,7 @@ export default function ProjectsPage() {
 
       {/* Grid - Strictly Centered */}
       <section className="py-24 bg-background w-full">
-        <div className="container mx-auto px-4 flex justify-center">
+        <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl w-full justify-items-center">
             {projects.map((project) => (
               <Link

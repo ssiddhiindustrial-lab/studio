@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -22,13 +21,14 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
+  // Updated logo URL to use the direct link format
   const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-28 items-center justify-between gap-4">
-          {/* Logo - Left Side */}
+          {/* Logo - Symmetrical balancing */}
           <div className="flex items-center shrink-0">
             <Link href="/" className="flex items-center group">
               <div className="relative h-24 w-[250px] md:w-[320px] overflow-hidden transition-all">
@@ -37,7 +37,7 @@ export function Navbar() {
                   alt="Siddhi Industrial Services Logo" 
                   fill 
                   unoptimized
-                  className="object-contain object-left"
+                  className="object-contain object-left md:object-center"
                   priority
                 />
               </div>
@@ -64,7 +64,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Empty spacer for balancing on desktop, or Mobile menu button */}
+          {/* Mobile menu button / Right spacer */}
           <div className="flex lg:w-[320px] justify-end shrink-0">
             <div className="lg:hidden">
               <button
