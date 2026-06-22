@@ -86,7 +86,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Supreme Power',
     scope: ['Specialized Foundations', 'Safety Walls'],
-    imageUrl: 'https://lh3.googleusercontent.com/d/1Wv9z2Z6BstPX_fFXF7pCr8C5uYPzw7kJ',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1ZUK6NL9RhzTg4RjIysIFWt9-MRDUMxjv',
   },
   {
     slug: 'energy-mission',
