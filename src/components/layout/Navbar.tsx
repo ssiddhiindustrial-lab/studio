@@ -36,6 +36,7 @@ export function Navbar() {
                   src={logoUrl} 
                   alt="Siddhi Industrial Services Logo" 
                   fill 
+                  unoptimized
                   className="object-contain object-left md:object-center"
                   priority
                 />

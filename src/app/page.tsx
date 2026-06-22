@@ -20,9 +20,9 @@ export default function Home() {
   ]
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full items-center">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-primary">
+      <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://picsum.photos/seed/hero/1920/1080"
@@ -30,6 +30,7 @@ export default function Home() {
             fill
             className="object-cover opacity-40 grayscale"
             priority
+            unoptimized
             data-ai-hint="industrial construction"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/90" />
@@ -58,8 +59,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Strictly Centered */}
-      <section className="bg-white py-16 border-b">
+      {/* Stats Section */}
+      <section className="bg-white py-16 border-b w-full flex justify-center">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-5xl mx-auto flex justify-center">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full">
@@ -78,8 +79,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview - Strictly Centered */}
-      <section className="py-24 bg-background">
+      {/* Services Overview */}
+      <section className="py-24 bg-background w-full flex justify-center">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-6 flex flex-col items-center">
             <div className="space-y-4 flex flex-col items-center">
@@ -113,8 +114,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects - Strictly Centered */}
-      <section className="py-24 bg-background">
+      {/* Featured Projects */}
+      <section className="py-24 bg-background w-full flex justify-center">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-4 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
@@ -132,6 +133,7 @@ export default function Home() {
                     src={project.imageUrl}
                     alt={project.name}
                     fill
+                    unoptimized
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
@@ -158,8 +160,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA - Strictly Centered */}
-      <section className="py-20 bg-white">
+      {/* Contact CTA */}
+      <section className="py-20 bg-white w-full flex justify-center">
         <div className="container mx-auto px-4 text-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto flex flex-col items-center">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />

@@ -91,6 +91,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
       src={src}
       alt={alt}
       fill
+      unoptimized
       className="object-cover group-hover:scale-110 transition-transform duration-700"
       onError={() => setError(true)}
     />

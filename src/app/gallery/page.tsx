@@ -40,6 +40,7 @@ export default function GalleryPage() {
                         alt={img.title}
                         width={800}
                         height={600}
+                        unoptimized
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>

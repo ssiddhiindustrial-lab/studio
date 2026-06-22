@@ -20,15 +20,15 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
     notFound()
   }
 
-  // Generate gallery items
+  // Generate gallery items - use at least the main image and a few others from the same category as fallback
+  const fallbackImages = projects
+    .filter(p => p.category === project.category && p.slug !== project.slug)
+    .slice(0, 4)
+    .map(p => p.imageUrl);
+
   const galleryItems = project.gallery && project.gallery.length > 0 
     ? project.gallery 
-    : [
-        'https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B',
-        'https://lh3.googleusercontent.com/d/1wVevZ8XrtD-0fDvvcYUlsSzrSEQMeCIu',
-        'https://lh3.googleusercontent.com/d/1kl3dHBSRwodlJvKk7VBYrva2O0NaG98Q',
-        'https://lh3.googleusercontent.com/d/1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'
-      ];
+    : [project.imageUrl, ...fallbackImages].slice(0, 4);
 
   return (
     <div className="flex flex-col w-full items-center">
@@ -159,6 +159,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   src={imgUrl}
                   alt={`Site activity ${i + 1}`}
                   fill
+                  unoptimized
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -192,6 +193,7 @@ function ProjectHeroImage({ src, alt }: { src: string; alt: string }) {
       src={src}
       alt={alt}
       fill
+      unoptimized
       className="object-cover transition-transform duration-700"
     />
   )
