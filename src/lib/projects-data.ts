@@ -50,7 +50,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Private Client',
     scope: ['Earthwork', 'PCC/RCC', 'Structural Shed'],
-    imageUrl: '/projects/plot-20-sanand/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1kl3dHBSRwodlJvKk7VBYrva2O0NaG98Q',
   },
   {
     slug: 'siddhi-premises',
