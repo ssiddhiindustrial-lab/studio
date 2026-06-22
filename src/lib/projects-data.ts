@@ -65,18 +65,6 @@ export const projects: Project[] = [
     imageUrl: 'https://lh3.googleusercontent.com/d/1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3',
   },
   {
-    slug: 'industrial-facility-sanand',
-    name: 'Industrial Manufacturing Facility',
-    value: '₹1.45 Cr',
-    year: '2024',
-    description: 'Comprehensive civil and structural development for a manufacturing unit in Sanand.',
-    category: 'Industrial',
-    status: 'Ongoing',
-    client: 'Industrial Partner',
-    scope: ['RCC Foundations', 'Steel Fabrication', 'Roofing Systems'],
-    imageUrl: 'https://lh3.googleusercontent.com/d/1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn',
-  },
-  {
     slug: 'suspa',
     name: 'SUSPA',
     value: '₹0.50 Cr',
@@ -92,7 +80,7 @@ export const projects: Project[] = [
       'Machine Foundations',
       'Parking Area Development'
     ],
-    imageUrl: 'https://picsum.photos/seed/suspa/800/600',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn',
   },
   {
     slug: 'uneco',
