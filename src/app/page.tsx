@@ -23,7 +23,7 @@ export default function Home() {
   return (
     <div className="flex flex-col w-full">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center overflow-hidden bg-primary">
+      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
             src="https://picsum.photos/seed/hero/1920/1080"
@@ -33,25 +33,25 @@ export default function Home() {
             priority
             data-ai-hint="industrial construction"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/90" />
         </div>
         
-        <div className="container mx-auto relative z-10 px-4 md:px-8">
-          <div className="max-w-3xl animate-reveal">
+        <div className="container mx-auto relative z-10 px-4 md:px-8 text-center">
+          <div className="max-w-4xl mx-auto animate-reveal flex flex-col items-center">
             <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
               Industrial & Infrastructure Contractors
             </h4>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline mb-6">
               Building Excellence With <span className="text-accent">Engineering Precision</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/80 max-w-xl leading-relaxed mb-8">
+            <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-10">
               We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-8">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-10 text-lg rounded-xl shadow-lg">
                 <Link href="/projects">View Projects</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-14 px-8">
+              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-14 px-10 text-lg rounded-xl">
                 <Link href="/contact">Contact Us</Link>
               </Button>
             </div>
@@ -82,7 +82,7 @@ export default function Home() {
       {/* Services Overview - Centered */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto mb-16 space-y-6">
+          <div className="max-w-4xl mx-auto mb-16 space-y-6 flex flex-col items-center">
             <div className="space-y-4">
               <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
@@ -114,10 +114,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Centered Header with Side by Side Layout */}
+      {/* Why Choose Us - Centered */}
       <section className="py-24 bg-primary text-white overflow-hidden relative">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 space-y-4">
+          <div className="max-w-4xl mx-auto text-center mb-16 space-y-4 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
             <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
@@ -168,7 +168,7 @@ export default function Home() {
       {/* Featured Projects - Centered */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-4xl mx-auto mb-16 space-y-4">
+          <div className="max-w-4xl mx-auto mb-16 space-y-4 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
@@ -176,26 +176,27 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto justify-center">
             {projects.slice(0, 3).map((project) => (
-              <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all flex flex-col">
-                <div className="relative h-64 overflow-hidden">
+              <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all flex flex-col items-center">
+                <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl}
                     alt={project.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
+                    unoptimized
                   />
-                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-bold uppercase">
+                  <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
                     {project.status}
                   </div>
                 </div>
-                <div className="p-6 text-center flex-grow flex flex-col items-center">
-                  <p className="text-accent font-bold text-xs uppercase mb-2">{project.category}</p>
-                  <h4 className="text-xl font-bold text-primary font-headline mb-3 group-hover:text-accent transition-colors">{project.name}</h4>
-                  <div className="w-full flex justify-between items-center text-sm text-muted-foreground border-t pt-4 mt-auto">
-                    <span>{project.year}</span>
-                    <span className="font-bold text-primary">{project.value}</span>
+                <div className="p-8 text-center flex-grow flex flex-col items-center w-full">
+                  <p className="text-accent font-bold text-[10px] uppercase tracking-widest mb-3">{project.category}</p>
+                  <h4 className="text-xl font-bold text-primary font-headline mb-6 group-hover:text-accent transition-colors leading-tight">{project.name}</h4>
+                  <div className="w-full flex justify-between items-center text-xs text-muted-foreground border-t pt-5 mt-auto font-medium">
+                    <span className="uppercase tracking-widest">{project.year}</span>
+                    <span className="font-bold text-primary text-lg">{project.value}</span>
                   </div>
                 </div>
               </Link>
@@ -203,7 +204,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-12">
+            <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-12 h-14 text-lg rounded-xl">
               <Link href="/projects">View All Projects</Link>
             </Button>
           </div>
@@ -213,19 +214,19 @@ export default function Home() {
       {/* Contact CTA - Centered */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto">
+          <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto flex flex-col items-center">
             <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             
-            <div className="relative z-10 max-w-3xl mx-auto space-y-8">
+            <div className="relative z-10 max-w-3xl mx-auto space-y-8 flex flex-col items-center">
               <h2 className="text-4xl md:text-6xl font-bold text-accent-foreground font-headline">Ready to Start Your Next Industrial Project?</h2>
               <p className="text-lg md:text-xl text-accent-foreground/80">Get a free consultation and project scope analysis from our expert engineers.</p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-12 h-14 text-lg">
+              <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
+                <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-12 h-14 text-lg rounded-xl shadow-xl">
                   <Link href="/contact">Get in Touch</Link>
                 </Button>
-                <Button asChild variant="ghost" size="lg" className="text-primary font-bold hover:bg-white/20 h-14 text-lg">
-                  <Link href="/about">Learn More About Us</Link>
+                <Button asChild variant="ghost" size="lg" className="text-primary font-bold hover:bg-white/20 h-14 text-lg rounded-xl">
+                  <Link href="/about">Learn More</Link>
                 </Button>
               </div>
             </div>
