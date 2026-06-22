@@ -20,35 +20,40 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
     notFound()
   }
 
+  // Generate gallery items: use actual gallery if exists, otherwise repeat main image with different seeds for variety
+  const galleryItems = project.gallery && project.gallery.length > 0 
+    ? project.gallery 
+    : [project.imageUrl, project.imageUrl, project.imageUrl, project.imageUrl];
+
   return (
-    <div className="flex flex-col w-full">
-      {/* Header - Centered */}
-      <section className="bg-primary py-16 text-white text-center">
-        <div className="container px-4">
+    <div className="flex flex-col w-full items-center">
+      {/* Header - Strictly Centered */}
+      <section className="bg-primary py-16 text-white text-center w-full">
+        <div className="container px-4 flex flex-col items-center">
           <Link href="/projects" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors mb-8 font-bold text-sm uppercase tracking-widest">
             <ArrowLeft className="h-4 w-4" /> Back to Portfolio
           </Link>
           <div className="max-w-4xl mx-auto flex flex-col items-center gap-8">
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col items-center">
               <div className="flex flex-wrap gap-2 justify-center">
-                <Badge className="bg-accent text-accent-foreground font-bold">{project.category}</Badge>
-                <Badge variant="outline" className="border-white/30 text-white font-bold">{project.status}</Badge>
+                <Badge className="bg-accent text-accent-foreground font-bold uppercase tracking-widest text-[10px]">{project.category}</Badge>
+                <Badge variant="outline" className="border-white/30 text-white font-bold uppercase tracking-widest text-[10px]">{project.status}</Badge>
               </div>
-              <h1 className="text-4xl md:text-6xl font-bold font-headline leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold font-headline leading-tight text-center">
                 {project.name}
               </h1>
             </div>
-            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20 min-w-[280px] text-center">
-              <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-2">Project Value</p>
+            <div className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm border border-white/20 min-w-[280px] text-center flex flex-col items-center">
+              <p className="text-white/60 text-[10px] uppercase tracking-widest font-bold mb-2">Project Value</p>
               <p className="text-4xl font-bold font-headline text-accent">{project.value}</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Main Content - Centered */}
-      <section className="py-24 bg-background">
-        <div className="container px-4">
+      {/* Main Content - Strictly Centered */}
+      <section className="py-24 bg-background w-full">
+        <div className="container px-4 flex flex-col items-center">
           <div className="max-w-5xl mx-auto space-y-24 flex flex-col items-center text-center">
             
             {/* Main Image */}
@@ -57,23 +62,23 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             </div>
 
             {/* Overview */}
-            <div className="max-w-3xl space-y-6">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Project Overview</h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
+            <div className="max-w-3xl space-y-6 flex flex-col items-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline text-center">Project Overview</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed text-center">
                 {project.description} We utilized advanced construction methodologies to ensure the structural integrity and longevity of the {project.name} project. Our approach prioritized safety, efficiency, and precise adherence to engineering specifications.
               </p>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-center">
                 This facility was designed to handle high-load industrial operations with specialized flooring and reinforced structural elements as part of the core scope of work provided by Siddhi Industrial Services.
               </p>
             </div>
 
             {/* Scope & Highlights Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-4xl">
               <div className="bg-white p-10 rounded-3xl border shadow-sm flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-primary font-headline mb-8 flex items-center gap-2">
+                <h3 className="text-2xl font-bold text-primary font-headline mb-8 flex items-center gap-2 justify-center">
                   <Activity className="h-6 w-6 text-accent" /> Scope of Work
                 </h3>
-                <ul className="space-y-4 text-left w-fit">
+                <ul className="space-y-4 text-left w-full max-w-xs">
                   {project.scope.map((item, i) => (
                     <li key={i} className="flex items-center gap-3 text-primary/80 font-medium">
                       <div className="w-2 h-2 rounded-full bg-accent shrink-0" />
@@ -83,7 +88,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 </ul>
               </div>
               <div className="bg-secondary/30 p-10 rounded-3xl border border-accent/20 flex flex-col items-center">
-                <h3 className="text-2xl font-bold text-primary font-headline mb-8 flex items-center gap-2">
+                <h3 className="text-2xl font-bold text-primary font-headline mb-8 flex items-center gap-2 justify-center">
                   <Factory className="h-6 w-6 text-accent" /> Facility Highlights
                 </h3>
                 <div className="space-y-6 w-full max-w-xs">
@@ -104,9 +109,9 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             </div>
 
             {/* Project Data Cards */}
-            <div className="w-full space-y-12">
-              <h3 className="text-3xl font-bold text-primary font-headline">Technical Data</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="w-full space-y-12 flex flex-col items-center">
+              <h3 className="text-3xl font-bold text-primary font-headline text-center">Technical Data</h3>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 w-full">
                 {[
                   { label: "Client Name", value: project.client, icon: User },
                   { label: "Completion Year", value: project.year, icon: Calendar },
@@ -136,21 +141,21 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
         </div>
       </section>
 
-      {/* Gallery - Centered */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container px-4 text-center">
-          <div className="max-w-4xl mx-auto space-y-6 mb-16">
-            <h2 className="text-accent font-bold uppercase tracking-wider">Visual Assets</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline">Work Site Gallery</h3>
-            <p className="text-white/60">Candid photos from the various stages of project execution.</p>
+      {/* Gallery - Strictly Centered */}
+      <section className="py-24 bg-primary text-white w-full">
+        <div className="container px-4 text-center flex flex-col items-center">
+          <div className="max-w-4xl mx-auto space-y-6 mb-16 flex flex-col items-center">
+            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Visual Assets</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-center">Work Site Gallery</h3>
+            <p className="text-white/60 text-center">Candid photos from the various stages of project execution.</p>
           </div>
           
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
-            {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white/10">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto w-full">
+            {galleryItems.map((imgUrl, i) => (
+              <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white/10 bg-white/5">
                 <Image
-                  src={`https://picsum.photos/seed/${project.slug}-${i}/600/600`}
-                  alt={`Site activity ${i}`}
+                  src={imgUrl}
+                  alt={`Site activity ${i + 1}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
                   unoptimized
