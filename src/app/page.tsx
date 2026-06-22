@@ -1,4 +1,3 @@
-
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -59,13 +58,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Centered */}
+      {/* Stats Section - Strictly Centered */}
       <section className="bg-white py-16 border-b">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-5xl mx-auto">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
+          <div className="max-w-5xl mx-auto flex justify-center">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 w-full">
               {stats.map((stat, i) => (
-                <div key={i} className="text-center group">
+                <div key={i} className="text-center group flex flex-col items-center">
                   <p className="text-4xl md:text-6xl font-bold text-primary mb-2 group-hover:text-accent transition-colors font-headline">
                     {stat.value}
                   </p>
@@ -79,14 +78,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview - Centered */}
+      {/* Services Overview - Strictly Centered */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-6 flex flex-col items-center">
-            <div className="space-y-4">
+            <div className="space-y-4 flex flex-col items-center">
               <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
               <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
-              <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+              <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
                 We deliver world-class industrial infrastructure with technical precision. From large factories to specialized warehousing, our expertise ensures structural excellence.
               </p>
             </div>
@@ -97,9 +96,9 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto justify-items-center">
             {coreServices.map((service, i) => (
-              <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group text-center flex flex-col items-center">
+              <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group text-center flex flex-col items-center w-full">
                 <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   <service.icon className="h-8 w-8" />
                 </div>
@@ -114,71 +113,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Why Choose Us - Centered */}
-      <section className="py-24 bg-primary text-white overflow-hidden relative">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center mb-16 space-y-4 flex flex-col items-center">
-            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Edge</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline leading-tight">Setting New Standards in Industrial Contracting</h3>
-            <p className="text-white/70 text-lg leading-relaxed max-w-2xl mx-auto">
-              We combine technical expertise with rigorous safety standards to deliver world-class infrastructure. Our commitment is to technical precision and operational excellence.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-7xl mx-auto">
-            {/* Features side */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
-              {[
-                { title: "Experienced Engineers", desc: "Our leadership brings decades of on-site technical expertise." },
-                { title: "Timely Delivery", desc: "We adhere strictly to project timelines without compromising quality." },
-                { title: "Safety Compliance", desc: "Rigorous HSE protocols protecting our people and your assets." },
-                { title: "Reliable Workforce", desc: "Skilled labor management ensuring consistent progress." }
-              ].map((item, i) => (
-                <div key={i} className="flex gap-4 items-start group">
-                  <div className="bg-accent/20 p-2 rounded-lg shrink-0">
-                    <CheckCircle2 className="h-6 w-6 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-bold mb-1 font-headline">{item.title}</h4>
-                    <p className="text-white/60 text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            {/* Image side */}
-            <div className="relative h-[400px] md:h-[500px] rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10 group">
-              <Image 
-                src="https://picsum.photos/seed/construction/1200/800" 
-                alt="Construction Site" 
-                fill 
-                className="object-cover transition-transform duration-700 group-hover:scale-110"
-                data-ai-hint="construction site"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
-              <div className="absolute bottom-8 left-8 right-8 bg-accent p-6 rounded-xl text-primary shadow-xl text-center">
-                <p className="text-3xl font-bold font-headline mb-1">100%</p>
-                <p className="font-bold text-xs uppercase tracking-wider">Quality Assurance in every square foot delivered</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Projects - Centered */}
+      {/* Featured Projects - Strictly Centered */}
       <section className="py-24 bg-background">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-4xl mx-auto mb-16 space-y-4 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl mx-auto">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
               A glimpse into our recent industrial and infrastructure achievements across Sanand and Ahmedabad.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16 max-w-7xl mx-auto justify-items-center">
             {projects.slice(0, 3).map((project) => (
-              <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all flex flex-col items-center">
+              <Link href={`/projects/${project.slug}`} key={project.slug} className="group overflow-hidden rounded-xl bg-white border shadow-sm hover:shadow-xl transition-all flex flex-col items-center w-full max-w-sm">
                 <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl}
@@ -203,7 +151,7 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center flex justify-center">
             <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-12 h-14 text-lg rounded-xl">
               <Link href="/projects">View All Projects</Link>
             </Button>
@@ -211,7 +159,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA - Centered */}
+      {/* Contact CTA - Strictly Centered */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4 text-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl mx-auto flex flex-col items-center">

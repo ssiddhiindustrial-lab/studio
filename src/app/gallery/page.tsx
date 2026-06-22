@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -7,7 +6,6 @@ import { Badge } from "@/components/ui/badge"
 import { projects } from "@/lib/projects-data"
 
 export default function GalleryPage() {
-  // Use images from the actual projects data
   const galleryItems = projects.map((project, index) => ({
     id: index,
     category: project.category,
@@ -18,10 +16,10 @@ export default function GalleryPage() {
 
   return (
     <div className="flex flex-col w-full">
-      {/* Header - Centered */}
+      {/* Header - Strictly Centered */}
       <section className="bg-primary py-24 text-white">
         <div className="container mx-auto px-4 text-center">
-          <div className="max-w-3xl mx-auto space-y-6">
+          <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Visual Portfolio</h1>
             <p className="text-xl text-white/70">A comprehensive view of our construction sites and completed industrial facilities.</p>
           </div>
@@ -30,8 +28,8 @@ export default function GalleryPage() {
 
       {/* Grid - Strictly Centered */}
       <section className="py-24 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
+        <div className="container mx-auto px-4 flex justify-center">
+          <div className="max-w-6xl w-full">
             <div className="masonry-grid">
               {galleryItems.map((img) => (
                 <div key={img.id} className="masonry-item group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all border">
