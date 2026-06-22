@@ -21,7 +21,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  // Updated logo URL to use the direct link format
+  // Logo URL
   const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
@@ -36,7 +36,6 @@ export function Navbar() {
                   src={logoUrl} 
                   alt="Siddhi Industrial Services Logo" 
                   fill 
-                  unoptimized
                   className="object-contain object-left md:object-center"
                   priority
                 />

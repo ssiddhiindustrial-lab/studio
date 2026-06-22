@@ -133,7 +133,6 @@ export default function Home() {
                     alt={project.name}
                     fill
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
-                    unoptimized
                   />
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
                     {project.status}

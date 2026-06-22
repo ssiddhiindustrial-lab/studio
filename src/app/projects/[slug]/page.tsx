@@ -20,7 +20,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
     notFound()
   }
 
-  // Generate gallery items from the projects list to show real work site photos
+  // Generate gallery items
   const galleryItems = project.gallery && project.gallery.length > 0 
     ? project.gallery 
     : [
@@ -160,7 +160,6 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   alt={`Site activity ${i + 1}`}
                   fill
                   className="object-cover group-hover:scale-110 transition-transform duration-700"
-                  unoptimized
                 />
               </div>
             ))}
@@ -194,7 +193,6 @@ function ProjectHeroImage({ src, alt }: { src: string; alt: string }) {
       alt={alt}
       fill
       className="object-cover transition-transform duration-700"
-      unoptimized
     />
   )
 }

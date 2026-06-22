@@ -41,7 +41,6 @@ export default function GalleryPage() {
                         width={800}
                         height={600}
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
-                        unoptimized
                       />
                     </div>
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-8 text-center items-center">
