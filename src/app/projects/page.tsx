@@ -93,7 +93,7 @@ export default function ProjectsPage() {
       <section className="py-24 bg-background">
         <div className="container px-4">
           {filteredProjects.length > 0 ? (
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto justify-items-center">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-items-center">
               {filteredProjects.map((project) => (
                 <Link
                   href={`/projects/${project.slug}`}
@@ -139,7 +139,7 @@ export default function ProjectsPage() {
               ))}
             </div>
           ) : (
-            <div className="text-center py-20 space-y-6 flex flex-col items-center">
+            <div className="text-center py-20 space-y-6 flex flex-col items-center w-full">
               <div className="bg-secondary p-8 rounded-full w-24 h-24 flex items-center justify-center">
                 <Search className="h-10 w-10 text-muted-foreground" />
               </div>
@@ -161,7 +161,7 @@ function ProjectImage({ src, alt }: { src: string; alt: string }) {
 
   if (error || !src) {
     return (
-      <div className="flex flex-col items-center justify-center p-6 text-center space-y-3">
+      <div className="flex flex-col items-center justify-center p-6 text-center space-y-3 bg-secondary/50 h-full w-full">
         <Construction className="h-12 w-12 text-accent/40" />
         <span className="text-xs font-bold text-primary/40 uppercase tracking-widest px-4">{alt}</span>
       </div>

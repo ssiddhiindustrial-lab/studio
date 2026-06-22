@@ -23,11 +23,9 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Hitachi Hi-Rel',
     scope: ['RCC Works', 'Structural Steel', 'Flooring', 'MEP Coordination'],
-    imageUrl: '/projects/hitachi/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B',
     gallery: [
-      '/projects/hitachi/gallery-1.jpg',
-      '/projects/hitachi/gallery-2.jpg',
-      '/projects/hitachi/gallery-3.jpg',
+      'https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B',
     ],
   },
   {
@@ -41,10 +39,6 @@ export const projects: Project[] = [
     client: 'Nectar Engineering',
     scope: ['Foundation', 'Structural Steel Fabrication', 'Roofing'],
     imageUrl: '/projects/nectar/cover.jpg',
-    gallery: [
-      '/projects/nectar/gallery-1.jpg',
-      '/projects/nectar/gallery-2.jpg',
-    ],
   },
   {
     slug: 'plot-20-sanand',
