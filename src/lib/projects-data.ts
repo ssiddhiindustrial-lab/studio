@@ -77,6 +77,24 @@ export const projects: Project[] = [
     imageUrl: 'https://lh3.googleusercontent.com/d/1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn',
   },
   {
+    slug: 'suspa',
+    name: 'SUSPA',
+    value: '₹0.50 Cr',
+    year: '2019-2020',
+    description: 'Specialized industrial infrastructure works including nitrogen tank foundations and heavy-duty parking development.',
+    category: 'Industrial',
+    status: 'Completed',
+    client: 'SUSPA',
+    scope: [
+      'Foundation for Nitrogen Tank',
+      'RCC Road',
+      'Compound Wall – Retaining',
+      'Machine Foundations',
+      'Parking Area Development'
+    ],
+    imageUrl: 'https://picsum.photos/seed/suspa/800/600',
+  },
+  {
     slug: 'uneco',
     name: 'UNECO',
     value: '₹1.05 Cr',

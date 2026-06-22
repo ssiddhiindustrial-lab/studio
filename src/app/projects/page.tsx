@@ -9,9 +9,9 @@ import { Badge } from "@/components/ui/badge"
 
 export default function ProjectsPage() {
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
-      <section className="bg-primary py-24 text-white">
+      <section className="bg-primary py-24 text-white w-full">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Project Portfolio</h1>
@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Grid - Strictly Centered */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-background w-full">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl w-full justify-items-center">
             {projects.map((project) => (

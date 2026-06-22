@@ -15,9 +15,9 @@ export default function GalleryPage() {
   }))
 
   return (
-    <div className="flex flex-col w-full">
+    <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
-      <section className="bg-primary py-24 text-white">
+      <section className="bg-primary py-24 text-white w-full">
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Visual Portfolio</h1>
@@ -27,7 +27,7 @@ export default function GalleryPage() {
       </section>
 
       {/* Grid - Strictly Centered */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-background w-full">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="max-w-6xl w-full">
             <div className="masonry-grid">
