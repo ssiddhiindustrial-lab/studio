@@ -62,7 +62,7 @@ export const projects: Project[] = [
     status: 'Ongoing',
     client: 'Siddhi Industrial Services',
     scope: ['Internal Roads', 'Drainage', 'Office Interior Construction'],
-    imageUrl: '/projects/siddhi-premises/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3',
   },
   {
     slug: 'uneco',
@@ -74,7 +74,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'UNECO',
     scope: ['Civil Works', 'Steel Structure'],
-    imageUrl: '/projects/uneco/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1Wv9z2Z6BstPX_fFXF7pCr8C5uYPzw7kJ',
   },
   {
     slug: 'supreme-power',
@@ -86,7 +86,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Supreme Power',
     scope: ['Specialized Foundations', 'Safety Walls'],
-    imageUrl: '/projects/supreme-power/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1Wv9z2Z6BstPX_fFXF7pCr8C5uYPzw7kJ',
   },
   {
     slug: 'energy-mission',
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Energy Mission',
     scope: ['Civil Construction', 'Utility Lines'],
-    imageUrl: '/projects/energy-mission/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1zjwxZ34iALXXzwzj4WKoGGFZLmdzkihC',
   },
   {
     slug: 'johnson-screens',
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Johnson Screens',
     scope: ['RCC Flooring', 'Extension shed'],
-    imageUrl: '/projects/johnson-screens/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/18zmL98dOb850vmHyj5LH92szDV5VcFjz',
   },
   {
     slug: 'vital-wellness',
@@ -122,7 +122,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Vital Wellness',
     scope: ['VDF Flooring', 'Steel Racks foundation', 'Warehousing shed'],
-    imageUrl: '/projects/vital-wellness/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq',
   },
   {
     slug: 'alp-nishikawa',
@@ -134,7 +134,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'ALP Nishikawa',
     scope: ['Industrial Shed', 'Machine Foundations'],
-    imageUrl: '/projects/alp-nishikawa/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1pO5inxi_Tk05q9Aj646vRtfwoZW3L8N8',
   },
   {
     slug: 'sharda-motors',
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Sharda Motors',
     scope: ['High-load Foundations', 'Internal Paving'],
-    imageUrl: '/projects/sharda-motors/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og',
   },
   {
     slug: 'mahle-anand',
@@ -158,6 +158,6 @@ export const projects: Project[] = [
     status: 'Completed',
     client: 'Mahle Anand',
     scope: ['RCC Slabs', 'Utility Trenches'],
-    imageUrl: '/projects/mahle-anand/cover.jpg',
+    imageUrl: 'https://lh3.googleusercontent.com/d/1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr',
   }
 ];
