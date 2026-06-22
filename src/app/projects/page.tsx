@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -12,7 +13,7 @@ export default function ProjectsPage() {
     <div className="flex flex-col w-full">
       {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Project Portfolio</h1>
             <p className="text-xl text-white/70">A showcase of our industrial engineering excellence across India.</p>
@@ -20,10 +21,10 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      {/* Grid - Centered */}
+      {/* Grid - Strictly Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto justify-center justify-items-center">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 max-w-7xl mx-auto justify-center place-items-center">
             {projects.map((project) => (
               <Link
                 href={`/projects/${project.slug}`}

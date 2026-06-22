@@ -29,7 +29,7 @@ export default function GalleryPage() {
     <div className="flex flex-col w-full">
       {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Visual Portfolio</h1>
             <p className="text-xl text-white/70">A look inside our construction sites and completed facilities.</p>
@@ -39,7 +39,7 @@ export default function GalleryPage() {
 
       {/* Filter Bar - Centered */}
       <section className="py-12 bg-white sticky top-16 z-30 shadow-sm border-b overflow-x-auto">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <div className="flex justify-center gap-2 min-w-max pb-2">
             {galleryCategories.map((cat) => (
               <Button
@@ -56,9 +56,9 @@ export default function GalleryPage() {
         </div>
       </section>
 
-      {/* Grid - Centered */}
+      {/* Grid - Strictly Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4">
+        <div className="container mx-auto px-4">
           <div className="masonry-grid max-w-6xl mx-auto">
             {filteredImages.map((img) => (
               <div key={img.id} className="masonry-item group relative overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-2xl transition-all">

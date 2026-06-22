@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -58,7 +59,7 @@ export default function ContactPage() {
     <div className="flex flex-col w-full">
       {/* Header - Centered */}
       <section className="bg-primary py-24 text-white">
-        <div className="container px-4 text-center">
+        <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">Contact Our Experts</h1>
             <p className="text-xl text-white/70">Let's build your next industrial project with engineering precision and cost-effective solutions.</p>
@@ -66,13 +67,13 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Content - Centered */}
+      {/* Main Content - Strictly Centered */}
       <section className="py-24 bg-background">
-        <div className="container px-4">
-          <div className="max-w-5xl mx-auto space-y-24">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto space-y-24 flex flex-col items-center">
             
             {/* Inquiry Hub & AI Tool - Centered Flow */}
-            <div className="flex flex-col items-center gap-16">
+            <div className="flex flex-col items-center gap-16 w-full">
               <div className="bg-white p-10 rounded-3xl shadow-xl border relative overflow-hidden flex flex-col items-center w-full max-w-3xl">
                 <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full" />
                 <h2 className="text-3xl font-bold text-primary font-headline mb-8 flex items-center gap-3">
@@ -158,12 +159,12 @@ export default function ContactPage() {
                 {aiResult && (
                   <div className="bg-white p-6 rounded-2xl border border-accent/30 animate-in fade-in slide-in-from-bottom-4 space-y-4 w-full">
                     <div className="space-y-1">
-                      <p className="text-[10px] text-accent font-bold uppercase tracking-widest">Estimated Cost Range</p>
-                      <p className="text-2xl font-bold text-primary font-headline">{aiResult.preliminaryCostEstimate}</p>
+                      <p className="text-[10px] text-accent font-bold uppercase tracking-widest text-center">Estimated Cost Range</p>
+                      <p className="text-2xl font-bold text-primary font-headline text-center">{aiResult.preliminaryCostEstimate}</p>
                     </div>
                     <div className="space-y-1">
-                      <p className="text-[10px] text-accent font-bold uppercase tracking-widest">High-Level Scope</p>
-                      <p className="text-sm text-muted-foreground leading-relaxed">{aiResult.highLevelScope}</p>
+                      <p className="text-[10px] text-accent font-bold uppercase tracking-widest text-center">High-Level Scope</p>
+                      <p className="text-sm text-muted-foreground leading-relaxed text-center">{aiResult.highLevelScope}</p>
                     </div>
                   </div>
                 )}
@@ -171,7 +172,7 @@ export default function ContactPage() {
             </div>
 
             {/* Office Information - Centered Row */}
-            <div className="space-y-16 text-center flex flex-col items-center">
+            <div className="space-y-16 text-center flex flex-col items-center w-full">
               <h2 className="text-3xl font-bold text-primary font-headline">Office Information</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12 w-full">
