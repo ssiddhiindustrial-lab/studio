@@ -26,31 +26,30 @@ export function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto px-4 py-4">
-        {/* Strictly Centered Navbar Content */}
-        <div className="flex flex-col items-center gap-6">
-          {/* Logo - Perfectly Centered */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative h-20 w-72 md:h-28 md:w-96 overflow-hidden transition-all">
+      <div className="container mx-auto px-4 py-2">
+        <div className="flex items-center justify-between h-16 md:h-24">
+          {/* Logo - Left Side */}
+          <Link href="/" className="flex items-center">
+            <div className="relative h-12 w-48 md:h-20 md:w-72 overflow-hidden">
               <Image 
                 src={logoUrl} 
                 alt="Siddhi Industrial Services Logo" 
                 fill 
                 unoptimized
-                className="object-contain object-center"
+                className="object-contain object-left"
                 priority
               />
             </div>
           </Link>
 
-          {/* Desktop Links - Perfectly Centered */}
-          <div className="hidden lg:flex items-center space-x-6">
+          {/* Desktop Links - Right Side */}
+          <div className="hidden lg:flex items-center space-x-1">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 className={cn(
-                  "px-3 py-1 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
+                  "px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
                   pathname === link.href
                     ? "text-accent"
                     : "text-foreground/80 hover:text-accent hover:bg-accent/5"
@@ -61,8 +60,8 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* Mobile Menu Button - Visible on mobile */}
-          <div className="lg:hidden absolute right-4 top-10">
+          {/* Mobile Menu Button */}
+          <div className="lg:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
