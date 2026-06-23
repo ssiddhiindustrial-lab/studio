@@ -18,8 +18,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Robust direct favicon URL
-const faviconUrl = "https://drive.google.com/thumbnail?id=1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc&sz=w128";
+// Robust direct direct link format for Favicon
+const faviconUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',

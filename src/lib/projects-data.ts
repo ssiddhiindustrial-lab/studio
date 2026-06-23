@@ -12,8 +12,8 @@ export interface Project {
   gallery?: string[];
 }
 
-// Helper for robust Google Drive thumbnail links
-const getDriveUrl = (id: string) => `https://drive.google.com/thumbnail?id=${id}&sz=w1200`;
+// Robust direct Google Drive image links using the lh3 endpoint
+const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 export const projects: Project[] = [
   {

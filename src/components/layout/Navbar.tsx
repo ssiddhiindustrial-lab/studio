@@ -21,8 +21,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  // Improved Logo URL format for direct embedding
-  const logoUrl = "https://drive.google.com/thumbnail?id=1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn&sz=w1000"
+  // Robust direct link format for Google Drive logo
+  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">

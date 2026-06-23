@@ -25,13 +25,12 @@ export default function Home() {
       <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://picsum.photos/seed/hero/1920/1080"
+            src="https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B"
             alt="Industrial Construction"
             fill
             unoptimized
             className="object-cover opacity-40 grayscale"
             priority
-            data-ai-hint="industrial construction"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/90" />
         </div>
