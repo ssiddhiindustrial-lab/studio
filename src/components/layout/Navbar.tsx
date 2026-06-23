@@ -21,63 +21,58 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  // Logo URL
-  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+  // Improved Logo URL format for direct embedding
+  const logoUrl = "https://drive.google.com/thumbnail?id=1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn&sz=w1000"
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex h-28 items-center justify-between gap-4">
-          {/* Logo container for symmetry */}
-          <div className="flex items-center shrink-0 w-[250px] md:w-[320px]">
-            <Link href="/" className="flex items-center group">
-              <div className="relative h-24 w-full overflow-hidden transition-all">
-                <Image 
-                  src={logoUrl} 
-                  alt="Siddhi Industrial Services Logo" 
-                  fill 
-                  unoptimized
-                  className="object-contain object-left md:object-center"
-                  priority
-                />
-              </div>
-            </Link>
-          </div>
-
-          {/* Desktop Links - Centered */}
-          <div className="hidden lg:flex flex-grow justify-center">
-            <div className="flex items-baseline space-x-1 xl:space-x-4">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.name}
-                  href={link.href}
-                  className={cn(
-                    "px-3 py-2 rounded-md text-base font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
-                    pathname === link.href
-                      ? "text-accent"
-                      : "text-foreground/80 hover:text-accent hover:bg-accent/5"
-                  )}
-                >
-                  {link.name}
-                </Link>
-              ))}
+      <div className="container mx-auto px-4 py-4">
+        {/* Strictly Centered Navbar Content */}
+        <div className="flex flex-col items-center gap-6">
+          {/* Logo - Perfectly Centered */}
+          <Link href="/" className="flex items-center group">
+            <div className="relative h-20 w-72 md:h-28 md:w-96 overflow-hidden transition-all">
+              <Image 
+                src={logoUrl} 
+                alt="Siddhi Industrial Services Logo" 
+                fill 
+                unoptimized
+                className="object-contain object-center"
+                priority
+              />
             </div>
-          </div>
+          </Link>
 
-          {/* Right side spacer for centering symmetry */}
-          <div className="flex lg:w-[320px] justify-end shrink-0">
-            <div className="lg:hidden">
-              <button
-                onClick={() => setIsOpen(!isOpen)}
-                className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
-              >
-                {isOpen ? (
-                  <X className="block h-6 w-6" aria-hidden="true" />
-                ) : (
-                  <Menu className="block h-6 w-6" aria-hidden="true" />
+          {/* Desktop Links - Perfectly Centered */}
+          <div className="hidden lg:flex items-center space-x-6">
+            {navLinks.map((link) => (
+              <Link
+                key={link.name}
+                href={link.href}
+                className={cn(
+                  "px-3 py-1 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
+                  pathname === link.href
+                    ? "text-accent"
+                    : "text-foreground/80 hover:text-accent hover:bg-accent/5"
                 )}
-              </button>
-            </div>
+              >
+                {link.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Mobile Menu Button - Visible on mobile */}
+          <div className="lg:hidden absolute right-4 top-10">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
+            >
+              {isOpen ? (
+                <X className="block h-6 w-6" aria-hidden="true" />
+              ) : (
+                <Menu className="block h-6 w-6" aria-hidden="true" />
+              )}
+            </button>
           </div>
         </div>
       </div>
@@ -85,14 +80,14 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden animate-in slide-in-from-top duration-300">
-          <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3 bg-background border-b shadow-lg">
+          <div className="space-y-1 px-2 pb-6 pt-2 bg-background border-b shadow-lg flex flex-col items-center">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  "block rounded-md px-3 py-4 text-lg font-bold uppercase tracking-widest text-center",
+                  "w-full rounded-md px-3 py-4 text-lg font-bold uppercase tracking-widest text-center",
                   pathname === link.href
                     ? "text-accent bg-accent/5"
                     : "text-foreground/70 hover:bg-accent/10 hover:text-accent"

@@ -18,7 +18,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-const faviconUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc";
+// Robust direct favicon URL
+const faviconUrl = "https://drive.google.com/thumbnail?id=1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc&sz=w128";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
@@ -44,7 +45,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <Navbar />
-        <main className="flex-grow flex flex-col items-center">{children}</main>
+        <main className="flex-grow flex flex-col items-center w-full">{children}</main>
         <Footer />
         <WhatsAppButton />
         <Toaster />
