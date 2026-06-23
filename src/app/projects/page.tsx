@@ -77,7 +77,7 @@ export default function ProjectsPage() {
 function ProjectImage({ src, alt }: { src: string; alt: string }) {
   const [error, setError] = React.useState(false)
 
-  if (error || !src || src.startsWith('/projects')) {
+  if (error || !src) {
     return (
       <div className="flex flex-col items-center justify-center p-6 text-center space-y-4 bg-secondary/50 h-full w-full">
         <Construction className="h-12 w-12 text-accent/40" />

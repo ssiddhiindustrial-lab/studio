@@ -28,10 +28,10 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-28 items-center justify-between gap-4">
-          {/* Logo - Symmetrical balancing */}
-          <div className="flex items-center shrink-0">
+          {/* Logo container for symmetry */}
+          <div className="flex items-center shrink-0 w-[250px] md:w-[320px]">
             <Link href="/" className="flex items-center group">
-              <div className="relative h-24 w-[250px] md:w-[320px] overflow-hidden transition-all">
+              <div className="relative h-24 w-full overflow-hidden transition-all">
                 <Image 
                   src={logoUrl} 
                   alt="Siddhi Industrial Services Logo" 
@@ -64,7 +64,7 @@ export function Navbar() {
             </div>
           </div>
 
-          {/* Mobile menu button / Right spacer */}
+          {/* Right side spacer for centering symmetry */}
           <div className="flex lg:w-[320px] justify-end shrink-0">
             <div className="lg:hidden">
               <button

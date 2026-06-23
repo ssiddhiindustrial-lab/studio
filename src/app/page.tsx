@@ -28,9 +28,9 @@ export default function Home() {
             src="https://picsum.photos/seed/hero/1920/1080"
             alt="Industrial Construction"
             fill
+            unoptimized
             className="object-cover opacity-40 grayscale"
             priority
-            unoptimized
             data-ai-hint="industrial construction"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/60 to-primary/90" />

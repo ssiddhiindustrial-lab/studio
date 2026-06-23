@@ -178,7 +178,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
 }
 
 function ProjectHeroImage({ src, alt }: { src: string; alt: string }) {
-  if (!src || src.startsWith('/projects')) {
+  if (!src) {
     return (
       <div className="flex flex-col items-center justify-center h-full w-full bg-secondary/50 p-12 text-center space-y-4">
         <Factory className="h-16 w-16 text-accent/40" />

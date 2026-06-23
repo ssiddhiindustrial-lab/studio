@@ -18,15 +18,17 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
+const faviconUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc";
+
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
   description: 'Premium industrial and infrastructure contractors. Building excellence with engineering precision.',
   icons: {
     icon: [
-      { url: 'https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc', type: 'image/png' },
+      { url: faviconUrl, type: 'image/png' },
     ],
-    shortcut: 'https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc',
-    apple: 'https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc',
+    shortcut: faviconUrl,
+    apple: faviconUrl,
   },
 };
 
@@ -37,6 +39,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+      <head>
+        <link rel="icon" href={faviconUrl} />
+      </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <Navbar />
         <main className="flex-grow flex flex-col items-center">{children}</main>
