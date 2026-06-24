@@ -5,6 +5,7 @@ import { Navbar } from '@/components/layout/Navbar';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 import { Toaster } from '@/components/ui/toaster';
+import { AuthProvider } from '@/components/providers/AuthProvider';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -18,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Robust direct direct link format for Favicon from Google Drive
-const faviconUrl = "https://lh3.googleusercontent.com/d/1GbtvzMhx-j2GeBUmANvJOua_oByeyvhc";
+// Direct link for the new Favicon from Google Drive
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
@@ -41,17 +42,18 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Explicit favicon links for maximum browser compatibility on custom domains */}
         <link rel="icon" type="image/png" href={faviconUrl} />
         <link rel="shortcut icon" type="image/x-icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
-        <Navbar />
-        <main className="flex-grow flex flex-col items-center w-full">{children}</main>
-        <Footer />
-        <WhatsAppButton />
-        <Toaster />
+        <AuthProvider>
+          <Navbar />
+          <main className="flex-grow flex flex-col items-center w-full">{children}</main>
+          <Footer />
+          <WhatsAppButton />
+          <Toaster />
+        </AuthProvider>
       </body>
     </html>
   );
