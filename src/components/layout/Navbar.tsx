@@ -28,7 +28,7 @@ export function Navbar() {
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between h-16 md:h-24">
-          {/* Logo - Left Side */}
+          {/* Logo - Left Side (As requested) */}
           <Link href="/" className="flex items-center">
             <div className="relative h-12 w-48 md:h-20 md:w-72 overflow-hidden">
               <Image 

@@ -41,9 +41,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Explicit favicon links for maximum browser compatibility */}
-        <link rel="icon" href={faviconUrl} />
-        <link rel="shortcut icon" href={faviconUrl} />
+        {/* Explicit favicon links for maximum browser compatibility on custom domains */}
+        <link rel="icon" type="image/png" href={faviconUrl} />
+        <link rel="shortcut icon" type="image/x-icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
