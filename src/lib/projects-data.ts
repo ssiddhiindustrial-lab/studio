@@ -12,10 +12,39 @@ export interface Project {
   gallery?: string[];
 }
 
-// Robust direct Google Drive image links using the lh3 endpoint
+/**
+ * HELPER: Converts a standard Google Drive share link to a direct-view URL.
+ * To add a new image: 
+ * 1. Upload to Drive.
+ * 2. Set sharing to "Anyone with the link".
+ * 3. Copy the ID from the URL (the long string between /d/ and /view).
+ * 4. Use getDriveUrl('YOUR_ID_HERE').
+ */
 const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 export const projects: Project[] = [
+  {
+    slug: 'suspa',
+    name: 'SUSPA',
+    value: '0.50 Cr',
+    year: '2019-2020',
+    description: 'Specialized industrial infrastructure works including nitrogen tank foundations and heavy-duty parking development.',
+    category: 'Industrial',
+    status: 'Completed',
+    client: 'SUSPA',
+    scope: [
+      'Foundation for Nitrogen Tank',
+      'RCC Road',
+      'Compound Wall – Retaining',
+      'Machine Foundations',
+      'Parking Area Development'
+    ],
+    imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
+    gallery: [
+      getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
+      // Add more IDs here to show in the "Work Site Gallery" section
+    ],
+  },
   {
     slug: 'hitachi-hi-rel',
     name: 'Hitachi Hi-Rel Power Electronics Ltd',
@@ -66,24 +95,6 @@ export const projects: Project[] = [
     client: 'Siddhi Industrial Services',
     scope: ['Internal Roads', 'Drainage', 'Office Interior Construction'],
     imageUrl: getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
-  },
-  {
-    slug: 'suspa',
-    name: 'SUSPA',
-    value: '₹0.50 Cr',
-    year: '2019-2020',
-    description: 'Specialized industrial infrastructure works including nitrogen tank foundations and heavy-duty parking development.',
-    category: 'Industrial',
-    status: 'Completed',
-    client: 'SUSPA',
-    scope: [
-      'Foundation for Nitrogen Tank',
-      'RCC Road',
-      'Compound Wall – Retaining',
-      'Machine Foundations',
-      'Parking Area Development'
-    ],
-    imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
   },
   {
     slug: 'uneco',
