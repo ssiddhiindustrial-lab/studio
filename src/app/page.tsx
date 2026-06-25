@@ -65,12 +65,7 @@ export default async function Home() {
               {hero.subtitle}
             </h4>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline mb-6">
-              {hero.title.split('Engineering').map((part: string, i: number) => (
-                <span key={i}>
-                  {part}
-                  {i === 0 && <span className="text-accent">Engineering</span>}
-                </span>
-              ))}
+              {hero.title}
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-10">
               {hero.description}
