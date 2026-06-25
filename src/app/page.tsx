@@ -3,8 +3,25 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Activity, Factory, Warehouse, Construction, ArrowRight, CheckCircle2 } from "lucide-react"
 import { projects } from "@/lib/projects-data"
+import { SectionEditor } from "@/components/cms/SectionEditor"
+import { getPageContent } from "@/services/cmsService"
 
-export default function Home() {
+export default async function Home() {
+  const content = await getPageContent("home") || {}
+
+  const hero = content.hero || {
+    subtitle: "Industrial & Infrastructure Contractors",
+    title: "Building Excellence With Engineering Precision",
+    description: "We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.",
+    imageUrl: "https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B"
+  }
+
+  const servicesSection = content.servicesSection || {
+    subtitle: "What We Do",
+    title: "Comprehensive Industrial Solutions",
+    description: "We deliver world-class industrial infrastructure with technical precision. From large factories to specialized warehousing, our expertise ensures structural excellence."
+  }
+
   const coreServices = [
     { title: "Industrial Construction", icon: Factory, desc: "End-to-end development of manufacturing units and plants." },
     { title: "Structural Steel Works", icon: Construction, desc: "High-precision steel fabrication and erection for industrial sheds." },
@@ -25,7 +42,7 @@ export default function Home() {
       <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">
           <Image
-            src="https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B"
+            src={hero.imageUrl}
             alt="Industrial Construction"
             fill
             unoptimized
@@ -36,15 +53,27 @@ export default function Home() {
         </div>
         
         <div className="container mx-auto relative z-10 px-4 md:px-8 text-center">
+          <div className="absolute top-4 right-4 z-50">
+            <SectionEditor 
+              pageId="home" 
+              sectionKey="hero" 
+              defaultValues={hero} 
+            />
+          </div>
           <div className="max-w-4xl mx-auto animate-reveal flex flex-col items-center">
             <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
-              Industrial & Infrastructure Contractors
+              {hero.subtitle}
             </h4>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline mb-6">
-              Building Excellence With <span className="text-accent">Engineering Precision</span>
+              {hero.title.split('Engineering').map((part: string, i: number) => (
+                <span key={i}>
+                  {part}
+                  {i === 0 && <span className="text-accent">Engineering</span>}
+                </span>
+              ))}
             </h1>
             <p className="text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed mb-10">
-              We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.
+              {hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-10 text-lg rounded-xl shadow-lg">
@@ -58,7 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Section - Strictly Centered */}
+      {/* Stats Section */}
       <section className="bg-white py-16 border-b w-full flex justify-center">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="max-w-5xl w-full grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
@@ -76,14 +105,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services Overview - Strictly Centered */}
-      <section className="py-24 bg-background w-full flex flex-col items-center">
+      {/* Services Overview */}
+      <section className="py-24 bg-background w-full flex flex-col items-center relative">
+        <div className="absolute top-10 right-10">
+          <SectionEditor 
+            pageId="home" 
+            sectionKey="servicesSection" 
+            defaultValues={servicesSection} 
+          />
+        </div>
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-6 flex flex-col items-center">
-            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">What We Do</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Comprehensive Industrial Solutions</h3>
+            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">{servicesSection.subtitle}</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">{servicesSection.title}</h3>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
-              We deliver world-class industrial infrastructure with technical precision. From large factories to specialized warehousing, our expertise ensures structural excellence.
+              {servicesSection.description}
             </p>
             <div className="pt-2">
               <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group text-lg">
@@ -109,7 +145,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Projects - Strictly Centered */}
+      {/* Featured Projects */}
       <section className="py-24 bg-background w-full flex flex-col items-center">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-4 flex flex-col items-center">
@@ -155,7 +191,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Contact CTA - Strictly Centered */}
+      {/* Contact CTA */}
       <section className="py-20 bg-white w-full flex flex-col items-center">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl w-full flex flex-col items-center">

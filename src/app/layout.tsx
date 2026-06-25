@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Direct permanent link for the Favicon
-const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
+// Direct permanent link with cache-busting version query
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=2";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
@@ -45,7 +45,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href={faviconUrl} />
         <link rel="shortcut icon" type="image/x-icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
-        {/* Force favicon refresh by adding a version query if needed, but direct link is best */}
+        <meta name="msapplication-TileImage" content={faviconUrl} />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <AuthProvider>
