@@ -4,13 +4,20 @@ import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { servicesData } from "@/lib/services-data"
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 const navLinks = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
+  { name: "Services", href: "/services", hasDropdown: true },
   { name: "Projects", href: "/projects" },
   { name: "Safety", href: "/safety" },
   { name: "Gallery", href: "/gallery" },
@@ -43,20 +50,57 @@ export function Navbar() {
 
           {/* Desktop Links */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                className={cn(
-                  "px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
-                  pathname === link.href
-                    ? "text-accent"
-                    : "text-foreground/80 hover:text-accent hover:bg-accent/5"
-                )}
-              >
-                {navLinks.find(l => l.href === pathname)?.href === link.href ? <b>{link.name}</b> : link.name}
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              if (link.hasDropdown) {
+                return (
+                  <DropdownMenu key={link.name}>
+                    <DropdownMenuTrigger className={cn(
+                      "flex items-center gap-1 px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap outline-none",
+                      pathname.startsWith("/services")
+                        ? "text-accent"
+                        : "text-foreground/80 hover:text-accent hover:bg-accent/5"
+                    )}>
+                      {link.name} <ChevronDown className="h-4 w-4" />
+                    </DropdownMenuTrigger>
+                    <DropdownMenuContent align="start" className="w-64 p-2">
+                      <DropdownMenuItem asChild>
+                        <Link href="/services" className="font-bold text-primary mb-1">
+                          All Services
+                        </Link>
+                      </DropdownMenuItem>
+                      <div className="h-px bg-border my-1" />
+                      {servicesData.map((service) => (
+                        <DropdownMenuItem key={service.slug} asChild>
+                          <Link 
+                            href={`/services/${service.slug}`}
+                            className={cn(
+                              "cursor-pointer py-2 text-xs",
+                              pathname === `/services/${service.slug}` ? "text-accent font-bold" : ""
+                            )}
+                          >
+                            {service.title}
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </DropdownMenuContent>
+                  </DropdownMenu>
+                )
+              }
+              return (
+                <Link
+                  key={link.name}
+                  href={link.href}
+                  className={cn(
+                    "px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
+                    pathname === link.href
+                      ? "text-accent"
+                      : "text-foreground/80 hover:text-accent hover:bg-accent/5"
+                  )}
+                >
+                  {link.name}
+                </Link>
+              )
+            })}
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,21 +122,41 @@ export function Navbar() {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="lg:hidden animate-in slide-in-from-top duration-300">
-          <div className="space-y-1 px-2 pb-6 pt-2 bg-background border-b shadow-lg flex flex-col items-center">
+          <div className="space-y-1 px-2 pb-6 pt-2 bg-background border-b shadow-lg flex flex-col">
             {navLinks.map((link) => (
-              <Link
-                key={link.name}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className={cn(
-                  "w-full rounded-md px-3 py-4 text-lg font-bold uppercase tracking-widest text-center",
-                  pathname === link.href
-                    ? "text-accent bg-accent/5"
-                    : "text-foreground/70 hover:bg-accent/10 hover:text-accent"
+              <React.Fragment key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className={cn(
+                    "w-full rounded-md px-3 py-4 text-lg font-bold uppercase tracking-widest",
+                    pathname === link.href
+                      ? "text-accent bg-accent/5"
+                      : "text-foreground/70 hover:bg-accent/10 hover:text-accent"
+                  )}
+                >
+                  {link.name}
+                </Link>
+                {link.hasDropdown && (
+                  <div className="pl-6 pb-4 flex flex-col space-y-3">
+                    {servicesData.map((service) => (
+                      <Link
+                        key={service.slug}
+                        href={`/services/${service.slug}`}
+                        onClick={() => setIsOpen(false)}
+                        className={cn(
+                          "text-sm font-medium border-l-2 pl-4",
+                          pathname === `/services/${service.slug}`
+                            ? "border-accent text-accent"
+                            : "border-border text-muted-foreground hover:text-accent hover:border-accent"
+                        )}
+                      >
+                        {service.title}
+                      </Link>
+                    ))}
+                  </div>
                 )}
-              >
-                {link.name}
-              </Link>
+              </React.Fragment>
             ))}
           </div>
         </div>
