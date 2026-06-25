@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -10,6 +11,7 @@ import { useToast } from "@/hooks/use-toast"
 import { aiProjectScopeAndEstimate } from "@/ai/flows/ai-project-scope-and-estimate"
 import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
+import { sendInquiryEmail } from "@/actions/emailActions"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -28,17 +30,41 @@ export default function ContactPage() {
     description: "Let's build your next industrial project with engineering precision and cost-effective solutions."
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    toast({
-      title: "Inquiry Sent Successfully",
-      description: "Our engineering team will get back to you within 24 hours.",
-    })
-    const form = e.target as HTMLFormElement
-    form.reset()
+    
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get("name") as string,
+      company: formData.get("company") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      projectType: formData.get("type") as string,
+      message: formData.get("message") as string,
+      sourcePage: "Contact Page"
+    }
+
+    try {
+      const result = await sendInquiryEmail(data)
+      if (result.success) {
+        toast({
+          title: "Inquiry Sent Successfully",
+          description: "Our engineering team will get back to you within 24 hours.",
+        })
+        e.currentTarget.reset()
+      } else {
+        throw new Error("Failed")
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Submission Error",
+        description: "Could not send inquiry at this time. Please try again or call us directly.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleAiEstimate = async () => {
@@ -97,28 +123,28 @@ export default function ContactPage() {
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="name" className="block text-center">Full Name</Label>
-                      <Input id="name" placeholder="John Doe" required className="text-center" />
+                      <Input name="name" id="name" placeholder="John Doe" required className="text-center" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="company" className="block text-center">Company Name</Label>
-                      <Input id="company" placeholder="Example Industries" className="text-center" />
+                      <Input name="company" id="company" placeholder="Example Industries" className="text-center" />
                     </div>
                   </div>
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <Label htmlFor="email" className="block text-center">Email Address</Label>
-                      <Input id="email" type="email" placeholder="john@example.com" required className="text-center" />
+                      <Input name="email" id="email" type="email" placeholder="john@example.com" required className="text-center" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="phone" className="block text-center">Phone Number</Label>
-                      <Input id="phone" type="tel" placeholder="+91 91571 87484" required className="text-center" />
+                      <Input name="phone" id="phone" type="tel" placeholder="+91 91571 87484" required className="text-center" />
                     </div>
                   </div>
 
                   <div className="space-y-2">
                     <Label htmlFor="type" className="block text-center">Project Type</Label>
-                    <select id="type" className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
+                    <select name="type" id="type" className="flex h-12 w-full rounded-md border border-input bg-background px-3 py-2 text-sm text-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
                       <option>Industrial Building</option>
                       <option>Factory Development</option>
                       <option>Warehousing</option>
@@ -131,6 +157,7 @@ export default function ContactPage() {
                   <div className="space-y-2">
                     <Label htmlFor="message" className="block text-center">Message</Label>
                     <Textarea 
+                      name="message"
                       id="message" 
                       placeholder="Tell us about your project requirements..." 
                       className="min-h-[150px] text-center"

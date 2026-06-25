@@ -11,6 +11,7 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { servicesData } from "@/lib/services-data"
+import { sendInquiryEmail } from "@/actions/emailActions"
 
 export default function ServiceDetailPage() {
   const { slug } = useParams()
@@ -25,17 +26,40 @@ export default function ServiceDetailPage() {
 
   const otherServices = servicesData.filter(s => s.slug !== slug).slice(0, 4)
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setIsSubmitting(false)
-    toast({
-      title: "Inquiry Received",
-      description: `Our team will contact you regarding ${service.title} shortly.`,
-    })
-    const form = e.target as HTMLFormElement
-    form.reset()
+    
+    const formData = new FormData(e.currentTarget)
+    const data = {
+      name: formData.get("name") as string,
+      email: formData.get("email") as string,
+      phone: formData.get("phone") as string,
+      message: formData.get("message") as string,
+      projectType: service.title,
+      sourcePage: `Service: ${service.title}`
+    }
+
+    try {
+      const result = await sendInquiryEmail(data)
+      if (result.success) {
+        toast({
+          title: "Inquiry Received",
+          description: `Our team will contact you regarding ${service.title} shortly.`,
+        })
+        e.currentTarget.reset()
+      } else {
+        throw new Error("Failed")
+      }
+    } catch (error) {
+      toast({
+        variant: "destructive",
+        title: "Error",
+        description: "Failed to send inquiry. Please try again or contact us via WhatsApp.",
+      })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -134,19 +158,20 @@ export default function ServiceDetailPage() {
               <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="space-y-2">
                   <Label htmlFor="name">Full Name</Label>
-                  <Input id="name" placeholder="Enter your name" required />
+                  <Input name="name" id="name" placeholder="Enter your name" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="email">Email</Label>
-                  <Input id="email" type="email" placeholder="email@example.com" required />
+                  <Input name="email" id="email" type="email" placeholder="email@example.com" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="phone">Phone Number</Label>
-                  <Input id="phone" type="tel" placeholder="+91 00000 00000" required />
+                  <Input name="phone" id="phone" type="tel" placeholder="+91 00000 00000" required />
                 </div>
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea 
+                    name="message"
                     id="message" 
                     placeholder={`Interested in ${service.title}...`} 
                     className="min-h-[100px]"
