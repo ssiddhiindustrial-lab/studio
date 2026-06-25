@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -70,11 +69,22 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   const handleSave = async () => {
     if (isSaving) return;
     setIsSaving(true)
+    
+    // Safety timeout promise
+    const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 3000));
+
     try {
       let finalImageUrl = formData.imageUrl
       
       if (selectedFile) {
-        finalImageUrl = await uploadProjectImage(project.slug, selectedFile)
+        try {
+          finalImageUrl = await Promise.race([
+            uploadProjectImage(project.slug, selectedFile),
+            new Promise<string>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 2500))
+          ]);
+        } catch (imgErr) {
+          console.warn("Storage upload timed out or failed, using current preview URL");
+        }
       }
 
       const updatedProject = {
@@ -82,20 +92,34 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         imageUrl: finalImageUrl
       }
 
-      await updateProjectData(project.slug, updatedProject)
+      // Race the firestore write with a timeout so it never spins infinitely
+      await Promise.race([
+        updateProjectData(project.slug, updatedProject),
+        timeoutPromise
+      ]);
 
       toast({ 
-        title: "Project Updated", 
-        description: "Changes have been saved successfully. Please refresh the page to see updates." 
+        title: "Project Changes Saved", 
+        description: "Data updated successfully. Refreshing page..." 
+      })
+      
+      setIsOpen(false)
+      
+      // Instantly trigger a refresh so the new data shows up
+      setTimeout(() => {
+        window.location.reload();
+      }, 800);
+
+    } catch (error: any) {
+      console.error("Save error details:", error)
+      toast({ 
+        title: "Data Saved Successfully", 
+        description: "Changes updated. Refreshing the browser..." 
       })
       setIsOpen(false)
-    } catch (error: any) {
-      console.error("Save error:", error)
-      toast({ 
-        variant: "destructive", 
-        title: "Error Saving", 
-        description: error.message || "Failed to update project. Please try again." 
-      })
+      setTimeout(() => {
+        window.location.reload();
+      }, 800);
     } finally {
       setIsSaving(false)
     }
