@@ -34,7 +34,6 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   const [previewUrl, setPreviewUrl] = React.useState(project.imageUrl)
   const fileInputRef = React.useRef<HTMLInputElement>(null)
 
-  // Reset form when project prop changes or dialog opens
   React.useEffect(() => {
     if (isOpen) {
       setFormData(project)
@@ -69,6 +68,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   }
 
   const handleSave = async () => {
+    if (isSaving) return;
     setIsSaving(true)
     try {
       let finalImageUrl = formData.imageUrl
@@ -84,17 +84,26 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
 
       await updateProjectData(project.slug, updatedProject)
 
-      toast({ title: "Project Updated", description: "Changes have been saved successfully. Please refresh the page." })
+      toast({ 
+        title: "Project Updated", 
+        description: "Changes have been saved successfully. Please refresh the page to see updates." 
+      })
       setIsOpen(false)
-    } catch (error) {
-      console.error(error)
-      toast({ variant: "destructive", title: "Error", description: "Failed to update project." })
+    } catch (error: any) {
+      console.error("Save error:", error)
+      toast({ 
+        variant: "destructive", 
+        title: "Error Saving", 
+        description: error.message || "Failed to update project. Please try again." 
+      })
     } finally {
       setIsSaving(false)
     }
   }
 
-  const triggerFileClick = () => {
+  const triggerFileClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     fileInputRef.current?.click()
   }
 

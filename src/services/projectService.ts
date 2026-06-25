@@ -4,7 +4,6 @@ import {
   getDocs, 
   getDoc, 
   doc, 
-  updateDoc, 
   setDoc,
   query,
   limit
@@ -20,7 +19,7 @@ const COLLECTION_NAME = "projects";
  */
 export async function syncProjectsToFirestore() {
   try {
-    // Only proceed if database is actually empty
+    // Check if the collection is empty
     const q = query(collection(db, COLLECTION_NAME), limit(1));
     const querySnapshot = await getDocs(q);
     
@@ -69,7 +68,8 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 export async function updateProjectData(slug: string, data: Partial<Project>) {
   try {
     const docRef = doc(db, COLLECTION_NAME, slug);
-    await updateDoc(docRef, data);
+    // Use setDoc with merge: true to ensure it works even if doc doesn't exist yet
+    await setDoc(docRef, data, { merge: true });
   } catch (error) {
     console.error("Failed to update project data:", error);
     throw error;
