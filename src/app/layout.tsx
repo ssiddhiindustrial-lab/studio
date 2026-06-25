@@ -20,7 +20,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 // Direct permanent link with cache-busting version query
-const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=2";
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=3";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',

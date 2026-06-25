@@ -9,7 +9,7 @@ const firebaseConfig = {
   projectId: "siddhi-industrial-services-85949",
   storageBucket: "siddhi-industrial-services-85949.firebasestorage.app",
   messagingSenderId: "1055569646",
-  appId: "1:1055569646:web:6e2f1e2f1e2f1e2f1e2f1e", // Sample structure, usually provided by config tool
+  appId: "1:1055569646:web:6e2f1e2f1e2f1e2f1e2f1e",
 };
 
 // Initialize Firebase
