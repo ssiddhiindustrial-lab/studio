@@ -1,3 +1,4 @@
+
 import { db, storage } from "@/lib/firebase"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
@@ -19,9 +20,10 @@ export async function getPageContent(pageId: string): Promise<PageContent | null
   }
 }
 
-export async function updatePageContent(pageId: string, content: PageContent) {
+export function updatePageContent(pageId: string, content: PageContent) {
   const docRef = doc(db, COLLECTION_NAME, pageId)
-  await setDoc(docRef, content, { merge: true })
+  // No await here for faster UI response
+  setDoc(docRef, content, { merge: true })
 }
 
 export async function uploadCmsImage(path: string, file: File): Promise<string> {

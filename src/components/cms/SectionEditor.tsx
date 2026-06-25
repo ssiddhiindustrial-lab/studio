@@ -2,6 +2,7 @@
 "use client"
 
 import * as React from "react"
+import { useRouter } from "next/navigation"
 import { useAuth } from "@/components/providers/AuthProvider"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -35,6 +36,7 @@ interface SectionEditorProps {
 export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEditorProps) {
   const { isAdmin } = useAuth()
   const { toast } = useToast()
+  const router = useRouter()
   const [isOpen, setIsOpen] = React.useState(false)
   const [isSaving, setIsSaving] = React.useState(false)
   const [formData, setFormData] = React.useState(defaultValues)
@@ -69,30 +71,39 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
         finalImageUrl = await uploadCmsImage(`${pageId}/${sectionKey}`, selectedFile)
       }
 
-      await updatePageContent(pageId, {
+      // Mutation initiated without await to prevent blocking
+      updatePageContent(pageId, {
         [sectionKey]: {
           ...formData,
           imageUrl: finalImageUrl
         }
-      })
+      });
 
-      toast({ title: "Content Saved", description: "Refresh the page to see changes." })
+      toast({ title: "Changes Applied", description: "The content is being updated in the background." })
       setIsOpen(false)
+      
+      // Refresh to fetch fresh server data
+      setTimeout(() => {
+        router.refresh()
+      }, 500);
+
     } catch (error) {
-      toast({ variant: "destructive", title: "Error", description: "Failed to save content." })
+      toast({ variant: "destructive", title: "Error", description: "Failed to upload resources." })
     } finally {
       setIsSaving(false)
     }
   }
 
-  const triggerFileClick = () => {
+  const triggerFileClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     fileInputRef.current?.click()
   }
 
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
-        <Button size="sm" variant="secondary" className="gap-2 shadow-lg border-2 border-primary/20">
+        <Button size="sm" variant="secondary" className="gap-2 shadow-lg border-2 border-primary/20 bg-white hover:bg-accent hover:text-white transition-all">
           <Edit className="h-4 w-4" /> Edit Section
         </Button>
       </DialogTrigger>
@@ -115,7 +126,7 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
                 )}
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-bold gap-2">
                   <ImageIcon className="h-6 w-6" />
-                  <span>Click to Upload New Image</span>
+                  <span>Click to Change Image</span>
                 </div>
                 <input 
                   type="file" 
@@ -125,13 +136,12 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
                   className="hidden"
                 />
               </div>
-              <p className="text-[10px] text-muted-foreground text-center italic">Supported formats: JPG, PNG, WEBP</p>
             </div>
           )}
 
           {formData.title !== undefined && (
             <div className="space-y-2">
-              <Label htmlFor="title">Main Title (H1/H2)</Label>
+              <Label htmlFor="title">Main Title</Label>
               <Input 
                 id="title" 
                 value={formData.title} 
@@ -142,7 +152,7 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
 
           {formData.subtitle !== undefined && (
             <div className="space-y-2">
-              <Label htmlFor="subtitle">Subtitle / Badge Text</Label>
+              <Label htmlFor="subtitle">Subtitle / Badge</Label>
               <Input 
                 id="subtitle" 
                 value={formData.subtitle} 
@@ -153,34 +163,13 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
 
           {formData.description !== undefined && (
             <div className="space-y-2">
-              <Label htmlFor="description">Description / Content</Label>
+              <Label htmlFor="description">Description Content</Label>
               <Textarea 
                 id="description" 
                 rows={4}
                 value={formData.description} 
                 onChange={(e) => setFormData({...formData, description: e.target.value})}
               />
-            </div>
-          )}
-
-          {(formData.buttonText !== undefined || formData.buttonLink !== undefined) && (
-            <div className="grid grid-cols-2 gap-4">
-              <div className="space-y-2">
-                <Label htmlFor="btnText">Button Text</Label>
-                <Input 
-                  id="btnText" 
-                  value={formData.buttonText} 
-                  onChange={(e) => setFormData({...formData, buttonText: e.target.value})}
-                />
-              </div>
-              <div className="space-y-2">
-                <Label htmlFor="btnLink">Button Link (e.g. /contact)</Label>
-                <Input 
-                  id="btnLink" 
-                  value={formData.buttonLink} 
-                  onChange={(e) => setFormData({...formData, buttonLink: e.target.value})}
-                />
-              </div>
             </div>
           )}
         </div>

@@ -1,3 +1,4 @@
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
@@ -5,6 +6,8 @@ import { Activity, Factory, Warehouse, Construction, ArrowRight, CheckCircle2 } 
 import { projects } from "@/lib/projects-data"
 import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
+
+export const dynamic = 'force-dynamic';
 
 export default async function Home() {
   const content = await getPageContent("home") || {}
