@@ -1,5 +1,5 @@
 
-import { Factory, Construction, Warehouse, Roads, Landmark, HardHat, Settings, Activity } from "lucide-react"
+import { Factory, Construction, Warehouse, Route, Landmark, HardHat, Settings, Activity } from "lucide-react"
 
 export interface ServiceDetail {
   slug: string;
@@ -69,7 +69,7 @@ export const servicesData: ServiceDetail[] = [
   {
     slug: "roads-drainage",
     title: "Roads & Drainage",
-    icon: Roads,
+    icon: Route,
     shortDesc: "Construction of internal heavy-duty industrial roads and complex drainage systems.",
     fullDesc: "Industrial facilities require roads that don't crack under the weight of heavy transport. We build RCC and bitumen roads specifically designed for industrial loads. Simultaneously, we implement complex storm-water and industrial drainage systems to ensure your site remains functional and dry throughout the year.",
     benefits: ["Heavy transport ready", "Efficient water runoff", "Durable materials"],
