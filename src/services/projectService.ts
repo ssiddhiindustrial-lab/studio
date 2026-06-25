@@ -6,7 +6,8 @@ import {
   doc, 
   updateDoc, 
   setDoc,
-  deleteDoc
+  query,
+  limit
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/firebase";
@@ -19,15 +20,20 @@ const COLLECTION_NAME = "projects";
  */
 export async function syncProjectsToFirestore() {
   try {
-    const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
+    // Optimized check: only check if at least one doc exists
+    const q = query(collection(db, COLLECTION_NAME), limit(1));
+    const querySnapshot = await getDocs(q);
+    
     if (querySnapshot.empty) {
+      console.log("Seeding database with static projects...");
       for (const project of staticProjects) {
         await setDoc(doc(db, COLLECTION_NAME, project.slug), project);
       }
       console.log("Migration complete: Projects synced to Firestore.");
     }
   } catch (error) {
-    console.error("Sync error:", error);
+    console.error("Sync error (check Firestore rules/setup):", error);
+    // Non-fatal, just log it.
   }
 }
 
@@ -38,8 +44,10 @@ export async function getAllProjects(): Promise<Project[]> {
     querySnapshot.forEach((doc) => {
       projects.push(doc.data() as Project);
     });
+    // Fallback to static data if Firestore is empty or inaccessible
     return projects.length > 0 ? projects : staticProjects;
   } catch (error) {
+    console.error("Error fetching projects from Firestore:", error);
     return staticProjects;
   }
 }
@@ -53,17 +61,28 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
     }
     return staticProjects.find(p => p.slug === slug) || null;
   } catch (error) {
+    console.error("Error fetching project by slug:", error);
     return staticProjects.find(p => p.slug === slug) || null;
   }
 }
 
 export async function updateProjectData(slug: string, data: Partial<Project>) {
-  const docRef = doc(db, COLLECTION_NAME, slug);
-  await updateDoc(docRef, data);
+  try {
+    const docRef = doc(db, COLLECTION_NAME, slug);
+    await updateDoc(docRef, data);
+  } catch (error) {
+    console.error("Failed to update project data:", error);
+    throw error;
+  }
 }
 
 export async function uploadProjectImage(slug: string, file: File): Promise<string> {
-  const storageRef = ref(storage, `projects/${slug}/${Date.now()}_${file.name}`);
-  const snapshot = await uploadBytes(storageRef, file);
-  return await getDownloadURL(snapshot.ref);
+  try {
+    const storageRef = ref(storage, `projects/${slug}/${Date.now()}_${file.name}`);
+    const snapshot = await uploadBytes(storageRef, file);
+    return await getDownloadURL(snapshot.ref);
+  } catch (error) {
+    console.error("Failed to upload project image:", error);
+    throw error;
+  }
 }
