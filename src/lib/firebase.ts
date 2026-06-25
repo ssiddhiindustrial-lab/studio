@@ -3,10 +3,8 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
-// Explicit project configuration for siddhi-industrial-services-85949
-// Note: If you see "invalid-api-key", please ensure you have added the correct API Key in your Firebase settings.
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAs-PLACEHOLDER", // This will be injected by the environment
+  apiKey: "AIzaSyCA8Af4iULkaKHmmI8dBN8_b8Hwmf_uQ0o",
   authDomain: "siddhi-industrial-services-85949.firebaseapp.com",
   projectId: "siddhi-industrial-services-85949",
   storageBucket: "siddhi-industrial-services-85949.firebasestorage.app",
@@ -14,7 +12,7 @@ const firebaseConfig = {
   appId: "1:1055569646:web:6e2f1e2f1e2f1e2f1e2f1e",
 };
 
-// Initialize Firebase with safety checks
+// Initialize Firebase
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 const db = getFirestore(app);
 const auth = getAuth(app);
