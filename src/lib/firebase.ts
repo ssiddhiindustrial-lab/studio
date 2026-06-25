@@ -3,7 +3,7 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
-// Using explicit project config to resolve "invalid-api-key" error
+// Using explicit project config for siddhi-industrial-services-85949
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAs-PLACEHOLDER", 
   authDomain: "siddhi-industrial-services-85949.firebaseapp.com",
