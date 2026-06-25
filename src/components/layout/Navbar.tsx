@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -29,8 +28,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  // Direct permanent link for logo
-  const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+  // Use the reliable drive thumbnail endpoint for the logo
+  const logoUrl = "https://drive.google.com/thumbnail?id=1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn&sz=w1000"
 
   return (
     <nav className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 shadow-sm">
@@ -43,9 +42,9 @@ export function Navbar() {
                 src={logoUrl} 
                 alt="Siddhi Industrial Services Logo" 
                 fill 
-                unoptimized
                 className="object-contain object-left"
                 priority
+                crossOrigin="anonymous"
               />
             </div>
           </Link>
