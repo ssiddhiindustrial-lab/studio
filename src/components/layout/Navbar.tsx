@@ -35,7 +35,6 @@ export function Navbar() {
                 src={logoUrl} 
                 alt="Siddhi Industrial Services Logo" 
                 fill 
-                unoptimized
                 className="object-contain object-left"
                 priority
               />
@@ -55,7 +54,7 @@ export function Navbar() {
                     : "text-foreground/80 hover:text-accent hover:bg-accent/5"
                 )}
               >
-                {link.name}
+                {navLinks.find(l => l.href === pathname)?.href === link.href ? <b>{link.name}</b> : link.name}
               </Link>
             ))}
           </div>

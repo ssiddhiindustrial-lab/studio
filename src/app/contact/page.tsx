@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -9,6 +8,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { aiProjectScopeAndEstimate } from "@/ai/flows/ai-project-scope-and-estimate"
+import { SectionEditor } from "@/components/cms/SectionEditor"
+import { getPageContent } from "@/services/cmsService"
 
 export default function ContactPage() {
   const { toast } = useToast()
@@ -16,11 +17,20 @@ export default function ContactPage() {
   const [aiLoading, setAiLoading] = React.useState(false)
   const [aiResult, setAiResult] = React.useState<any>(null)
   const [requirements, setRequirements] = React.useState("")
+  const [content, setContent] = React.useState<any>({})
+
+  React.useEffect(() => {
+    getPageContent("contact").then(data => data && setContent(data))
+  }, [])
+
+  const header = content.header || {
+    title: "Contact Our Experts",
+    description: "Let's build your next industrial project with engineering precision and cost-effective solutions."
+  }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate Firestore write
     await new Promise(resolve => setTimeout(resolve, 1500))
     setIsSubmitting(false)
     toast({
@@ -58,11 +68,14 @@ export default function ContactPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Header - Centered */}
-      <section className="bg-primary py-24 text-white">
+      <section className="bg-primary py-24 text-white relative">
+        <div className="absolute top-4 right-4 z-50">
+          <SectionEditor pageId="contact" sectionKey="header" defaultValues={header} />
+        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline">Contact Our Experts</h1>
-            <p className="text-xl text-white/70">Let's build your next industrial project with engineering precision and cost-effective solutions.</p>
+            <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
+            <p className="text-xl text-white/70">{header.description}</p>
           </div>
         </div>
       </section>

@@ -4,8 +4,21 @@ import * as React from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { projects } from "@/lib/projects-data"
+import { SectionEditor } from "@/components/cms/SectionEditor"
+import { getPageContent } from "@/services/cmsService"
 
 export default function GalleryPage() {
+  const [content, setContent] = React.useState<any>({})
+
+  React.useEffect(() => {
+    getPageContent("gallery").then(data => data && setContent(data))
+  }, [])
+
+  const header = content.header || {
+    title: "Visual Portfolio",
+    description: "A comprehensive view of our construction sites and completed industrial facilities."
+  }
+
   const galleryItems = projects.map((project, index) => ({
     id: index,
     category: project.category,
@@ -17,11 +30,14 @@ export default function GalleryPage() {
   return (
     <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
-      <section className="bg-primary py-24 text-white w-full">
+      <section className="bg-primary py-24 text-white w-full relative">
+        <div className="absolute top-4 right-4 z-50">
+          <SectionEditor pageId="gallery" sectionKey="header" defaultValues={header} />
+        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline">Visual Portfolio</h1>
-            <p className="text-xl text-white/70">A comprehensive view of our construction sites and completed industrial facilities.</p>
+            <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
+            <p className="text-xl text-white/70">{header.description}</p>
           </div>
         </div>
       </section>
@@ -40,7 +56,6 @@ export default function GalleryPage() {
                         alt={img.title}
                         width={800}
                         height={600}
-                        unoptimized
                         className="object-cover w-full h-full group-hover:scale-110 transition-transform duration-700"
                       />
                     </div>
