@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Using a stable direct-view URL for favicon
+// Using a stable direct-view URL for favicon from Google Drive
 const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
