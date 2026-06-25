@@ -28,7 +28,7 @@ export function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
   const pathname = usePathname()
 
-  // Updated Logo URL to direct lh3 format for maximum stability
+  // Logo URL format optimized for stability across domains
   const logoUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
 
   return (
@@ -45,7 +45,6 @@ export function Navbar() {
                 unoptimized
                 className="object-contain object-left"
                 priority
-                crossOrigin="anonymous"
               />
             </div>
           </Link>

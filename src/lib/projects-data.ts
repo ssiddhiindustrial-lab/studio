@@ -14,7 +14,7 @@ export interface Project {
 
 /**
  * HELPER: Converts a standard Google Drive share link to a direct-view URL.
- * Using the lh3 subdomain is more reliable for direct embedding in web apps.
+ * This format is the most stable for public cross-domain embedding.
  */
 const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
