@@ -55,33 +55,37 @@ export function Navbar() {
                 return (
                   <DropdownMenu key={link.name}>
                     <DropdownMenuTrigger className={cn(
-                      "flex items-center gap-1 px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap outline-none",
+                      "flex items-center gap-1 px-4 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap outline-none",
                       pathname.startsWith("/services")
                         ? "text-accent"
                         : "text-foreground/80 hover:text-accent hover:bg-accent/5"
                     )}>
                       {link.name} <ChevronDown className="h-4 w-4" />
                     </DropdownMenuTrigger>
-                    <DropdownMenuContent align="start" className="w-64 p-2">
-                      <DropdownMenuItem asChild>
-                        <Link href="/services" className="font-bold text-primary mb-1">
-                          All Services
-                        </Link>
-                      </DropdownMenuItem>
-                      <div className="h-px bg-border my-1" />
-                      {servicesData.map((service) => (
-                        <DropdownMenuItem key={service.slug} asChild>
-                          <Link 
-                            href={`/services/${service.slug}`}
-                            className={cn(
-                              "cursor-pointer py-2 text-xs",
-                              pathname === `/services/${service.slug}` ? "text-accent font-bold" : ""
-                            )}
-                          >
-                            {service.title}
-                          </Link>
-                        </DropdownMenuItem>
-                      ))}
+                    <DropdownMenuContent align="start" className="w-80 p-2 shadow-2xl border-t-4 border-t-accent">
+                      <div className="grid grid-cols-1 gap-1">
+                        {servicesData.map((service) => (
+                          <DropdownMenuItem key={service.slug} asChild className="p-0">
+                            <Link 
+                              href={`/services/${service.slug}`}
+                              className={cn(
+                                "flex items-center gap-4 w-full p-4 rounded-lg transition-all hover:bg-secondary/50",
+                                pathname === `/services/${service.slug}` ? "bg-accent/10 text-accent" : "text-primary"
+                              )}
+                            >
+                              <div className={cn(
+                                "p-2 rounded-md",
+                                pathname === `/services/${service.slug}` ? "bg-accent text-white" : "bg-primary/5 text-primary"
+                              )}>
+                                <service.icon className="h-5 w-5" />
+                              </div>
+                              <span className="font-bold text-sm tracking-tight leading-tight">
+                                {service.title}
+                              </span>
+                            </Link>
+                          </DropdownMenuItem>
+                        ))}
+                      </div>
                     </DropdownMenuContent>
                   </DropdownMenu>
                 )
@@ -91,7 +95,7 @@ export function Navbar() {
                   key={link.name}
                   href={link.href}
                   className={cn(
-                    "px-3 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
+                    "px-4 py-2 rounded-md text-sm font-bold transition-colors uppercase tracking-tight whitespace-nowrap",
                     pathname === link.href
                       ? "text-accent"
                       : "text-foreground/80 hover:text-accent hover:bg-accent/5"
@@ -145,12 +149,13 @@ export function Navbar() {
                         href={`/services/${service.slug}`}
                         onClick={() => setIsOpen(false)}
                         className={cn(
-                          "text-sm font-medium border-l-2 pl-4",
+                          "flex items-center gap-3 text-sm font-bold border-l-2 pl-4 py-1",
                           pathname === `/services/${service.slug}`
                             ? "border-accent text-accent"
                             : "border-border text-muted-foreground hover:text-accent hover:border-accent"
                         )}
                       >
+                        <service.icon className="h-4 w-4" />
                         {service.title}
                       </Link>
                     ))}
