@@ -20,20 +20,20 @@ const COLLECTION_NAME = "projects";
  */
 export async function syncProjectsToFirestore() {
   try {
-    // Optimized check: only check if at least one doc exists
+    // Only proceed if database is actually empty
     const q = query(collection(db, COLLECTION_NAME), limit(1));
     const querySnapshot = await getDocs(q);
     
     if (querySnapshot.empty) {
       console.log("Seeding database with static projects...");
-      for (const project of staticProjects) {
-        await setDoc(doc(db, COLLECTION_NAME, project.slug), project);
-      }
-      console.log("Migration complete: Projects synced to Firestore.");
+      const promises = staticProjects.map(project => 
+        setDoc(doc(db, COLLECTION_NAME, project.slug), project)
+      );
+      await Promise.all(promises);
+      console.log("Migration complete.");
     }
   } catch (error) {
-    console.error("Sync error (check Firestore rules/setup):", error);
-    // Non-fatal, just log it.
+    console.warn("Sync error (non-fatal):", error);
   }
 }
 

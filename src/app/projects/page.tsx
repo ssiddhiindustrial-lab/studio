@@ -7,29 +7,48 @@ import Image from "next/image"
 import { ArrowRight, Construction, Loader2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { getAllProjects, syncProjectsToFirestore } from "@/services/projectService"
-import { Project } from "@/lib/projects-data"
+import { Project, projects as staticProjects } from "@/lib/projects-data"
 
 export default function ProjectsPage() {
-  const [projects, setProjects] = React.useState<Project[]>([])
+  const [projects, setProjects] = React.useState<Project[]>(staticProjects)
   const [loading, setLoading] = React.useState(true)
 
   React.useEffect(() => {
     async function load() {
+      // 1. Immediately show static projects so user doesn't wait
+      setProjects(staticProjects);
+      
       try {
-        // Run sync in background or only if needed
-        await syncProjectsToFirestore().catch(err => console.error("Sync non-fatal error:", err))
-        const data = await getAllProjects()
-        setProjects(data || [])
+        // 2. Start sync in background - DO NOT await it to prevent blocking
+        syncProjectsToFirestore().catch(err => console.warn("Background sync info:", err));
+        
+        // 3. Try to fetch fresh data from Firestore
+        // We wrap this in a timeout or just handle the promise properly
+        const dataPromise = getAllProjects();
+        
+        // If it takes more than 3 seconds, just stop loading and show static
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Timeout")), 3000)
+        );
+
+        const data = await Promise.race([dataPromise, timeoutPromise]) as Project[];
+        if (data && data.length > 0) {
+          setProjects(data);
+        }
       } catch (error) {
-        console.error("Failed to load projects:", error)
+        console.log("Using cached/static project data");
       } finally {
-        setLoading(false)
+        setLoading(false);
       }
     }
-    load()
+    load();
+    
+    // Safety fallback: always hide loader after 4 seconds max
+    const timer = setTimeout(() => setLoading(false), 4000);
+    return () => clearTimeout(timer);
   }, [])
 
-  if (loading) {
+  if (loading && projects.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center min-h-[60vh] w-full space-y-4">
         <Loader2 className="h-10 w-10 animate-spin text-primary" />
