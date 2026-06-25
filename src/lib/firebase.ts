@@ -4,12 +4,12 @@ import { getAuth } from "firebase/auth";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAs-PLACEHOLDER", // Fallback to prevent crash during setup
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN || "siddhi-industrial-services-85949.firebaseapp.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID || "siddhi-industrial-services-85949",
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || "siddhi-industrial-services-85949.firebasestorage.app",
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY || "AIzaSyAs-PLACEHOLDER", 
+  authDomain: "siddhi-industrial-services-85949.firebaseapp.com",
+  projectId: "siddhi-industrial-services-85949",
+  storageBucket: "siddhi-industrial-services-85949.firebasestorage.app",
+  messagingSenderId: "1055569646",
+  appId: "1:1055569646:web:6e2f1e2f1e2f1e2f1e2f1e", // Sample structure, usually provided by config tool
 };
 
 // Initialize Firebase

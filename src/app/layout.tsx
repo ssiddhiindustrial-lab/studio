@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Direct link for the new Favicon from Google Drive
+// Direct permanent link for the Favicon
 const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
@@ -45,6 +45,7 @@ export default function RootLayout({
         <link rel="icon" type="image/png" href={faviconUrl} />
         <link rel="shortcut icon" type="image/x-icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
+        {/* Force favicon refresh by adding a version query if needed, but direct link is best */}
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <AuthProvider>
