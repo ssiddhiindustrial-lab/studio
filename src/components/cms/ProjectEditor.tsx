@@ -32,6 +32,16 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   const [formData, setFormData] = React.useState<Project>(project)
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = React.useState(project.imageUrl)
+  const fileInputRef = React.useRef<HTMLInputElement>(null)
+
+  // Reset form when project prop changes or dialog opens
+  React.useEffect(() => {
+    if (isOpen) {
+      setFormData(project)
+      setPreviewUrl(project.imageUrl)
+      setSelectedFile(null)
+    }
+  }, [isOpen, project])
 
   if (!isAdmin) return null
 
@@ -74,7 +84,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
 
       await updateProjectData(project.slug, updatedProject)
 
-      toast({ title: "Project Updated", description: "Changes have been saved successfully. Refresh to see them." })
+      toast({ title: "Project Updated", description: "Changes have been saved successfully. Please refresh the page." })
       setIsOpen(false)
     } catch (error) {
       console.error(error)
@@ -82,6 +92,10 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
     } finally {
       setIsSaving(false)
     }
+  }
+
+  const triggerFileClick = () => {
+    fileInputRef.current?.click()
   }
 
   return (
@@ -99,20 +113,25 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <Label>Main Project Image</Label>
-              <div className="relative aspect-video rounded-xl overflow-hidden border-2 border-dashed border-primary/20 bg-secondary/30 flex items-center justify-center group">
+              <div 
+                onClick={triggerFileClick}
+                className="relative aspect-video rounded-xl overflow-hidden border-2 border-dashed border-primary/20 bg-secondary/30 flex items-center justify-center group cursor-pointer"
+              >
                 {previewUrl ? (
                   <img src={previewUrl} alt="Preview" className="object-cover w-full h-full" />
                 ) : (
                   <ImageIcon className="h-10 w-10 text-muted-foreground" />
                 )}
-                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center text-white text-xs font-bold">
-                  Click to Change
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-bold gap-2">
+                  <ImageIcon className="h-6 w-6" />
+                  <span>Click to Change Image</span>
                 </div>
-                <Input 
+                <input 
                   type="file" 
+                  ref={fileInputRef}
                   accept="image/*" 
                   onChange={handleFileChange}
-                  className="absolute inset-0 opacity-0 cursor-pointer"
+                  className="hidden"
                 />
               </div>
             </div>

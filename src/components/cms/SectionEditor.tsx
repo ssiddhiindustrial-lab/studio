@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -39,6 +40,15 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
   const [formData, setFormData] = React.useState(defaultValues)
   const [selectedFile, setSelectedFile] = React.useState<File | null>(null)
   const [previewUrl, setPreviewUrl] = React.useState(defaultValues.imageUrl)
+  const fileInputRef = React.useRef<HTMLInputElement>(null)
+
+  React.useEffect(() => {
+    if (isOpen) {
+      setFormData(defaultValues)
+      setPreviewUrl(defaultValues.imageUrl)
+      setSelectedFile(null)
+    }
+  }, [isOpen, defaultValues])
 
   if (!isAdmin) return null
 
@@ -75,6 +85,10 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
     }
   }
 
+  const triggerFileClick = () => {
+    fileInputRef.current?.click()
+  }
+
   return (
     <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogTrigger asChild>
@@ -90,20 +104,28 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
           {formData.imageUrl !== undefined && (
             <div className="space-y-2">
               <Label>Section Image</Label>
-              <div className="relative aspect-video rounded-xl overflow-hidden border-2 border-dashed border-primary/20 bg-secondary/30 flex items-center justify-center">
+              <div 
+                onClick={triggerFileClick}
+                className="relative aspect-video rounded-xl overflow-hidden border-2 border-dashed border-primary/20 bg-secondary/30 flex items-center justify-center cursor-pointer group"
+              >
                 {previewUrl ? (
                   <img src={previewUrl} alt="Preview" className="object-cover w-full h-full" />
                 ) : (
                   <ImageIcon className="h-10 w-10 text-muted-foreground" />
                 )}
-                <Input 
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-bold gap-2">
+                  <ImageIcon className="h-6 w-6" />
+                  <span>Click to Upload New Image</span>
+                </div>
+                <input 
                   type="file" 
+                  ref={fileInputRef}
                   accept="image/*" 
                   onChange={handleFileChange}
-                  className="absolute inset-0 opacity-0 cursor-pointer"
+                  className="hidden"
                 />
               </div>
-              <p className="text-[10px] text-muted-foreground text-center italic">Click image area to upload new image</p>
+              <p className="text-[10px] text-muted-foreground text-center italic">Supported formats: JPG, PNG, WEBP</p>
             </div>
           )}
 
