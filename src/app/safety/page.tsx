@@ -1,7 +1,18 @@
-import Image from "next/image"
-import { ShieldCheck, HardHat, ClipboardCheck, Users, GraduationCap, Microscope, Award, AlertCircle, CheckCircle2 } from "lucide-react"
 
-export default function SafetyPage() {
+import Image from "next/image"
+import { ShieldCheck, HardHat, ClipboardCheck, Users, GraduationCap, Award, AlertCircle, CheckCircle2 } from "lucide-react"
+import { SectionEditor } from "@/components/cms/SectionEditor"
+import { getPageContent } from "@/services/cmsService"
+
+export default async function SafetyPage() {
+  const content = await getPageContent("safety") || {}
+
+  const header = content.header || {
+    subtitle: "Protection & Performance",
+    title: "Our Safety First Culture",
+    description: "At Siddhi Industrial Services, safety isn't just a requirement; it's our core value. We believe every worker should return home safe every day."
+  }
+
   const safetyProtocols = [
     { title: "Mandatory PPE", desc: "Strict 100% Personal Protective Equipment usage policy for all workers and visitors on site.", icon: HardHat },
     { title: "Dedicated HSE Officers", desc: "Qualified Health, Safety, and Environment officers present on every major project site.", icon: ShieldCheck },
@@ -17,12 +28,15 @@ export default function SafetyPage() {
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-primary py-24 text-white relative overflow-hidden">
+        <div className="absolute top-4 right-4 z-50">
+          <SectionEditor pageId="safety" sectionKey="header" defaultValues={header} />
+        </div>
         <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/10 skew-x-12 translate-x-1/2" />
         <div className="container mx-auto px-4 relative z-10 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
-            <h2 className="text-accent font-bold uppercase tracking-widest text-sm">Protection & Performance</h2>
-            <h1 className="text-4xl md:text-6xl font-bold font-headline">Our Safety First Culture</h1>
-            <p className="text-xl text-white/70">At Siddhi Industrial Services, safety isn't just a requirement; it's our core value. We believe every worker should return home safe every day.</p>
+            <h2 className="text-accent font-bold uppercase tracking-widest text-sm">{header.subtitle}</h2>
+            <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
+            <p className="text-xl text-white/70">{header.description}</p>
           </div>
         </div>
       </section>

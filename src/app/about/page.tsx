@@ -1,3 +1,4 @@
+
 import Image from "next/image"
 import { Target, Lightbulb, Quote } from "lucide-react"
 import { SectionEditor } from "@/components/cms/SectionEditor"
@@ -5,6 +6,11 @@ import { getPageContent } from "@/services/cmsService"
 
 export default async function AboutPage() {
   const content = await getPageContent("about") || {}
+
+  const header = content.header || {
+    title: "Engineering Trust Since 1997",
+    description: "From site engineer roots to becoming a premier industrial contractor in India."
+  }
 
   const intro = content.intro || {
     subtitle: "Our Evolution",
@@ -29,11 +35,14 @@ export default async function AboutPage() {
   return (
     <div className="flex flex-col w-full">
       {/* Header */}
-      <section className="bg-primary py-24 text-white">
+      <section className="bg-primary py-24 text-white relative">
+        <div className="absolute top-4 right-4 z-50">
+          <SectionEditor pageId="about" sectionKey="header" defaultValues={header} />
+        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
-            <h1 className="text-4xl md:text-6xl font-bold font-headline">Engineering Trust Since 1997</h1>
-            <p className="text-xl text-white/70">From site engineer roots to becoming a premier industrial contractor in India.</p>
+            <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
+            <p className="text-xl text-white/70">{header.description}</p>
           </div>
         </div>
       </section>
