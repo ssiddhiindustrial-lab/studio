@@ -1,7 +1,24 @@
 import Image from "next/image"
 import { Target, Lightbulb, Quote } from "lucide-react"
+import { SectionEditor } from "@/components/cms/SectionEditor"
+import { getPageContent } from "@/services/cmsService"
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const content = await getPageContent("about") || {}
+
+  const intro = content.intro || {
+    subtitle: "Our Evolution",
+    title: "A Legacy of Hard Work & Technical Precision",
+    description: "Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. With a history spanning over two decades of technical expertise, we have evolved from site-level management to complex turnkey project delivery."
+  }
+
+  const founder = content.founder || {
+    name: "Shailesh Patel",
+    role: "Founder & Managing Director",
+    quote: "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth. Our commitment is to deliver excellence every single time.",
+    imageUrl: "https://picsum.photos/seed/founder/400/400"
+  }
+
   const timeline = [
     { year: "1997", event: "Site Engineer Career Started", description: "Beginning of professional journey in large-scale civil engineering projects." },
     { year: "2006", event: "Umiya Stone Crusher Plant", description: "Key project leadership in major industrial machinery establishment." },
@@ -22,13 +39,16 @@ export default function AboutPage() {
       </section>
 
       {/* Story & Evolution */}
-      <section className="py-24 bg-background">
+      <section className="py-24 bg-background relative">
+        <div className="absolute top-10 right-10 z-50">
+          <SectionEditor pageId="about" sectionKey="intro" defaultValues={intro} />
+        </div>
         <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
-            <h2 className="text-accent font-bold uppercase tracking-wider">Our Evolution</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">A Legacy of Hard Work & Technical Precision</h3>
+            <h2 className="text-accent font-bold uppercase tracking-wider">{intro.subtitle}</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">{intro.title}</h3>
             <p className="text-muted-foreground leading-relaxed text-lg max-w-3xl mx-auto">
-              Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. With a history spanning over two decades of technical expertise, we have evolved from site-level management to complex turnkey project delivery.
+              {intro.description}
             </p>
           </div>
 
@@ -51,24 +71,28 @@ export default function AboutPage() {
           </div>
 
           {/* Founder Section - Centered */}
-          <div className="w-full max-w-3xl mx-auto mb-24">
+          <div className="w-full max-w-3xl mx-auto mb-24 relative">
+            <div className="absolute top-4 right-4 z-50">
+              <SectionEditor pageId="about" sectionKey="founder" defaultValues={founder} />
+            </div>
             <div className="bg-white p-12 rounded-3xl border shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full" />
               <div className="flex flex-col items-center text-center">
                 <div className="relative w-48 h-48 rounded-2xl overflow-hidden shadow-lg ring-4 ring-accent/10 mb-8">
                   <Image 
-                    src="https://picsum.photos/seed/founder/400/400" 
-                    alt="Shailesh Patel" 
+                    src={founder.imageUrl} 
+                    alt={founder.name} 
                     fill 
+                    unoptimized
                     className="object-cover"
                   />
                 </div>
                 <div className="space-y-4">
                   <Quote className="h-10 w-10 text-accent mx-auto mb-2 opacity-50" />
-                  <h4 className="text-3xl font-bold text-primary font-headline">Shailesh Patel</h4>
-                  <p className="text-accent font-bold uppercase tracking-widest text-sm">Founder & Managing Director</p>
+                  <h4 className="text-3xl font-bold text-primary font-headline">{founder.name}</h4>
+                  <p className="text-accent font-bold uppercase tracking-widest text-sm">{founder.role}</p>
                   <p className="text-muted-foreground italic leading-relaxed text-lg max-w-xl mx-auto">
-                    "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth. Our commitment is to deliver excellence every single time."
+                    "{founder.quote}"
                   </p>
                 </div>
               </div>

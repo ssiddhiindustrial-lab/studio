@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Force-refresh favicon with versioning query
-const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=10";
+// Using a versioned direct link to force browser to refresh favicon
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=25";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
@@ -42,11 +42,10 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Force favicon refresh across all browsers */}
+        {/* Force favicon refresh across all browsers with explicit link tags */}
         <link rel="icon" type="image/png" href={faviconUrl} />
         <link rel="shortcut icon" type="image/x-icon" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
-        <meta name="msapplication-TileImage" content={faviconUrl} />
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <AuthProvider>
