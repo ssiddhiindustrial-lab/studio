@@ -1,13 +1,36 @@
+
 "use client"
 
 import * as React from "react"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowRight, Construction } from "lucide-react"
-import { projects } from "@/lib/projects-data"
+import { ArrowRight, Construction, Loader2 } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
+import { getAllProjects, syncProjectsToFirestore } from "@/services/projectService"
+import { Project } from "@/lib/projects-data"
 
 export default function ProjectsPage() {
+  const [projects, setProjects] = React.useState<Project[]>([])
+  const [loading, setLoading] = React.useState(true)
+
+  React.useEffect(() => {
+    async function load() {
+      await syncProjectsToFirestore() // Ensure DB is seeded
+      const data = await getAllProjects()
+      setProjects(data)
+      setLoading(false)
+    }
+    load()
+  }, [])
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center min-h-[60vh] w-full">
+        <Loader2 className="h-8 w-8 animate-spin text-primary" />
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}

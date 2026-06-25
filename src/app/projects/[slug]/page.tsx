@@ -1,12 +1,16 @@
+
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
 import { ArrowLeft, Calendar, BadgeDollarSign, User, Activity, Factory, ChevronRight } from "lucide-react"
-import { projects } from "@/lib/projects-data"
+import { projects as staticProjects } from "@/lib/projects-data"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { getProjectBySlug, getAllProjects } from "@/services/projectService"
+import { ProjectEditor } from "@/components/cms/ProjectEditor"
 
 export async function generateStaticParams() {
+  const projects = await getAllProjects()
   return projects.map((p) => ({
     slug: p.slug,
   }))
@@ -14,14 +18,16 @@ export async function generateStaticParams() {
 
 export default async function ProjectDetails({ params }: { params: { slug: string } }) {
   const { slug } = await params;
-  const project = projects.find((p) => p.slug === slug)
+  const project = await getProjectBySlug(slug)
 
   if (!project) {
     notFound()
   }
 
-  // Generate gallery items - use at least the main image and a few others from the same category as fallback
-  const fallbackImages = projects
+  const allProjects = await getAllProjects()
+  
+  // Generate gallery items
+  const fallbackImages = allProjects
     .filter(p => p.category === project.category && p.slug !== project.slug)
     .slice(0, 4)
     .map(p => p.imageUrl);
@@ -33,7 +39,10 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
   return (
     <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
-      <section className="bg-primary py-16 text-white text-center w-full">
+      <section className="bg-primary py-16 text-white text-center w-full relative">
+        <div className="absolute top-4 right-4 z-50">
+          <ProjectEditor project={project} />
+        </div>
         <div className="container px-4 flex flex-col items-center mx-auto">
           <Link href="/projects" className="inline-flex items-center gap-2 text-accent hover:text-white transition-colors mb-8 font-bold text-sm uppercase tracking-widest">
             <ArrowLeft className="h-4 w-4" /> Back to Portfolio

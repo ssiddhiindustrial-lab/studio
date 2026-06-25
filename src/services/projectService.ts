@@ -5,9 +5,8 @@ import {
   getDoc, 
   doc, 
   updateDoc, 
-  query, 
-  where,
-  setDoc
+  setDoc,
+  deleteDoc
 } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/firebase";
@@ -17,55 +16,54 @@ const COLLECTION_NAME = "projects";
 
 /**
  * Syncs static projects to Firestore if they don't exist.
- * This is a one-time migration helper.
  */
 export async function syncProjectsToFirestore() {
-  const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
-  if (querySnapshot.empty) {
-    for (const project of staticProjects) {
-      await setDoc(doc(db, COLLECTION_NAME, project.slug), project);
+  try {
+    const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
+    if (querySnapshot.empty) {
+      for (const project of staticProjects) {
+        await setDoc(doc(db, COLLECTION_NAME, project.slug), project);
+      }
+      console.log("Migration complete: Projects synced to Firestore.");
     }
-    console.log("Migration complete: Projects synced to Firestore.");
+  } catch (error) {
+    console.error("Sync error:", error);
   }
 }
 
 export async function getAllProjects(): Promise<Project[]> {
-  const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
-  const projects: Project[] = [];
-  querySnapshot.forEach((doc) => {
-    projects.push(doc.data() as Project);
-  });
-  return projects.length > 0 ? projects : staticProjects;
+  try {
+    const querySnapshot = await getDocs(collection(db, COLLECTION_NAME));
+    const projects: Project[] = [];
+    querySnapshot.forEach((doc) => {
+      projects.push(doc.data() as Project);
+    });
+    return projects.length > 0 ? projects : staticProjects;
+  } catch (error) {
+    return staticProjects;
+  }
 }
 
 export async function getProjectBySlug(slug: string): Promise<Project | null> {
-  const docRef = doc(db, COLLECTION_NAME, slug);
-  const docSnap = await getDoc(docRef);
-  
-  if (docSnap.exists()) {
-    return docSnap.data() as Project;
+  try {
+    const docRef = doc(db, COLLECTION_NAME, slug);
+    const docSnap = await getDoc(docRef);
+    if (docSnap.exists()) {
+      return docSnap.data() as Project;
+    }
+    return staticProjects.find(p => p.slug === slug) || null;
+  } catch (error) {
+    return staticProjects.find(p => p.slug === slug) || null;
   }
-  
-  // Fallback to static data for initial load
-  return staticProjects.find(p => p.slug === slug) || null;
 }
 
-export async function updateProjectImage(slug: string, file: File, type: 'main' | 'gallery') {
+export async function updateProjectData(slug: string, data: Partial<Project>) {
+  const docRef = doc(db, COLLECTION_NAME, slug);
+  await updateDoc(docRef, data);
+}
+
+export async function uploadProjectImage(slug: string, file: File): Promise<string> {
   const storageRef = ref(storage, `projects/${slug}/${Date.now()}_${file.name}`);
   const snapshot = await uploadBytes(storageRef, file);
-  const downloadURL = await getDownloadURL(snapshot.ref);
-
-  const docRef = doc(db, COLLECTION_NAME, slug);
-  const project = await getProjectBySlug(slug);
-
-  if (!project) throw new Error("Project not found");
-
-  if (type === 'main') {
-    await updateDoc(docRef, { imageUrl: downloadURL });
-  } else {
-    const gallery = project.gallery || [];
-    await updateDoc(docRef, { gallery: [...gallery, downloadURL] });
-  }
-
-  return downloadURL;
+  return await getDownloadURL(snapshot.ref);
 }
