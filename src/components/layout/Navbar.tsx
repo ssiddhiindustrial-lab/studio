@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -37,7 +38,7 @@ export function Navbar() {
         <div className="flex items-center justify-between h-16 md:h-24">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <div className="relative h-12 w-48 md:h-20 md:w-72 overflow-hidden">
+            <div className="relative h-12 w-48 md:h-20 md:w-72">
               <Image 
                 src={logoUrl} 
                 alt="Siddhi Industrial Services Logo" 

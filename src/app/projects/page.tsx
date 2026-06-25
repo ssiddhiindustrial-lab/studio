@@ -15,37 +15,23 @@ export default function ProjectsPage() {
 
   React.useEffect(() => {
     async function load() {
-      // 1. Immediately show static projects so user doesn't wait
-      setProjects(staticProjects);
-      
       try {
-        // 2. Start sync in background - DO NOT await it to prevent blocking
+        // Immediately try to sync static data to Firestore if DB is empty
         syncProjectsToFirestore().catch(err => console.warn("Background sync info:", err));
         
-        // 3. Try to fetch fresh data from Firestore
-        // We wrap this in a timeout or just handle the promise properly
-        const dataPromise = getAllProjects();
-        
-        // If it takes more than 3 seconds, just stop loading and show static
-        const timeoutPromise = new Promise((_, reject) => 
-          setTimeout(() => reject(new Error("Timeout")), 3000)
-        );
-
-        const data = await Promise.race([dataPromise, timeoutPromise]) as Project[];
+        // Fetch fresh data from Firestore
+        const data = await getAllProjects();
         if (data && data.length > 0) {
+          // Sort projects so updated ones appear correctly or maintain a specific order
           setProjects(data);
         }
       } catch (error) {
-        console.log("Using cached/static project data");
+        console.log("Using cached/static project data as fallback");
       } finally {
         setLoading(false);
       }
     }
     load();
-    
-    // Safety fallback: always hide loader after 4 seconds max
-    const timer = setTimeout(() => setLoading(false), 4000);
-    return () => clearTimeout(timer);
   }, [])
 
   if (loading && projects.length === 0) {

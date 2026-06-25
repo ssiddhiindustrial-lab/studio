@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -70,20 +71,14 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
     if (isSaving) return;
     setIsSaving(true)
     
-    // Safety timeout promise
-    const timeoutPromise = new Promise((resolve) => setTimeout(resolve, 3000));
-
     try {
       let finalImageUrl = formData.imageUrl
       
       if (selectedFile) {
         try {
-          finalImageUrl = await Promise.race([
-            uploadProjectImage(project.slug, selectedFile),
-            new Promise<string>((_, reject) => setTimeout(() => reject(new Error("Timeout")), 2500))
-          ]);
+          finalImageUrl = await uploadProjectImage(project.slug, selectedFile);
         } catch (imgErr) {
-          console.warn("Storage upload timed out or failed, using current preview URL");
+          console.warn("Storage upload failed, using fallback");
         }
       }
 
@@ -92,11 +87,8 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         imageUrl: finalImageUrl
       }
 
-      // Race the firestore write with a timeout so it never spins infinitely
-      await Promise.race([
-        updateProjectData(project.slug, updatedProject),
-        timeoutPromise
-      ]);
+      // Explicitly wait for Firestore confirmation
+      await updateProjectData(project.slug, updatedProject);
 
       toast({ 
         title: "Project Changes Saved", 
@@ -105,21 +97,18 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
       
       setIsOpen(false)
       
-      // Instantly trigger a refresh so the new data shows up
+      // Give the DB a split second then refresh
       setTimeout(() => {
         window.location.reload();
-      }, 800);
+      }, 500);
 
     } catch (error: any) {
       console.error("Save error details:", error)
       toast({ 
-        title: "Data Saved Successfully", 
-        description: "Changes updated. Refreshing the browser..." 
+        variant: "destructive",
+        title: "Save Failed", 
+        description: "Could not update project. Please check your connection." 
       })
-      setIsOpen(false)
-      setTimeout(() => {
-        window.location.reload();
-      }, 800);
     } finally {
       setIsSaving(false)
     }
