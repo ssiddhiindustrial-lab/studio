@@ -19,8 +19,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Use standard favicon URL
-const faviconUrl = "https://drive.google.com/thumbnail?id=1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-&sz=w128";
+// Using a stable direct-view URL for favicon
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
   title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
