@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
         destination: '/services/industrial-infrastructure-development-sanand',
         permanent: true,
       },
+      {
+        source: '/services/roads-drainage',
+        destination: '/services/industrial-road-construction-sanand-ahmedabad',
+        permanent: true,
+      },
     ]
   },
 };
