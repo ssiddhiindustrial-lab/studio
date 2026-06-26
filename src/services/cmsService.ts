@@ -2,8 +2,6 @@
 import { db, storage } from "@/lib/firebase"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
-import { errorEmitter } from '@/firebase/error-emitter'
-import { FirestorePermissionError } from '@/firebase/errors'
 
 const COLLECTION_NAME = "site_content"
 
@@ -24,17 +22,11 @@ export async function getPageContent(pageId: string): Promise<PageContent | null
 
 export async function updatePageContent(pageId: string, content: PageContent) {
   const docRef = doc(db, COLLECTION_NAME, pageId)
-  
   try {
     await setDoc(docRef, content, { merge: true });
     return { success: true };
   } catch (error: any) {
-    const permissionError = new FirestorePermissionError({
-      path: docRef.path,
-      operation: 'write',
-      requestResourceData: content,
-    });
-    errorEmitter.emit('permission-error', permissionError);
+    console.error("Firestore Write Error (CMS):", error);
     throw error;
   }
 }

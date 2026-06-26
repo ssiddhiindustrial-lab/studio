@@ -2,7 +2,6 @@
 "use client"
 
 import * as React from "react"
-import { useRouter } from "next/navigation"
 import { useAuth } from "@/components/providers/AuthProvider"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -36,7 +35,6 @@ interface SectionEditorProps {
 export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEditorProps) {
   const { isAdmin } = useAuth()
   const { toast } = useToast()
-  const router = useRouter()
   const [isOpen, setIsOpen] = React.useState(false)
   const [isSaving, setIsSaving] = React.useState(false)
   const [formData, setFormData] = React.useState(defaultValues)
@@ -78,13 +76,18 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
         }
       });
 
-      toast({ title: "Update Successful", description: "Content has been saved to the database." })
+      toast({ title: "Update Successful", description: "Content has been saved." })
       setIsOpen(false)
       
-      router.refresh()
-    } catch (error) {
-      console.error("Save error:", error)
-      toast({ variant: "destructive", title: "Update Failed", description: "Could not save changes. Please check permissions." })
+      // Hard refresh to show new data
+      window.location.reload();
+    } catch (error: any) {
+      console.error("Save error detail:", error)
+      toast({ 
+        variant: "destructive", 
+        title: "Update Failed", 
+        description: error.message || "Could not save changes. Check database permissions." 
+      })
     } finally {
       setIsSaving(false)
     }

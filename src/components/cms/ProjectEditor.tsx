@@ -2,7 +2,6 @@
 "use client"
 
 import * as React from "react"
-import { useRouter } from "next/navigation"
 import { useAuth } from "@/components/providers/AuthProvider"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -28,7 +27,6 @@ interface ProjectEditorProps {
 export function ProjectEditor({ project }: ProjectEditorProps) {
   const { isAdmin } = useAuth()
   const { toast } = useToast()
-  const router = useRouter()
   const [isOpen, setIsOpen] = React.useState(false)
   const [isSaving, setIsSaving] = React.useState(false)
   const [formData, setFormData] = React.useState<Project>(project)
@@ -68,13 +66,17 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         imageUrl: finalImageUrl
       });
 
-      toast({ title: "Project Saved", description: "Data has been updated in Firestore." })
+      toast({ title: "Project Saved", description: "Changes updated in database." })
       setIsOpen(false)
       
-      router.refresh()
+      window.location.reload();
     } catch (error: any) {
-      console.error("Project save error:", error)
-      toast({ variant: "destructive", title: "Save Failed", description: "Could not write to database." })
+      console.error("Project save error detail:", error)
+      toast({ 
+        variant: "destructive", 
+        title: "Save Failed", 
+        description: error.message || "Could not write to database." 
+      })
     } finally {
       setIsSaving(false)
     }

@@ -11,8 +11,6 @@ import {
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "@/lib/firebase";
 import { Project, projects as staticProjects } from "@/lib/projects-data";
-import { errorEmitter } from '@/firebase/error-emitter';
-import { FirestorePermissionError } from '@/firebase/errors';
 
 const COLLECTION_NAME = "projects";
 
@@ -28,7 +26,7 @@ export async function syncProjectsToFirestore() {
       await Promise.all(promises);
     }
   } catch (error) {
-    console.warn("Sync info:", error);
+    console.warn("Sync info (ignorable):", error);
   }
 }
 
@@ -60,17 +58,11 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
 
 export async function updateProjectData(slug: string, data: Partial<Project>) {
   const docRef = doc(db, COLLECTION_NAME, slug);
-  
   try {
     await setDoc(docRef, data, { merge: true });
     return { success: true };
   } catch (error: any) {
-    const permissionError = new FirestorePermissionError({
-      path: docRef.path,
-      operation: 'write',
-      requestResourceData: data,
-    });
-    errorEmitter.emit('permission-error', permissionError);
+    console.error("Firestore Write Error (Project):", error);
     throw error;
   }
 }
