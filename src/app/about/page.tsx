@@ -14,22 +14,22 @@ export default async function AboutPage() {
   const intro = content.intro || {
     subtitle: "Our Evolution",
     title: "A Legacy of Hard Work & Technical Precision",
-    description: "Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. Our journey began with Shailesh Patel’s extensive background as a Site Engineer at a government-approved AA+ contracting firm, managing high-stakes civil projects. This technical foundation paved the way for successful ventures in stone crushing and quarry works, eventually leading to the establishment of Siddhi Industrial Services in 2013. Today, we stand as a trusted industrial construction company in Ahmedabad, recognized for our ability to execute complex factory construction and infrastructure projects with unmatched precision."
+    description: "Siddhi Industrial Services was founded on the principles of integrity, quality, and technical excellence. Our journey is rooted in the extensive career of our founder, Shailesh Patel, who began as a Site Engineer at a premier AA+ contracting firm in 1997. This foundational experience in managing high-stakes civil works paved the way for successful ventures in material production and infrastructure development. In 2013, Siddhi Industrial Services was established as an independent entity to execute complex industrial projects with a focus on engineering precision. Today, we are recognized as a trusted industrial construction company in Ahmedabad, specializing in building robust factory units and sophisticated warehouses. We bridge the gap between architectural vision and structural reality through decades of field expertise and a commitment to delivering on time, every time."
   }
 
   const founder = content.founder || {
     name: "Shailesh Patel",
     role: "Founder & Managing Director",
     quote: "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth.",
-    message: "With over 25 years in the construction industry, I have seen the sector evolve from traditional methods to advanced engineering precision. At Siddhi Industrial Services, we leverage this experience to solve complex challenges for our clients. Our focus remains on delivering high-quality, cost-effective industrial projects while maintaining the highest safety standards. We are not just building structures; we are building long-term partnerships based on reliability, transparency, and technical excellence.",
+    message: "With over 25 years in the construction industry, I have seen the sector evolve from traditional methods to advanced engineering precision. At Siddhi Industrial Services, we leverage this experience to solve complex challenges for our clients. Our focus remains on delivering high-quality, cost-effective industrial projects while maintaining the highest safety standards. We are not just building structures; we are building long-term partnerships based on reliability, transparency, and technical excellence in every project we execute.",
     imageUrl: "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-"
   }
 
   const timeline = [
     { year: "1997", event: "Site Engineer Career Started", description: "Started professional career as a Site Engineer at Y.N. Dhanani, managing large-scale civil works." },
-    { year: "2006", event: "Umiya Stone Crusher Plant", description: "Established Umiya Stone Crusher Plant to specialize in industrial material supply and site management." },
-    { year: "2009", event: "Mahakali Quarry Works", description: "Founded Mahakali Quarry Works, expanding technical capabilities in infrastructure and resource development." },
-    { year: "2013", event: "Siddhi Industrial Services Founded", description: "Established Siddhi Industrial Services to deliver independent, high-quality industrial and infrastructure construction projects." }
+    { year: "2006", event: "Umiya Stone Crusher Plant", description: "Established Umiya Stone Crusher Plant to specialize in high-quality industrial material supply." },
+    { year: "2009", event: "Mahakali Quarry Works", description: "Founded Mahakali Quarry Works to expand technical capabilities in resource development." },
+    { year: "2013", event: "Siddhi Industrial Services Founded", description: "Established Siddhi Industrial Services to deliver independent, high-quality industrial construction projects." }
   ]
 
   return (
@@ -111,7 +111,7 @@ export default async function AboutPage() {
               <div className="space-y-3">
                 <h4 className="text-3xl font-bold font-headline">Our Vision</h4>
                 <p className="text-white/70 leading-relaxed">
-                  To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth through sustainable engineering.
+                  To be recognized as a leading industrial construction company delivering world-class infrastructure that empowers business growth through sustainable engineering and uncompromising quality standards across India’s industrial corridors.
                 </p>
               </div>
             </div>
@@ -122,7 +122,7 @@ export default async function AboutPage() {
               <div className="space-y-3">
                 <h4 className="text-3xl font-bold font-headline text-primary">Our Mission</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction, safety compliance, and long-term partnerships.
+                  To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction, safety compliance, and long-term partnerships through expert civil contracting and turnkey execution.
                 </p>
               </div>
             </div>
