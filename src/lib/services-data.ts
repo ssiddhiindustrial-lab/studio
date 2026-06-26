@@ -51,7 +51,7 @@ export const servicesData: ServiceDetail[] = [
     label: "Manufacturing Hubs",
     icon: Settings,
     shortDesc: "Professional factory construction and industrial plant development in Ahmedabad, focusing on manufacturing workflow optimization and heavy-duty infrastructure integration.",
-    fullDesc: "Siddhi Industrial Services specializes in the dedicated development of industrial plants and manufacturing facilities. Our approach integrates process-specific requirements into the civil structure, ensuring that the building supports the machinery and production flow. As expert industrial civil contractors in Ahmedabad, we handle everything from specialized machine pits to high-clearance process halls. We collaborate closely with manufacturing heads to ensure that the physical infrastructure—including load-bearing capacities and utility corridors—is perfectly aligned with the industrial engineering needs of the plant.",
+    fullDesc: "Siddhi Industrial Services specializes in the comprehensive development of industrial plants and manufacturing facilities across the high-growth corridors of Ahmedabad and Sanand. Our engineering approach goes beyond basic civil work; we integrate process-specific requirements directly into the structural design, ensuring that the physical infrastructure seamlessly supports complex machinery and production workflows. As expert factory development partners, we handle everything from specialized, vibration-isolated machine foundations to high-clearance process halls. We collaborate closely with manufacturing heads and consultants to ensure that the production infrastructure—including load-bearing capacities and utility corridors—is perfectly aligned with the industrial engineering needs of the plant. Whether you are initiating a greenfield factory development in Sanand GIDC or executing a strategic factory expansion in Ahmedabad, our turnkey industrial projects prioritize manufacturing workflow optimization and long-term operational efficiency. Our deep expertise in industrial civil construction and heavy RCC works ensures that every manufacturing unit is built to withstand rigorous industrial loads while providing a safe, productive, and compliant environment for your production units. We leverage advanced construction methodologies to deliver durable industrial buildings that serve as a reliable foundation for your manufacturing success in Gujarat's premier industrial zones.",
     benefits: [
       "Optimized production workflows",
       "Seamless machinery integration",
@@ -69,11 +69,12 @@ export const servicesData: ServiceDetail[] = [
       "Advanced site security features"
     ],
     faq: [
-      { question: "Can you build specialized machine foundations?", answer: "Yes, we specialize in vibration-isolated foundations and heavy-load pits for manufacturing machinery." },
-      { question: "Do you handle chemical-resistant flooring?", answer: "We provide various industrial flooring options including epoxy and chemical-resistant RCC." },
-      { question: "How do you manage utility integration?", answer: "We plan all plumbing, electrical, and gas lines during the civil phase for a clutter-free environment." },
-      { question: "Are you active in Sanand GIDC?", answer: "Yes, we have extensive experience working within Sanand GIDC and other industrial zones in Ahmedabad." },
-      { question: "Do you provide fire-safety infrastructure?", answer: "Every plant development includes integrated fire tanks, piping, and safety walls as per industrial norms." }
+      { question: "What is included in factory & plant development in Ahmedabad?", answer: "Our service covers turnkey civil works, specialized machine foundations, industrial utilities, and production hall construction tailored to manufacturing needs." },
+      { question: "Do you provide factory & plant development in Sanand?", answer: "Yes, we have extensive experience executing plant development projects within Sanand GIDC, adhering to all local industrial norms." },
+      { question: "How do you design machine foundations?", answer: "We design foundations based on equipment load and vibration specifications, using specialized RCC techniques to ensure stability and machine longevity." },
+      { question: "Can you handle factory expansion projects?", answer: "Yes, we specialize in brownfield expansions, ensuring minimal disruption to existing operations while integrating new production units seamlessly." },
+      { question: "What industrial utilities do you manage?", answer: "We plan and install comprehensive utility networks including compressed air lines, industrial water systems, power corridors, and specialized drainage." },
+      { question: "What is the typical project timeline?", answer: "Timelines vary by scale, but a standard manufacturing facility typically takes 6 to 12 months from site grading to final handover." }
     ]
   },
   {
