@@ -1,7 +1,6 @@
 
 import Image from "next/image"
 import { Target, Lightbulb, Quote } from "lucide-react"
-import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
 
 export default async function AboutPage() {
@@ -36,9 +35,6 @@ export default async function AboutPage() {
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-primary py-24 text-white relative">
-        <div className="absolute top-4 right-4 z-50">
-          <SectionEditor pageId="about" sectionKey="header" defaultValues={header} />
-        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-4">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
@@ -49,9 +45,6 @@ export default async function AboutPage() {
 
       {/* Story & Evolution */}
       <section className="py-24 bg-background relative">
-        <div className="absolute top-10 right-10 z-50">
-          <SectionEditor pageId="about" sectionKey="intro" defaultValues={intro} />
-        </div>
         <div className="container mx-auto px-4 flex flex-col items-center">
           <div className="max-w-4xl mx-auto text-center mb-20 space-y-6">
             <h2 className="text-accent font-bold uppercase tracking-wider">{intro.subtitle}</h2>
@@ -81,9 +74,6 @@ export default async function AboutPage() {
 
           {/* Founder Section - Centered */}
           <div className="w-full max-w-3xl mx-auto mb-24 relative">
-            <div className="absolute top-4 right-4 z-50">
-              <SectionEditor pageId="about" sectionKey="founder" defaultValues={founder} />
-            </div>
             <div className="bg-white p-12 rounded-3xl border shadow-xl relative overflow-hidden">
               <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full" />
               <div className="flex flex-col items-center text-center">

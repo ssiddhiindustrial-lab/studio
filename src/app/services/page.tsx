@@ -2,7 +2,6 @@
 import { ArrowRight, CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
 import { servicesData } from "@/lib/services-data"
 
@@ -18,9 +17,6 @@ export default async function ServicesPage() {
     <div className="flex flex-col w-full">
       {/* Header */}
       <section className="bg-primary py-24 text-white relative">
-        <div className="absolute top-4 right-4 z-50">
-          <SectionEditor pageId="services" sectionKey="header" defaultValues={header} />
-        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>

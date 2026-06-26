@@ -2,9 +2,8 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Activity, Factory, Warehouse, Construction, ArrowRight, CheckCircle2 } from "lucide-react"
+import { Activity, Factory, Warehouse, Construction, ArrowRight } from "lucide-react"
 import { projects } from "@/lib/projects-data"
-import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
 
 export const dynamic = 'force-dynamic';
@@ -56,13 +55,6 @@ export default async function Home() {
         </div>
         
         <div className="container mx-auto relative z-10 px-4 md:px-8 text-center">
-          <div className="absolute top-4 right-4 z-50">
-            <SectionEditor 
-              pageId="home" 
-              sectionKey="hero" 
-              defaultValues={hero} 
-            />
-          </div>
           <div className="max-w-4xl mx-auto animate-reveal flex flex-col items-center">
             <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
               {hero.subtitle}
@@ -105,13 +97,6 @@ export default async function Home() {
 
       {/* Services Overview */}
       <section className="py-24 bg-background w-full flex flex-col items-center relative">
-        <div className="absolute top-10 right-10">
-          <SectionEditor 
-            pageId="home" 
-            sectionKey="servicesSection" 
-            defaultValues={servicesSection} 
-          />
-        </div>
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-6 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">{servicesSection.subtitle}</h2>

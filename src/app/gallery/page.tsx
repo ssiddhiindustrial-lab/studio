@@ -1,10 +1,10 @@
+
 "use client"
 
 import * as React from "react"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { projects } from "@/lib/projects-data"
-import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
 
 export default function GalleryPage() {
@@ -31,9 +31,6 @@ export default function GalleryPage() {
     <div className="flex flex-col w-full items-center">
       {/* Header - Strictly Centered */}
       <section className="bg-primary py-24 text-white w-full relative">
-        <div className="absolute top-4 right-4 z-50">
-          <SectionEditor pageId="gallery" sectionKey="header" defaultValues={header} />
-        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6 flex flex-col items-center">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>

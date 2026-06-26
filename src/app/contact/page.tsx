@@ -9,7 +9,6 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
 import { aiProjectScopeAndEstimate } from "@/ai/flows/ai-project-scope-and-estimate"
-import { SectionEditor } from "@/components/cms/SectionEditor"
 import { getPageContent } from "@/services/cmsService"
 import { sendInquiryEmail } from "@/actions/emailActions"
 
@@ -95,9 +94,6 @@ export default function ContactPage() {
     <div className="flex flex-col w-full">
       {/* Header - Centered */}
       <section className="bg-primary py-24 text-white relative">
-        <div className="absolute top-4 right-4 z-50">
-          <SectionEditor pageId="contact" sectionKey="header" defaultValues={header} />
-        </div>
         <div className="container mx-auto px-4 text-center">
           <div className="max-w-3xl mx-auto space-y-6">
             <h1 className="text-4xl md:text-6xl font-bold font-headline">{header.title}</h1>
@@ -156,6 +152,7 @@ export default function ContactPage() {
 
                   <div className="space-y-2">
                     <Label htmlFor="message" className="block text-center">Message</Label>
+                    <span className="sr-only">Message</span>
                     <Textarea 
                       name="message"
                       id="message" 
@@ -185,6 +182,7 @@ export default function ContactPage() {
                 </div>
                 
                 <div className="space-y-4 w-full">
+                  <span className="sr-only">Requirements</span>
                   <Textarea 
                     placeholder="Example: I want to build a 20,000 sq ft industrial shed in Sanand..."
                     className="bg-white text-center"
