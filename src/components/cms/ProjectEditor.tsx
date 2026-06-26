@@ -53,7 +53,20 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
   }
 
   const handleSave = async () => {
+    if (isSaving) return;
     setIsSaving(true)
+
+    const timeout = setTimeout(() => {
+      if (isSaving) {
+        setIsSaving(false);
+        toast({ 
+          variant: "destructive", 
+          title: "Save Timeout", 
+          description: "Database connection slow. Please try again." 
+        });
+      }
+    }, 15000);
+
     try {
       let finalImageUrl = formData.imageUrl
       
@@ -61,16 +74,20 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         finalImageUrl = await uploadProjectImage(project.slug, selectedFile);
       }
 
-      await updateProjectData(project.slug, {
+      const result = await updateProjectData(project.slug, {
         ...formData,
         imageUrl: finalImageUrl
       });
 
-      toast({ title: "Project Saved", description: "Changes updated in database." })
-      setIsOpen(false)
-      
-      window.location.reload();
+      clearTimeout(timeout);
+
+      if (result.success) {
+        toast({ title: "Project Saved", description: "Changes updated in database." })
+        setIsOpen(false)
+        setTimeout(() => window.location.reload(), 500);
+      }
     } catch (error: any) {
+      clearTimeout(timeout);
       console.error("Project save error detail:", error)
       toast({ 
         variant: "destructive", 

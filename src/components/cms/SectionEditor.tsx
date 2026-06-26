@@ -61,7 +61,22 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
   }
 
   const handleSave = async () => {
+    if (isSaving) return;
+    
     setIsSaving(true)
+    
+    // Safety timeout to prevent infinite loading
+    const timeout = setTimeout(() => {
+      if (isSaving) {
+        setIsSaving(false);
+        toast({ 
+          variant: "destructive", 
+          title: "Request Timeout", 
+          description: "The database took too long to respond. Please check your connection." 
+        });
+      }
+    }, 15000);
+
     try {
       let finalImageUrl = formData.imageUrl
       
@@ -69,24 +84,28 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
         finalImageUrl = await uploadCmsImage(`${pageId}/${sectionKey}`, selectedFile)
       }
 
-      await updatePageContent(pageId, {
+      const result = await updatePageContent(pageId, {
         [sectionKey]: {
           ...formData,
           imageUrl: finalImageUrl
         }
       });
 
-      toast({ title: "Update Successful", description: "Content has been saved." })
-      setIsOpen(false)
+      clearTimeout(timeout);
       
-      // Hard refresh to show new data
-      window.location.reload();
+      if (result.success) {
+        toast({ title: "Update Successful", description: "Content has been saved." })
+        setIsOpen(false)
+        // Refresh after short delay to ensure DB consistency
+        setTimeout(() => window.location.reload(), 500);
+      }
     } catch (error: any) {
-      console.error("Save error detail:", error)
+      clearTimeout(timeout);
+      console.error("Detailed Save Error:", error)
       toast({ 
         variant: "destructive", 
         title: "Update Failed", 
-        description: error.message || "Could not save changes. Check database permissions." 
+        description: error.message || "Could not save changes. Please try again." 
       })
     } finally {
       setIsSaving(false)
