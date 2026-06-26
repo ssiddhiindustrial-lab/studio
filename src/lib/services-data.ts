@@ -46,12 +46,43 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
+    slug: "factory-plant-development",
+    title: "Factory & Plant Development",
+    label: "Manufacturing Hubs",
+    icon: Settings,
+    shortDesc: "Professional factory construction and industrial plant development in Ahmedabad, focusing on manufacturing workflow optimization and heavy-duty infrastructure integration.",
+    fullDesc: "Siddhi Industrial Services specializes in the dedicated development of industrial plants and manufacturing facilities. Our approach integrates process-specific requirements into the civil structure, ensuring that the building supports the machinery and production flow. As expert industrial civil contractors in Ahmedabad, we handle everything from specialized machine pits to high-clearance process halls. We collaborate closely with manufacturing heads to ensure that the physical infrastructure—including load-bearing capacities and utility corridors—is perfectly aligned with the industrial engineering needs of the plant.",
+    benefits: [
+      "Optimized production workflows",
+      "Seamless machinery integration",
+      "Scalable facility design",
+      "High safety standards compliance",
+      "Robust utility planning",
+      "Durable structural build"
+    ],
+    features: [
+      "Process-aware plant layouts",
+      "Custom heavy-load machine pits",
+      "High-clearance manufacturing halls",
+      "Integrated utility corridors",
+      "Specialized ventilation systems",
+      "Advanced site security features"
+    ],
+    faq: [
+      { question: "Can you build specialized machine foundations?", answer: "Yes, we specialize in vibration-isolated foundations and heavy-load pits for manufacturing machinery." },
+      { question: "Do you handle chemical-resistant flooring?", answer: "We provide various industrial flooring options including epoxy and chemical-resistant RCC." },
+      { question: "How do you manage utility integration?", answer: "We plan all plumbing, electrical, and gas lines during the civil phase for a clutter-free environment." },
+      { question: "Are you active in Sanand GIDC?", answer: "Yes, we have extensive experience working within Sanand GIDC and other industrial zones in Ahmedabad." },
+      { question: "Do you provide fire-safety infrastructure?", answer: "Every plant development includes integrated fire tanks, piping, and safety walls as per industrial norms." }
+    ]
+  },
+  {
     slug: "structural-steel-works",
     title: "Structural Steel Works",
     label: "Steel Engineering & Fabrication",
     icon: Construction,
     shortDesc: "Leading structural steel works in Ahmedabad specializing in PEB structures, high-span industrial sheds, and custom fabrication for heavy-duty industrial applications.",
-    fullDesc: "As experts in structural steel works, Siddhi Industrial Services provides comprehensive fabrication and on-site erection solutions for the most demanding industrial requirements. Our steel structures are designed for maximum clear spans and structural durability, making us a preferred choice for factory buildings and large-scale warehouses. We utilize advanced fabrication techniques to ensure every joint and member meets precise engineering specifications. Our team is skilled in the erection of Pre-Engineered Buildings (PEB) and custom-designed structural steel frameworks that offer flexibility and speed without compromising on strength. In an era where speed to market is critical, our structural steel solutions allow for faster project delivery while maintaining the highest safety standards. From anti-corrosive coatings to seismic-resistant designs, our steel works are engineered to withstand the harsh industrial environment of Gujarat's manufacturing hubs.",
+    fullDesc: "As experts in structural steel works, Siddhi Industrial Services provides comprehensive fabrication and on-site erection solutions for the most demanding industrial requirements. Our steel structures are designed for maximum clear spans and structural durability, making us a preferred choice for factory buildings and large-scale warehouses. We utilize advanced fabrication techniques to ensure every joint and member meets precise engineering specifications. Our team is skilled in the erection of Pre-Engineered Buildings (PEB) and custom-designed structural steel frameworks that offer flexibility and speed without compromising on strength. In an era where speed to market is critical, our structural steel solutions allow for faster project delivery while maintaining the highest safety standards.",
     benefits: [
       "Rapid on-site erection for faster delivery",
       "Maximized clear spans for storage optimization",
@@ -82,7 +113,7 @@ export const servicesData: ServiceDetail[] = [
     label: "Concrete Engineering",
     icon: Activity,
     shortDesc: "Specialized RCC works and heavy-duty industrial flooring in Ahmedabad, delivering high-strength reinforced concrete solutions for manufacturing plants and machinery bases.",
-    fullDesc: "Industrial environments demand concrete that can withstand extreme weight, constant vibration, and chemical exposure. Siddhi Industrial Services is a specialist in heavy-duty RCC works, providing engineered solutions that go far beyond standard civil work. We specialize in VDF (Vacuum Dewatered Flooring), which provides the level of precision and durability required for modern manufacturing floors. Our expertise extends to the construction of high-load machine foundations that must absorb significant kinetic energy without cracking. As a leading building contractor in Ahmedabad, we utilize high-grade reinforcement and laser-level precision to ensure every slab is perfectly flat and structurally sound. Our RCC construction processes are optimized for industrial projects where structural integrity is non-negotiable. From utility trenches to specialized storage tanks, our reinforced concrete works are built to last.",
+    fullDesc: "Industrial environments demand concrete that can withstand extreme weight, constant vibration, and chemical exposure. Siddhi Industrial Services is a specialist in heavy-duty RCC works, providing engineered solutions that go far beyond standard civil work. We specialize in VDF (Vacuum Dewatered Flooring), which provides the level of precision and durability required for modern manufacturing floors. Our expertise extends to the construction of high-load machine foundations that must absorb significant kinetic energy without cracking. As a leading building contractor in Ahmedabad, we utilize high-grade reinforcement and laser-level precision to ensure every slab is perfectly flat and structurally sound.",
     benefits: [
       "VDF flooring for superior surface hardness",
       "Crack-resistant industrial concrete slabs",
@@ -113,7 +144,7 @@ export const servicesData: ServiceDetail[] = [
     label: "Storage Infrastructure",
     icon: Warehouse,
     shortDesc: "Complete industrial warehouse development in Ahmedabad, featuring large clear-span sheds, VDF flooring, and optimized storage layouts for logistics and manufacturing hubs.",
-    fullDesc: "Siddhi Industrial Services specializes in the development of modern, large-scale warehousing solutions tailored for the logistics and supply chain sectors. We provide turnkey warehouse construction that focuses on space optimization, structural strength, and operational flow. Our warehouses are built using a combination of high-strength RCC and structural steel, ensuring they can support high-rack storage systems and heavy vehicular traffic. We integrate advanced features such as insulated roofing, efficient stormwater drainage, and high-capacity loading docks. As recognized building contractors in Ahmedabad, we understand the local regulatory requirements for warehouse heights and safety clearances. Whether you need a simple storage shed or a complex distribution center with integrated admin blocks, we deliver infrastructure that enhances your supply chain efficiency. Our focus on quality workmanship ensures that your inventory is protected in a secure, climate-stable environment.",
+    fullDesc: "Siddhi Industrial Services specializes in the development of modern, large-scale warehousing solutions tailored for the logistics and supply chain sectors. We provide turnkey warehouse construction that focuses on space optimization, structural strength, and operational flow. Our warehouses are built using a combination of high-strength RCC and structural steel, ensuring they can support high-rack storage systems and heavy vehicular traffic. We integrate advanced features such as insulated roofing, efficient stormwater drainage, and high-capacity loading docks.",
     benefits: [
       "Maximum space utilization with high spans",
       "VDF flooring ready for high-rack storage",
@@ -136,6 +167,99 @@ export const servicesData: ServiceDetail[] = [
       { question: "How do you handle site drainage?", answer: "We design complex stormwater drainage systems to keep the site dry during monsoons." },
       { question: "Can you assist with building permissions?", answer: "While we are contractors, we can provide all technical drawings needed for regulatory approvals." },
       { question: "What kind of flooring is best for warehouses?", answer: "VDF (Vacuum Dewatered Flooring) is the industry standard for durability and flatness." }
+    ]
+  },
+  {
+    slug: "infrastructure-development",
+    title: "Infrastructure Development",
+    label: "Industrial Backbone",
+    icon: Landmark,
+    shortDesc: "Comprehensive industrial infrastructure development in Ahmedabad, including site preparation, utility networks, and administrative facilities for large industrial zones.",
+    fullDesc: "Infrastructure is the backbone of any industrial enterprise. Siddhi Industrial Services provides end-to-end infrastructure development, ensuring your site is ready for high-performance operations. We manage complex site grading, underground utility networks, and the construction of support buildings like administrative blocks, labs, and security hubs. As recognized building contractors in Ahmedabad, we understand that quality infrastructure is a long-term investment that reduces operational friction and ensures safety across the entire site.",
+    benefits: [
+      "Reliable utility networks",
+      "Expert site preparation",
+      "Durable support infrastructure",
+      "Future-ready site planning",
+      "Efficient land utilization",
+      "Compliance with GIDC norms"
+    ],
+    features: [
+      "Advanced earthwork and grading",
+      "Underground piping and cabling",
+      "Administrative building construction",
+      "Perimeter security and fencing",
+      "Water storage and treatment units",
+      "Integrated fire fighting networks"
+    ],
+    faq: [
+      { question: "Do you handle site land grading?", answer: "Yes, we provide comprehensive earthwork, leveling, and grading to prepare the site for construction." },
+      { question: "Can you build administrative blocks?", answer: "We construct all support infrastructure including offices, security cabins, and worker welfare centers." },
+      { question: "How do you plan underground utilities?", answer: "We design and execute integrated utility trenches for electrical, water, and sewage lines." },
+      { question: "Do you work with GIDC regulations?", answer: "We have deep knowledge of GIDC norms in Gujarat, ensuring all infrastructure is compliant." },
+      { question: "Is fire-fighting infrastructure included?", answer: "We specialize in building underground fire tanks and hydrant pipe networks for industrial safety." }
+    ]
+  },
+  {
+    slug: "roads-drainage",
+    title: "Roads & Drainage",
+    label: "Industrial Access",
+    icon: Route,
+    shortDesc: "Durable industrial road construction and stormwater drainage engineering in Ahmedabad, designed to withstand heavy vehicular traffic and heavy monsoons.",
+    fullDesc: "Industrial roads and drainage systems face unique challenges, including heavy truck traffic and significant water runoff. Siddhi Industrial Services engineers these systems to last. We use high-grade materials for internal road networks and design sophisticated drainage systems to ensure your site remains operational and flood-free during Ahmedabad’s monsoons. Our expertise in industrial road construction ensures smooth logistics flow and minimizes long-term maintenance costs for the facility owner.",
+    benefits: [
+      "Flood-free site operations",
+      "High-durability road surfaces",
+      "Optimized traffic flow",
+      "Reduced long-term maintenance",
+      "Efficient water runoff management",
+      "Sustainable site drainage"
+    ],
+    features: [
+      "Heavy-duty RCC/Bitumen roads",
+      "Stormwater drainage networks",
+      "Paved parking and loading zones",
+      "Integrated culverts and manholes",
+      "Sustainable water harvesting points",
+      "High-visibility road markings"
+    ],
+    faq: [
+      { question: "What type of roads are best for factories?", answer: "Heavy-duty RCC roads with proper reinforcement are the best for long-term industrial use." },
+      { question: "How do you prevent site flooding?", answer: "We design sloped site drainage and high-capacity stormwater networks based on local rainfall data." },
+      { question: "Do you handle internal road marking?", answer: "Yes, we provide complete road markings and safety signage as part of the infrastructure package." },
+      { question: "Can you build heavy-load parking zones?", answer: "We specialize in constructing parking areas that can withstand constant use by multi-axle trucks." },
+      { question: "What about maintenance for these roads?", answer: "Our high-precision RCC construction ensures minimal maintenance for many years." }
+    ]
+  },
+  {
+    slug: "turnkey-project-management",
+    title: "Turnkey Project Management",
+    label: "End-to-End Execution",
+    icon: HardHat,
+    shortDesc: "Complete turnkey industrial project management in Ahmedabad, providing a single point of responsibility from initial concept to final facility handover.",
+    fullDesc: "Our turnkey project management services simplify the complex process of industrial construction. Siddhi Industrial Services takes full responsibility for the project, coordinating design, procurement, and construction. This ensures seamless communication, faster delivery, and a technically superior final product, allowing you to focus on your core business. As premier turnkey builders in Ahmedabad, we manage everything from the initial land survey to the final commissioning of the facility.",
+    benefits: [
+      "Single point of responsibility",
+      "Faster project turnaround",
+      "Cost-certainty execution",
+      "Seamless communication",
+      "Expert vendor coordination",
+      "Zero-hassle handover"
+    ],
+    features: [
+      "Integrated project planning",
+      "Budget and schedule management",
+      "Procurement and vendor selection",
+      "On-site supervision and HSE",
+      "Quality control and reporting",
+      "Final commissioning and handover"
+    ],
+    faq: [
+      { question: "What does 'Turnkey' actually include?", answer: "It means we handle everything: planning, materials, labor, and execution until the building is ready for use." },
+      { question: "Do you provide fixed-cost contracts?", answer: "We provide detailed estimates and can work on fixed-budget models for better cost-certainty." },
+      { question: "How is communication handled?", answer: "You will have a dedicated project manager who will provide weekly progress and quality reports." },
+      { question: "Do you handle regulatory compliance?", answer: "We provide all technical documents and support required for regulatory and GIDC approvals." },
+      { question: "What is your track record for turnkey projects?", answer: "We have successfully delivered multiple turnkey factories and warehouses across Gujarat." }
     ]
   }
 ];
