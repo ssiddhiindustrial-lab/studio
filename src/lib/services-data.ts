@@ -142,7 +142,7 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    slug: "warehousing",
+    slug: "industrial-warehousing-construction-sanand",
     title: "Industrial Warehouse Construction",
     label: "Logistics & Storage Infrastructure",
     icon: Warehouse,
