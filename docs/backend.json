@@ -1,0 +1,48 @@
+
+{
+  "entities": {
+    "PageContent": {
+      "title": "PageContent",
+      "description": "Dynamic content for various pages of the site.",
+      "type": "object",
+      "properties": {
+        "header": { "type": "object" },
+        "hero": { "type": "object" },
+        "servicesSection": { "type": "object" },
+        "intro": { "type": "object" },
+        "founder": { "type": "object" }
+      }
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Industrial construction project details.",
+      "type": "object",
+      "properties": {
+        "slug": { "type": "string" },
+        "name": { "type": "string" },
+        "value": { "type": "string" },
+        "year": { "type": "string" },
+        "description": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "type": "string" },
+        "client": { "type": "string" },
+        "scope": { "type": "array", "items": { "type": "string" } },
+        "imageUrl": { "type": "string" },
+        "gallery": { "type": "array", "items": { "type": "string" } }
+      }
+    }
+  },
+  "auth": {
+    "providers": ["password"]
+  },
+  "firestore": {
+    "/site_content/{pageId}": {
+      "schema": "PageContent",
+      "description": "Stores CMS content for different pages."
+    },
+    "/projects/{slug}": {
+      "schema": "Project",
+      "description": "Stores individual project details."
+    }
+  }
+}

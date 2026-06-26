@@ -1,3 +1,4 @@
+
 import type {Metadata} from 'next';
 import { Inter, Space_Grotesk } from 'next/font/google';
 import './globals.css';
@@ -6,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/components/providers/AuthProvider';
+import { FirebaseErrorListener } from '@/components/FirebaseErrorListener';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -19,7 +21,6 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Using a stable direct-view URL for favicon from Google Drive
 const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
@@ -47,6 +48,7 @@ export default function RootLayout({
           <main className="flex-grow flex flex-col items-center w-full">{children}</main>
           <Footer />
           <WhatsAppButton />
+          <FirebaseErrorListener />
           <Toaster />
         </AuthProvider>
       </body>

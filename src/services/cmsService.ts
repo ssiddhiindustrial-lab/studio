@@ -2,6 +2,8 @@
 import { db, storage } from "@/lib/firebase"
 import { doc, getDoc, setDoc } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage"
+import { errorEmitter } from '@/firebase/error-emitter'
+import { FirestorePermissionError } from '@/firebase/errors'
 
 const COLLECTION_NAME = "site_content"
 
@@ -15,15 +17,22 @@ export async function getPageContent(pageId: string): Promise<PageContent | null
     const docSnap = await getDoc(docRef)
     return docSnap.exists() ? docSnap.data() : null
   } catch (error) {
-    console.error("Error fetching content:", error)
     return null
   }
 }
 
 export function updatePageContent(pageId: string, content: PageContent) {
   const docRef = doc(db, COLLECTION_NAME, pageId)
-  // No await here for faster UI response
+  
   setDoc(docRef, content, { merge: true })
+    .catch(async (error) => {
+      const permissionError = new FirestorePermissionError({
+        path: docRef.path,
+        operation: 'write',
+        requestResourceData: content,
+      });
+      errorEmitter.emit('permission-error', permissionError);
+    });
 }
 
 export async function uploadCmsImage(path: string, file: File): Promise<string> {
