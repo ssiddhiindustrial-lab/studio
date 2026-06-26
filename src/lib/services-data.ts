@@ -51,7 +51,7 @@ export const servicesData: ServiceDetail[] = [
     label: "Manufacturing Hubs",
     icon: Settings,
     shortDesc: "Professional factory construction and industrial plant development in Ahmedabad, focusing on manufacturing workflow optimization and heavy-duty infrastructure integration.",
-    fullDesc: "Siddhi Industrial Services specializes in the comprehensive development of industrial plants and manufacturing facilities across the high-growth corridors of Ahmedabad and Sanand. Our engineering approach goes beyond basic civil work; we integrate process-specific requirements directly into the structural design, ensuring that the physical infrastructure seamlessly supports complex machinery and production workflows. As expert factory development partners, we handle everything from specialized, vibration-isolated machine foundations to high-clearance process halls. We collaborate closely with manufacturing heads and consultants to ensure that the production infrastructure—including load-bearing capacities and utility corridors—is perfectly aligned with the industrial engineering needs of the plant. Whether you are initiating a greenfield factory development in Sanand GIDC or executing a strategic factory expansion in Ahmedabad, our turnkey industrial projects prioritize manufacturing workflow optimization and long-term operational efficiency. Our deep expertise in industrial civil construction and heavy RCC works ensures that every manufacturing unit is built to withstand rigorous industrial loads while providing a safe, productive, and compliant environment for your production units. We leverage advanced construction methodologies to deliver durable industrial buildings that serve as a reliable foundation for your manufacturing success in Gujarat's premier industrial zones.",
+    fullDesc: "Siddhi Industrial Services specializes in the comprehensive development of industrial plants and manufacturing facilities across the high-growth corridors of Ahmedabad and Sanand. Our engineering approach goes beyond basic civil work; we integrate process-specific requirements directly into the structural design, ensuring that the physical infrastructure seamlessly supports complex machinery and production workflows. As expert factory development partners, we handle everything from specialized, vibration-isolated machine foundations to high-clearance process halls. We collaborate closely with manufacturing heads and consultants to ensure that the production infrastructure—including load-bearing capacities and utility corridors—is perfectly aligned with the industrial engineering needs of the plant. Whether you are initiating a greenfield factory development in Sanand GIDC or executing a strategic factory expansion in Ahmedabad, our turnkey industrial projects prioritize manufacturing workflow optimization and long-term operational efficiency. Our deep expertise in industrial civil construction and heavy RCC works ensures that every manufacturing unit is built to withstand rigorous industrial loads while providing a safe, productive, and compliant environment for your production units.",
     benefits: [
       "Optimized production workflows",
       "Seamless machinery integration",
@@ -111,33 +111,34 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     slug: "rcc-construction",
-    title: "RCC Construction",
+    title: "RCC Construction Contractor in Sanand, Ahmedabad",
     label: "Concrete Engineering",
     icon: Activity,
-    shortDesc: "Specialized RCC works and heavy-duty industrial flooring in Ahmedabad, delivering high-strength reinforced concrete solutions for manufacturing plants and machinery bases.",
-    fullDesc: "Industrial environments demand concrete that can withstand extreme weight, constant vibration, and chemical exposure. Siddhi Industrial Services is a specialist in heavy-duty RCC works, providing engineered solutions that go far beyond standard civil work. We specialize in VDF (Vacuum Dewatered Flooring), which provides the level of precision and durability required for modern manufacturing floors. Our expertise extends to the construction of high-load machine foundations that must absorb significant kinetic energy without cracking. As a leading building contractor in Ahmedabad, we utilize high-grade reinforcement and laser-level precision to ensure every slab is perfectly flat and structurally sound.",
+    shortDesc: "Specialized RCC works and heavy-duty industrial flooring delivering high-strength reinforced concrete solutions for manufacturing plants and machinery foundations.",
+    fullDesc: "Siddhi Industrial Services is a specialized RCC construction contractor in Sanand and Ahmedabad, delivering high-integrity concrete structures for the most demanding industrial environments. Our expertise in industrial RCC construction encompasses heavy-duty foundations designed to withstand extreme dynamic loads, vibration-isolated machine foundations, and large-span concrete frameworks. Operating extensively in Sanand GIDC, we understand that industrial infrastructure requires more than just pouring concrete; it demands precise reinforcement as per IS codes and superior grade concrete (M25 to M40) to ensure longevity. As a leading RCC contracting company, we execute complex projects including high-load bearing columns, reinforced beams, and specialized industrial floor slabs. Our civil engineering team provides end-to-end solutions for retaining walls, water tanks, and underground RCC structures critical for manufacturing facilities and warehouses in Gujarat. By choosing Siddhi, you partner with RCC building contractors who prioritize structural safety, engineering precision, and quality-assured workmanship. From initial site mobilization to final curing, we ensure that every reinforced cement concrete structure we build serves as a reliable backbone for your industrial operations, adhering to the highest standards of heavy civil construction and industrial engineering.",
     benefits: [
-      "VDF flooring for superior surface hardness",
-      "Crack-resistant industrial concrete slabs",
-      "High-load machinery base engineering",
-      "Laser-level precision for flat surfaces",
-      "Reduced maintenance costs over lifecycle",
-      "Superior resistance to heavy industrial traffic"
+      "Heavy Load-Bearing Capacity",
+      "Extended Structural Lifecycle",
+      "Precision Reinforcement Execution",
+      "High-Strength Concrete (M25-M40)",
+      "Cost-Effective Civil Engineering",
+      "Quality-Assured Site Supervision"
     ],
     features: [
-      "Vacuum Dewatered Flooring (VDF) expertise",
-      "High-grade reinforcement steel integration",
-      "Specialized vibration-dampening foundations",
-      "Chemical-resistant concrete surfacing",
-      "Integrated drainage and utility channels",
-      "Dust-proof and wear-resistant finishes"
+      "M25 to M40 Grade Concrete Usage",
+      "Reinforcement as per IS 456 Standards",
+      "Vibration-Dampening Machine Foundations",
+      "Heavy-Duty Industrial Floor Slabs",
+      "High-Load Capacity RCC Columns",
+      "Rigorous Slump & Cube Strength Testing"
     ],
     faq: [
-      { question: "What is VDF flooring?", answer: "VDF stands for Vacuum Dewatered Flooring, which increases concrete strength and surface hardness." },
-      { question: "How do you prevent cracks in large slabs?", answer: "We use high-grade reinforcement and specialized joint cutting techniques." },
-      { question: "Can you build foundations for heavy machinery?", answer: "Yes, we specialize in heavy-load foundations with vibration absorption." },
-      { question: "What concrete grades do you work with?", answer: "We typically work with M25 to M40 grades depending on the industrial load requirements." },
-      { question: "Do you provide floor hardening services?", answer: "Yes, we offer various surface treatments to increase floor durability." }
+      { question: "Why hire an RCC construction contractor in Sanand?", answer: "Sanand GIDC has unique soil and load requirements. We provide specialized heavy RCC works designed for the industrial loads typical of Gujarat's manufacturing hub." },
+      { question: "Which concrete grades do you use for machine foundations?", answer: "We typically use M25 to M40 grade concrete, depending on the machinery specifications, to ensure maximum durability and vibration resistance." },
+      { question: "Do you provide RCC construction in Ahmedabad city limits?", answer: "Yes, we are full-service RCC contractors in Ahmedabad, serving both industrial zones and urban commercial construction projects." },
+      { question: "What is the importance of IS code reinforcement?", answer: "Adhering to IS 456 standards ensures the structural integrity and safety of the building, preventing future cracks or structural failures in heavy load environments." },
+      { question: "How do you manage the RCC construction timeline?", answer: "We use systematic planning, high-efficiency shuttering systems, and mechanized concrete pouring to meet aggressive industrial project deadlines." },
+      { question: "Can you build specialized RCC retaining walls?", answer: "Yes, we specialize in high-strength RCC retaining walls and underground water tanks designed for industrial-scale water management and site stability." }
     ]
   },
   {
