@@ -2,9 +2,15 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Activity, Factory, Warehouse, Construction, ArrowRight, ShieldCheck } from "lucide-react"
+import { Activity, Factory, Warehouse, Construction, ArrowRight, ShieldCheck, Settings, Landmark, HelpCircle } from "lucide-react"
 import { projects } from "@/lib/projects-data"
 import { getPageContent } from "@/services/cmsService"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 
 export const dynamic = 'force-dynamic';
 
@@ -21,14 +27,16 @@ export default async function Home() {
   const servicesSection = content.servicesSection || {
     subtitle: "Industrial Expertise",
     title: "Trusted Civil Contractors in Ahmedabad for Large-Scale Industrial Projects",
-    description: "Founded by Shailesh Patel, Siddhi Industrial Services combines decades of technical expertise with modern engineering practices. As a leading commercial construction company, we specialize in building robust industrial infrastructure."
+    description: "Founded by Shailesh Patel, Siddhi Industrial Services combines decades of technical expertise with modern engineering practices. As a leading commercial construction company, we specialize in building robust industrial infrastructure, from heavy-duty manufacturing plants to sophisticated warehousing facilities in the Sanand industrial hub."
   }
 
   const coreServices = [
-    { title: "Industrial Construction", icon: Factory, desc: "Comprehensive civil work for factories and manufacturing units, focusing on high-load foundations and structural integrity." },
-    { title: "Structural Steel Works", icon: Construction, desc: "Expert fabrication and erection of industrial sheds and PEB structures designed for maximum span and durability." },
-    { title: "RCC Construction", icon: Activity, desc: "High-strength reinforced concrete works, including VDF flooring and specialized heavy machinery foundations." },
-    { title: "Warehousing Solutions", icon: Warehouse, desc: "Modern warehouse development featuring optimized storage layouts, efficient drainage, and integrated utility systems." }
+    { title: "Industrial Building Construction", icon: Factory, desc: "High-precision construction for factories and manufacturing units, focusing on structural longevity and load-bearing foundations in Ahmedabad." },
+    { title: "Factory & Plant Development", icon: Settings, desc: "Optimized production layouts and heavy-duty infrastructure integration for specialized manufacturing facilities across Sanand GIDC." },
+    { title: "Structural Steel Works", icon: Construction, desc: "Expert fabrication and erection of industrial sheds and PEB structures designed for maximum clear span and durability." },
+    { title: "RCC Construction", icon: Activity, desc: "High-strength reinforced concrete works including specialized machinery foundations and VDF flooring for industrial applications." },
+    { title: "Warehousing Solutions", icon: Warehouse, desc: "Modern warehouse development featuring optimized storage layouts, efficient drainage, and integrated utility systems for logistics hubs." },
+    { title: "Infrastructure Development", icon: Landmark, desc: "Comprehensive industrial site preparation, underground utility networks, and administrative facility construction for large-scale projects." }
   ]
 
   const stats = [
@@ -36,6 +44,15 @@ export default async function Home() {
     { label: "Industrial Projects", value: "20+" },
     { label: "Qualified Engineers", value: "15+" },
     { label: "Safety Compliance", value: "100%" }
+  ]
+
+  const faqs = [
+    { q: "Why choose Siddhi as your industrial civil contractors in Ahmedabad?", a: "We combine over 25 years of technical field experience with modern engineering precision to deliver durable industrial facilities." },
+    { q: "What services does a factory construction company provide?", a: "We handle everything from site grading and machine foundations to specialized RCC works and structural steel fabrication." },
+    { q: "Do you handle industrial construction projects in Sanand GIDC?", a: "Yes, we are highly active in Sanand GIDC, providing infrastructure and building solutions for major manufacturing units." },
+    { q: "What is turnkey industrial construction?", a: "It is a single-point responsibility model where we handle planning, procurement, and execution until the facility is ready for handover." },
+    { q: "How do you ensure safety standards on construction sites?", a: "We follow a strict zero-compromise HSE policy with daily toolbox talks, dedicated safety officers, and 100% PPE compliance." },
+    { q: "Do you build industrial warehouses and sheds?", a: "Yes, we specialize in high-span structural steel sheds and modern warehousing solutions with VDF flooring." }
   ]
 
   return (
@@ -111,7 +128,7 @@ export default async function Home() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl w-full justify-items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl w-full justify-items-center">
             {coreServices.map((service, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group text-center flex flex-col items-center w-full">
                 <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
@@ -177,15 +194,33 @@ export default async function Home() {
       {/* SEO Content Section */}
       <section className="py-24 bg-secondary/30 w-full flex flex-col items-center">
         <div className="container mx-auto px-4 max-w-5xl text-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline mb-8">Leading the Industrial Growth in Sanand GIDC & Ahmedabad</h2>
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline mb-8">Trusted Industrial Construction Company in Sanand & Ahmedabad</h2>
           <div className="text-muted-foreground text-lg leading-relaxed space-y-6">
             <p>
-              As a prominent <strong>commercial construction company</strong> in Gujarat, Siddhi Industrial Services has played a pivotal role in the infrastructure development of Sanand GIDC. Our reputation as top <strong>construction contractors in ahmedabad</strong> is built on a foundation of technical precision and transparent project management. We understand the unique challenges of industrial civil work, from soil stability for heavy machinery to complex utility integrations for manufacturing plants.
+              As a leading <strong>Industrial Construction Company</strong>, Siddhi Industrial Services has established itself as the go-to partner for <strong>Industrial Civil Contractors in Ahmedabad</strong> and <strong>Industrial Civil Contractors in Sanand</strong>. Our deep-rooted expertise as <strong>Industrial Infrastructure Contractors</strong> allows us to navigate the complexities of large-scale site development and <strong>Industrial Building Construction</strong> with absolute precision.
             </p>
             <p>
-              Whether you are looking for <strong>civil contractors in ahmedabad</strong> for a new factory setup or <strong>building contractors in ahmedabad</strong> for warehouse expansion, our team delivers cost-effective, high-quality solutions that adhere to international safety standards. Our deep roots in the local industry as <strong>industrial civil contractors in ahmedabad</strong> allow us to navigate regulatory requirements efficiently, ensuring your project is delivered on schedule and within budget.
+              Whether you are seeking a <strong>Factory Construction Company</strong> for a greenfield project or a <strong>Commercial Construction Company</strong> for warehouse expansion, our team delivers engineering-first solutions. We specialize in executing heavy civil construction within Sanand GIDC, ensuring that all manufacturing facilities and production units are built to the highest safety standards and quality workmanship. From structural steel works to complex RCC works, our turnkey construction approach ensures that every project is delivered on schedule, reinforcing our position as the most reliable construction contractors in Sanand and Ahmedabad.
             </p>
           </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 bg-white w-full flex flex-col items-center">
+        <div className="container mx-auto px-4 max-w-3xl flex flex-col items-center">
+          <div className="text-center mb-12 flex flex-col items-center">
+            <HelpCircle className="h-10 w-10 text-accent mb-4" />
+            <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline">Frequently Asked Questions</h2>
+          </div>
+          <Accordion type="single" collapsible className="w-full">
+            {faqs.map((faq, i) => (
+              <AccordionItem key={i} value={`item-${i}`}>
+                <AccordionTrigger className="text-left font-bold text-primary hover:text-accent">{faq.q}</AccordionTrigger>
+                <AccordionContent className="text-muted-foreground leading-relaxed">{faq.a}</AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
         </div>
       </section>
 
