@@ -2,7 +2,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
-import { Activity, Factory, Warehouse, Construction, ArrowRight } from "lucide-react"
+import { Activity, Factory, Warehouse, Construction, ArrowRight, ShieldCheck } from "lucide-react"
 import { projects } from "@/lib/projects-data"
 import { getPageContent } from "@/services/cmsService"
 
@@ -12,30 +12,30 @@ export default async function Home() {
   const content = await getPageContent("home") || {}
 
   const hero = content.hero || {
-    subtitle: "Industrial & Infrastructure Contractors",
-    title: "Building Excellence With Engineering Precision",
-    description: "We transform industrial visions into structural reality. From advanced factory plants to specialized infrastructure, we deliver quality that lasts generations.",
+    subtitle: "Engineering Excellence Since 1997",
+    title: "Premier Industrial & Infrastructure Construction Contractors in Ahmedabad",
+    description: "Delivering high-precision factory development, warehousing solutions, and turnkey industrial projects across Sanand GIDC and Gujarat with a focus on quality and safety.",
     imageUrl: "https://lh3.googleusercontent.com/d/100DYuXZ3h8HLdukOsIndYKIVwZzeY25B"
   }
 
   const servicesSection = content.servicesSection || {
-    subtitle: "What We Do",
-    title: "Comprehensive Industrial Solutions",
-    description: "We deliver world-class industrial infrastructure with technical precision. From large factories to specialized warehousing, our expertise ensures structural excellence."
+    subtitle: "Industrial Expertise",
+    title: "Trusted Civil Contractors in Ahmedabad for Large-Scale Industrial Projects",
+    description: "Founded by Shailesh Patel, Siddhi Industrial Services combines decades of technical expertise with modern engineering practices. As a leading commercial construction company, we specialize in building robust industrial infrastructure."
   }
 
   const coreServices = [
-    { title: "Industrial Construction", icon: Factory, desc: "End-to-end development of manufacturing units and plants." },
-    { title: "Structural Steel Works", icon: Construction, desc: "High-precision steel fabrication and erection for industrial sheds." },
-    { title: "RCC Works", icon: Activity, desc: "Specialized reinforced cement concrete works for heavy machinery." },
-    { title: "Warehousing", icon: Warehouse, desc: "Large-scale modern logistics and storage infrastructure." }
+    { title: "Industrial Construction", icon: Factory, desc: "Comprehensive civil work for factories and manufacturing units, focusing on high-load foundations and structural integrity." },
+    { title: "Structural Steel Works", icon: Construction, desc: "Expert fabrication and erection of industrial sheds and PEB structures designed for maximum span and durability." },
+    { title: "RCC Construction", icon: Activity, desc: "High-strength reinforced concrete works, including VDF flooring and specialized heavy machinery foundations." },
+    { title: "Warehousing Solutions", icon: Warehouse, desc: "Modern warehouse development featuring optimized storage layouts, efficient drainage, and integrated utility systems." }
   ]
 
   const stats = [
-    { label: "Years Experience", value: "13+" },
-    { label: "Projects Completed", value: "20+" },
-    { label: "Expert Engineers", value: "15+" },
-    { label: "Safety Rating", value: "100%" }
+    { label: "Years of Excellence", value: "13+" },
+    { label: "Industrial Projects", value: "20+" },
+    { label: "Qualified Engineers", value: "15+" },
+    { label: "Safety Compliance", value: "100%" }
   ]
 
   return (
@@ -45,7 +45,7 @@ export default async function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src={hero.imageUrl}
-            alt="Industrial Construction"
+            alt="Industrial Civil Contractors in Ahmedabad"
             fill
             unoptimized
             className="object-cover opacity-40 grayscale"
@@ -67,10 +67,10 @@ export default async function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold h-14 px-10 text-lg rounded-xl shadow-lg">
-                <Link href="/projects">View Projects</Link>
+                <Link href="/projects">View Our Projects</Link>
               </Button>
               <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-14 px-10 text-lg rounded-xl">
-                <Link href="/contact">Contact Us</Link>
+                <Link href="/contact">Request a Quote</Link>
               </Button>
             </div>
           </div>
@@ -101,12 +101,12 @@ export default async function Home() {
           <div className="max-w-4xl mb-16 space-y-6 flex flex-col items-center">
             <h2 className="text-accent font-bold uppercase tracking-wider text-sm">{servicesSection.subtitle}</h2>
             <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">{servicesSection.title}</h3>
-            <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
+            <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
               {servicesSection.description}
             </p>
             <div className="pt-2">
               <Link href="/services" className="inline-flex items-center gap-2 text-primary font-bold hover:text-accent transition-colors group text-lg">
-                Explore All Services <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                Learn More About Us <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </div>
           </div>
@@ -132,10 +132,10 @@ export default async function Home() {
       <section className="py-24 bg-background w-full flex flex-col items-center">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-4 flex flex-col items-center">
-            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Latest Work</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Featured Projects</h3>
+            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Portfolio</h2>
+            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Proven Excellence in Factory & Infrastructure Execution</h3>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
-              A glimpse into our recent industrial and infrastructure achievements across Sanand and Ahmedabad.
+              A showcase of our successfully delivered industrial sites across Sanand GIDC and Ahmedabad’s premier industrial zones.
             </p>
           </div>
 
@@ -168,8 +168,23 @@ export default async function Home() {
 
           <div className="text-center flex justify-center">
             <Button asChild variant="outline" size="lg" className="border-primary text-primary hover:bg-primary hover:text-white px-12 h-14 text-lg rounded-xl">
-              <Link href="/projects">View All Projects</Link>
+              <Link href="/projects">View All Case Studies</Link>
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* SEO Content Section */}
+      <section className="py-24 bg-secondary/30 w-full flex flex-col items-center">
+        <div className="container mx-auto px-4 max-w-5xl text-center">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary font-headline mb-8">Leading the Industrial Growth in Sanand GIDC & Ahmedabad</h2>
+          <div className="text-muted-foreground text-lg leading-relaxed space-y-6">
+            <p>
+              As a prominent <strong>commercial construction company</strong> in Gujarat, Siddhi Industrial Services has played a pivotal role in the infrastructure development of Sanand GIDC. Our reputation as top <strong>construction contractors in ahmedabad</strong> is built on a foundation of technical precision and transparent project management. We understand the unique challenges of industrial civil work, from soil stability for heavy machinery to complex utility integrations for manufacturing plants.
+            </p>
+            <p>
+              Whether you are looking for <strong>civil contractors in ahmedabad</strong> for a new factory setup or <strong>building contractors in ahmedabad</strong> for warehouse expansion, our team delivers cost-effective, high-quality solutions that adhere to international safety standards. Our deep roots in the local industry as <strong>industrial civil contractors in ahmedabad</strong> allow us to navigate regulatory requirements efficiently, ensuring your project is delivered on schedule and within budget.
+            </p>
           </div>
         </div>
       </section>
@@ -182,14 +197,14 @@ export default async function Home() {
             <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
             
             <div className="relative z-10 max-w-3xl space-y-8 flex flex-col items-center">
-              <h2 className="text-4xl md:text-6xl font-bold text-accent-foreground font-headline">Ready to Start Your Next Industrial Project?</h2>
-              <p className="text-lg md:text-xl text-accent-foreground/80">Get a free consultation and project scope analysis from our expert engineers.</p>
+              <h2 className="text-4xl md:text-6xl font-bold text-accent-foreground font-headline">Partner with a Leading Commercial Construction Company</h2>
+              <p className="text-lg md:text-xl text-accent-foreground/80">Discuss your next industrial project with our expert engineering team for a technically sound and cost-effective execution plan.</p>
               <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-md">
                 <Button asChild size="lg" className="bg-primary text-white hover:bg-primary/90 px-12 h-14 text-lg rounded-xl shadow-xl">
-                  <Link href="/contact">Get in Touch</Link>
+                  <Link href="/contact">Get a Consultation</Link>
                 </Button>
                 <Button asChild variant="ghost" size="lg" className="text-primary font-bold hover:bg-white/20 h-14 text-lg rounded-xl">
-                  <Link href="/about">Learn More</Link>
+                  <Link href="/contact">Contact Us</Link>
                 </Button>
               </div>
             </div>

@@ -23,8 +23,8 @@ const spaceGrotesk = Space_Grotesk({
 const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
-  title: 'Siddhi Industrial Services - Industrial & Infrastructure Contractors',
-  description: 'Premium industrial and infrastructure contractors. Building excellence with engineering precision.',
+  title: 'Industrial Civil Contractors in Ahmedabad & Sanand | Siddhi Industrial Services',
+  description: 'Siddhi Industrial Services is a leading industrial civil contractor in Ahmedabad, specializing in factory construction, warehouse development, and turnkey industrial projects.',
   icons: {
     icon: [
       { url: faviconUrl, type: 'image/png' },
