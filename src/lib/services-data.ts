@@ -207,34 +207,34 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     slug: "roads-drainage",
-    title: "Roads & Drainage Construction Companies in Sanand, Ahmedabad",
-    label: "Industrial Access",
+    title: "Industrial Road Construction in Ahmedabad",
+    label: "Roads & Drainage Engineering",
     icon: Route,
-    shortDesc: "Durable industrial road construction and storm water drainage engineering in Ahmedabad, designed to withstand heavy vehicular traffic and heavy monsoons.",
-    fullDesc: "Siddhi Industrial Services is a specialized infrastructure contractor providing comprehensive roads & drainage construction in Sanand and Ahmedabad. Our industrial road construction services include the design and execution of internal factory roads, ranging from high-strength concrete roads to heavy-duty bituminous roads. We understand the dynamic load requirements of manufacturing sites, which is why our road pavement design prioritizes structural durability and subgrade stability. Complementing our road works, we engineer sophisticated industrial drainage systems, featuring high-capacity storm water drainage networks and underground drainage networks. Our road base preparation and drainage infrastructure planning ensure that your industrial site remains operational and flood-free, even during intense Gujarat monsoons. By integrating road and drainage engineering, we facilitate smooth logistics flow and long-term facility resilience. Whether you require a new road network for a greenfield project in Sanand GIDC or a drainage upgrade for an existing facility in Ahmedabad, our team provides turnkey infrastructure solutions that meet global industrial standards and local safety regulations. We leverage advanced construction practices to deliver durable internal factory roads and storm water networks that support the logistical backbone of your manufacturing operations.",
+    shortDesc: "Specialized industrial road construction in Ahmedabad and Sanand. Expert road construction contractors providing industrial drainage construction and storm water drainage systems.",
+    fullDesc: "Siddhi Industrial Services is a leader in Industrial Road Construction in Ahmedabad, delivering high-performance infrastructure designed for the heavy logistical demands of manufacturing sectors. As premier Road Construction Contractors, we specialize in the engineering and execution of internal factory roads that withstand multi-axle vehicle traffic. Our expertise also extends to Industrial Road Construction in Sanand, particularly within Sanand GIDC, where we provide technically advanced pavement solutions. A critical component of our road infrastructure is professional Industrial Drainage Construction. As an experienced Storm Water Drainage Contractor, we design integrated storm water networks and underground drainage systems that prevent flooding and protect industrial assets during monsoons. Whether it is heavy-duty RCC roads or bituminous surfacing, our team ensures every project meets rigorous industrial safety and durability standards. We provide turnkey solutions from road base preparation to final surface alignment, making us the go-to contractors for comprehensive industrial access and water management in Gujarat.",
     benefits: [
-      "Heavy Vehicle Ready Roads",
-      "Efficient Storm Water Management",
-      "Long Service Life",
-      "Low Maintenance Infrastructure",
-      "Reliable Site Connectivity",
-      "Fast Project Execution"
+      "Heavy Vehicle Ready Infrastructure",
+      "Advanced Storm Water Management",
+      "Long-Term Structural Durability",
+      "Integrated Utility Corridors",
+      "Rapid Site Connectivity",
+      "Low Maintenance Road Design"
     ],
     features: [
-      "RCC & Bituminous Roads",
-      "High Load Bearing Pavement",
-      "Storm Water Drainage Network",
-      "Road Subgrade Preparation",
-      "Industrial Drainage Channels",
-      "IS Standard Construction Practices"
+      "RCC & Bituminous Road Pavement",
+      "Industrial Drainage Networks",
+      "Expert Subgrade Preparation",
+      "High-Capacity Drainage Channels",
+      "Precise Surface Leveling",
+      "IS Standard Site Execution"
     ],
     faq: [
-      { question: "Are you one of the top road construction companies in Ahmedabad?", answer: "Yes, we are recognized for our specialized focus on heavy-duty industrial roads, serving major manufacturing units with engineering precision and quality workmanship." },
-      { question: "Do you provide road construction services in Sanand GIDC?", answer: "Absolutely. We have extensive experience executing road and drainage projects within Sanand GIDC, adhering to all local industrial norms and safety standards." },
-      { question: "What are the advantages of concrete roads for industrial plants?", answer: "Concrete roads offer superior load-bearing capacity, resistance to oil spills, and a significantly longer service life with minimal maintenance compared to traditional asphalt." },
-      { question: "How do you design storm water drainage for manufacturing sites?", answer: "We perform site-specific hydrological analysis to calculate peak runoff, ensuring our drainage networks prevent flooding even during the heavy monsoons in Ahmedabad." },
-      { question: "What is the importance of road subgrade preparation?", answer: "Proper subgrade preparation is critical for industrial roads to prevent settling and cracking under the weight of multi-axle heavy vehicles and machinery transport." },
-      { question: "What is the typical project timeline?", answer: "Timelines depend on the site area and complexity, but a standard internal factory road network typically takes 2 to 4 months from grading to completion." }
+      { question: "What are your capabilities in Industrial Road Construction in Ahmedabad?", answer: "We provide complete turnkey services including site grading, base preparation, and the construction of heavy-duty RCC or Bituminous roads tailored for industrial traffic." },
+      { question: "Do you offer Industrial Road Construction in Sanand?", answer: "Yes, we are highly active in Sanand GIDC, executing large-scale road projects for leading manufacturing units and logistics hubs." },
+      { question: "Why should we hire expert Road Construction Contractors?", answer: "Professional contractors understand load-bearing requirements and drainage integration, ensuring that roads do not crack under heavy truck movement." },
+      { question: "What is included in Industrial Drainage Construction?", answer: "It involves the planning and building of RCC open drains, underground pipelines, and catchment basins to handle large volumes of industrial runoff." },
+      { question: "What makes you a preferred Storm Water Drainage Contractor?", answer: "Our ability to perform hydrological site analysis ensures that we design drainage networks that effectively prevent waterlogging during peak monsoons." },
+      { question: "How long does a typical industrial road project take?", answer: "Timelines depend on the square meter area, but a standard industrial road and drainage project typically takes between 3 to 5 months." }
     ]
   },
   {
