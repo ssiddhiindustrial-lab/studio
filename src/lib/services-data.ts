@@ -175,33 +175,34 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     slug: "infrastructure-development",
-    title: "Infrastructure Development",
+    title: "Industrial Infrastructure Development",
     label: "Industrial Backbone",
     icon: Landmark,
-    shortDesc: "Comprehensive industrial infrastructure development in Ahmedabad, including site preparation, utility networks, and administrative facilities for large industrial zones.",
-    fullDesc: "Infrastructure is the backbone of any industrial enterprise. Siddhi Industrial Services provides end-to-end infrastructure development, ensuring your site is ready for high-performance operations. We manage complex site grading, underground utility networks, and the construction of support buildings like administrative blocks, labs, and security hubs. As recognized building contractors in Ahmedabad, we understand that quality infrastructure is a long-term investment that reduces operational friction and ensures safety across the entire site.",
+    shortDesc: "Comprehensive industrial infrastructure development in Ahmedabad, including site preparation, utility networks, and internal roads for large industrial zones.",
+    fullDesc: "Siddhi Industrial Services stands as a premier industrial infrastructure contractor, delivering robust site solutions that serve as the foundation for manufacturing success. Our expertise in infrastructure development in Sanand, Ahmedabad encompasses the entire spectrum of civil engineering required for high-performing industrial zones. We specialize in industrial site development, including meticulous site grading and industrial earthwork to ensure optimal terrain for construction. Our team engineers durable internal roads and pavement systems designed to withstand multi-axle vehicle loads typical of GIDC environments. A core competency is the design and execution of sophisticated underground utility networks, including water supply infrastructure, electrical utility corridors, and underground pipeline networks. We prioritize environmental resilience through advanced storm water drainage systems and industrial sewer lines that prevent site flooding during peak monsoons. Whether constructing industrial compound walls for high-level security or planning a complete turnkey infrastructure development project, we adhere to the highest industrial engineering standards. By choosing Siddhi, you partner with experts who understand the unique regulatory and technical demands of the Ahmedabad and Sanand industrial corridors.",
     benefits: [
-      "Reliable utility networks",
-      "Expert site preparation",
-      "Durable support infrastructure",
-      "Future-ready site planning",
-      "Efficient land utilization",
-      "Compliance with GIDC norms"
+      "Complete Industrial Site Development",
+      "Integrated Utility Network Planning",
+      "Efficient Storm Water Management",
+      "Durable Heavy-Duty Road Infrastructure",
+      "Scalable Infrastructure for Growth",
+      "Adherence to GIDC Safety Norms"
     ],
     features: [
-      "Advanced earthwork and grading",
-      "Underground piping and cabling",
-      "Administrative building construction",
-      "Perimeter security and fencing",
-      "Water storage and treatment units",
-      "Integrated fire fighting networks"
+      "Internal RCC & Bitumen Roads",
+      "Storm Water Drainage Networks",
+      "Underground Utility Corridors",
+      "High-Capacity Water Supply Pipelines",
+      "Electrical Duct & Manhole Networks",
+      "Precision Site Grading & Earthwork"
     ],
     faq: [
-      { question: "Do you handle site land grading?", answer: "Yes, we provide comprehensive earthwork, leveling, and grading to prepare the site for construction." },
-      { question: "Can you build administrative blocks?", answer: "We construct all support infrastructure including offices, security cabins, and worker welfare centers." },
-      { question: "How do you plan underground utilities?", answer: "We design and execute integrated utility trenches for electrical, water, and sewage lines." },
-      { question: "Do you work with GIDC regulations?", answer: "We have deep knowledge of GIDC norms in Gujarat, ensuring all infrastructure is compliant." },
-      { question: "Is fire-fighting infrastructure included?", answer: "We specialize in building underground fire tanks and hydrant pipe networks for industrial safety." }
+      { question: "What is included in industrial infrastructure development in Ahmedabad?", answer: "It includes site grading, internal roads, storm water drainage, sewer lines, water supply networks, and electrical utility corridors." },
+      { question: "Do you provide infrastructure development in Sanand GIDC?", answer: "Yes, we are highly experienced in executing comprehensive site and utility infrastructure projects within Sanand GIDC following local industrial norms." },
+      { question: "Why are durable internal roads important for industrial sites?", answer: "Industrial sites handle heavy multi-axle truck traffic; therefore, we build high-strength RCC or Bitumen roads to ensure long-term logistical efficiency and low maintenance." },
+      { question: "How do you manage storm water on large industrial sites?", answer: "We design and build integrated storm water drainage networks that calculate peak runoff to ensure the site remains flood-free during heavy rains." },
+      { question: "What underground utilities do you execute?", answer: "We install electrical duct networks, water supply lines, firefighting lines, and telecommunication conduits in organized underground corridors." },
+      { question: "What is the typical project timeline?", answer: "Timeline depends on the site area and complexity, but a complete site infrastructure for a standard factory typically takes 3 to 6 months." }
     ]
   },
   {
