@@ -82,30 +82,31 @@ export const servicesData: ServiceDetail[] = [
     title: "Structural Steel Works",
     label: "Steel Engineering & Fabrication",
     icon: Construction,
-    shortDesc: "Leading structural steel works in Ahmedabad specializing in PEB structures, high-span industrial sheds, and custom fabrication for heavy-duty industrial applications.",
-    fullDesc: "As experts in structural steel works, Siddhi Industrial Services provides comprehensive fabrication and on-site erection solutions for the most demanding industrial requirements. Our steel structures are designed for maximum clear spans and structural durability, making us a preferred choice for factory buildings and large-scale warehouses. We utilize advanced fabrication techniques to ensure every joint and member meets precise engineering specifications. Our team is skilled in the erection of Pre-Engineered Buildings (PEB) and custom-designed structural steel frameworks that offer flexibility and speed without compromising on strength. In an era where speed to market is critical, our structural steel solutions allow for faster project delivery while maintaining the highest safety standards.",
+    shortDesc: "Expert structural steel fabrication and erection in Ahmedabad specializing in PEB structures, high-span industrial sheds, and heavy framework for manufacturing units.",
+    fullDesc: "Siddhi Industrial Services is a premier contractor for structural steel fabrication and erection in Ahmedabad and Sanand. We specialize in delivering end-to-end steelwork construction, from factory-controlled fabrication to precise on-site structural steel erection. Our expertise encompasses complex industrial steel structures, including heavy-duty frameworks for manufacturing plants, factory buildings, and specialized industrial sheds. We utilize advanced structural engineering principles to fabricate high-integrity steel columns and beams that form the backbone of modern industrial infrastructure. Whether it is structural steel fabrication and installation for a greenfield project in Sanand GIDC or custom industrial platforms and roofing structures, our team ensures every joint and weld meets IS standards. Our steelwork construction services are tailored for iron and steel workers and procurement teams who demand speed without sacrificing structural safety. By integrating PEB structures with traditional heavy steel construction, we provide flexible and scalable solutions for industrial facilities across Gujarat. Our turnkey steel projects prioritize durability, seismic resistance, and anti-corrosive protection, ensuring your infrastructure withstands the most rigorous industrial environments.",
     benefits: [
-      "Rapid on-site erection for faster delivery",
-      "Maximized clear spans for storage optimization",
-      "Cost-effective alternative to traditional RCC",
-      "Superior strength-to-weight ratios",
-      "Flexible and scalable structural designs",
-      "High resistance to environmental stressors"
+      "High Structural Strength & Durability",
+      "Faster Project Execution Timelines",
+      "Custom Fabrication Precision",
+      "Seismic-Resistant Frameworks",
+      "Long-Term Service Life",
+      "Low Maintenance Costs"
     ],
     features: [
-      "Custom PEB (Pre-Engineered Building) design",
-      "Precision fabrication of heavy steel sections",
-      "Seismic-compliant structural frameworks",
-      "Anti-corrosive industrial coatings",
-      "Integrated mezzanine floor solutions",
-      "High-span roof truss systems"
+      "IS Standard Structural Steel Sourcing",
+      "Factory-Controlled Precision Fabrication",
+      "Precision Arc & Mig Welding Procedures",
+      "Heavy Load-Bearing Columns & Beams",
+      "Anti-Corrosion Surface Coating Systems",
+      "Expert Site Erection & Alignment Protocols"
     ],
     faq: [
-      { question: "What are the advantages of PEB over traditional steel?", answer: "PEB structures offer faster construction, lower costs, and greater design flexibility." },
-      { question: "What type of steel grades do you use?", answer: "We use high-grade industrial steel that meets all national and international standards." },
-      { question: "Can you handle custom structural designs?", answer: "Yes, we have an expert team for custom fabrication based on specific engineering drawings." },
-      { question: "Do you provide roofing with the steel structure?", answer: "Yes, we offer integrated roofing solutions including insulated and skylight options." },
-      { question: "Is your steel work anti-corrosive?", answer: "We apply specialized anti-corrosive coatings to ensure long-term durability in industrial settings." }
+      { question: "What is included in your structural steel fabrication and erection service?", answer: "It includes material sourcing, factory-based fabrication, logistics, and precision on-site erection of steel frameworks for industrial buildings." },
+      { question: "Do you provide structural steel fabrication and installation in Sanand GIDC?", answer: "Yes, we are a leading provider of steelwork construction services in Sanand GIDC, catering to major manufacturing units and industrial parks." },
+      { question: "What are the advantages of PEB structures for factory buildings?", answer: "PEB structures offer significant cost savings, faster erection timelines, and greater flexibility for future expansions compared to traditional RCC." },
+      { question: "How do you ensure the quality of structural steel erection?", answer: "We follow strict alignment protocols, torque-controlled bolting, and certified welding procedures to ensure the structural integrity of the entire framework." },
+      { question: "What is the typical timeline for a structural steel project?", answer: "Timelines depend on the tonnage and complexity, but our streamlined fabrication and erection process typically reduces project duration by 30-40%." },
+      { question: "Do you handle heavy-duty industrial platforms and mezzanines?", answer: "Yes, we design and execute high-capacity steel platforms and mezzanine floors tailored for heavy machinery and material storage." }
     ]
   },
   {
