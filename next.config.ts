@@ -51,13 +51,13 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
-        source: '/services/rcc-contractor-sanand-ahmedabad',
-        destination: '/services/rcc-contractor-sanand-ahmedabad',
+        source: '/services/warehousing',
+        destination: '/services/industrial-warehousing-construction-sanand',
         permanent: true,
       },
       {
-        source: '/services/warehousing',
-        destination: '/services/industrial-warehousing-construction-sanand',
+        source: '/services/infrastructure-development',
+        destination: '/services/industrial-infrastructure-development-sanand',
         permanent: true,
       },
     ]

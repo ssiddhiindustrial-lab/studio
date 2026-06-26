@@ -168,13 +168,13 @@ export const servicesData: ServiceDetail[] = [
       { question: "Why hire an industrial warehouse contractor in Sanand?", answer: "Sanand GIDC is a major logistics hub. We provide specialized warehouse construction designed for high-density storage and heavy vehicle movement typical of the region." },
       { question: "What type of flooring is best for industrial warehouses?", answer: "VDF (Vacuum Dewatered Flooring) is the industry standard for industrial warehouses in Ahmedabad, offering high abrasion resistance and a flat surface for heavy racking." },
       { question: "Do you handle warehouse construction in Ahmedabad?", answer: "Yes, we are a leading warehouse construction company in Ahmedabad, serving various logistics and manufacturing corridors." },
-      { question: "What is the typical timeline for warehouse construction?", answer: "Timelines depend on the scale, but our use of PEB and efficient civil management usually delivers a functional warehouse in 4 to 8 months." },
+      { question: "What is the typical project timeline?", answer: "Timelines depend on the scale, but our use of PEB and efficient civil management usually delivers a functional warehouse in 4 to 8 months." },
       { question: "Steel vs RCC: Which is better for warehouses?", answer: "Steel (PEB) is ideal for large clear spans and speed, while RCC is preferred for certain load-bearing and climate-specific requirements. We often use a hybrid approach." },
       { question: "Can you assist with customized warehouse design?", answer: "Yes, we provide turnkey warehouse planning, ensuring the design accommodates your specific racking, docking, and utility requirements." }
     ]
   },
   {
-    slug: "infrastructure-development",
+    slug: "industrial-infrastructure-development-sanand",
     title: "Industrial Infrastructure Development",
     label: "Industrial Backbone",
     icon: Landmark,
