@@ -243,29 +243,30 @@ export const servicesData: ServiceDetail[] = [
     label: "End-to-End Execution",
     icon: HardHat,
     shortDesc: "Complete turnkey industrial project management in Ahmedabad, providing a single point of responsibility from initial concept to final facility handover.",
-    fullDesc: "Our turnkey project management services simplify the complex process of industrial construction. Siddhi Industrial Services takes full responsibility for the project, coordinating design, procurement, and construction. This ensures seamless communication, faster delivery, and a technically superior final product, allowing you to focus on your core business. As premier turnkey builders in Ahmedabad, we manage everything from the initial land survey to the final commissioning of the facility.",
+    fullDesc: "Siddhi Industrial Services provides comprehensive turnkey project management in Sanand and Ahmedabad, offering a single point of responsibility for large-scale industrial infrastructure. Our end-to-end project delivery model begins with rigorous project planning and engineering coordination, ensuring that design management is perfectly aligned with the client’s operational requirements. We handle every phase of the lifecycle, including detailed budget planning and procurement management to ensure cost control without compromising on engineering excellence. Our construction execution team manages vendor coordination and construction supervision, maintaining strict quality assurance and safety management protocols throughout the process. As a leading industrial turnkey contractor, we navigate the complexities of Sanand GIDC and Ahmedabad’s regulatory landscapes, providing a hassle-free experience for factory owners and industrial developers. The process concludes with thorough testing and commissioning, followed by a professional final project handover. By managing everything from site grading to final utility activation, we reduce client risk and ensure that the facility is ready for immediate operation upon completion.",
     benefits: [
-      "Single point of responsibility",
-      "Faster project turnaround",
-      "Cost-certainty execution",
-      "Seamless communication",
-      "Expert vendor coordination",
-      "Zero-hassle handover"
+      "Single Point Responsibility",
+      "Better Cost Control",
+      "Faster Project Delivery",
+      "Integrated Project Coordination",
+      "Quality-Assured Execution",
+      "Reduced Client Risk"
     ],
     features: [
-      "Integrated project planning",
-      "Budget and schedule management",
-      "Procurement and vendor selection",
-      "On-site supervision and HSE",
-      "Quality control and reporting",
-      "Final commissioning and handover"
+      "End-to-End Project Planning",
+      "Engineering & Design Coordination",
+      "Procurement Management",
+      "Construction Monitoring",
+      "Quality & Safety Compliance",
+      "Commissioning & Handover"
     ],
     faq: [
-      { question: "What does 'Turnkey' actually include?", answer: "It means we handle everything: planning, materials, labor, and execution until the building is ready for use." },
-      { question: "Do you provide fixed-cost contracts?", answer: "We provide detailed estimates and can work on fixed-budget models for better cost-certainty." },
-      { question: "How is communication handled?", answer: "You will have a dedicated project manager who will provide weekly progress and quality reports." },
-      { question: "Do you handle regulatory compliance?", answer: "We provide all technical documents and support required for regulatory and GIDC approvals." },
-      { question: "What is your track record for turnkey projects?", answer: "We have successfully delivered multiple turnkey factories and warehouses across Gujarat." }
+      { question: "What is turnkey project management in Ahmedabad?", answer: "It is a single-source responsibility model where Siddhi handles everything from planning and engineering to procurement and final project handover." },
+      { question: "Why hire a turnkey contractor in Sanand?", answer: "A turnkey contractor like Siddhi understands Sanand GIDC norms and manages all vendors, reducing the client's management burden and project risks." },
+      { question: "What are the advantages of turnkey industrial projects?", answer: "Key advantages include faster project delivery, better cost control, integrated coordination, and single-point accountability for quality." },
+      { question: "How do you manage industrial project costs?", answer: "We use detailed budget planning and procurement management to prevent cost overruns and ensure transparency throughout the execution phase." },
+      { question: "What is the typical timeline for a turnkey project?", answer: "Timelines depend on the facility's scale and complexity, but the turnkey model typically shortens the overall duration through integrated management." },
+      { question: "Do you handle testing and commissioning?", answer: "Yes, our turnkey service includes complete testing, commissioning, and ensuring the facility meets all operational specifications before handover." }
     ]
   }
 ];
