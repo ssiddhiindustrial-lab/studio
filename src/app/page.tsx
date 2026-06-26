@@ -45,7 +45,7 @@ export default async function Home() {
         <div className="absolute inset-0 z-0">
           <Image
             src={hero.imageUrl}
-            alt="Industrial Civil Contractors in Ahmedabad"
+            alt="Industrial building construction site in Sanand GIDC Ahmedabad by Siddhi Industrial Services"
             fill
             unoptimized
             className="object-cover opacity-40 grayscale"
@@ -56,9 +56,9 @@ export default async function Home() {
         
         <div className="container mx-auto relative z-10 px-4 md:px-8 text-center">
           <div className="max-w-4xl mx-auto animate-reveal flex flex-col items-center">
-            <h4 className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
+            <p className="text-accent font-bold tracking-widest uppercase text-sm md:text-base mb-4">
               {hero.subtitle}
-            </h4>
+            </p>
             <h1 className="text-4xl md:text-7xl font-bold text-white leading-tight font-headline mb-6">
               {hero.title}
             </h1>
@@ -99,8 +99,8 @@ export default async function Home() {
       <section className="py-24 bg-background w-full flex flex-col items-center relative">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-6 flex flex-col items-center">
-            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">{servicesSection.subtitle}</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">{servicesSection.title}</h3>
+            <p className="text-accent font-bold uppercase tracking-wider text-sm">{servicesSection.subtitle}</p>
+            <h2 className="text-3xl md:text-5xl font-bold font-headline text-primary">{servicesSection.title}</h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-3xl">
               {servicesSection.description}
             </p>
@@ -117,7 +117,7 @@ export default async function Home() {
                 <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
                   <service.icon className="h-8 w-8" />
                 </div>
-                <h4 className="text-xl font-bold mb-3 text-primary font-headline">{service.title}</h4>
+                <h3 className="text-xl font-bold mb-3 text-primary font-headline">{service.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                   {service.desc}
                 </p>
@@ -132,8 +132,8 @@ export default async function Home() {
       <section className="py-24 bg-background w-full flex flex-col items-center">
         <div className="container mx-auto px-4 text-center flex flex-col items-center">
           <div className="max-w-4xl mb-16 space-y-4 flex flex-col items-center">
-            <h2 className="text-accent font-bold uppercase tracking-wider text-sm">Our Portfolio</h2>
-            <h3 className="text-3xl md:text-5xl font-bold font-headline text-primary">Proven Excellence in Factory & Infrastructure Execution</h3>
+            <p className="text-accent font-bold uppercase tracking-wider text-sm">Our Portfolio</p>
+            <h2 className="text-3xl md:text-5xl font-bold font-headline text-primary">Proven Excellence in Factory & Infrastructure Execution</h2>
             <p className="text-muted-foreground text-lg leading-relaxed max-w-2xl">
               A showcase of our successfully delivered industrial sites across Sanand GIDC and Ahmedabad’s premier industrial zones.
             </p>
@@ -145,7 +145,7 @@ export default async function Home() {
                 <div className="relative h-64 w-full overflow-hidden">
                   <Image
                     src={project.imageUrl}
-                    alt={project.name}
+                    alt={`${project.name} - industrial construction project by Siddhi Industrial Services`}
                     fill
                     unoptimized
                     className="object-cover group-hover:scale-110 transition-transform duration-500"

@@ -23,8 +23,25 @@ const spaceGrotesk = Space_Grotesk({
 const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
-  title: 'Industrial Civil Contractors in Ahmedabad & Sanand | Siddhi Industrial Services',
-  description: 'Siddhi Industrial Services is a leading industrial civil contractor in Ahmedabad, specializing in factory construction, warehouse development, and turnkey industrial projects.',
+  title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
+  description: 'Siddhi Industrial Services is a leading industrial civil contractor in Ahmedabad & Sanand, specializing in factory construction and warehousing. Get a quote today!',
+  keywords: 'industrial construction company, industrial civil contractors in ahmedabad, construction contractors in ahmedabad, civil contractors in ahmedabad, building contractors in ahmedabad, industrial infrastructure contractors, factory construction company, industrial building contractors, warehouse builders ahmedabad, sanand gidc contractors',
+  alternates: {
+    canonical: 'https://www.siddhiindustrialservices.in/',
+  },
+  openGraph: {
+    title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
+    description: 'Leading industrial construction company in Ahmedabad & Sanand. Specializing in factories, warehouses, and turnkey infrastructure projects.',
+    url: 'https://www.siddhiindustrialservices.in/',
+    siteName: 'Siddhi Industrial Services',
+    locale: 'en_IN',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Siddhi Industrial Services | Industrial Contractors Ahmedabad',
+    description: 'Premier industrial civil contractors in Ahmedabad. Building the future of Gujarat\'s industrial corridors with engineering precision.',
+  },
   icons: {
     icon: [
       { url: faviconUrl, type: 'image/png' },
