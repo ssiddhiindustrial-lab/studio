@@ -110,7 +110,7 @@ export const servicesData: ServiceDetail[] = [
     ]
   },
   {
-    slug: "rcc-construction",
+    slug: "rcc-contractor-sanand-ahmedabad",
     title: "RCC Construction Contractor in Sanand, Ahmedabad",
     label: "Concrete Engineering",
     icon: Activity,
@@ -119,7 +119,7 @@ export const servicesData: ServiceDetail[] = [
     benefits: [
       "Heavy Load-Bearing Capacity",
       "Extended Structural Lifecycle",
-      "Precision Reinforcement Execution",
+      "Precision RCC Execution",
       "High-Strength Concrete (M25-M40)",
       "Cost-Effective Civil Engineering",
       "Quality-Assured Site Supervision"
@@ -129,7 +129,7 @@ export const servicesData: ServiceDetail[] = [
       "Reinforcement as per IS 456 Standards",
       "Vibration-Dampening Machine Foundations",
       "Heavy-Duty Industrial Floor Slabs",
-      "High-Load Capacity RCC Columns",
+      "High-Strength RCC Columns",
       "Rigorous Slump & Cube Strength Testing"
     ],
     faq: [

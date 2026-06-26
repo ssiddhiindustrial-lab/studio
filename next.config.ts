@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -41,6 +42,15 @@ const nextConfig: NextConfig = {
         pathname: '/**',
       },
     ],
+  },
+  async redirects() {
+    return [
+      {
+        source: '/services/rcc-construction',
+        destination: '/services/rcc-contractor-sanand-ahmedabad',
+        permanent: true,
+      },
+    ]
   },
 };
 
