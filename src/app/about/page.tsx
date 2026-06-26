@@ -8,27 +8,28 @@ export default async function AboutPage() {
 
   const header = content.header || {
     title: "Engineering Trust Since 1997",
-    description: "From site engineer roots to becoming a premier industrial contractor in India."
+    description: "From site engineer roots to becoming a premier industrial contractor in India, we deliver precision-engineered infrastructure."
   }
 
   const intro = content.intro || {
     subtitle: "Our Evolution",
     title: "A Legacy of Hard Work & Technical Precision",
-    description: "Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. With a history spanning over two decades of technical expertise, we have evolved from site-level management to complex turnkey project delivery."
+    description: "Siddhi Industrial Services was founded on the principles of integrity, quality, and commitment. Our journey began with Shailesh Patel’s extensive background as a Site Engineer at a government-approved AA+ contracting firm, managing high-stakes civil projects. This technical foundation paved the way for successful ventures in stone crushing and quarry works, eventually leading to the establishment of Siddhi Industrial Services in 2013. Today, we stand as a trusted industrial construction company in Ahmedabad, recognized for our ability to execute complex factory construction and infrastructure projects with unmatched precision."
   }
 
   const founder = content.founder || {
     name: "Shailesh Patel",
     role: "Founder & Managing Director",
-    quote: "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth. Our commitment is to deliver excellence every single time.",
-    imageUrl: "https://picsum.photos/seed/founder/400/400"
+    quote: "Building is more than just concrete and steel; it's about engineering the infrastructure that fuels growth.",
+    message: "With over 25 years in the construction industry, I have seen the sector evolve from traditional methods to advanced engineering precision. At Siddhi Industrial Services, we leverage this experience to solve complex challenges for our clients. Our focus remains on delivering high-quality, cost-effective industrial projects while maintaining the highest safety standards. We are not just building structures; we are building long-term partnerships based on reliability, transparency, and technical excellence.",
+    imageUrl: "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-"
   }
 
   const timeline = [
-    { year: "1997", event: "Site Engineer Career Started", description: "Beginning of professional journey in large-scale civil engineering projects." },
-    { year: "2006", event: "Umiya Stone Crusher Plant", description: "Key project leadership in major industrial machinery establishment." },
-    { year: "2009", event: "Mahakali Quarry Works", description: "Expansion into resource management and infrastructure development." },
-    { year: "2013", event: "Siddhi Industrial Services Founded", description: "Establishment of a dedicated premium industrial contracting firm." }
+    { year: "1997", event: "Site Engineer Career Started", description: "Started professional career as a Site Engineer at Y.N. Dhanani, managing large-scale civil works." },
+    { year: "2006", event: "Umiya Stone Crusher Plant", description: "Established Umiya Stone Crusher Plant to specialize in industrial material supply and site management." },
+    { year: "2009", event: "Mahakali Quarry Works", description: "Founded Mahakali Quarry Works, expanding technical capabilities in infrastructure and resource development." },
+    { year: "2013", event: "Siddhi Industrial Services Founded", description: "Established Siddhi Industrial Services to deliver independent, high-quality industrial and infrastructure construction projects." }
   ]
 
   return (
@@ -90,8 +91,11 @@ export default async function AboutPage() {
                   <Quote className="h-10 w-10 text-accent mx-auto mb-2 opacity-50" />
                   <h4 className="text-3xl font-bold text-primary font-headline">{founder.name}</h4>
                   <p className="text-accent font-bold uppercase tracking-widest text-sm">{founder.role}</p>
-                  <p className="text-muted-foreground italic leading-relaxed text-lg max-w-xl mx-auto">
+                  <p className="text-muted-foreground italic leading-relaxed text-lg max-w-xl mx-auto mb-6">
                     "{founder.quote}"
+                  </p>
+                  <p className="text-muted-foreground leading-relaxed text-md max-w-2xl mx-auto">
+                    {founder.message}
                   </p>
                 </div>
               </div>
@@ -107,7 +111,7 @@ export default async function AboutPage() {
               <div className="space-y-3">
                 <h4 className="text-3xl font-bold font-headline">Our Vision</h4>
                 <p className="text-white/70 leading-relaxed">
-                  To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth.
+                  To be recognized as a leading contractor delivering world-class industrial infrastructure that empowers business and community growth through sustainable engineering.
                 </p>
               </div>
             </div>
@@ -118,7 +122,7 @@ export default async function AboutPage() {
               <div className="space-y-3">
                 <h4 className="text-3xl font-bold font-headline text-primary">Our Mission</h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction and long-term partnerships.
+                  To consistently provide high-quality, cost-effective industrial projects while ensuring customer satisfaction, safety compliance, and long-term partnerships.
                 </p>
               </div>
             </div>
