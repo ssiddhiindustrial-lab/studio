@@ -143,33 +143,34 @@ export const servicesData: ServiceDetail[] = [
   },
   {
     slug: "warehousing",
-    title: "Warehousing Solutions",
-    label: "Storage Infrastructure",
+    title: "Industrial Warehouse Construction",
+    label: "Logistics & Storage Infrastructure",
     icon: Warehouse,
-    shortDesc: "Complete industrial warehouse development in Ahmedabad, featuring large clear-span sheds, VDF flooring, and optimized storage layouts for logistics and manufacturing hubs.",
-    fullDesc: "Siddhi Industrial Services specializes in the development of modern, large-scale warehousing solutions tailored for the logistics and supply chain sectors. We provide turnkey warehouse construction that focuses on space optimization, structural strength, and operational flow. Our warehouses are built using a combination of high-strength RCC and structural steel, ensuring they can support high-rack storage systems and heavy vehicular traffic. We integrate advanced features such as insulated roofing, efficient stormwater drainage, and high-capacity loading docks.",
+    shortDesc: "Leading industrial warehouse contractor in Sanand & Ahmedabad, specializing in high-capacity logistics infrastructure and distribution centers built for structural durability.",
+    fullDesc: "Siddhi Industrial Services is recognized as a premier Industrial Warehouse Contractor in Sanand, Ahmedabad, delivering end-to-end solutions for the logistics and manufacturing sectors. Our expertise in industrial warehouse construction encompasses strategic warehouse planning, site grading, and the execution of high-capacity storage infrastructure. We specialize in building modern distribution centers and logistics infrastructure that prioritize supply chain efficiency and high-density storage. Our construction methodologies integrate robust warehouse RCC and steel structures, featuring large clear-span sheds to maximize internal space. A critical component of our service is the installation of heavy-duty industrial flooring, such as VDF (Vacuum Dewatered Flooring), designed to withstand the constant movement of material handling equipment and high rack loads. We ensure that every facility is equipped with optimized loading and unloading bays, including advanced dock levelers for seamless transport operations. Whether you are looking for a new turnkey project or a warehouse expansion in Sanand GIDC or Ahmedabad, our team provides technically sound infrastructure that meets global logistics standards. From utility planning to fire safety compliance, we deliver durable, scalable industrial storage facilities that serve as the backbone of your supply chain operations in Gujarat.",
     benefits: [
-      "Maximum space utilization with high spans",
-      "VDF flooring ready for high-rack storage",
-      "Efficient logistics flow and loading design",
-      "Integrated fire safety and utility systems",
-      "Climate-aware roofing and insulation",
-      "Durable infrastructure for 24/7 operations"
+      "Optimized Warehouse Layout for Flow",
+      "Maximum Storage Capacity Efficiency",
+      "Heavy Vehicle Access & Docking",
+      "Durable VDF Industrial Flooring",
+      "Fast Project Delivery Timelines",
+      "Scalable & Modular Warehouse Design"
     ],
     features: [
-      "High-clearance PEB structural sheds",
-      "Heavy-duty vehicular docking bays",
-      "Advanced site drainage and water management",
-      "Integrated office and admin blocks",
-      "Rack-ready high-strength flooring",
-      "Security-integrated site perimeter solutions"
+      "High Load-Bearing Floor Engineering",
+      "Wide Span Clear-Height Warehouse Design",
+      "Dock Levelers & Heavy Loading Bays",
+      "Natural Industrial Ventilation Systems",
+      "FM2/FM3 Fire Safety Compliance",
+      "Integrated Utility & Infrastructure"
     ],
     faq: [
-      { question: "What is the maximum span you can achieve?", answer: "We can design and build spans up to 60+ meters depending on structural requirements." },
-      { question: "Do you build warehouses with cold storage capability?", answer: "Yes, we provide the civil and structural base required for insulated cold storage." },
-      { question: "How do you handle site drainage?", answer: "We design complex stormwater drainage systems to keep the site dry during monsoons." },
-      { question: "Can you assist with building permissions?", answer: "While we are contractors, we can provide all technical drawings needed for regulatory approvals." },
-      { question: "What kind of flooring is best for warehouses?", answer: "VDF (Vacuum Dewatered Flooring) is the industry standard for durability and flatness." }
+      { question: "Why hire an industrial warehouse contractor in Sanand?", answer: "Sanand GIDC is a major logistics hub. We provide specialized warehouse construction designed for high-density storage and heavy vehicle movement typical of the region." },
+      { question: "What type of flooring is best for industrial warehouses?", answer: "VDF (Vacuum Dewatered Flooring) is the industry standard for industrial warehouses in Ahmedabad, offering high abrasion resistance and a flat surface for heavy racking." },
+      { question: "Do you handle warehouse construction in Ahmedabad?", answer: "Yes, we are a leading warehouse construction company in Ahmedabad, serving various logistics and manufacturing corridors." },
+      { question: "What is the typical timeline for warehouse construction?", answer: "Timelines depend on the scale, but our use of PEB and efficient civil management usually delivers a functional warehouse in 4 to 8 months." },
+      { question: "Steel vs RCC: Which is better for warehouses?", answer: "Steel (PEB) is ideal for large clear spans and speed, while RCC is preferred for certain load-bearing and climate-specific requirements. We often use a hybrid approach." },
+      { question: "Can you assist with customized warehouse design?", answer: "Yes, we provide turnkey warehouse planning, ensuring the design accommodates your specific racking, docking, and utility requirements." }
     ]
   },
   {
