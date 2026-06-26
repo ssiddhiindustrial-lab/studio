@@ -16,7 +16,7 @@ import {
   DialogTrigger,
   DialogFooter,
 } from "@/components/ui/dialog"
-import { Edit, Loader2, Image as ImageIcon, Plus, Trash2 } from "lucide-react"
+import { Edit, Loader2, Image as ImageIcon } from "lucide-react"
 import { updateProjectData, uploadProjectImage } from "@/services/projectService"
 import { useToast } from "@/hooks/use-toast"
 import { Project } from "@/lib/projects-data"
@@ -63,24 +63,18 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         finalImageUrl = await uploadProjectImage(project.slug, selectedFile);
       }
 
-      const updatedProject = {
+      await updateProjectData(project.slug, {
         ...formData,
         imageUrl: finalImageUrl
-      }
+      });
 
-      // Initiate non-blocking write
-      updateProjectData(project.slug, updatedProject);
-
-      toast({ title: "Project Updated", description: "Changes saved successfully." })
+      toast({ title: "Project Saved", description: "Data has been updated in Firestore." })
       setIsOpen(false)
       
-      // Immediate refresh for UI sync
-      setTimeout(() => {
-        router.refresh()
-      }, 500);
-
+      router.refresh()
     } catch (error: any) {
-      toast({ variant: "destructive", title: "Update Failed", description: "Failed to upload project resources." })
+      console.error("Project save error:", error)
+      toast({ variant: "destructive", title: "Save Failed", description: "Could not write to database." })
     } finally {
       setIsSaving(false)
     }
@@ -160,7 +154,7 @@ export function ProjectEditor({ project }: ProjectEditorProps) {
         </div>
         <DialogFooter>
           <Button onClick={handleSave} disabled={isSaving} className="w-full h-12 text-lg">
-            {isSaving ? <Loader2 className="h-5 w-5 animate-spin mr-2" /> : "Apply Changes"}
+            {isSaving ? <><Loader2 className="h-5 w-5 animate-spin mr-2" /> Saving...</> : "Apply Changes"}
           </Button>
         </DialogFooter>
       </DialogContent>

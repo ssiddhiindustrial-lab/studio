@@ -17,22 +17,26 @@ export async function getPageContent(pageId: string): Promise<PageContent | null
     const docSnap = await getDoc(docRef)
     return docSnap.exists() ? docSnap.data() : null
   } catch (error) {
+    console.error("Error fetching page content:", error)
     return null
   }
 }
 
-export function updatePageContent(pageId: string, content: PageContent) {
+export async function updatePageContent(pageId: string, content: PageContent) {
   const docRef = doc(db, COLLECTION_NAME, pageId)
   
-  setDoc(docRef, content, { merge: true })
-    .catch(async (error) => {
-      const permissionError = new FirestorePermissionError({
-        path: docRef.path,
-        operation: 'write',
-        requestResourceData: content,
-      });
-      errorEmitter.emit('permission-error', permissionError);
+  try {
+    await setDoc(docRef, content, { merge: true });
+    return { success: true };
+  } catch (error: any) {
+    const permissionError = new FirestorePermissionError({
+      path: docRef.path,
+      operation: 'write',
+      requestResourceData: content,
     });
+    errorEmitter.emit('permission-error', permissionError);
+    throw error;
+  }
 }
 
 export async function uploadCmsImage(path: string, file: File): Promise<string> {

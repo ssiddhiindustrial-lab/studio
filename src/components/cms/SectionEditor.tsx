@@ -71,24 +71,20 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
         finalImageUrl = await uploadCmsImage(`${pageId}/${sectionKey}`, selectedFile)
       }
 
-      // Mutation initiated without await to prevent blocking
-      updatePageContent(pageId, {
+      await updatePageContent(pageId, {
         [sectionKey]: {
           ...formData,
           imageUrl: finalImageUrl
         }
       });
 
-      toast({ title: "Changes Applied", description: "The content is being updated in the background." })
+      toast({ title: "Update Successful", description: "Content has been saved to the database." })
       setIsOpen(false)
       
-      // Refresh to fetch fresh server data
-      setTimeout(() => {
-        router.refresh()
-      }, 500);
-
+      router.refresh()
     } catch (error) {
-      toast({ variant: "destructive", title: "Error", description: "Failed to upload resources." })
+      console.error("Save error:", error)
+      toast({ variant: "destructive", title: "Update Failed", description: "Could not save changes. Please check permissions." })
     } finally {
       setIsSaving(false)
     }
@@ -175,7 +171,7 @@ export function SectionEditor({ pageId, sectionKey, defaultValues }: SectionEdit
         </div>
         <DialogFooter>
           <Button onClick={handleSave} disabled={isSaving} className="w-full h-12 text-lg">
-            {isSaving ? <Loader2 className="h-5 w-5 animate-spin mr-2" /> : "Save Changes"}
+            {isSaving ? <><Loader2 className="h-5 w-5 animate-spin mr-2" /> Saving...</> : "Save Changes"}
           </Button>
         </DialogFooter>
       </DialogContent>

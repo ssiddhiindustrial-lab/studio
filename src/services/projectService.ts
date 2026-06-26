@@ -58,18 +58,21 @@ export async function getProjectBySlug(slug: string): Promise<Project | null> {
   }
 }
 
-export function updateProjectData(slug: string, data: Partial<Project>) {
+export async function updateProjectData(slug: string, data: Partial<Project>) {
   const docRef = doc(db, COLLECTION_NAME, slug);
   
-  setDoc(docRef, data, { merge: true })
-    .catch(async (error) => {
-      const permissionError = new FirestorePermissionError({
-        path: docRef.path,
-        operation: 'write',
-        requestResourceData: data,
-      });
-      errorEmitter.emit('permission-error', permissionError);
+  try {
+    await setDoc(docRef, data, { merge: true });
+    return { success: true };
+  } catch (error: any) {
+    const permissionError = new FirestorePermissionError({
+      path: docRef.path,
+      operation: 'write',
+      requestResourceData: data,
     });
+    errorEmitter.emit('permission-error', permissionError);
+    throw error;
+  }
 }
 
 export async function uploadProjectImage(slug: string, file: File): Promise<string> {
