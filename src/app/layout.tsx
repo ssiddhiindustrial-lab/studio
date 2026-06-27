@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
   description: 'Siddhi Industrial Services is a leading industrial civil contractor in Ahmedabad & Sanand, specializing in factory construction and warehousing. Get a quote today!',
   keywords: 'industrial construction company, industrial civil contractors in ahmedabad, construction contractors in ahmedabad, civil contractors in ahmedabad, building contractors in ahmedabad, industrial infrastructure contractors, factory construction company, industrial building contractors, warehouse builders ahmedabad, sanand gidc contractors',
+  verification: {
+    google: 'dB_Pqtanq6e-pF-yXFYN45ghXG2e52JnMsJBEmK8Jrw',
+  },
   alternates: {
     canonical: 'https://www.siddhiindustrialservices.in/',
   },
