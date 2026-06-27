@@ -100,6 +100,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/sharda-motors',
+        destination: '/projects/sharda-motors-industrial-infrastructure-sanand',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

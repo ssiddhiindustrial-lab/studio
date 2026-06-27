@@ -378,7 +378,7 @@ export const projects: Project[] = [
     ],
     solutions: [
       'Advanced Ground Surveying: Utilized high-precision surveying to map underground utilities before trenching, ensuring zero downtime for the plant.',
-      'High-Grade Material Sourcing: Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.',
+      { label: 'High-Grade Material Sourcing', value: 'Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.' },
       'Phased Execution: Divided the scrap yard and road construction into sections, allowing the client to maintain logistics flow throughout the build.'
     ],
     technicalHighlights: [
@@ -478,16 +478,46 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1pO5inxi_Tk05q9Aj646vRtfwoZW3L8N8'),
   },
   {
-    slug: 'sharda-motors',
-    name: 'Sharda Motors',
+    slug: 'sharda-motors-industrial-infrastructure-sanand',
+    name: 'Sharda Motors Industrial Infrastructure Project',
     value: '₹1.15 Cr',
-    year: '2020',
-    description: 'Exhaust system manufacturing unit expansion.',
+    year: '2018–2019',
+    description: 'Siddhi Industrial Services executed a critical industrial infrastructure development project for Sharda Motors, a prominent name in industrial automation and automotive component manufacturing, at their Sanand facility in Ahmedabad. The project, valued at ₹1.15 crore, was carried out between 2018 and 2019, focusing on enhancing the operational backbone of the manufacturing plant. The client required specialized civil works that could support high-precision automation lines and integrated MEPF (Mechanical, Electrical, Plumbing, and Firefighting) systems, demanding a contractor with deep technical expertise in industrial environments. Our engineering approach was centered on precision and structural longevity. We began with the complex task of designing and constructing foundations for MEPF systems, which required careful coordination with the plant\'s mechanical layouts to ensure zero-clash installation of heavy utility infrastructure. This was followed by the construction of heavy-duty internal RCC roads, engineered to withstand continuous multi-axle vehicle traffic essential for the automotive supply chain. Beyond the core manufacturing shell, we developed specialized storage yards and modernized the facility\'s utility blocks, including high-standard industrial toilet blocks designed for durability and hygiene. The successful completion of this project resulted in a significant upgrade to Sharda Motors\' site infrastructure, providing them with a robust, efficient, and future-ready facility that supports their large-scale manufacturing output in the heart of Gujarat\'s industrial corridor.',
     category: 'Industrial',
     status: 'Completed',
     client: 'Sharda Motors',
-    scope: ['High-load Foundations', 'Internal Paving'],
+    industry: 'Industrial Automation & Automotive Components Manufacturing',
+    locationDetails: 'Sanand, Ahmedabad, Gujarat',
+    scope: [
+      'Design and execution of specialized RCC foundations for complex MEPF utility systems.',
+      'Construction of heavy-duty internal RCC roads engineered for multi-axle logistical traffic.',
+      'Development of modern industrial toilet blocks with premium industrial-grade fittings.',
+      'Construction of high-capacity industrial storage yards with reinforced flooring.',
+      'Strategic industrial landscape development to improve site aesthetics and runoff management.'
+    ],
+    challenges: [
+      'Precision Foundation for MEPF: Constructing foundations for high-density MEPF systems within an active plant required sub-millimeter accuracy to avoid interference with existing underground utilities and production lines.',
+      'Dynamic Load Management: The storage yard and internal roads needed to be engineered for varying static and dynamic loads from both manufacturing equipment and heavy logistical vehicles.',
+      'Timeline Sync: Aligning the construction phases with the client\'s production downtime windows necessitated an accelerated execution schedule without compromising on curing periods for the RCC works.'
+    ],
+    solutions: [
+      '3D Site Mapping: We employed advanced site surveying to map existing underground networks, ensuring the MEPF foundations and cable trenches were executed with zero utility damage.',
+      'High-Performance RCC Mixes: Utilized M30 grade concrete with specialized additives for the internal roads and MEPF foundations to ensure rapid strength gain and high resistance to industrial wear.',
+      'Integrated Project Management: Deployed a multi-disciplinary site team to manage the parallel execution of the landscape, utility blocks, and road works, optimizing the overall project timeline.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure & Specialized Civil Works' },
+      { label: 'Industry', value: 'Industrial Automation & Automotive Components' },
+      { label: 'Location', value: 'Sanand, Ahmedabad, Gujarat' },
+      { label: 'Structure Type', value: 'Heavy Load RCC & Infrastructure' },
+      { label: 'Execution Period', value: '2018–2019' },
+      { label: 'Project Value', value: '₹1.15 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og'),
+    gallery: [
+      getDriveUrl('1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og'),
+    ]
   },
   {
     slug: 'mahle-anand',
