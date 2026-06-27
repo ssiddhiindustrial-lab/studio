@@ -65,7 +65,8 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
         "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#webpage`,
         "url": `https://www.siddhiindustrialservices.in/projects/${project.slug}`,
         "name": project.metaTitle || project.name,
-        "description": project.metaDescription || project.description
+        "description": project.metaDescription || project.description,
+        "breadcrumb": { "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#breadcrumb` }
       },
       {
         "@type": "Article",
@@ -117,7 +118,10 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
         "@id": "https://www.siddhiindustrialservices.in/#organization",
         "name": "Siddhi Industrial Services",
         "url": "https://www.siddhiindustrialservices.in",
-        "logo": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+        },
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "K-403 Radhe Sky Line, Sanand",
@@ -126,6 +130,12 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
           "postalCode": "382110",
           "addressCountry": "IN"
         }
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${project.imageUrl}#image`,
+        "url": project.imageUrl,
+        "caption": `Professional industrial infrastructure execution for ${project.name}`
       }
     ]
   }
@@ -153,7 +163,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-headline leading-tight text-center">
                 {project.projectType || `${project.name} ${project.category} Project`}
               </h1>
-              <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
+              <p className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed text-center">
                 {project.subtitle || `Professional industrial infrastructure development project at ${project.locationDetails}. Delivered with engineering precision and quality workmanship.`}
               </p>
             </div>
@@ -204,7 +214,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
                     <Activity className="h-7 w-7 text-accent" /> Project Overview
                   </h2>
                   <div className="text-lg text-muted-foreground leading-relaxed space-y-4 whitespace-pre-wrap">
-                    <p>{project.description}</p>
+                    {project.description}
                   </div>
                 </div>
 
@@ -290,7 +300,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
                 <h3 className="text-3xl font-bold text-primary font-headline">Case Study Gallery</h3>
                 <p className="text-muted-foreground">Detailed visual documentation of the project execution phases.</p>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 {galleryItems.map((item, i) => {
                   const isObject = typeof item === 'object';
                   const imgUrl = isObject ? item.url : item;
@@ -322,11 +332,10 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
               <div className="flex flex-wrap justify-center gap-4">
                 {[
                   { name: "Industrial Building Construction", href: "/services/industrial-building-construction" },
-                  { name: "Factory & Plant Development", href: "/services/factory-plant-development" },
                   { name: "RCC Construction", href: "/services/rcc-contractor-sanand-ahmedabad" },
                   { name: "Infrastructure Development", href: "/services/industrial-infrastructure-development-sanand" },
-                  { name: "Roads & Drainage", href: "/services/industrial-road-construction-sanand-ahmedabad" },
-                  { name: "Turnkey Projects", href: "/services/turnkey-project-management" }
+                  { name: "Roads & Drainage Construction", href: "/services/industrial-road-construction-sanand-ahmedabad" },
+                  { name: "Turnkey Project Management", href: "/services/turnkey-project-management" }
                 ].map((service, i) => (
                   <Button key={i} variant="outline" asChild className="border-primary/20 hover:border-accent hover:text-accent">
                     <Link href={service.href}>{service.name}</Link>
@@ -339,7 +348,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
             <div className="bg-primary p-12 md:p-20 rounded-3xl text-center w-full relative overflow-hidden text-white space-y-8">
                <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                <h2 className="text-3xl md:text-5xl font-bold font-headline">Planning Your Next Industrial Project?</h2>
-               <p className="text-xl text-white/70 max-w-2xl mx-auto">Partner with Siddhi Industrial Services for industrial buildings, factory development, RCC works, infrastructure projects and turnkey industrial construction across Sanand, Ahmedabad and Gujarat.</p>
+               <p className="text-xl text-white/70 max-w-2xl mx-auto text-center">Partner with Siddhi Industrial Services for industrial buildings, factory development, RCC works, infrastructure projects and turnkey industrial construction across Sanand, Ahmedabad and Gujarat.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 h-16 text-lg font-bold">
                    <Link href="/contact">Get a Quote</Link>

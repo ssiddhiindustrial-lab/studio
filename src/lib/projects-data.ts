@@ -26,7 +26,6 @@ export interface Project {
 
 /**
  * HELPER: Converts a standard Google Drive share link to a direct-view URL.
- * This format is the most stable for public cross-domain embedding.
  */
 const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
@@ -60,6 +59,7 @@ export const projects: Project[] = [
       { label: 'Type', value: 'Hydraulic Components Manufacturing Facility' },
       { label: 'Structural Build', value: 'Industrial RCC Infrastructure' },
       { label: 'Execution', value: '2022–2023' },
+      { label: 'Completion Year', value: '2023' },
       { label: 'Status', value: 'Completed' }
     ],
     imageUrl: getDriveUrl('1u-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
@@ -85,7 +85,7 @@ export const projects: Project[] = [
     slug: 'suspa-industrial-infrastructure-project-sanand',
     name: 'SUSPA Industrial Infrastructure Project',
     value: '₹0.50 Cr',
-    year: '2019-2020',
+    year: '2019–2020',
     description: 'Siddhi Industrial Services was commissioned by SUSPA to execute a specialized industrial infrastructure package at their manufacturing plant in Sanand GIDC, Ahmedabad. The project required a high degree of engineering precision to accommodate specialized machinery and utility installations critical to the facility\'s manufacturing operations. Our engineering approach focused on delivering high-durability reinforced concrete structures. A primary component of the project was the construction of the Nitrogen Tank Foundation, which demanded strict adherence to load-bearing specifications and seismic stability. Additionally, we executed various Machine Foundation Construction tasks, involving deep-pit excavations and high-grade RCC pouring to ensure zero-vibration mounting for heavy manufacturing equipment. The project also encompassed site-wide infrastructure improvements, including the development of heavy-duty RCC roads designed for multi-axle vehicle traffic and a comprehensive parking area development. To ensure site stability and secure the perimeter, we constructed reinforced compound walls and retaining walls, integrating them with the site\'s grading and drainage plan.',
     category: 'Industrial',
     status: 'Completed',
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     slug: 'hitachi-hi-rel-industrial-facility-expansion-project-sanand',
     name: 'Hitachi Hi-Rel Industrial Facility Expansion Project',
     value: '₹2.20 Cr',
-    year: '2024-2025',
+    year: '2024–2025',
     description: 'Siddhi Industrial Services is currently spearheading the industrial facility expansion and infrastructure development project for Hitachi Hi-Rel Power Electronics Ltd at their Chharodi manufacturing site in Sanand, Ahmedabad. As a premier industrial infrastructure contractor in Gujarat, we were selected to deliver a technically demanding package that involves both critical civil repairs and the construction of new manufacturing extensions. The project is designed to transform the existing site into a high-capacity electronics production hub, requiring meticulous planning to integrate new structures with existing operational blocks. Our engineering approach focuses on creating a robust backbone for the facility. This includes the installation of a comprehensive Storm Water Drainage (SWD) network and strategic culvert construction to protect the sensitive electronic manufacturing environment from regional monsoons. To facilitate heavy logistics, we are executing high-strength RCC road construction throughout the site, designed for the durability required by multi-axle supply chain vehicles. Beyond pure industrial shells, the scope encompasses essential human-centric infrastructure like modern locker rooms, executive toilet blocks, and high-visibility security cabins, alongside organized parking area development to improve traffic flow.',
     category: 'Industrial',
     status: 'Ongoing',
@@ -166,7 +166,7 @@ export const projects: Project[] = [
     slug: 'nectar-engineering-industrial-building-project-sanand',
     name: 'Nectar Engineering Industrial Building Project',
     value: '₹1.80 Cr',
-    year: '2024-2025',
+    year: '2024–2025',
     description: 'Siddhi Industrial Services is currently executing the comprehensive industrial building and infrastructure development project for Nectar Engineering in Sanand, Ahmedabad. This project represents a significant engineering undertaking, transforming a greenfield site into a technically advanced precision engineering manufacturing facility. Our client required a high-performance workspace that integrates heavy manufacturing capabilities with administrative and residential support structures. Our engineering approach for Nectar Engineering focuses on structural integrity and operational efficiency. We began with deep-site grading and the execution of high-load industrial foundations to support the massive RCC frame structure of the main factory building. A key technical highlight is the installation of over 40,000 square feet of high-strength Tremix industrial flooring, specifically engineered to withstand heavy machinery vibrations and continuous logistical traffic. Beyond the main production hall, we are constructing a modern administrative block and a specialized worker\'s guest house, ensuring that the facility provides a comprehensive environment for both operations and personnel. The infrastructure scope also includes a robust RCC internal road network and organized parking development, designed to facilitate seamless multi-axle vehicle movement. To ensure site security and stability, we have executed reinforced boundary wall construction integrated with advanced storm water drainage systems. This ongoing project in Sanand GIDC is being executed under strict safety protocols and quality audits, ensuring that Nectar Engineering receives a turnkey facility that meets global industrial standards.',
     category: 'Industrial',
     status: 'Ongoing',
@@ -205,7 +205,7 @@ export const projects: Project[] = [
     slug: 'plot-20-industrial-building-sanand',
     name: 'Plot No. 20 Industrial Building Project',
     value: '₹1.25 Cr',
-    year: '2024-2025',
+    year: '2024–2025',
     description: 'Siddhi Industrial Services is spearheading the industrial building construction and infrastructure development project at Plot No. 20 in Sanand, Gujarat. This greenfield project involves transforming an undeveloped site into a high-efficiency manufacturing hub. Our client required a multi-functional facility that could support both precision manufacturing and intensive administrative operations. To meet these needs, we implemented an engineering strategy centered on structural durability and site resilience. The project began with comprehensive site grading and the installation of a reinforced boundary wall to secure the perimeter. We are executing the complete RCC frame structure for the main factory block, which includes high-load industrial foundations designed to absorb static and dynamic equipment stresses. A major technical component of this project is the installation of high-strength Tremix industrial flooring, providing a hard-wearing surface for heavy-duty production lines. Beyond the manufacturing shell, we are constructing a modern administrative building and a dedicated utility network. The infrastructure scope also includes the development of a heavy-duty internal RCC road network and organized parking areas, engineered to facilitate multi-axle vehicle logistics. This ongoing project highlights our capability as an industrial infrastructure contractor to deliver complex, multi-faceted facilities in Sanand\'s premier industrial corridor.',
     category: 'Industrial',
     status: 'Ongoing',
@@ -244,7 +244,7 @@ export const projects: Project[] = [
     slug: 'siddhi-industrial-services-premises-sanand',
     name: 'Siddhi Industrial Services Premises',
     value: '₹0.95 Cr',
-    year: '2023-2025',
+    year: '2023–2025',
     description: 'Siddhi Industrial Services is developing its own integrated infrastructure facility at Sanand GIDC to strengthen construction operations across Ahmedabad and surrounding industrial regions. As a premier industrial civil contractor, we recognized the need for a centralized, technically advanced operations hub that could streamline our supply chain and workforce management. This project serves as a live demonstration of our turnkey engineering capabilities, encompassing everything from site grading and soil stabilization to the construction of specialized heavy-duty structures. The premises features a multi-functional layout including dedicated construction material storage, machinery yards, and modern administrative offices, designed for maximum operational efficiency and future scalability.',
     category: 'Infrastructure',
     status: 'Ongoing',
@@ -495,7 +495,7 @@ export const projects: Project[] = [
     slug: 'alp-nishikawa-auto-parts-manufacturing-project-chharodi',
     name: 'ALP Nishikawa Industrial Infrastructure & Manufacturing Facility Development Project',
     value: '₹0.85 Cr',
-    year: '2020-2021',
+    year: '2020–2021',
     description: 'Siddhi Industrial Services successfully delivered a specialized industrial infrastructure and facility development package for ALP Nishikawa’s automotive parts manufacturing plant in Khoda, Chharodi, Ahmedabad. This project, valued at ₹0.85 crore and executed during the 2020-2021 period, was a critical expansion designed to support high-precision manufacturing processes required for automotive sealing systems. The client required a structural environment that could accommodate heavy-duty vibrating machinery while ensuring a safe and efficient workflow for their workforce. Our engineering approach prioritized the execution of high-grade machine foundations, utilizing reinforced concrete with specific vibration-dampening properties to ensure zero-tolerance stability for the manufacturing units. The project scope encompassed the complete site development, including the construction of a reinforced compound wall for perimeter security and the development of a modern administrative building integrated with the facility\'s core operations. We implemented a comprehensive Storm Water Drainage (SWD) network, engineered to handle the regional rainfall patterns and protect the sensitive production zones from water ingress. Additionally, the execution included organized parking area development and industrial landscaping, creating a professional and functional environment. The outcome of this project is a technically sound, high-performance manufacturing facility that meets ALP Nishikawa’s global safety and quality standards.',
     category: 'Industrial',
     status: 'Completed',
