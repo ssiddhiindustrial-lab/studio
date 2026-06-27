@@ -187,16 +187,48 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1kl3dHBSRwodlJvKk7VBYrva2O0NaG98Q'),
   },
   {
-    slug: 'siddhi-premises',
+    slug: 'siddhi-industrial-services-premises-sanand',
     name: 'Siddhi Industrial Services Premises',
     value: '₹0.95 Cr',
     year: '2023-2025',
-    description: 'Expansion and modernization of own operations base.',
+    description: 'Siddhi Industrial Services is developing its own integrated infrastructure facility at Sanand GIDC to strengthen construction operations across Ahmedabad and surrounding industrial regions. As a premier industrial civil contractor, we recognized the need for a centralized, technically advanced operations hub that could streamline our supply chain and workforce management. This project serves as a live demonstration of our turnkey engineering capabilities, encompassing everything from site grading and soil stabilization to the construction of specialized heavy-duty structures. The premises features a multi-functional layout including dedicated construction material storage, machinery yards, and modern administrative offices, designed for maximum operational efficiency and future scalability.',
     category: 'Infrastructure',
     status: 'Ongoing',
     client: 'Siddhi Industrial Services',
-    scope: ['Internal Roads', 'Drainage', 'Office Interior Construction'],
+    industry: 'Construction & Industrial Infrastructure',
+    locationDetails: 'Sanand GIDC, Ahmedabad, Gujarat',
+    scope: [
+      'Boundary wall construction and site security fortification.',
+      'Comprehensive soil filling and land development for heavy logistics.',
+      'Execution of heavy-load foundations for machinery storage areas.',
+      'Construction of high-strength RCC internal roads and parking hubs.',
+      'Installation of specialized Tremix industrial flooring for the material godown.',
+      'Development of modern administrative building with integrated utility networks.',
+      'Strategic construction material godown and machinery storage facility development.',
+      'Planned labour colony development with hygienic welfare facilities.'
+    ],
+    challenges: [
+      'Complex Utility Integration: Coordinating underground drainage, electrical ducts, and firefighting networks within a restricted plot area while maintaining site access.',
+      'Dynamic Load Requirements: Designing foundations for machinery storage that can handle varying weight distributions from heavy cranes and equipment.',
+      'Operational Continuity: Managing our own site development while simultaneously supporting multiple external industrial projects in Sanand GIDC.'
+    ],
+    solutions: [
+      'Modular Layout Design: Implemented a strategic zoning plan that separates office traffic from heavy machinery zones to ensure safety and efficiency.',
+      'Soil Stabilization: Conducted extensive soil filling and moisture control procedures to create a stable sub-grade for the heavy-duty yard and godown foundations.',
+      'Smart Infrastructure: Installed a comprehensive SWD network with integrated catchment pits to ensure the site remains flood-free during the Gujarat monsoon season.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Company Infrastructure Development' },
+      { label: 'Industry', value: 'Industrial Construction' },
+      { label: 'Location', value: 'Sanand GIDC, Ahmedabad' },
+      { label: 'Structure Type', value: 'RCC Frame & Industrial Yard' },
+      { label: 'Execution Period', value: '2023–2025' },
+      { label: 'Status', value: 'Under Development' }
+    ],
     imageUrl: getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
+    gallery: [
+      getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
+    ]
   },
   {
     slug: 'uneco',

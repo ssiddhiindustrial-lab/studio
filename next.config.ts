@@ -65,6 +65,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/siddhi-premises',
+        destination: '/projects/siddhi-industrial-services-premises-sanand',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,
