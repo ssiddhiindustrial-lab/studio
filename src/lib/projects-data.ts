@@ -311,15 +311,44 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1ZUK6NL9RhzTg4RjIysIFWt9-MRDUMxjv'),
   },
   {
-    slug: 'energy-mission',
-    name: 'Energy Mission',
+    slug: 'energy-mission-industrial-infrastructure-gujarat',
+    name: 'Energy Mission Industrial Infrastructure Project',
     value: '₹0.85 Cr',
     year: '2022',
-    description: 'Manufacturing unit for energy equipment.',
+    description: 'Siddhi Industrial Services successfully completed the industrial infrastructure development project for Energy Mission in Gujarat. This manufacturing unit for energy equipment required a high-integrity civil backbone to support intensive production cycles and heavy equipment movement. Our engineering approach centered on structural durability and site resilience, transforming the greenfield area into a technically advanced industrial hub. The execution phase encompassed a comprehensive range of civil services, beginning with boundary wall construction and precise site grading. We implemented engineered soil filling and compaction to ensure a stable sub-grade for the manufacturing floors. The primary structural components involved the construction of high-load bearing foundations and a robust RCC frame structure designed to withstand both static and dynamic machinery loads. To facilitate seamless logistics, we constructed a network of heavy-duty RCC internal roads and optimized parking areas, allowing multi-axle vehicle movement without structural degradation. A critical technical feature was the installation of high-strength Tremix industrial flooring, specifically treated for abrasion resistance and long-term durability in a manufacturing environment. Additionally, we installed a strategic Storm Water Drainage (SWD) network to safeguard the facility from Gujarat\'s monsoon intensity, ensuring zero waterlogging in production zones. The outcome is a world-class manufacturing facility that meets all industrial standards, empowering Energy Mission’s operational growth.',
     category: 'Industrial',
     status: 'Completed',
     client: 'Energy Mission',
-    scope: ['Civil Construction', 'Utility Lines'],
+    industry: 'Manufacturing Unit',
+    locationDetails: 'Gujarat, India',
+    scope: [
+      'Boundary wall construction and site development for high security.',
+      'Soil filling and land preparation engineered for industrial load bearing.',
+      'Complete RCC foundations and structural framework for the manufacturing block.',
+      'Execution of heavy-duty RCC internal roads for logistics and transport.',
+      'Installation of a comprehensive Storm Water Drainage (SWD) network.',
+      'Specialized Tremix industrial flooring for heavy-duty production halls.',
+      'Parking area development and site utility network works.'
+    ],
+    challenges: [
+      'Site Topography and Runoff: The site\'s original gradient posed a risk of water accumulation, requiring precise hydrological leveling for the SWD network.',
+      'Heavy Machinery Vibration: The client\'s energy equipment manufacturing process involves high-vibration machinery, necessitating specialized machine foundations.',
+      'Accelerated Timeline: The project needed to be completed within a tight window to align with the client\'s production commencement date.'
+    ],
+    solutions: [
+      'High-Capacity SWD Integration: Designed a multi-point drainage network with reinforced culverts to handle high-volume storm water discharge.',
+      'Raft Foundation System: Implemented specialized raft foundations for machine zones to dampen vibrations and distribute loads evenly across the sub-grade.',
+      '24/7 Site Management: Utilized parallel workstreams for site infrastructure and structural framing to meet the aggressive delivery schedule.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure Development' },
+      { label: 'Industry', value: 'Manufacturing Unit' },
+      { label: 'Location', value: 'Gujarat' },
+      { label: 'Structure Type', value: 'RCC Frame & Heavy Infrastructure' },
+      { label: 'Execution', value: '2022' },
+      { label: 'Project Value', value: '₹0.85 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1zjwxZ34iALXXzwzj4WKoGGFZLmdzkihC'),
   },
   {
