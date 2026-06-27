@@ -100,7 +100,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "Can you handle factory expansion projects?", answer: "Yes, we specialize in brownfield expansions, ensuring minimal disruption to existing operations while integrating new production units seamlessly." },
       { question: "What industrial utilities do you manage?", answer: "We plan and install comprehensive utility networks including compressed air lines, industrial water systems, power corridors, and specialized drainage." },
       { question: "What is the typical project timeline?", answer: "Timelines vary by scale, but a standard manufacturing facility typically takes 6 to 12 months from site grading to final handover." }
-    ]
+    ],
+    metadata: {
+      title: 'Factory & Plant Development in Sanand, Ahmedabad | Siddhi',
+      description: 'Looking for expert factory & plant development in Sanand, Ahmedabad? Siddhi Industrial Services offers precision engineering for manufacturing facility construction.',
+      keywords: 'factory & plant development in sanand, factory development, ahmedabad, sanand gidc, manufacturing facility construction, industrial plant development, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/factory-plant-development',
+      },
+      openGraph: {
+        title: 'Factory & Plant Development in Sanand, Ahmedabad | Siddhi',
+        description: 'Leading factory & plant development in Sanand, Ahmedabad. We specialize in industrial engineering and production unit construction.',
+        url: 'https://www.siddhiindustrialservices.in/services/factory-plant-development',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Factory & Plant Development Sanand & Ahmedabad | Siddhi',
+        description: 'Looking for expert factory & plant development in Sanand, Ahmedabad? Siddhi Industrial Services offers precision engineering for manufacturing facility construction.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "structural-steel-works",
