@@ -109,15 +109,42 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'nectar-engineering',
-    name: 'Nectar Engineering',
+    slug: 'nectar-engineering-industrial-building-project-sanand',
+    name: 'Nectar Engineering Industrial Building Project',
     value: '₹1.80 Cr',
     year: '2024-2025',
-    description: 'Precision engineering workshop and administrative block.',
+    description: 'Siddhi Industrial Services is currently executing the comprehensive industrial building and infrastructure development project for Nectar Engineering in Sanand, Ahmedabad. This project represents a significant engineering undertaking, transforming a greenfield site into a technically advanced precision engineering manufacturing facility. Our client required a high-performance workspace that integrates heavy manufacturing capabilities with administrative and residential support structures. Our engineering approach for Nectar Engineering focuses on structural integrity and operational efficiency. We began with deep-site grading and the execution of high-load industrial foundations to support the massive RCC frame structure of the main factory building. A key technical highlight is the installation of over 40,000 square feet of high-strength Tremix industrial flooring, specifically engineered to withstand heavy machinery vibrations and continuous logistical traffic. Beyond the main production hall, we are constructing a modern administrative block and a specialized worker\'s guest house, ensuring that the facility provides a comprehensive environment for both operations and personnel. The infrastructure scope also includes a robust RCC internal road network and organized parking development, designed to facilitate seamless multi-axle vehicle movement. To ensure site security and stability, we have executed reinforced boundary wall construction integrated with advanced storm water drainage systems. This ongoing project in Sanand GIDC is being executed under strict safety protocols and quality audits, ensuring that Nectar Engineering receives a turnkey facility that meets global industrial standards.',
     category: 'Industrial',
     status: 'Ongoing',
     client: 'Nectar Engineering',
-    scope: ['Foundation', 'Structural Steel Fabrication', 'Roofing'],
+    industry: 'Industrial Manufacturing',
+    locationDetails: 'Sanand, Ahmedabad, Gujarat',
+    scope: [
+      'Execution of heavy-load industrial foundations for precision machinery.',
+      'Construction of high-strength RCC frame structure for the main factory block.',
+      'Installation of specialized Tremix industrial flooring for heavy-duty production.',
+      'Development of administrative building and worker\'s guest house infrastructure.',
+      'Construction of high-security boundary walls and site security enclosures.',
+      'Execution of internal RCC roads and organized parking area development.'
+    ],
+    challenges: [
+      'Structural Load Balancing: The main engineering block required specialized foundation design to support heavy machinery while maintaining the integrity of the RCC frame structure.',
+      'Soil Bearing Capacity: The site in Sanand required soil stabilization and specialized compaction to prevent long-term settlement of the high-span manufacturing floors.',
+      'Monsoon Utility Management: Integrating the underground utility network and storm water drainage while maintaining the construction schedule during heavy rainfall periods.'
+    ],
+    solutions: [
+      'Raft Foundation System: Implementation of a Raft Foundation system to distribute heavy static and dynamic loads evenly across the manufacturing floor area.',
+      'High-Grade Materials: Utilization of high-grade M30 concrete for the RCC frame and Tremix flooring to ensure maximum durability and abrasion resistance.',
+      'Phased Site Stabilization: Phased infrastructure development, prioritizing the boundary wall and drainage systems first to stabilize the site for vertical construction.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Building Construction' },
+      { label: 'Industry', value: 'Precision Engineering' },
+      { label: 'Location', value: 'Sanand, Ahmedabad' },
+      { label: 'Structure Type', value: 'RCC Frame & Tremix Floor' },
+      { label: 'Execution', value: '2024–2025' },
+      { label: 'Status', value: 'Ongoing' }
+    ],
     imageUrl: getDriveUrl('1wVevZ8XrtD-0fDvvcYUlsSzrSEQMeCIu'),
   },
   {
