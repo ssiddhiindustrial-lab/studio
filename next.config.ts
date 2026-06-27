@@ -95,6 +95,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/alp-nishikawa',
+        destination: '/projects/alp-nishikawa-auto-parts-manufacturing-project-chharodi',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

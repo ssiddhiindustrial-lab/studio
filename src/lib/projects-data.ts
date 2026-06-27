@@ -438,15 +438,43 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: 'alp-nishikawa',
-    name: 'ALP Nishikawa',
+    slug: 'alp-nishikawa-auto-parts-manufacturing-project-chharodi',
+    name: 'ALP Nishikawa Industrial Infrastructure & Manufacturing Facility Development Project',
     value: '₹0.85 Cr',
-    year: '2021',
-    description: 'Automotive component plant expansion.',
+    year: '2020-2021',
+    description: 'Siddhi Industrial Services successfully delivered a specialized industrial infrastructure and facility development package for ALP Nishikawa’s automotive parts manufacturing plant in Khoda, Chharodi, Ahmedabad. This project, valued at ₹0.85 crore and executed during the 2020-2021 period, was a critical expansion designed to support high-precision manufacturing processes required for automotive sealing systems. The client required a structural environment that could accommodate heavy-duty vibrating machinery while ensuring a safe and efficient workflow for their workforce. Our engineering approach prioritized the execution of high-grade machine foundations, utilizing reinforced concrete with specific vibration-dampening properties to ensure zero-tolerance stability for the manufacturing units. The project scope encompassed the complete site development, including the construction of a reinforced compound wall for perimeter security and the development of a modern administrative building integrated with the facility\'s core operations. We implemented a comprehensive Storm Water Drainage (SWD) network, engineered to handle the regional rainfall patterns and protect the sensitive production zones from water ingress. Additionally, the execution included organized parking area development and industrial landscaping, creating a professional and functional environment. The outcome of this project is a technically sound, high-performance manufacturing facility that meets ALP Nishikawa’s global safety and quality standards.',
     category: 'Industrial',
     status: 'Completed',
     client: 'ALP Nishikawa',
-    scope: ['Industrial Shed', 'Machine Foundations'],
+    industry: 'Automotive Parts Manufacturing',
+    locationDetails: 'Khoda, Chharodi, Ahmedabad, Gujarat',
+    scope: [
+      'Construction of high-security reinforced compound walls for perimeter fortification.',
+      'Execution of specialized high-precision machine foundations for automotive production.',
+      'Development of modern administrative building infrastructure with integrated utilities.',
+      'Installation of a comprehensive Storm Water Drainage (SWD) network.',
+      'Organized parking area development and internal logistics paving.',
+      'Execution of professional industrial landscaping and site grading.'
+    ],
+    challenges: [
+      'Vibration Management: Designing foundations for high-speed automotive part machinery required specialized RCC mixes to prevent structural fatigue.',
+      'Site Drainage Integration: Integrating a new Storm Water Drainage network into an existing plot topography while ensuring zero-backflow during peak monsoons.',
+      'Workforce Logistics: Constructing the administrative block and parking facilities without interrupting the client’s existing manufacturing logistics.'
+    ],
+    solutions: [
+      'Engineered Foundations: Employed high-strength M30 concrete with specialized steel reinforcement maps for critical machine pits.',
+      'Hydrological Grading: Utilized digital site surveying to establish precise gradients for the SWD network, ensuring gravity-based water discharge.',
+      'Phased Infrastructure: Sequenced the compound wall and admin building construction to maintain secure access points throughout the execution phase.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure Development' },
+      { label: 'Industry', value: 'Automotive Parts' },
+      { label: 'Location', value: 'Chharodi, Ahmedabad' },
+      { label: 'Structure Type', value: 'RCC Foundations & Admin Block' },
+      { label: 'Execution', value: '2020–2021' },
+      { label: 'Project Value', value: '₹0.85 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1pO5inxi_Tk05q9Aj646vRtfwoZW3L8N8'),
   },
   {
