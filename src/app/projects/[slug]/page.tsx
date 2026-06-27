@@ -56,71 +56,77 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
     ? project.gallery 
     : [project.imageUrl];
 
-  // Enhanced Structured Data (Schema.org Graph)
+  // Enhanced Structured Data (Schema.org Graph) for SEO, AEO, and GEO
+  const pageUrl = `https://www.siddhiindustrialservices.in/projects/${project.slug}`;
+  const orgName = "Siddhi Industrial Services";
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "WebPage",
-        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#webpage`,
-        "url": `https://www.siddhiindustrialservices.in/projects/${project.slug}`,
+        "@id": `${pageUrl}#webpage`,
+        "url": pageUrl,
         "name": project.metaTitle || project.name,
-        "description": project.metaDescription || project.description,
-        "breadcrumb": { "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#breadcrumb` }
+        "description": project.metaDescription || project.description.slice(0, 160),
+        "isPartOf": { "@id": `${orgUrl}/#website` },
+        "breadcrumb": { "@id": `${pageUrl}#breadcrumb` },
+        "inLanguage": "en-IN",
+        "about": { "@id": `${orgUrl}/#organization` }
       },
       {
         "@type": "Article",
-        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#article`,
+        "@id": `${pageUrl}#article`,
+        "mainEntityOfPage": { "@id": `${pageUrl}#webpage` },
         "headline": project.name,
         "description": project.description,
-        "image": project.imageUrl,
+        "image": { "@id": `${project.imageUrl}#image` },
         "author": {
           "@type": "Organization",
-          "name": "Siddhi Industrial Services",
-          "url": "https://www.siddhiindustrialservices.in"
+          "@id": `${orgUrl}/#organization`,
+          "name": orgName
         },
-        "publisher": {
-          "@type": "Organization",
-          "name": "Siddhi Industrial Services",
-          "logo": {
-            "@type": "ImageObject",
-            "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
-          }
-        },
-        "datePublished": project.year.split('–')[0] + "-01-01"
+        "publisher": { "@id": `${orgUrl}/#organization` },
+        "datePublished": project.year.split('–')[0] + "-01-01",
+        "dateModified": new Date().toISOString().split('T')[0],
+        "keywords": `industrial construction, ${project.category}, ${project.locationDetails || 'Sanand'}, ${project.industry || 'Manufacturing'}`,
+        "articleSection": "Project Case Study"
       },
       {
         "@type": "BreadcrumbList",
-        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#breadcrumb`,
+        "@id": `${pageUrl}#breadcrumb`,
         "itemListElement": [
           {
             "@type": "ListItem",
             "position": 1,
             "name": "Home",
-            "item": "https://www.siddhiindustrialservices.in"
+            "item": orgUrl
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": "Projects",
-            "item": "https://www.siddhiindustrialservices.in/projects"
+            "item": `${orgUrl}/projects`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": project.name,
-            "item": `https://www.siddhiindustrialservices.in/projects/${project.slug}`
+            "item": pageUrl
           }
         ]
       },
       {
         "@type": "Organization",
-        "@id": "https://www.siddhiindustrialservices.in/#organization",
-        "name": "Siddhi Industrial Services",
-        "url": "https://www.siddhiindustrialservices.in",
+        "@id": `${orgUrl}/#organization`,
+        "name": orgName,
+        "url": orgUrl,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+          "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn",
+          "width": 600,
+          "height": 190
         },
         "address": {
           "@type": "PostalAddress",
@@ -129,16 +135,24 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
           "addressRegion": "Gujarat",
           "postalCode": "382110",
           "addressCountry": "IN"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-91571-87484",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi", "gu"]
         }
       },
       {
         "@type": "ImageObject",
         "@id": `${project.imageUrl}#image`,
         "url": project.imageUrl,
-        "caption": `Professional industrial infrastructure execution for ${project.name}`
+        "caption": `Professional industrial infrastructure execution for ${project.name} in ${project.locationDetails || 'Sanand'}`,
+        "inLanguage": "en-IN"
       }
     ]
-  }
+  };
 
   return (
     <div className="flex flex-col w-full items-center">
