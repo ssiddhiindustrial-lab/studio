@@ -105,6 +105,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/mahle-anand',
+        destination: '/projects/mahle-anand-industrial-infrastructure-chharodi',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

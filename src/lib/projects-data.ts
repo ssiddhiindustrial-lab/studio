@@ -520,15 +520,44 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: 'mahle-anand',
+    slug: 'mahle-anand-industrial-infrastructure-chharodi',
     name: 'Mahle Anand Thermal Systems',
     value: '₹1.10 Cr',
-    year: '2020',
-    description: 'Thermal systems production facility infrastructure.',
+    year: '2017–2018',
+    description: 'Siddhi Industrial Services successfully delivered a specialized industrial infrastructure package for Mahle Anand Thermal Systems at their automotive thermal management manufacturing facility in Chharodi, Ahmedabad. This project, executed between 2017 and 2018, was critical for the facility\'s operational expansion and environmental compliance. Our engineering approach integrated advanced civil repair techniques with the construction of high-capacity utility infrastructure. A primary technical component was the design and execution of a comprehensive Storm Water Drainage (SWD) network and Recharge Well construction. This sustainable water management system was engineered to handle high-volume industrial runoff, ensuring the facility remains flood-free during the Gujarat monsoons while simultaneously recharging the local groundwater table. We also executed the construction of high-precision foundations for MEPF (Mechanical, Electrical, Plumbing, and Firefighting) systems, requiring strict adherence to equipment-specific load-bearing and alignment specifications. The project also encompassed extensive industrial civil repairs to the existing manufacturing block, reinforcing the structural integrity of the aging infrastructure. To facilitate heavy-duty logistics and supply chain movements, we constructed a network of high-strength internal RCC roads designed for multi-axle vehicle durability. Additionally, the development of an organized industrial storage yard optimized the plant\'s material handling capabilities. This project highlights our ability as an industrial infrastructure contractor to deliver multi-faceted civil works that enhance both the functionality and sustainability of large-scale manufacturing units.',
     category: 'Industrial',
     status: 'Completed',
-    client: 'Mahle Anand',
-    scope: ['RCC Slabs', 'Utility Trenches'],
+    client: 'Mahle Anand Thermal Systems',
+    industry: 'Automotive Thermal Management Manufacturing',
+    locationDetails: 'Chharodi, Ahmedabad, Gujarat',
+    scope: [
+      'Construction of high-capacity recharge wells for sustainable groundwater management.',
+      'Installation of a comprehensive Storm Water Drainage (SWD) network for site flood protection.',
+      'Structural civil repairs and reinforcement of the existing manufacturing blocks.',
+      'Execution of heavy-duty internal RCC roads for multi-axle vehicle logistics.',
+      'Design and construction of high-precision RCC foundations for MEPF utility systems.',
+      'Development of organized industrial storage yards for material management.',
+      'Site grading and land preparation for optimized utility flow.'
+    ],
+    challenges: [
+      'Sustainable Water Management Integration: Integrating a large-scale recharge well and drainage system into an existing operational facility without disrupting production cycles.',
+      'Precision MEPF Foundations: Executing foundations for complex mechanical and electrical systems that required sub-millimeter leveling to ensure the longevity of high-performance thermal management equipment.',
+      'Operational Site Repairs: Performing structural repairs within a live manufacturing environment, necessitating strict dust control and safety protocols to protect workers and sensitive electronics.'
+    ],
+    solutions: [
+      'Hydrological Mapping: Used advanced site surveying and hydrological modeling to design the recharge well and SWD network for maximum efficiency and zero backflow.',
+      'High-Grade RCC Mixes: Utilized M30 grade concrete with specialized additives for the road and MEPF works to ensure rapid strength gain and high resistance to industrial stresses.',
+      'Zero-Disruption Phasing: Implemented a phased repair schedule, utilizing off-peak shifts and containment barriers to perform civil works while the plant maintained its thermal system production.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure & Specialized Civil Works' },
+      { label: 'Industry', value: 'Automotive Thermal Management Manufacturing' },
+      { label: 'Location', value: 'Chharodi, Ahmedabad, Gujarat' },
+      { label: 'Structure Type', value: 'Heavy Load RCC & Sustainable Drainage' },
+      { label: 'Execution Period', value: '2017–2018' },
+      { label: 'Project Value', value: '₹1.10 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr'),
   }
 ];

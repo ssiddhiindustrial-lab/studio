@@ -52,32 +52,75 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
     notFound()
   }
 
-  const allProjects = await getAllProjects()
-  
   const galleryItems = project.gallery && project.gallery.length > 0 
     ? project.gallery 
     : [project.imageUrl];
 
-  // Structured Data (Schema.org)
+  // Enhanced Structured Data (Schema.org Graph)
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Article",
-    "headline": project.name,
-    "description": project.description,
-    "image": project.imageUrl,
-    "author": {
-      "@type": "Organization",
-      "name": "Siddhi Industrial Services"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Siddhi Industrial Services",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+    "@graph": [
+      {
+        "@type": "Article",
+        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#article`,
+        "headline": project.name,
+        "description": project.description,
+        "image": project.imageUrl,
+        "author": {
+          "@type": "Organization",
+          "name": "Siddhi Industrial Services",
+          "url": "https://www.siddhiindustrialservices.in"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Siddhi Industrial Services",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn"
+          }
+        },
+        "datePublished": project.year.split('–')[0] + "-01-01"
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#breadcrumb`,
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.siddhiindustrialservices.in"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://www.siddhiindustrialservices.in/projects"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": project.name,
+            "item": `https://www.siddhiindustrialservices.in/projects/${project.slug}`
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://www.siddhiindustrialservices.in/#organization",
+        "name": "Siddhi Industrial Services",
+        "url": "https://www.siddhiindustrialservices.in",
+        "logo": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "K-403 Radhe Sky Line, Sanand",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "382110",
+          "addressCountry": "IN"
+        }
       }
-    },
-    "datePublished": project.year.split('-')[0] + "-01-01"
+    ]
   }
 
   return (
@@ -101,10 +144,10 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 <Badge variant="outline" className="border-white/30 text-white font-bold uppercase tracking-widest text-[10px]">{project.status}</Badge>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-headline leading-tight text-center">
-                {project.name}
+                {project.name} {project.category} Project
               </h1>
               <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-                {project.description.split('.')[0]}. Professional industrial infrastructure development project at {project.locationDetails || 'Sanand, Ahmedabad'}.
+                Professional industrial infrastructure development project at {project.locationDetails}. Delivered with engineering precision and quality workmanship.
               </p>
             </div>
             
@@ -135,13 +178,13 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             <div className="w-full relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <Image
                 src={project.imageUrl}
-                alt={`${project.name} - industrial construction site view by Siddhi Industrial Services`}
+                alt={`${project.name} - ${project.industry} project infrastructure by Siddhi Industrial Services`}
                 fill
                 unoptimized
                 className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-sm italic">
-                {project.name} industrial construction activity in {project.locationDetails}.
+                Professional engineering and infrastructure execution at {project.locationDetails}.
               </div>
             </div>
 
@@ -244,7 +287,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white shadow-lg">
                     <Image
                       src={imgUrl}
-                      alt={`Execution phase for ${project.name} industrial project`}
+                      alt={`Execution phase document for ${project.name} by Siddhi Industrial Services`}
                       fill
                       unoptimized
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -276,7 +319,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             {/* CTA */}
             <div className="bg-primary p-12 md:p-20 rounded-3xl text-center w-full relative overflow-hidden text-white space-y-8">
                <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-               <h2 className="text-3xl md:text-5xl font-bold font-headline">Start Your Industrial Project with Experts</h2>
+               <h2 className="text-3xl md:text-5xl font-bold font-headline">Start Your Industrial Project</h2>
                <p className="text-xl text-white/70 max-w-2xl mx-auto">Discuss your upcoming infrastructure or factory construction requirements with our engineering team.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 h-16 text-lg font-bold">
