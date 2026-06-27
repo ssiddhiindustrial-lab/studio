@@ -396,16 +396,46 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'vital-wellness',
-    name: 'Vital Wellness',
+    slug: 'vital-wellness-industrial-infrastructure-sanand',
+    name: 'Vital Wellness Industrial Infrastructure Project',
     value: '₹1.10 Cr',
     year: '2021',
-    description: 'Wellness product distribution warehouse.',
+    description: 'Siddhi Industrial Services successfully completed a comprehensive industrial infrastructure development project for Vital Wellness at GIDC Sanand, Ahmedabad. As the premier industrial civil contractor for this wellness product distribution hub, we were tasked with creating a high-performance logistics environment designed for intensive warehousing operations. The project involved transforming a raw industrial plot into a technically advanced facility through deep site preparation and specialized structural execution. Our engineering approach prioritized floor durability and site water management to ensure long-term operational efficiency for the client. The core of the project focused on the main distribution warehouse, where we installed high-strength Tremix (VDF) industrial flooring designed to handle the high static loads of sophisticated steel racking systems and the constant dynamic stresses of heavy-duty forklifts. Beyond the main shell, the scope encompassed the construction of a modern administrative building with integrated utility networks, providing a centralized hub for operations management. Infrastructure development included a robust internal RCC road network and organized parking areas engineered for multi-axle vehicle logistics. To ensure site longevity, we executed a strategic Storm Water Drainage (SWD) network and integrated industrial landscaping to manage site runoff while improving the facility aesthetic. This completed turnkey project stands as a testament to our expertise in delivering durable, high-capacity warehousing infrastructure in the Sanand GIDC industrial corridor.',
     category: 'Warehousing',
     status: 'Completed',
     client: 'Vital Wellness',
-    scope: ['VDF Flooring', 'Steel Racks foundation', 'Warehousing shed'],
+    industry: 'Industrial Manufacturing & Distribution',
+    locationDetails: 'GIDC Sanand, Ahmedabad, Gujarat',
+    scope: [
+      'Construction of high-security boundary walls for site fortification.',
+      'Execution of heavy-duty RCC internal roads and pavement for logistics.',
+      'Installation of specialized Tremix (VDF) industrial flooring for the main warehouse.',
+      'Construction of a modern administrative building with integrated utilities.',
+      'Development of a comprehensive Storm Water Drainage (SWD) network.',
+      'Execution of industrial landscaping and site water management.',
+      'Organized parking area development for staff and logistics vehicles.'
+    ],
+    challenges: [
+      'High-Density Racking Stability: The warehouse required specialized floor leveling and reinforcement to support the high point-loads of steel rack foundations.',
+      'Drainage & Landscape Integration: Designing a drainage network that effectively managed site runoff while maintaining the structural integrity of the landscaped zones.',
+      'Sanand GIDC Soil Conditions: Managing soil stabilization in the Sanand region to prevent long-term settlement under heavy logistics traffic.'
+    ],
+    solutions: [
+      'VDF Flooring System: Implemented a Vacuum Dewatered Flooring (VDF) system to provide a hard-wearing, dust-proof surface with superior flatness for racking.',
+      'Strategic SWD Layout: Engineered a gravity-fed storm water network with reinforced catch pits integrated into the site grading plan.',
+      'High-Grade RCC: Utilized M30 grade concrete for internal roads and parking to ensure durability against multi-axle vehicle movement.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure' },
+      { label: 'Industry', value: 'Wellness & Distribution' },
+      { label: 'Location', value: 'GIDC Sanand, Ahmedabad' },
+      { label: 'Flooring Type', value: 'Tremix / VDF' },
+      { label: 'Infrastructure', value: 'RCC Roads & SWD' }
+    ],
     imageUrl: getDriveUrl('1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq'),
+    gallery: [
+      getDriveUrl('1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq'),
+    ]
   },
   {
     slug: 'alp-nishikawa',
