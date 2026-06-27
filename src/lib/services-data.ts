@@ -91,7 +91,7 @@ export const servicesData: ServiceDetail[] = [
       "High-clearance manufacturing halls",
       "Integrated utility corridors",
       "Specialized ventilation systems",
-      "Advanced site security features"
+      "Advanced site grading & earthwork"
     ],
     faq: [
       { question: "What is included in factory & plant development in Ahmedabad?", answer: "Our service covers turnkey civil works, specialized machine foundations, industrial utilities, and production hall construction tailored to manufacturing needs." },
@@ -433,7 +433,7 @@ export const servicesData: ServiceDetail[] = [
     ],
     metadata: {
       title: 'Turnkey Project Management in Sanand, Ahmedabad | Siddhi',
-      description: 'Expert turnkey project management services in Sanand & Ahmedabad. We handle industrial projects from planning to handover with single-point responsibility.',
+      description: 'Expert turnkey project management in Sanand, Ahmedabad. Siddhi Industrial Services handles industrial projects from planning to handover with single point responsibility.',
       keywords: 'turnkey project management in sanand, turnkey project management in ahmedabad, turnkey industrial contractor, sanand gidc, gujarat, siddhi industrial services',
       alternates: {
         canonical: 'https://www.siddhiindustrialservices.in/services/turnkey-project-management',
