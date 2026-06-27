@@ -7,6 +7,7 @@ import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/ui/whatsapp-button';
 import { Toaster } from '@/components/ui/toaster';
 import { AuthProvider } from '@/components/providers/AuthProvider';
+import { FirebaseErrorListener } from '@/components/FirebaseErrorListener';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,7 +21,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
+// Using the official logo ID for the favicon
+const faviconUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn";
 
 export const metadata: Metadata = {
   title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
@@ -47,7 +49,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: faviconUrl, type: 'image/png' },
+      { url: faviconUrl, sizes: '32x32', type: 'image/png' },
+      { url: faviconUrl, sizes: '16x16', type: 'image/png' }
     ],
     shortcut: faviconUrl,
     apple: faviconUrl,
@@ -62,6 +65,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
+        <link rel="icon" href={faviconUrl} />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RPWX95J37V"
           strategy="afterInteractive"
@@ -78,6 +82,7 @@ export default function RootLayout({
       </head>
       <body className="font-body antialiased min-h-screen flex flex-col selection:bg-accent/30 selection:text-accent-foreground">
         <AuthProvider>
+          <FirebaseErrorListener />
           <Navbar />
           <main className="flex-grow flex flex-col items-center w-full">{children}</main>
           <Footer />
