@@ -62,22 +62,12 @@ export const projects: Project[] = [
       { label: 'Completion Year', value: '2023' },
       { label: 'Status', value: 'Completed' }
     ],
-    imageUrl: getDriveUrl('1u-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+    imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
     gallery: [
       {
-        url: getDriveUrl('1v-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+        url: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
         alt: 'High-precision Tremix industrial flooring installation at Hilex Hydraulics Sanand facility',
         caption: 'Engineered Tremix flooring designed for heavy hydraulic machinery loads.'
-      },
-      {
-        url: getDriveUrl('1w-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
-        alt: 'Industrial RCC road network and site infrastructure at Hilex Hydraulics Ahmedabad',
-        caption: 'Heavy-duty internal road network facilitating seamless logistics.'
-      },
-      {
-        url: getDriveUrl('1x-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
-        alt: 'Modern administration building and industrial landscaping at Hilex Hydraulics site',
-        caption: 'Integrated administrative hub with professional site landscaping.'
       }
     ]
   },
@@ -117,7 +107,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
     gallery: [
-      getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
+      {
+        url: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
+        alt: 'Industrial nitrogen tank foundation execution by Siddhi Industrial Services',
+        caption: 'Heavy-duty RCC foundation engineered for high-pressure storage systems.'
+      }
     ],
   },
   {
@@ -159,7 +153,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('100DYuXZ3h8HLdukOsIndYKIVwZzeY25B'),
     gallery: [
-      getDriveUrl('100DYuXZ3h8HLdukOsIndYKIVwZzeY25B'),
+      {
+        url: getDriveUrl('100DYuXZ3h8HLdukOsIndYKIVwZzeY25B'),
+        alt: 'Industrial road construction and site grading at Hitachi Chharodi facility',
+        caption: 'High-strength RCC roads designed for heavy logistical transport.'
+      }
     ],
   },
   {
@@ -281,7 +279,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
     gallery: [
-      getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
+      {
+        url: getDriveUrl('1WJCbbk5u2LIvu7gJg5EHZ7ro_9hcxk-3'),
+        alt: 'Siddhi Industrial Services operations hub construction in Sanand',
+        caption: 'Developing integrated facilities for industrial construction management.'
+      }
     ]
   },
   {
@@ -432,7 +434,7 @@ export const projects: Project[] = [
     ],
     solutions: [
       'Advanced Ground Surveying: Utilized high-precision surveying to map underground utilities before trenching, ensuring zero downtime for the plant.',
-      { label: 'High-Grade Material Sourcing', value: 'Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.' },
+      'High-Grade Material Sourcing: Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.',
       'Phased Execution: Divided the scrap yard and road construction into sections, allowing the client to maintain logistics flow throughout the build.'
     ],
     technicalHighlights: [
@@ -446,7 +448,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('18zmL98dOb850vmHyj5LH92szDV5VcFjz'),
     gallery: [
-      getDriveUrl('18zmL98dOb850vmHyj5LH92szDV5VcFjz'),
+      {
+        url: getDriveUrl('18zmL98dOb850vmHyj5LH92szDV5VcFjz'),
+        alt: 'Industrial ETP plant foundation and cable trench construction at Johnson Screens',
+        caption: 'Specialized civil works for effluent treatment and utility management.'
+      }
     ],
   },
   {
@@ -488,7 +494,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq'),
     gallery: [
-      getDriveUrl('1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq'),
+      {
+        url: getDriveUrl('1nJCt-hLyzud9IbJmxin4N_wvogcyN8sq'),
+        alt: 'Modern industrial warehouse with VDF flooring at Vital Wellness Sanand',
+        caption: 'High-capacity logistics facility engineered for intense material handling.'
+      }
     ]
   },
   {
@@ -530,6 +540,13 @@ export const projects: Project[] = [
       { label: 'Status', value: 'Completed' }
     ],
     imageUrl: getDriveUrl('1pO5inxi_Tk05q9Aj646vRtfwoZW3L8N8'),
+    gallery: [
+      {
+        url: getDriveUrl('1pO5inxi_Tk05q9Aj646vRtfwoZW3L8N8'),
+        alt: 'Precision machine foundations and infrastructure at ALP Nishikawa Chharodi',
+        caption: 'Engineered civil works for automotive manufacturing excellence.'
+      }
+    ],
   },
   {
     slug: 'sharda-motors-industrial-infrastructure-sanand',
@@ -570,7 +587,11 @@ export const projects: Project[] = [
     ],
     imageUrl: getDriveUrl('1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og'),
     gallery: [
-      getDriveUrl('1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og'),
+      {
+        url: getDriveUrl('1XBNbWd5tDjrCHzYCy1Zof815Elqjd6og'),
+        alt: 'Heavy-duty industrial infrastructure and MEPF foundations at Sharda Motors Sanand',
+        caption: 'Specialized civil engineering for industrial automation and logistics.'
+      }
     ]
   },
   {
@@ -578,12 +599,15 @@ export const projects: Project[] = [
     name: 'Mahle Anand Thermal Systems',
     value: '₹1.10 Cr',
     year: '2017–2018',
-    description: 'Siddhi Industrial Services successfully delivered a specialized industrial infrastructure package for Mahle Anand Thermal Systems at their automotive thermal management manufacturing facility in Chharodi, Ahmedabad. This project, executed between 2017 and 2018, was critical for the facility\'s operational expansion and environmental compliance. Our engineering approach integrated advanced civil repair techniques with the construction of high-capacity utility infrastructure. A primary technical component was the design and execution of a comprehensive Storm Water Drainage (SWD) network and Recharge Well construction. This sustainable water management system was engineered to handle high-volume industrial runoff, ensuring the facility remains flood-free during the Gujarat monsoons while simultaneously recharging the local groundwater table. We also executed the construction of high-precision foundations for MEPF (Mechanical, Electrical, Plumbing, and Firefighting) systems, requiring strict adherence to equipment-specific load-bearing and alignment specifications. The project also encompassed extensive industrial civil repairs to the existing manufacturing block, reinforcing the structural integrity of the aging infrastructure. To facilitate heavy-duty logistics and supply chain movements, we constructed a network of high-strength internal RCC roads designed for multi-axle vehicle durability. Additionally, the development of an organized industrial storage yard optimized the plant\'s material handling capabilities. This project highlights our ability as an industrial infrastructure contractor to deliver multi-faceted civil works that enhance both the functionality and sustainability of large-scale manufacturing units.',
+    description: 'Siddhi Industrial Services successfully delivered a specialized industrial infrastructure package for Mahle Anand Thermal Systems at their automotive thermal management manufacturing facility in Chharodi, Ahmedabad. Executed between 2017 and 2018, this ₹1.10 crore project was critical for the facility\'s operational expansion and environmental compliance. Our engineering approach integrated advanced civil repair techniques with the construction of high-capacity utility infrastructure tailored for the automotive sector.\n\nA primary technical component of the project was the design and execution of a comprehensive Storm Water Drainage (SWD) network and Recharge Well construction. This sustainable water management system was engineered to handle high-volume industrial runoff, ensuring the facility remains flood-free during the intensive Gujarat monsoons while simultaneously recharging the local groundwater table. This dual-purpose infrastructure demonstrates our commitment to environmentally responsible construction.\n\nFurthermore, we executed the construction of high-precision foundations for MEPF (Mechanical, Electrical, Plumbing, and Firefighting) systems. These works required strict adherence to equipment-specific load-bearing and alignment specifications to ensure the seamless operation of critical plant utilities. The project also encompassed extensive industrial civil repairs to the existing manufacturing block, reinforcing the structural integrity of the infrastructure without disrupting the daily production output.\n\nTo facilitate heavy-duty logistics and supply chain efficiency, we constructed a network of high-strength internal RCC roads designed for multi-axle vehicle durability. Additionally, the development of an organized industrial storage yard optimized the plant\'s material handling capabilities. This completed turnkey project stands as a testament to our ability as an industrial infrastructure contractor to deliver multi-faceted civil works that enhance both the functionality and sustainability of large-scale manufacturing units in the Chharodi industrial corridor.',
     category: 'Industrial',
     status: 'Completed',
     client: 'Mahle Anand Thermal Systems',
     industry: 'Automotive Thermal Management Manufacturing',
     locationDetails: 'Chharodi, Ahmedabad, Gujarat',
+    projectType: 'Industrial Infrastructure & Specialized Civil Works Project',
+    metaTitle: 'Mahle Anand Industrial Infrastructure Project in Chharodi | Siddhi',
+    metaDescription: 'Case study of the ₹1.10 Cr industrial infrastructure project for Mahle Anand Thermal Systems in Chharodi, Ahmedabad. Expert civil works and SWD networks.',
     scope: [
       'Construction of high-capacity recharge wells for sustainable groundwater management.',
       'Installation of a comprehensive Storm Water Drainage (SWD) network for site flood protection.',
@@ -613,5 +637,12 @@ export const projects: Project[] = [
       { label: 'Status', value: 'Completed' }
     ],
     imageUrl: getDriveUrl('1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr'),
+    gallery: [
+      {
+        url: getDriveUrl('1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr'),
+        alt: 'Industrial recharge well and drainage network at Mahle Anand Chharodi plant',
+        caption: 'Sustainable water management infrastructure for automotive manufacturing.'
+      }
+    ]
   }
 ];
