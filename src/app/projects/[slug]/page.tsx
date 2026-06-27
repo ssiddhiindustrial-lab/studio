@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!project) return {}
 
-  const title = `${project.name} | ${project.industry || 'Industrial'} Project Case Study`;
-  const description = project.description.slice(0, 160);
+  const title = project.metaTitle || `${project.name} | ${project.industry || 'Industrial'} Project Case Study`;
+  const description = project.metaDescription || project.description.slice(0, 160);
 
   return {
     title,
@@ -60,6 +60,13 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#webpage`,
+        "url": `https://www.siddhiindustrialservices.in/projects/${project.slug}`,
+        "name": project.metaTitle || project.name,
+        "description": project.metaDescription || project.description
+      },
       {
         "@type": "Article",
         "@id": `https://www.siddhiindustrialservices.in/projects/${project.slug}#article`,
@@ -144,10 +151,10 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 <Badge variant="outline" className="border-white/30 text-white font-bold uppercase tracking-widest text-[10px]">{project.status}</Badge>
               </div>
               <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-headline leading-tight text-center">
-                {project.name} {project.category} Project
+                {project.projectType || `${project.name} ${project.category} Project`}
               </h1>
               <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-                Professional industrial infrastructure development project at {project.locationDetails}. Delivered with engineering precision and quality workmanship.
+                {project.subtitle || `Professional industrial infrastructure development project at ${project.locationDetails}. Delivered with engineering precision and quality workmanship.`}
               </p>
             </div>
             
@@ -182,6 +189,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 fill
                 unoptimized
                 className="object-cover"
+                priority
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-sm italic">
                 Professional engineering and infrastructure execution at {project.locationDetails}.
@@ -195,7 +203,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   <h2 className="text-3xl font-bold text-primary font-headline flex items-center gap-3">
                     <Activity className="h-7 w-7 text-accent" /> Project Overview
                   </h2>
-                  <div className="text-lg text-muted-foreground leading-relaxed space-y-4">
+                  <div className="text-lg text-muted-foreground leading-relaxed space-y-4 whitespace-pre-wrap">
                     <p>{project.description}</p>
                   </div>
                 </div>
@@ -283,17 +291,28 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 <p className="text-muted-foreground">Detailed visual documentation of the project execution phases.</p>
               </div>
               <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full">
-                {galleryItems.map((imgUrl, i) => (
-                  <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white shadow-lg">
-                    <Image
-                      src={imgUrl}
-                      alt={`Execution phase document for ${project.name} by Siddhi Industrial Services`}
-                      fill
-                      unoptimized
-                      className="object-cover group-hover:scale-110 transition-transform duration-700"
-                    />
-                  </div>
-                ))}
+                {galleryItems.map((item, i) => {
+                  const isObject = typeof item === 'object';
+                  const imgUrl = isObject ? item.url : item;
+                  const alt = isObject ? item.alt : `Execution phase document for ${project.name} by Siddhi Industrial Services`;
+                  const caption = isObject ? item.caption : null;
+
+                  return (
+                    <div key={i} className="space-y-3">
+                      <div className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white shadow-lg">
+                        <Image
+                          src={imgUrl}
+                          alt={alt}
+                          fill
+                          unoptimized
+                          loading="lazy"
+                          className="object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                      </div>
+                      {caption && <p className="text-xs text-muted-foreground italic">{caption}</p>}
+                    </div>
+                  );
+                })}
               </div>
             </div>
 
@@ -319,14 +338,14 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
             {/* CTA */}
             <div className="bg-primary p-12 md:p-20 rounded-3xl text-center w-full relative overflow-hidden text-white space-y-8">
                <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
-               <h2 className="text-3xl md:text-5xl font-bold font-headline">Start Your Industrial Project</h2>
-               <p className="text-xl text-white/70 max-w-2xl mx-auto">Discuss your upcoming infrastructure or factory construction requirements with our engineering team.</p>
+               <h2 className="text-3xl md:text-5xl font-bold font-headline">Planning Your Next Industrial Project?</h2>
+               <p className="text-xl text-white/70 max-w-2xl mx-auto">Partner with Siddhi Industrial Services for industrial buildings, factory development, RCC works, infrastructure projects and turnkey industrial construction across Sanand, Ahmedabad and Gujarat.</p>
                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 h-16 text-lg font-bold">
-                   <Link href="/contact">Request Project Consultation</Link>
+                   <Link href="/contact">Get a Quote</Link>
                  </Button>
                  <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-16 px-10 text-lg">
-                   <Link href="/projects">Browse Full Portfolio</Link>
+                   <Link href="/projects">View More Projects</Link>
                  </Button>
                </div>
             </div>

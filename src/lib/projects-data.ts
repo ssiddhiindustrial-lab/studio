@@ -9,7 +9,7 @@ export interface Project {
   client: string;
   scope: string[];
   imageUrl: string;
-  gallery?: string[];
+  gallery?: (string | { url: string; alt: string; caption: string })[];
   industry?: string;
   locationDetails?: string;
   challenges?: string[];
@@ -18,6 +18,10 @@ export interface Project {
     label: string;
     value: string;
   }[];
+  projectType?: string;
+  subtitle?: string;
+  metaTitle?: string;
+  metaDescription?: string;
 }
 
 /**
@@ -27,6 +31,56 @@ export interface Project {
 const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 export const projects: Project[] = [
+  {
+    slug: 'hilex-hydraulics-industrial-infrastructure-sanand',
+    name: 'Hilex Hydraulics Pvt. Ltd.',
+    value: '₹0.85 Cr',
+    year: '2022–2023',
+    description: 'Siddhi Industrial Services successfully completed the comprehensive industrial infrastructure development project for Hilex Hydraulics Pvt. Ltd. in Sanand, Ahmedabad, Gujarat, during the 2022–2023 execution period. As a specialized industrial civil contractor, our engineering approach focused on creating a high-performance manufacturing environment that prioritizes structural durability, industrial safety, and efficient production workflows. The project background involved transforming a greenfield site into a technically advanced hydraulic components manufacturing facility.\n\nOur execution team managed a wide-ranging scope, beginning with the construction of a reinforced boundary wall for perimeter security and extensive site preparation. A critical technical highlight was the installation of high-strength Tremix industrial flooring across the production hall, specifically engineered to support heavy-duty hydraulic machinery and withstand constant logistical stresses. The infrastructure development also included a network of heavy-duty internal RCC roads and organized parking areas, designed for seamless multi-axle vehicle logistics. To ensure long-term site resilience against regional monsoons, we installed a comprehensive Storm Water Drainage (SWD) network with precisely calculated gradients. Beyond the manufacturing shell, we constructed a modern administration building with integrated utility networks and executed professional industrial landscaping to enhance the facility\'s overall aesthetic and environmental balance. The outcome is a world-class manufacturing hub delivered with uncompromising engineering quality and timely project completion, providing Hilex Hydraulics with a robust foundation for their industrial operations in the heart of Gujarat\'s industrial corridor.',
+    category: 'Industrial',
+    status: 'Completed',
+    client: 'Hilex Hydraulics Pvt. Ltd.',
+    industry: 'Hydraulic Components Manufacturing',
+    locationDetails: 'Sanand, Ahmedabad, Gujarat',
+    projectType: 'Industrial Infrastructure & Manufacturing Facility Development',
+    subtitle: 'Industrial Infrastructure Development Project completed in Sanand, Gujarat, featuring RCC roads, Tremix flooring, administration building, industrial landscaping and complete infrastructure works.',
+    metaTitle: 'Hilex Hydraulics Industrial Project in Sanand | Siddhi Industrial Services',
+    metaDescription: 'Explore the Hilex Hydraulics industrial infrastructure project completed by Siddhi Industrial Services in Sanand, Gujarat. The project included RCC roads, Tremix flooring, administration building, SWD network, landscaping, parking development and complete industrial infrastructure works.',
+    scope: [
+      'Boundary Wall Construction',
+      'Industrial RCC Road',
+      'Parking Area Development',
+      'Tremix Industrial Flooring',
+      'Administration Building',
+      'Infrastructure Development',
+      'Storm Water Drainage Network',
+      'Industrial Landscaping'
+    ],
+    technicalHighlights: [
+      { label: 'Type', value: 'Hydraulic Components Manufacturing Facility' },
+      { label: 'Structural Build', value: 'Industrial RCC Infrastructure' },
+      { label: 'Execution', value: '2022–2023' },
+      { label: 'Status', value: 'Completed' }
+    ],
+    imageUrl: getDriveUrl('1u-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+    gallery: [
+      {
+        url: getDriveUrl('1v-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+        alt: 'High-precision Tremix industrial flooring installation at Hilex Hydraulics Sanand facility',
+        caption: 'Engineered Tremix flooring designed for heavy hydraulic machinery loads.'
+      },
+      {
+        url: getDriveUrl('1w-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+        alt: 'Industrial RCC road network and site infrastructure at Hilex Hydraulics Ahmedabad',
+        caption: 'Heavy-duty internal road network facilitating seamless logistics.'
+      },
+      {
+        url: getDriveUrl('1x-kX0p6N7q5Z4_v1_7v1_7v1_7v1_'),
+        alt: 'Modern administration building and industrial landscaping at Hilex Hydraulics site',
+        caption: 'Integrated administrative hub with professional site landscaping.'
+      }
+    ]
+  },
   {
     slug: 'suspa-industrial-infrastructure-project-sanand',
     name: 'SUSPA Industrial Infrastructure Project',
