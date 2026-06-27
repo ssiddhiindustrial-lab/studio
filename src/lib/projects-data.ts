@@ -62,12 +62,12 @@ export const projects: Project[] = [
       { label: 'Completion Year', value: '2023' },
       { label: 'Status', value: 'Completed' }
     ],
-    imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
+    imageUrl: getDriveUrl('12A4QE-_lK819ryfqmJEZ8HpOwp69BCx6'),
     gallery: [
       {
-        url: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
-        alt: 'High-precision Tremix industrial flooring installation at Hilex Hydraulics Sanand facility',
-        caption: 'Engineered Tremix flooring designed for heavy hydraulic machinery loads.'
+        url: getDriveUrl('12A4QE-_lK819ryfqmJEZ8HpOwp69BCx6'),
+        alt: 'High-precision industrial infrastructure execution at Hilex Hydraulics Sanand facility',
+        caption: 'Engineered industrial infrastructure designed for heavy manufacturing loads.'
       }
     ]
   },
@@ -313,7 +313,7 @@ export const projects: Project[] = [
     ],
     solutions: [
       'Engineered Soil Stabilization: Implemented a dual-layer engineered soil filling and compaction process to stabilize the sub-grade before foundation pouring.',
-      'Hydrological Network Design: Developed a high-capacity SWD network with reinforced culverts and precise gradients to ensure rapid discharge of storm water during the monsoon.'
+      'Hydrological Network Design: Developed a high-capacity SWD network with reinforced culverts and precise gradients to ensure gravity-based water discharge.',
     ],
     technicalHighlights: [
       { label: 'Project Type', value: 'Industrial Building & Infrastructure' },
@@ -433,7 +433,7 @@ export const projects: Project[] = [
       'Operational Logistics: Managing heavy material transport and RCC road construction while maintaining site access for manufacturing operations.'
     ],
     solutions: [
-      'Advanced Ground Surveying: Utilized high-precision surveying to map existing underground utilities before trenching, ensuring zero downtime for the plant.',
+      'Advanced Surveying: Utilized high-precision surveying to map existing underground utilities before trenching, ensuring zero downtime for the plant.',
       'High-Grade Material Sourcing: Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.',
       'Phased Execution: Divided the scrap yard and road construction into sections, allowing the client to maintain logistics flow throughout the build.'
     ],
