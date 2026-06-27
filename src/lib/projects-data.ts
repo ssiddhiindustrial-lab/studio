@@ -352,16 +352,48 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1zjwxZ34iALXXzwzj4WKoGGFZLmdzkihC'),
   },
   {
-    slug: 'johnson-screens',
-    name: 'Johnson Screens',
+    slug: 'johnson-screens-industrial-infrastructure-sanand',
+    name: 'Johnson Screens Industrial Infrastructure Project',
     value: '₹0.80 Cr',
     year: '2022',
-    description: 'Industrial filter manufacturing plant extension.',
+    description: 'Johnson Screens, a global leader in screening and separation technology, required a robust infrastructure upgrade for their manufacturing facility in Sanand, Ahmedabad. The project demanded high-precision civil engineering to support specialized industrial utilities, specifically the ETP (Effluent Treatment Plant) and complex cable networking. Siddhi Industrial Services was appointed as the primary industrial civil contractor to deliver a turnkey infrastructure package. Our engineering approach focused on durability and site resilience, ensuring that every foundation and trench met the heavy-duty operational requirements of the plant. Execution involved precise soil stabilization for the ETP plant foundation and the construction of reinforced cable trenches designed for easy maintenance access. The project was delivered on schedule, providing Johnson Screens with a modernized site infrastructure that optimizes logistics and utility management.',
     category: 'Industrial',
     status: 'Completed',
     client: 'Johnson Screens',
-    scope: ['RCC Flooring', 'Extension shed'],
+    industry: 'Industrial Manufacturing',
+    locationDetails: 'Sanand, Chharodi, Ahmedabad, Gujarat',
+    scope: [
+      'Construction of high-security boundary walls for perimeter fortification.',
+      'Execution of heavy-duty industrial foundations for ETP plant components.',
+      'Development of reinforced cable trenches for facility-wide utility networking.',
+      'Construction of heavy-strength internal RCC roads for material transport.',
+      'Installation of a strategic Storm Water Drainage (SWD) network.',
+      'Development of a specialized industrial scrap yard for efficient waste management.',
+      'Engineered soil filling and site grading for optimized logistics flow.'
+    ],
+    challenges: [
+      'Sub-surface Utility Coordination: Integrating complex cable trenches within an existing operational site without disturbing existing underground utilities.',
+      'ETP Foundation Stability: The ETP plant required a high-load bearing, chemical-resistant foundation to support heavy effluent processing equipment.',
+      'Operational Logistics: Managing heavy material transport and RCC road construction while maintaining site access for manufacturing operations.'
+    ],
+    solutions: [
+      'Advanced Ground Surveying: Utilized high-precision surveying to map underground utilities before trenching, ensuring zero downtime for the plant.',
+      'High-Grade Material Sourcing: Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.',
+      'Phased Execution: Divided the scrap yard and road construction into sections, allowing the client to maintain logistics flow throughout the build.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure & Civil Works' },
+      { label: 'Industry', value: 'Manufacturing' },
+      { label: 'Location', value: 'Sanand, Ahmedabad' },
+      { label: 'Specialized Scope', value: 'ETP & Cable Trenches' },
+      { label: 'Execution', value: '2022' },
+      { label: 'Project Value', value: '₹0.80 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('18zmL98dOb850vmHyj5LH92szDV5VcFjz'),
+    gallery: [
+      getDriveUrl('18zmL98dOb850vmHyj5LH92szDV5VcFjz'),
+    ],
   },
   {
     slug: 'vital-wellness',

@@ -85,6 +85,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/johnson-screens',
+        destination: '/projects/johnson-screens-industrial-infrastructure-sanand',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,
