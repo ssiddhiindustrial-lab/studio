@@ -148,15 +148,42 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1wVevZ8XrtD-0fDvvcYUlsSzrSEQMeCIu'),
   },
   {
-    slug: 'plot-20-sanand',
-    name: 'Plot No. 20 Sanand',
-    value: '₹1.15 Cr',
+    slug: 'plot-20-industrial-building-sanand',
+    name: 'Plot No. 20 Industrial Building Project',
+    value: '₹1.25 Cr',
     year: '2024-2025',
-    description: 'Multi-purpose industrial shed construction at Sanand GIDC.',
+    description: 'Siddhi Industrial Services is spearheading the industrial building construction and infrastructure development project at Plot No. 20 in Sanand, Gujarat. This greenfield project involves transforming an undeveloped site into a high-efficiency manufacturing hub. Our client required a multi-functional facility that could support both precision manufacturing and intensive administrative operations. To meet these needs, we implemented an engineering strategy centered on structural durability and site resilience. The project began with comprehensive site grading and the installation of a reinforced boundary wall to secure the perimeter. We are executing the complete RCC frame structure for the main factory block, which includes high-load industrial foundations designed to absorb static and dynamic equipment stresses. A major technical component of this project is the installation of high-strength Tremix industrial flooring, providing a hard-wearing surface for heavy-duty production lines. Beyond the manufacturing shell, we are constructing a modern administrative building and a dedicated utility network. The infrastructure scope also includes the development of a heavy-duty internal RCC road network and organized parking areas, engineered to facilitate multi-axle vehicle logistics. This ongoing project highlights our capability as an industrial infrastructure contractor to deliver complex, multi-faceted facilities in Sanand\'s premier industrial corridor.',
     category: 'Industrial',
     status: 'Ongoing',
     client: 'Private Client',
-    scope: ['Earthwork', 'PCC/RCC', 'Structural Shed'],
+    industry: 'Industrial Manufacturing',
+    locationDetails: 'Sanand, Ahmedabad, Gujarat',
+    scope: [
+      'Construction of high-security boundary walls and site security enclosures.',
+      'Execution of specialized industrial foundations and full RCC frame structure.',
+      'Installation of heavy-duty Tremix industrial flooring for manufacturing halls.',
+      'Development of a modern administrative building with integrated utilities.',
+      'Construction of internal RCC road network for logistical vehicle movement.',
+      'Comprehensive parking area development and site grading for drainage flow.'
+    ],
+    challenges: [
+      'Site Soil Stability: The greenfield site at Plot No. 20 required extensive soil stabilization and moisture control before laying the heavy-load industrial foundations.',
+      'Simultaneous Infrastructure Development: Coordinating the construction of the main RCC frame alongside the development of the underground utility network and internal road systems.',
+      'Logistics Management: Managing heavy construction equipment movement within the plot while maintaining access for material supply during the foundation phase.'
+    ],
+    solutions: [
+      'Phased Site Grading: Implemented a systematic site grading plan to ensure stable bearing capacity across the entire footprint before foundation pouring.',
+      'Integrated Utility Planning: Used advanced site layout techniques to install underground pipelines and electrical ducts concurrently with the structural frame to optimize the timeline.',
+      'High-Grade RCC: Utilized M30 grade concrete for the frame and specialized additives for the Tremix floor to ensure maximum surface hardness and longevity.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Building & Infrastructure' },
+      { label: 'Industry', value: 'Manufacturing' },
+      { label: 'Location', value: 'Sanand, Ahmedabad' },
+      { label: 'Structure Type', value: 'RCC Frame & Tremix Flooring' },
+      { label: 'Execution', value: '2024–2025' },
+      { label: 'Status', value: 'Ongoing' }
+    ],
     imageUrl: getDriveUrl('1kl3dHBSRwodlJvKk7VBYrva2O0NaG98Q'),
   },
   {

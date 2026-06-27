@@ -60,6 +60,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/plot-20-sanand',
+        destination: '/projects/plot-20-industrial-building-sanand',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import { ArrowLeft, Calendar, BadgeDollarSign, User, Activity, Factory, ChevronRight, CheckCircle2, AlertCircle, HardHat } from "lucide-react"
+import { ArrowLeft, Calendar, BadgeDollarSign, Activity, Factory, CheckCircle2, AlertCircle, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { getProjectBySlug, getAllProjects } from "@/services/projectService"
@@ -20,20 +20,23 @@ export async function generateMetadata({ params }: { params: { slug: string } })
 
   if (!project) return {}
 
+  const title = `${project.name} | ${project.industry || 'Industrial'} Project Case Study`;
+  const description = project.description.slice(0, 160);
+
   return {
-    title: `${project.name} | Industrial Construction Case Study Sanand`,
-    description: `Case study of ${project.name} at ${project.locationDetails || 'Sanand'}. ${project.description.slice(0, 100)}...`,
+    title,
+    description,
     openGraph: {
-      title: `${project.name} | Siddhi Industrial Services`,
-      description: project.description.slice(0, 160),
+      title,
+      description,
       url: `https://www.siddhiindustrialservices.in/projects/${project.slug}`,
       type: 'article',
       images: [{ url: project.imageUrl }]
     },
     twitter: {
       card: 'summary_large_image',
-      title: project.name,
-      description: project.description.slice(0, 160),
+      title,
+      description,
     },
     alternates: {
       canonical: `https://www.siddhiindustrialservices.in/projects/${project.slug}`
@@ -51,15 +54,9 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
 
   const allProjects = await getAllProjects()
   
-  // Generate gallery items
-  const fallbackImages = allProjects
-    .filter(p => p.category === project.category && p.slug !== project.slug)
-    .slice(0, 4)
-    .map(p => p.imageUrl);
-
   const galleryItems = project.gallery && project.gallery.length > 0 
     ? project.gallery 
-    : [project.imageUrl, ...fallbackImages].slice(0, 4);
+    : [project.imageUrl];
 
   // Structured Data (Schema.org)
   const jsonLd = {
@@ -90,7 +87,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       
-      {/* Hero Section - Optimized Case Study Look */}
+      {/* Hero Section */}
       <section className="bg-primary pt-24 pb-16 text-white text-center w-full relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/2 h-full bg-accent/5 skew-x-12 translate-x-1/3" />
         <div className="container px-4 flex flex-col items-center mx-auto relative z-10">
@@ -103,20 +100,21 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 <Badge className="bg-accent text-accent-foreground font-bold uppercase tracking-widest text-[10px]">{project.category}</Badge>
                 <Badge variant="outline" className="border-white/30 text-white font-bold uppercase tracking-widest text-[10px]">{project.status}</Badge>
               </div>
-              <h1 className="text-4xl md:text-7xl font-bold font-headline leading-tight text-center">
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-headline leading-tight text-center">
                 {project.name}
               </h1>
               <p className="text-xl text-white/70 max-w-2xl mx-auto leading-relaxed">
-                Completed industrial infrastructure development project at {project.locationDetails || 'Sanand GIDC'} including specialized foundations and RCC road networks.
+                {project.description.split('.')[0]}. Professional industrial infrastructure development project at {project.locationDetails || 'Sanand, Ahmedabad'}.
               </p>
             </div>
             
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 w-full mt-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 w-full mt-8">
               {[
                 { label: "Value", value: project.value, icon: BadgeDollarSign },
                 { label: "Year", value: project.year, icon: Calendar },
                 { label: "Status", value: project.status, icon: Activity },
-                { label: "Industry", value: project.industry || "Industrial", icon: Factory }
+                { label: "Industry", value: project.industry || "Industrial", icon: Factory },
+                { label: "Location", value: project.locationDetails?.split(',')[0] || "Sanand", icon: Factory }
               ].map((stat, i) => (
                 <div key={i} className="bg-white/10 p-4 rounded-xl backdrop-blur-sm border border-white/20 text-center">
                   <p className="text-white/50 text-[10px] uppercase tracking-widest font-bold mb-1">{stat.label}</p>
@@ -128,27 +126,27 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
         </div>
       </section>
 
-      {/* Main Content - Case Study Layout */}
+      {/* Main Content */}
       <section className="py-24 bg-background w-full">
         <div className="container px-4 flex flex-col items-center mx-auto">
           <div className="max-w-6xl mx-auto space-y-24 flex flex-col items-center w-full">
             
-            {/* Main Featured Image */}
-            <div className="w-full relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white group">
+            {/* Featured Image */}
+            <div className="w-full relative aspect-video rounded-3xl overflow-hidden shadow-2xl border-8 border-white">
               <Image
                 src={project.imageUrl}
-                alt={`${project.name} - ${project.industry} project by Siddhi Industrial Services at ${project.locationDetails}`}
+                alt={`${project.name} - industrial construction site view by Siddhi Industrial Services`}
                 fill
                 unoptimized
-                className="object-cover transition-transform duration-700"
+                className="object-cover"
               />
               <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-black/80 to-transparent text-white text-sm italic">
-                Site view of {project.name} industrial infrastructure execution at {project.locationDetails}.
+                {project.name} industrial construction activity in {project.locationDetails}.
               </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 w-full">
-              {/* Left Column: Narrative */}
+              {/* Left Column */}
               <div className="lg:col-span-2 space-y-16">
                 <div className="space-y-6">
                   <h2 className="text-3xl font-bold text-primary font-headline flex items-center gap-3">
@@ -194,7 +192,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                 )}
               </div>
 
-              {/* Right Column: Technical Stats & Sidebar */}
+              {/* Right Column */}
               <aside className="space-y-12">
                 <div className="bg-white p-8 rounded-3xl border shadow-xl sticky top-32 space-y-8">
                   <div className="space-y-4">
@@ -229,24 +227,24 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   </div>
 
                   <Button asChild className="w-full h-14 bg-primary hover:bg-accent font-bold">
-                    <Link href="/contact">Inquire Similar Project</Link>
+                    <Link href="/contact">Request Project Consultation</Link>
                   </Button>
                 </div>
               </aside>
             </div>
 
-            {/* Gallery Section */}
+            {/* Gallery */}
             <div className="w-full space-y-12 text-center">
               <div className="space-y-2">
-                <h3 className="text-3xl font-bold text-primary font-headline">Construction Progress Gallery</h3>
-                <p className="text-muted-foreground">Actual site photos from the various stages of project delivery.</p>
+                <h3 className="text-3xl font-bold text-primary font-headline">Case Study Gallery</h3>
+                <p className="text-muted-foreground">Detailed visual documentation of the project execution phases.</p>
               </div>
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 w-full">
+              <div className="grid grid-cols-2 lg:grid-cols-3 gap-6 w-full">
                 {galleryItems.map((imgUrl, i) => (
-                  <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white/10 shadow-lg">
+                  <div key={i} className="relative aspect-square rounded-2xl overflow-hidden group border-4 border-white shadow-lg">
                     <Image
                       src={imgUrl}
-                      alt={`Site activity during ${project.name} industrial infrastructure project execution`}
+                      alt={`Execution phase for ${project.name} industrial project`}
                       fill
                       unoptimized
                       className="object-cover group-hover:scale-110 transition-transform duration-700"
@@ -256,7 +254,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
               </div>
             </div>
 
-            {/* Related Services Links */}
+            {/* Related Services */}
             <div className="w-full pt-16 border-t text-center space-y-10">
               <h3 className="text-2xl font-bold text-primary font-headline">Relevant Industrial Expertise</h3>
               <div className="flex flex-wrap justify-center gap-4">
@@ -264,7 +262,9 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                   { name: "Industrial Building Construction", href: "/services/industrial-building-construction" },
                   { name: "Factory & Plant Development", href: "/services/factory-plant-development" },
                   { name: "RCC Construction", href: "/services/rcc-contractor-sanand-ahmedabad" },
-                  { name: "Infrastructure Development", href: "/services/industrial-infrastructure-development-sanand" }
+                  { name: "Infrastructure Development", href: "/services/industrial-infrastructure-development-sanand" },
+                  { name: "Roads & Drainage", href: "/services/industrial-road-construction-sanand-ahmedabad" },
+                  { name: "Turnkey Projects", href: "/services/turnkey-project-management" }
                 ].map((service, i) => (
                   <Button key={i} variant="outline" asChild className="border-primary/20 hover:border-accent hover:text-accent">
                     <Link href={service.href}>{service.name}</Link>
@@ -273,7 +273,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
               </div>
             </div>
 
-            {/* Final CTA */}
+            {/* CTA */}
             <div className="bg-primary p-12 md:p-20 rounded-3xl text-center w-full relative overflow-hidden text-white space-y-8">
                <div className="absolute top-0 left-0 w-32 h-32 bg-white/5 rounded-full -translate-x-1/2 -translate-y-1/2" />
                <h2 className="text-3xl md:text-5xl font-bold font-headline">Start Your Industrial Project with Experts</h2>
@@ -283,7 +283,7 @@ export default async function ProjectDetails({ params }: { params: { slug: strin
                    <Link href="/contact">Request Project Consultation</Link>
                  </Button>
                  <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-16 px-10 text-lg">
-                   <Link href="/projects">Browse Portfolio</Link>
+                   <Link href="/projects">Browse Full Portfolio</Link>
                  </Button>
                </div>
             </div>
