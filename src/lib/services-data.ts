@@ -302,7 +302,7 @@ export const servicesData: ServiceDetail[] = [
       "Integrated Utility Network Planning",
       "Efficient Storm Water Management",
       "Durable Heavy-Duty Road Infrastructure",
-      "Scalable Infrastructure for Growth",
+      "Scalable Industrial Infrastructure for Growth",
       "Adherence to GIDC Safety Norms"
     ],
     features: [
@@ -322,7 +322,7 @@ export const servicesData: ServiceDetail[] = [
       { question: "What is the typical project timeline?", answer: "Timeline depends on the site area and complexity, but a complete site infrastructure for a standard factory typically takes 3 to 6 months." }
     ],
     metadata: {
-      title: 'Infrastructure Development in Sanand, Ahmedabad | Siddhi',
+      title: 'Industrial Infrastructure Development in Sanand, Ahmedabad | Siddhi',
       description: 'Siddhi Industrial Services provides expert infrastructure development in Sanand & Ahmedabad. We specialize in industrial site development, roads, and utilities.',
       keywords: 'infrastructure development in sanand, industrial infrastructure development in ahmedabad, industrial infrastructure contractor, sanand gidc, gujarat, siddhi industrial services',
       alternates: {
@@ -369,7 +369,7 @@ export const servicesData: ServiceDetail[] = [
       "IS Standard Construction Practices"
     ],
     faq: [
-      { question: "What are your capabilities in industrial road construction in Ahmedabad?", answer: "We provide complete turnkey services including site grading, base preparation, and the construction of heavy-duty RCC or Bituminous roads tailored for industrial traffic." },
+      { question: "What is your capabilities in industrial road construction in Ahmedabad?", answer: "We provide complete turnkey services including site grading, base preparation, and the construction of heavy-duty RCC or Bituminous roads tailored for industrial traffic." },
       { question: "Do you offer industrial road construction in Sanand?", answer: "Yes, we are highly active in Sanand GIDC, executing large-scale road projects for leading manufacturing units and logistics hubs." },
       { question: "Why should we hire expert road construction contractors?", answer: "Professional contractors understand load-bearing requirements and drainage integration, ensuring that roads do not crack under heavy truck movement." },
       { question: "What is included in industrial drainage construction?", answer: "It involves the planning and building of RCC open drains, underground pipelines, and catchment basins to handle large volumes of industrial runoff." },
