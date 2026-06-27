@@ -70,6 +70,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/uneco',
+        destination: '/projects/una-eco-systems-industrial-building-chharodi',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

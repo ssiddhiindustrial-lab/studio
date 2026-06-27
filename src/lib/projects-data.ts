@@ -231,15 +231,42 @@ export const projects: Project[] = [
     ]
   },
   {
-    slug: 'uneco',
-    name: 'UNECO',
+    slug: 'una-eco-systems-industrial-building-chharodi',
+    name: 'Una Eco Systems Pvt. Ltd.',
     value: '₹1.05 Cr',
     year: '2023',
-    description: 'Turnkey industrial plant development.',
+    description: 'Siddhi Industrial Services successfully completed the industrial building and infrastructure development project for Una Eco Systems Pvt. Ltd. at Chharodi, Ahmedabad, Gujarat. This greenfield project involved transforming an undeveloped site into a high-performance manufacturing facility. The client required a structurally sound production environment integrated with a modern administrative block and robust logistics infrastructure. Our engineering approach prioritized foundation stability and efficient site water management. We executed a complete RCC structural framework, including high-load bearing foundations designed for manufacturing equipment. A critical technical component was the installation of the Storm Water Drainage (SWD) network, engineered to protect the sensitive manufacturing environment from regional monsoons. The project also featured high-strength Tremix industrial flooring for the production floors and a comprehensive internal RCC road network for heavy vehicle access. This completed project stands as a testament to our capability to deliver turnkey industrial facilities that meet global engineering standards within the Ahmedabad industrial corridor.',
     category: 'Industrial',
     status: 'Completed',
-    client: 'UNECO',
-    scope: ['Civil Works', 'Steel Structure'],
+    client: 'Una Eco Systems Pvt. Ltd.',
+    industry: 'Industrial Manufacturing',
+    locationDetails: 'Chharodi, Ahmedabad, Gujarat',
+    scope: [
+      'Boundary wall construction and site security fortification.',
+      'Complete RCC foundations and structural framework for the factory block.',
+      'Execution of heavy-duty RCC internal roads and pavement for material transport.',
+      'Installation of a comprehensive Storm Water Drainage (SWD) network.',
+      'Construction of modern administrative building with integrated utilities.',
+      'Installation of specialized Tremix industrial flooring for heavy-duty production.',
+      'Site grading and land development for optimized logistics flow.',
+      'Organized parking area development and site security infrastructure.'
+    ],
+    challenges: [
+      'Sub-surface Soil Instability: The Chharodi region features varied soil bearing capacities, requiring advanced soil preparation and engineered filling to support industrial loads.',
+      'High-Volume Runoff Management: Designing a drainage network capable of handling high-volume runoff from the large manufacturing roof area without affecting neighboring plots.'
+    ],
+    solutions: [
+      'Engineered Soil Stabilization: Implemented a dual-layer engineered soil filling and compaction process to stabilize the sub-grade before foundation pouring.',
+      'Hydrological Network Design: Developed a high-capacity SWD network with reinforced culverts and precise gradients to ensure rapid discharge of storm water during the monsoon.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Building & Infrastructure' },
+      { label: 'Industry', value: 'Manufacturing' },
+      { label: 'Location', value: 'Chharodi, Ahmedabad' },
+      { label: 'Structure Type', value: 'RCC Frame & Tremix Floor' },
+      { label: 'Execution', value: '2023' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1Wv9z2Z6BstPX_fFXF7pCr8C5uYPzw7kJ'),
   },
   {
