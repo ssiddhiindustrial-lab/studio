@@ -270,15 +270,44 @@ export const projects: Project[] = [
     imageUrl: getDriveUrl('1Wv9z2Z6BstPX_fFXF7pCr8C5uYPzw7kJ'),
   },
   {
-    slug: 'supreme-power',
-    name: 'Supreme Power',
+    slug: 'supreme-power-industrial-infrastructure-gujarat',
+    name: 'Supreme Power Industrial Infrastructure Project',
     value: '₹1.10 Cr',
     year: '2023',
-    description: 'Substation and power facility infrastructure.',
+    description: 'The Supreme Power Industrial Infrastructure Project in Gujarat was a landmark project executed by Siddhi Industrial Services, focusing on high-precision civil engineering and site development. Our client, Supreme Power Ltd., required a robust infrastructure backbone for their industrial manufacturing facility, demanding uncompromising structural quality and engineering precision. The project background involved transforming a challenging site into an optimized industrial hub through comprehensive site preparation and soil stabilization. Our engineering approach centered on structural stability, utilizing high-grade RCC foundations and a complete structural frame to support heavy manufacturing equipment. Execution involved the construction of heavy-duty internal RCC roads, a strategic Storm Water Drainage (SWD) network, and high-strength Tremix industrial flooring to ensure long-term operational efficiency. The outcome is a world-class manufacturing facility that meets all industrial safety standards, empowering Supreme Power\'s growth in the Gujarat corridor.',
     category: 'Infrastructure',
     status: 'Completed',
-    client: 'Supreme Power',
-    scope: ['Specialized Foundations', 'Safety Walls'],
+    client: 'Supreme Power Ltd.',
+    industry: 'Industrial Power Manufacturing',
+    locationDetails: 'Gujarat, India',
+    scope: [
+      'Precision site preparation and engineered soil filling for heavy foundations.',
+      'Construction of high-security boundary walls and site fortification.',
+      'Execution of specialized heavy-duty RCC foundations and structural frame.',
+      'Installation of comprehensive Storm Water Drainage (SWD) infrastructure.',
+      'Construction of high-strength internal RCC roads for heavy transport.',
+      'Execution of Tremix industrial flooring for production and storage areas.',
+      'Organized parking area development and integrated site utility works.'
+    ],
+    challenges: [
+      'Complex Site Topography: The Gujarat site required extensive land development and soil stabilization to support heavy industrial loads.',
+      'Integration with Power Systems: Executing civil works in close proximity to high-voltage zones required specialized safety protocols.',
+      'Monsoon Water Management: Designing a high-capacity drainage network that could handle the regional rainfall intensity without site flooding.'
+    ],
+    solutions: [
+      'Advanced Soil Engineering: Implemented a systematic filling and compaction process to create a stable base for the factory foundations.',
+      'Safety-First Execution: Deployed specialized HSE teams to oversee all construction activity near electrical infrastructure.',
+      'Engineered Drainage Flow: Utilized high-precision leveling and reinforced SWD channels to ensure rapid water discharge across the site.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure Development' },
+      { label: 'Industry', value: 'Power Manufacturing' },
+      { label: 'Location', value: 'Gujarat' },
+      { label: 'Structure Type', value: 'RCC & Heavy Foundations' },
+      { label: 'Execution', value: '2023' },
+      { label: 'Project Value', value: '₹1.10 Cr' },
+      { label: 'Status', value: 'Completed' }
+    ],
     imageUrl: getDriveUrl('1ZUK6NL9RhzTg4RjIysIFWt9-MRDUMxjv'),
   },
   {

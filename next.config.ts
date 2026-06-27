@@ -75,6 +75,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/supreme-power',
+        destination: '/projects/supreme-power-industrial-infrastructure-gujarat',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,
