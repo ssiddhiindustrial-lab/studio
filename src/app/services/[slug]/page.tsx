@@ -34,5 +34,7 @@ export default async function ServiceDetailPage({ params }: { params: { slug: st
     notFound()
   }
 
-  return <ServiceDetailClient service={service} />
+  // We only pass the slug to the client component because the service object 
+  // contains non-serializable Lucide icon components.
+  return <ServiceDetailClient slug={slug} />
 }

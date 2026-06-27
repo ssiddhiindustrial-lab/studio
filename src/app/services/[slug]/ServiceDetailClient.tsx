@@ -3,13 +3,14 @@
 
 import * as React from "react"
 import Link from "next/link"
+import { notFound } from "next/navigation"
 import { ArrowLeft, CheckCircle2, MessageSquare, Send, Loader2, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { useToast } from "@/hooks/use-toast"
-import { ServiceDetail, servicesData } from "@/lib/services-data"
+import { servicesData } from "@/lib/services-data"
 import { sendInquiryEmail } from "@/actions/emailActions"
 import {
   Accordion,
@@ -19,12 +20,19 @@ import {
 } from "@/components/ui/accordion"
 
 interface ServiceDetailClientProps {
-  service: ServiceDetail
+  slug: string
 }
 
-export default function ServiceDetailClient({ service }: ServiceDetailClientProps) {
+export default function ServiceDetailClient({ slug }: ServiceDetailClientProps) {
   const { toast } = useToast()
   const [isSubmitting, setIsSubmitting] = React.useState(false)
+
+  // Find the service data client-side to avoid serialization issues with icons
+  const service = servicesData.find(s => s.slug === slug)
+  
+  if (!service) {
+    notFound()
+  }
 
   const otherServices = servicesData.filter(s => s.slug !== service.slug).slice(0, 4)
 
