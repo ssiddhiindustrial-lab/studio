@@ -10,6 +10,14 @@ export interface Project {
   scope: string[];
   imageUrl: string;
   gallery?: string[];
+  industry?: string;
+  locationDetails?: string;
+  challenges?: string[];
+  solutions?: string[];
+  technicalHighlights?: {
+    label: string;
+    value: string;
+  }[];
 }
 
 /**
@@ -20,20 +28,38 @@ const getDriveUrl = (id: string) => `https://lh3.googleusercontent.com/d/${id}`;
 
 export const projects: Project[] = [
   {
-    slug: 'suspa',
-    name: 'SUSPA',
-    value: '0.50 Cr',
+    slug: 'suspa-industrial-infrastructure-project-sanand',
+    name: 'SUSPA Industrial Infrastructure Project',
+    value: '₹0.50 Cr',
     year: '2019-2020',
-    description: 'Specialized industrial infrastructure works including nitrogen tank foundations and heavy-duty parking development.',
+    description: 'Siddhi Industrial Services was commissioned by SUSPA to execute a specialized industrial infrastructure package at their manufacturing plant in Sanand GIDC, Ahmedabad. The project required a high degree of engineering precision to accommodate specialized machinery and utility installations critical to the facility\'s manufacturing operations. Our engineering approach focused on delivering high-durability reinforced concrete structures. A primary component of the project was the construction of the Nitrogen Tank Foundation, which demanded strict adherence to load-bearing specifications and seismic stability. Additionally, we executed various Machine Foundation Construction tasks, involving deep-pit excavations and high-grade RCC pouring to ensure zero-vibration mounting for heavy manufacturing equipment. The project also encompassed site-wide infrastructure improvements, including the development of heavy-duty RCC roads designed for multi-axle vehicle traffic and a comprehensive parking area development. To ensure site stability and secure the perimeter, we constructed reinforced compound walls and retaining walls, integrating them with the site\'s grading and drainage plan.',
     category: 'Industrial',
     status: 'Completed',
     client: 'SUSPA',
+    industry: 'Industrial Manufacturing',
+    locationDetails: 'Sanand GIDC, Ahmedabad, Gujarat',
     scope: [
-      'Foundation for Nitrogen Tank',
-      'RCC Road',
-      'Compound Wall – Retaining',
-      'Machine Foundations',
-      'Parking Area Development'
+      'High-precision RCC foundations for industrial nitrogen storage tanks.',
+      'Construction of vibration-dampening machine foundations for heavy units.',
+      'Development of heavy-duty RCC internal roads and pavement for logistics.',
+      'Reinforced compound walls and retaining structures for site security.',
+      'Organized parking area development and site grading for logistics flow.'
+    ],
+    challenges: [
+      'Soil Stabilization for Heavy Tanks: The site conditions required specialized soil preparation to support high static loads of the Nitrogen Tanks.',
+      'Precision Leveling: Machine foundations required sub-millimeter precision to ensure alignment for manufacturing equipment.',
+      'Active Site Management: Executing RCC road construction while maintaining facility access for ongoing factory operations.'
+    ],
+    solutions: [
+      'Custom Foundation Design: Implemented a raft-foundation design for the nitrogen tanks to distribute load effectively across the sub-grade.',
+      'High-Precision Shuttering: Used advanced shuttering and leveling tools to meet the tight tolerances required for machine pits.',
+      'Phased Execution: Divided the road construction and site grading into phases, allowing the client to maintain partial facility access throughout.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Infrastructure' },
+      { label: 'Industry', value: 'Manufacturing' },
+      { label: 'Structure Type', value: 'Heavy Load RCC' },
+      { label: 'Concrete Grade', value: 'M25 / M30' }
     ],
     imageUrl: getDriveUrl('1wt8E6q-Y5WVRaKCIUk4TKD3OSsZlaYkn'),
     gallery: [
