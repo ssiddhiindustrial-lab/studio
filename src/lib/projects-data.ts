@@ -214,7 +214,7 @@ export const projects: Project[] = [
       'Construction of high-security boundary walls and site security enclosures.',
       'Execution of specialized industrial foundations and full RCC frame structure.',
       'Installation of heavy-duty Tremix industrial flooring for manufacturing halls.',
-      'Development of a modern administrative building with integrated utilities.',
+      'Development of a modern administrative building and a dedicated utility network.',
       'Construction of internal RCC road network for logistical vehicle movement.',
       'Comprehensive parking area development and site grading for drainage flow.'
     ],
@@ -535,7 +535,7 @@ export const projects: Project[] = [
       { label: 'Industry', value: 'Automotive Parts' },
       { label: 'Location', value: 'Chharodi, Ahmedabad' },
       { label: 'Structure Type', value: 'RCC Foundations & Admin Block' },
-      { label: 'Execution', value: '2020–2021' },
+      { label: 'Execution Period', value: '2020–2021' },
       { label: 'Project Value', value: '₹0.85 Cr' },
       { label: 'Status', value: 'Completed' }
     ],
@@ -569,7 +569,7 @@ export const projects: Project[] = [
     challenges: [
       'Precision Foundation for MEPF: Constructing foundations for high-density MEPF systems within an active plant required sub-millimeter accuracy to avoid interference with existing underground utilities and production lines.',
       'Dynamic Load Management: The storage yard and internal roads needed to be engineered for varying static and dynamic loads from both manufacturing equipment and heavy logistical vehicles.',
-      'Timeline Sync: Aligning the construction phases with the client\'s production downtime windows necessitated an accelerated execution schedule without compromising on curing periods for the RCC works.'
+      'Timeline Sync: Aligning the construction phases with the client\'s production downtime windows necessitated an accelerated execution schedule without compromising on clearing periods for the RCC works.'
     ],
     solutions: [
       '3D Site Mapping: We employed advanced site surveying to map existing underground networks, ensuring the MEPF foundations and cable trenches were executed with zero utility damage.',
@@ -636,10 +636,10 @@ export const projects: Project[] = [
       { label: 'Project Value', value: '₹1.10 Cr' },
       { label: 'Status', value: 'Completed' }
     ],
-    imageUrl: getDriveUrl('1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr'),
+    imageUrl: getDriveUrl('12A4QE-_lK819ryfqmJEZ8HpOwp69BCx6'),
     gallery: [
       {
-        url: getDriveUrl('1PbMAmBSm0OIhRRoQ3tN77_EmC37TGgqr'),
+        url: getDriveUrl('12A4QE-_lK819ryfqmJEZ8HpOwp69BCx6'),
         alt: 'Industrial recharge well and drainage network at Mahle Anand Chharodi plant',
         caption: 'Sustainable water management infrastructure for automotive manufacturing.'
       }
