@@ -377,22 +377,22 @@ export const servicesData: ServiceDetail[] = [
       { question: "How long does a typical industrial road project take?", answer: "Timelines depend on the square meter area, but a standard industrial road and drainage project typically takes between 3 to 5 months." }
     ],
     metadata: {
-      title: 'Industrial Road Construction in Ahmedabad | Siddhi',
-      description: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad. Siddhi Industrial Services specializes in industrial road construction and storm water drainage.',
-      keywords: 'industrial road construction in ahmedabad, industrial road construction in sanand, road construction contractors, sanand gidc, gujarat, siddhi industrial services',
+      title: 'Industrial Roads & Drainage Construction Companies Sanand | Siddhi',
+      description: 'Siddhi Industrial Services is among the top industrial roads & drainage construction companies in Sanand, Ahmedabad. Expert road construction contractors in Gujarat.',
+      keywords: 'industrial road construction, road construction companies, road construction contractors, sanand, ahmedabad, siddhi industrial services',
       alternates: {
         canonical: 'https://www.siddhiindustrialservices.in/services/industrial-road-construction-sanand-ahmedabad',
       },
       openGraph: {
-        title: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad | Siddhi',
+        title: 'Industrial Roads & Drainage Construction Companies in Sanand, Ahmedabad | Siddhi',
         description: 'Leading industrial road and drainage infrastructure development in Ahmedabad and Sanand GIDC.',
         url: 'https://www.siddhiindustrialservices.in/services/industrial-road-construction-sanand-ahmedabad',
         type: 'article',
       },
       twitter: {
         card: 'summary_large_image',
-        title: 'Roads & Drainage Construction Sanand & Ahmedabad | Siddhi',
-        description: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad. Siddhi Industrial Services specializes in industrial road construction.',
+        title: 'Industrial Roads & Drainage Construction Companies Sanand | Siddhi',
+        description: 'Siddhi Industrial Services is among the top industrial roads & drainage construction companies in Sanand, Ahmedabad.',
       },
       robots: {
         index: true,
