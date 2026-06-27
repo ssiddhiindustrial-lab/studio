@@ -50,6 +50,11 @@ const nextConfig: NextConfig = {
         permanent: true,
       },
       {
+        source: '/projects/hitachi-hi-rel',
+        destination: '/projects/hitachi-hi-rel-industrial-facility-expansion-project-sanand',
+        permanent: true,
+      },
+      {
         source: '/services/rcc-construction',
         destination: '/services/rcc-contractor-sanand-ahmedabad',
         permanent: true,

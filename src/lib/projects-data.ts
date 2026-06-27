@@ -67,15 +67,42 @@ export const projects: Project[] = [
     ],
   },
   {
-    slug: 'hitachi-hi-rel',
-    name: 'Hitachi Hi-Rel Power Electronics Ltd',
+    slug: 'hitachi-hi-rel-industrial-facility-expansion-project-sanand',
+    name: 'Hitachi Hi-Rel Industrial Facility Expansion Project',
     value: '₹2.20 Cr',
     year: '2024-2025',
-    description: 'Advanced industrial electronics manufacturing facility construction.',
+    description: 'Siddhi Industrial Services is currently spearheading the industrial facility expansion and infrastructure development project for Hitachi Hi-Rel Power Electronics Ltd at their Chharodi manufacturing site in Sanand, Ahmedabad. As a premier industrial infrastructure contractor in Gujarat, we were selected to deliver a technically demanding package that involves both critical civil repairs and the construction of new manufacturing extensions. The project is designed to transform the existing site into a high-capacity electronics production hub, requiring meticulous planning to integrate new structures with existing operational blocks. Our engineering approach focuses on creating a robust backbone for the facility. This includes the installation of a comprehensive Storm Water Drainage (SWD) network and strategic culvert construction to protect the sensitive electronic manufacturing environment from regional monsoons. To facilitate heavy logistics, we are executing high-strength RCC road construction throughout the site, designed for the durability required by multi-axle supply chain vehicles. Beyond pure industrial shells, the scope encompasses essential human-centric infrastructure like modern locker rooms, executive toilet blocks, and high-visibility security cabins, alongside organized parking area development to improve traffic flow.',
     category: 'Industrial',
     status: 'Ongoing',
     client: 'Hitachi Hi-Rel',
-    scope: ['RCC Works', 'Structural Steel', 'Flooring', 'MEP Coordination'],
+    industry: 'Industrial Power Electronics Manufacturing',
+    locationDetails: 'Chharodi, Sanand, Ahmedabad, Gujarat',
+    scope: [
+      'Civil repairs and structural extension of the main manufacturing block.',
+      'Installation of a comprehensive Storm Water Drainage (SWD) network.',
+      'Construction of heavy-duty internal RCC roads for material transport.',
+      'Strategic culvert construction for efficient site water management.',
+      'Development of administrative utility buildings including locker rooms and executive toilet blocks.',
+      'Erection of high-security cabins and organized parking infrastructure.'
+    ],
+    challenges: [
+      'Operational Continuity: Executing heavy civil works and extensions while the existing manufacturing plant maintains full production capacity.',
+      'Complex Drainage Integration: Designing and installing a new Storm Water Drainage (SWD) network that integrates with existing site levels to ensure zero waterlogging.',
+      'Utility Logistics: Managing multiple infrastructure upgrades (locker rooms, security cabins, parking) simultaneously within a live industrial environment.'
+    ],
+    solutions: [
+      'Phased Construction: Implementing a strict phased schedule to ensure that construction noise and dust do not impact sensitive power electronics assembly areas.',
+      'Advanced Surveying: Utilizing high-precision leveling for the SWD and culvert construction to guarantee efficient water flow and long-term site stability.',
+      'Dedicated HSE Oversight: Deploying full-time safety officers to manage the safe movement of construction equipment alongside plant personnel and logistics vehicles.'
+    ],
+    technicalHighlights: [
+      { label: 'Project Type', value: 'Industrial Expansion' },
+      { label: 'Industry', value: 'Power Electronics' },
+      { label: 'Location', value: 'Chharodi, Sanand' },
+      { label: 'Infrastructure', value: 'SWD & RCC Roads' },
+      { label: 'Project Value', value: '₹2.20 Cr' },
+      { label: 'Status', value: 'Ongoing' }
+    ],
     imageUrl: getDriveUrl('100DYuXZ3h8HLdukOsIndYKIVwZzeY25B'),
     gallery: [
       getDriveUrl('100DYuXZ3h8HLdukOsIndYKIVwZzeY25B'),
