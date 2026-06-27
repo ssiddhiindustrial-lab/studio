@@ -174,7 +174,7 @@ export const projects: Project[] = [
     scope: [
       'Execution of heavy-load industrial foundations for precision machinery.',
       'Construction of high-strength RCC frame structure for the main factory block.',
-      'Installation of specialized Tremix industrial flooring for heavy-duty production.',
+      'Installation of over 40,000 square feet of high-strength Tremix industrial flooring.',
       'Development of administrative building and worker\'s guest house infrastructure.',
       'Construction of high-security boundary walls and site security enclosures.',
       'Execution of internal RCC roads and organized parking area development.'
@@ -433,7 +433,7 @@ export const projects: Project[] = [
       'Operational Logistics: Managing heavy material transport and RCC road construction while maintaining site access for manufacturing operations.'
     ],
     solutions: [
-      'Advanced Ground Surveying: Utilized high-precision surveying to map underground utilities before trenching, ensuring zero downtime for the plant.',
+      'Advanced Ground Surveying: Utilized high-precision surveying to map existing underground utilities before trenching, ensuring zero downtime for the plant.',
       'High-Grade Material Sourcing: Used specialized concrete additives to provide chemical resistance for the ETP foundation, enhancing structural longevity.',
       'Phased Execution: Divided the scrap yard and road construction into sections, allowing the client to maintain logistics flow throughout the build.'
     ],
