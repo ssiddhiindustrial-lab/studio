@@ -1,5 +1,6 @@
 
 import { Factory, Construction, Warehouse, Route, Landmark, HardHat, Settings, Activity } from "lucide-react"
+import { Metadata } from "next"
 
 export interface ServiceDetail {
   slug: string;
@@ -11,6 +12,7 @@ export interface ServiceDetail {
   benefits: string[];
   features: string[];
   faq: { question: string; answer: string }[];
+  metadata?: Metadata;
 }
 
 export const servicesData: ServiceDetail[] = [
@@ -43,7 +45,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "Are you experienced in Sanand GIDC projects?", answer: "We have executed numerous high-profile industrial projects across Sanand GIDC and Ahmedabad." },
       { question: "How do you ensure construction quality?", answer: "We conduct regular material testing and follow a 4-step quality audit framework." },
       { question: "Do you handle specialized machine foundations?", answer: "Yes, we specialize in high-load, vibration-absorbing foundations for heavy industrial equipment." }
-    ]
+    ],
+    metadata: {
+      title: 'Industrial Building Contractor in Sanand and Ahmedabad | Siddhi',
+      description: 'Looking for a trusted industrial building contractor in Sanand and Ahmedabad? Siddhi Industrial Services delivers high-precision factory and shed construction.',
+      keywords: 'industrial building contractor in sanand, industrial building construction, industrial shed construction, ahmedabad, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/industrial-building-construction',
+      },
+      openGraph: {
+        title: 'Industrial Building Contractor in Sanand and Ahmedabad | Siddhi',
+        description: 'Premier industrial building contractor in Sanand and Ahmedabad. Expert industrial shed construction and manufacturing facilities.',
+        url: 'https://www.siddhiindustrialservices.in/services/industrial-building-construction',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Industrial Building Contractor in Sanand and Ahmedabad | Siddhi',
+        description: 'Looking for a trusted industrial building contractor in Sanand and Ahmedabad? Siddhi Industrial Services delivers high-precision factory and shed construction.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "factory-plant-development",
