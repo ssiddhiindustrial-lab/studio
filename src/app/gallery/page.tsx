@@ -27,8 +27,38 @@ export default function GalleryPage() {
     status: project.status
   }))
 
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  const pageUrl = `${orgUrl}/gallery`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ImageGallery",
+        "@id": `${pageUrl}/#gallery`,
+        "url": pageUrl,
+        "name": header.title,
+        "description": header.description,
+        "isPartOf": { "@id": `${orgUrl}/#website` },
+        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": orgUrl },
+          { "@type": "ListItem", "position": 2, "name": "Gallery", "item": pageUrl }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full items-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header - Strictly Centered */}
       <section className="bg-primary py-24 text-white w-full relative">
         <div className="container mx-auto px-4 text-center">

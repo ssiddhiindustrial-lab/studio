@@ -24,8 +24,39 @@ export default async function SafetyPage() {
     { title: "Zero Compromise", desc: "A strict 'Stop Work' authority granted to any employee who observes an unsafe condition.", icon: ActivityIcon }
   ]
 
+  const orgName = "Siddhi Industrial Services";
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  const pageUrl = `${orgUrl}/safety`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": `${pageUrl}/#webpage`,
+        "url": pageUrl,
+        "name": header.title,
+        "isPartOf": { "@id": `${orgUrl}/#website` },
+        "description": header.description,
+        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": orgUrl },
+          { "@type": "ListItem", "position": 2, "name": "Safety", "item": pageUrl }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <section className="bg-primary py-24 text-white relative overflow-hidden">
         <div className="absolute top-4 right-4 z-50">
@@ -120,6 +151,25 @@ export default async function SafetyPage() {
 }
 
 function ActivityIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+    </svg>
+  )
+}
+
+function Activity(props: any) {
   return (
     <svg
       {...props}

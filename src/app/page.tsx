@@ -55,8 +55,80 @@ export default async function Home() {
     { q: "Do you build industrial warehouses and sheds?", a: "Yes, we specialize in high-span structural steel sheds and modern warehousing solutions with VDF flooring." }
   ]
 
+  const orgName = "Siddhi Industrial Services";
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": `${orgUrl}/#website`,
+        "url": orgUrl,
+        "name": orgName,
+        "description": "Leading industrial civil contractor in Ahmedabad & Sanand specializing in factory construction and warehousing.",
+        "publisher": { "@id": `${orgUrl}/#organization` },
+        "inLanguage": "en-IN"
+      },
+      {
+        "@type": "Organization",
+        "@id": `${orgUrl}/#organization`,
+        "name": orgName,
+        "url": orgUrl,
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn",
+          "width": 600,
+          "height": 190
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+91-91571-87484",
+          "contactType": "customer service",
+          "areaServed": "IN",
+          "availableLanguage": ["en", "hi", "gu"]
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "K-403 Radhe Sky Line, Sanand",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "382110",
+          "addressCountry": "IN"
+        }
+      },
+      {
+        "@type": "LocalBusiness",
+        "@id": `${orgUrl}/#localbusiness`,
+        "name": orgName,
+        "image": hero.imageUrl,
+        "@id": orgUrl,
+        "url": orgUrl,
+        "telephone": "+91-91571-87484",
+        "priceRange": "₹₹₹",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "K-403 Radhe Sky Line, Sanand",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "382110",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "22.9990",
+          "longitude": "72.3789"
+        }
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full items-center">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative h-[90vh] w-full flex items-center justify-center overflow-hidden bg-primary">
         <div className="absolute inset-0 z-0">

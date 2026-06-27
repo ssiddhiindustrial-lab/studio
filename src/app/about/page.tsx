@@ -64,8 +64,51 @@ export default async function AboutPage() {
     { q: "Does the founder have a technical background?", a: "Yes, Shailesh Patel is a Civil Engineer (Diploma, 1996) with decades of field-hardened experience in heavy civil contracting." }
   ]
 
+  const orgName = "Siddhi Industrial Services";
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  const pageUrl = `${orgUrl}/about`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "AboutPage",
+        "@id": `${pageUrl}/#webpage`,
+        "url": pageUrl,
+        "name": "About Siddhi Industrial Services",
+        "isPartOf": { "@id": `${orgUrl}/#website` },
+        "description": intro.description,
+        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` }
+      },
+      {
+        "@type": "Organization",
+        "@id": `${orgUrl}/#organization`,
+        "name": orgName,
+        "founder": {
+          "@type": "Person",
+          "name": founder.name,
+          "jobTitle": founder.role
+        },
+        "foundingDate": "2013",
+        "description": intro.description
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": orgUrl },
+          { "@type": "ListItem", "position": 2, "name": "About Us", "item": pageUrl }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <section className="bg-primary py-24 text-white relative">
         <div className="container mx-auto px-4 text-center">

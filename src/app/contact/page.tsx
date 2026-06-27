@@ -90,8 +90,64 @@ export default function ContactPage() {
     }
   }
 
+  const orgUrl = "https://www.siddhiindustrialservices.in";
+  const pageUrl = `${orgUrl}/contact`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "ContactPage",
+        "@id": `${pageUrl}/#webpage`,
+        "url": pageUrl,
+        "name": header.title,
+        "isPartOf": { "@id": `${orgUrl}/#website` },
+        "description": header.description,
+        "breadcrumb": { "@id": `${pageUrl}/#breadcrumb` }
+      },
+      {
+        "@type": "LocalBusiness",
+        "name": "Siddhi Industrial Services",
+        "image": "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn",
+        "telephone": "+91-91571-87484",
+        "email": "s.d.patel.qw@gmail.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "K-403 Radhe Sky Line, Sanand",
+          "addressLocality": "Ahmedabad",
+          "addressRegion": "Gujarat",
+          "postalCode": "382110",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "22.9990",
+          "longitude": "72.3789"
+        },
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "09:00",
+          "closes": "19:00"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": `${pageUrl}/#breadcrumb`,
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": orgUrl },
+          { "@type": "ListItem", "position": 2, "name": "Contact", "item": pageUrl }
+        ]
+      }
+    ]
+  };
+
   return (
     <div className="flex flex-col w-full">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header - Centered */}
       <section className="bg-primary py-24 text-white relative">
         <div className="container mx-auto px-4 text-center">
