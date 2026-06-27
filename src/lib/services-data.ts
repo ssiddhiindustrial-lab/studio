@@ -155,7 +155,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "How do you ensure the quality of structural steel erection?", answer: "We follow strict alignment protocols, torque-controlled bolting, and certified welding procedures to ensure the structural integrity of the entire framework." },
       { question: "What is the typical timeline for a structural steel project?", answer: "Timelines depend on the tonnage and complexity, but our streamlined fabrication and erection process typically reduces project duration by 30-40%." },
       { question: "Do you handle heavy-duty industrial platforms and mezzanines?", answer: "Yes, we design and execute high-capacity steel platforms and mezzanine floors tailored for heavy machinery and material storage." }
-    ]
+    ],
+    metadata: {
+      title: 'Structural Steel Works in Sanand & Ahmedabad | Siddhi',
+      description: 'Expert structural steel works in Sanand & Ahmedabad. We specialize in structural steel fabrication and erection for industrial sheds and factory buildings.',
+      keywords: 'structural steel works in sanand & ahmedabad, structural steel fabrication and erection, structural metal works, steelwork construction, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/structural-steel-works',
+      },
+      openGraph: {
+        title: 'Structural Steel Works in Sanand & Ahmedabad | Siddhi',
+        description: 'Leading structural steel fabrication and erection services for industrial buildings and factories in Sanand and Ahmedabad.',
+        url: 'https://www.siddhiindustrialservices.in/services/structural-steel-works',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Structural Steel Works in Sanand & Ahmedabad | Siddhi',
+        description: 'Expert structural steel works in Sanand & Ahmedabad. We specialize in structural steel fabrication and erection for industrial sheds and factory buildings.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "rcc-contractor-sanand-ahmedabad",
@@ -187,7 +210,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "What is the importance of IS code reinforcement?", answer: "Adhering to IS 456 standards ensures the structural integrity and safety of the building, preventing future cracks or structural failures in heavy load environments." },
       { question: "How do you manage the RCC construction timeline?", answer: "We use systematic planning, high-efficiency shuttering systems, and mechanized concrete pouring to meet aggressive industrial project deadlines." },
       { question: "Can you build specialized RCC retaining walls?", answer: "Yes, we specialize in high-strength RCC retaining walls and underground water tanks designed for industrial-scale water management and site stability." }
-    ]
+    ],
+    metadata: {
+      title: 'RCC Construction Contractor in Sanand, Ahmedabad | Siddhi',
+      description: 'Looking for a trusted RCC construction contractor in Sanand, Ahmedabad? Siddhi Industrial Services offers high-precision reinforced concrete solutions.',
+      keywords: 'rcc construction contractor in sanand, rcc construction company in ahmedabad, rcc contracting company, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/rcc-contractor-sanand-ahmedabad',
+      },
+      openGraph: {
+        title: 'RCC Construction Contractor in Sanand, Ahmedabad | Siddhi',
+        description: 'Leading RCC construction contractor in Sanand and Ahmedabad. Expert heavy-duty foundations and industrial flooring.',
+        url: 'https://www.siddhiindustrialservices.in/services/rcc-contractor-sanand-ahmedabad',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'RCC Construction Contractor Sanand & Ahmedabad | Siddhi',
+        description: 'Looking for a trusted RCC construction contractor in Sanand, Ahmedabad? Siddhi Industrial Services offers high-precision reinforced concrete solutions.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "industrial-warehousing-construction-sanand",
@@ -219,7 +265,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "What is the typical project timeline?", answer: "Timelines depend on the scale, but our use of PEB and efficient civil management usually delivers a functional warehouse in 4 to 8 months." },
       { question: "Steel vs RCC: Which is better for warehouses?", answer: "Steel (PEB) is ideal for large clear spans and speed, while RCC is preferred for certain load-bearing and climate-specific requirements. We often use a hybrid approach." },
       { question: "Can you assist with customized warehouse design?", answer: "Yes, we provide turnkey warehouse planning, ensuring the design accommodates your specific racking, docking, and utility requirements." }
-    ]
+    ],
+    metadata: {
+      title: 'Industrial Warehouse Contractor in Sanand, Ahmedabad | Siddhi',
+      description: 'Leading industrial warehouse contractor in Sanand, Ahmedabad. Expert in logistics infrastructure, storage facilities, and turnkey warehouse construction.',
+      keywords: 'industrial warehouse contractor in sanand, warehouse construction in ahmedabad, warehouse construction company, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/industrial-warehousing-construction-sanand',
+      },
+      openGraph: {
+        title: 'Industrial Warehouse Contractor in Sanand, Ahmedabad | Siddhi',
+        description: 'Premier industrial warehouse builders specializing in high-capacity storage and distribution centers in Ahmedabad and Sanand.',
+        url: 'https://www.siddhiindustrialservices.in/services/industrial-warehousing-construction-sanand',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Warehouse Construction Contractor Sanand & Ahmedabad | Siddhi',
+        description: 'Leading industrial warehouse contractor in Sanand, Ahmedabad. Expert in logistics infrastructure and turnkey warehouse construction.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "industrial-infrastructure-development-sanand",
@@ -251,7 +320,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "How do you manage storm water on large industrial sites?", answer: "We design and build integrated storm water drainage networks that calculate peak runoff to ensure the site remains flood-free during heavy rains." },
       { question: "What underground utilities do you execute?", answer: "We install electrical duct networks, water supply lines, firefighting lines, and telecommunication conduits in organized underground corridors." },
       { question: "What is the typical project timeline?", answer: "Timeline depends on the site area and complexity, but a complete site infrastructure for a standard factory typically takes 3 to 6 months." }
-    ]
+    ],
+    metadata: {
+      title: 'Infrastructure Development in Sanand, Ahmedabad | Siddhi',
+      description: 'Siddhi Industrial Services provides expert infrastructure development in Sanand & Ahmedabad. We specialize in industrial site development, roads, and utilities.',
+      keywords: 'infrastructure development in sanand, industrial infrastructure development in ahmedabad, industrial infrastructure contractor, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/industrial-infrastructure-development-sanand',
+      },
+      openGraph: {
+        title: 'Infrastructure Development in Sanand, Ahmedabad | Siddhi Industrial',
+        description: 'Comprehensive industrial site development and utility infrastructure services in Ahmedabad and Sanand GIDC.',
+        url: 'https://www.siddhiindustrialservices.in/services/industrial-infrastructure-development-sanand',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Industrial Infrastructure Development Sanand & Ahmedabad | Siddhi',
+        description: 'Siddhi Industrial Services provides expert infrastructure development in Sanand & Ahmedabad. We specialize in roads, and utilities.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "industrial-road-construction-sanand-ahmedabad",
@@ -283,7 +375,30 @@ export const servicesData: ServiceDetail[] = [
       { question: "What is included in industrial drainage construction?", answer: "It involves the planning and building of RCC open drains, underground pipelines, and catchment basins to handle large volumes of industrial runoff." },
       { question: "What makes you a preferred storm water drainage contractor?", answer: "Our ability to perform hydrological site analysis ensures that we design drainage networks that effectively prevent waterlogging during peak monsoons." },
       { question: "How long does a typical industrial road project take?", answer: "Timelines depend on the square meter area, but a standard industrial road and drainage project typically takes between 3 to 5 months." }
-    ]
+    ],
+    metadata: {
+      title: 'Industrial Road Construction in Ahmedabad | Siddhi',
+      description: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad. Siddhi Industrial Services specializes in industrial road construction and storm water drainage.',
+      keywords: 'industrial road construction in ahmedabad, industrial road construction in sanand, road construction contractors, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/industrial-road-construction-sanand-ahmedabad',
+      },
+      openGraph: {
+        title: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad | Siddhi',
+        description: 'Leading industrial road and drainage infrastructure development in Ahmedabad and Sanand GIDC.',
+        url: 'https://www.siddhiindustrialservices.in/services/industrial-road-construction-sanand-ahmedabad',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Roads & Drainage Construction Sanand & Ahmedabad | Siddhi',
+        description: 'Roads & Drainage Construction Companies in Sanand, Ahmedabad. Siddhi Industrial Services specializes in industrial road construction.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   },
   {
     slug: "turnkey-project-management",
@@ -315,6 +430,29 @@ export const servicesData: ServiceDetail[] = [
       { question: "How do you manage industrial project costs?", answer: "We use detailed budget planning and procurement management to prevent cost overruns and ensure transparency throughout the execution phase." },
       { question: "What is the typical timeline for a turnkey project?", answer: "Timelines depend on the facility's scale and complexity, but the turnkey model typically shortens the overall duration through integrated management." },
       { question: "Do you handle testing and commissioning?", answer: "Yes, our turnkey service includes complete testing, commissioning, and ensuring the facility meets all operational specifications before handover." }
-    ]
+    ],
+    metadata: {
+      title: 'Turnkey Project Management in Sanand, Ahmedabad | Siddhi',
+      description: 'Expert turnkey project management services in Sanand & Ahmedabad. We handle industrial projects from planning to handover with single-point responsibility.',
+      keywords: 'turnkey project management in sanand, turnkey project management in ahmedabad, turnkey industrial contractor, sanand gidc, gujarat, siddhi industrial services',
+      alternates: {
+        canonical: 'https://www.siddhiindustrialservices.in/services/turnkey-project-management',
+      },
+      openGraph: {
+        title: 'Turnkey Project Management in Sanand, Ahmedabad | Siddhi',
+        description: 'Comprehensive turnkey execution for industrial facilities, factories, and warehouses in Ahmedabad and Sanand.',
+        url: 'https://www.siddhiindustrialservices.in/services/turnkey-project-management',
+        type: 'article',
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: 'Industrial Turnkey Project Management | Siddhi Industrial',
+        description: 'Leading turnkey industrial projects contractor in Gujarat. From planning to final commissioning.',
+      },
+      robots: {
+        index: true,
+        follow: true,
+      },
+    }
   }
 ];
