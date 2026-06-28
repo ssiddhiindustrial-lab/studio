@@ -33,12 +33,12 @@ export function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-6 font-headline text-white">Services</h3>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
-              <li>Industrial Construction</li>
-              <li>Structural Steel Works</li>
-              <li>RCC Construction</li>
-              <li>Warehousing Solutions</li>
-              <li>Infrastructure Development</li>
-              <li>Turnkey Projects</li>
+              <li><Link href="/services/industrial-building-construction" className="hover:text-accent transition-colors">Industrial Construction</Link></li>
+              <li><Link href="/services/structural-steel-works" className="hover:text-accent transition-colors">Structural Steel Works</Link></li>
+              <li><Link href="/services/rcc-contractor-sanand-ahmedabad" className="hover:text-accent transition-colors">RCC Construction</Link></li>
+              <li><Link href="/services/industrial-warehousing-construction-sanand" className="hover:text-accent transition-colors">Warehousing Solutions</Link></li>
+              <li><Link href="/services/industrial-infrastructure-development-sanand" className="hover:text-accent transition-colors">Infrastructure Development</Link></li>
+              <li><Link href="/services/turnkey-project-management" className="hover:text-accent transition-colors">Turnkey Projects</Link></li>
             </ul>
           </div>
 
