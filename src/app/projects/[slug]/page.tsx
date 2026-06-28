@@ -1,3 +1,4 @@
+
 import Image from "next/image"
 import Link from "next/link"
 import { notFound } from "next/navigation"
@@ -367,7 +368,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
                  <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 px-10 h-16 text-lg font-bold">
                    <Link href="/contact">Get a Quote</Link>
                  </Button>
-                 <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-16 px-10 text-lg">
+                 <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 h-16 px-10 text-lg">
                    <Link href="/projects">View More Projects</Link>
                  </Button>
                </div>

@@ -243,7 +243,7 @@ export default function ServiceDetailClient({ slug }: ServiceDetailClientProps) 
               <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 h-16 px-12 text-xl font-bold rounded-2xl shadow-xl flex-grow">
                 <Link href="/contact">Get a Quote</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="border-white text-white hover:bg-white/10 h-16 px-12 text-xl font-bold rounded-2xl flex-grow">
+              <Button asChild variant="outline" size="lg" className="bg-transparent border-white text-white hover:bg-white/10 h-16 px-12 text-xl font-bold rounded-2xl flex-grow">
                 <Link href="/projects">View Projects</Link>
               </Button>
             </div>
