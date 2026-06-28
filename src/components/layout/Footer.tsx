@@ -92,8 +92,18 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-16 pt-8 border-t border-primary-foreground/10 text-center text-sm text-primary-foreground/50">
+        <div className="mt-16 pt-8 border-t border-primary-foreground/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/50">
           <p>© {new Date().getFullYear()} Siddhi Industrial Services. All rights reserved.</p>
+          <p>
+            Developed by{" "}
+            <Link 
+              href="https://www.vibratseo.in/" 
+              target="_blank" 
+              className="text-accent font-bold hover:underline"
+            >
+              VIBRATSEO
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
