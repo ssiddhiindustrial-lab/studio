@@ -1,5 +1,4 @@
 import Link from "next/link"
-import Image from "next/image"
 import { Phone, Mail, MapPin, Linkedin, Twitter, Facebook } from "lucide-react"
 
 export function Footer() {
@@ -7,6 +6,7 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10">
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          {/* Brand & Social */}
           <div className="space-y-6">
             <h2 className="text-2xl font-bold font-headline text-white">Siddhi Industrial Services</h2>
             <p className="text-primary-foreground/70 text-sm leading-relaxed max-w-sm">
@@ -19,6 +19,7 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Quick Links */}
           <div>
             <h3 className="text-lg font-bold mb-6 font-headline text-white">Quick Links</h3>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
@@ -30,24 +31,54 @@ export function Footer() {
             </ul>
           </div>
 
+          {/* Services Links */}
           <div>
             <h3 className="text-lg font-bold mb-6 font-headline text-white">Services</h3>
             <ul className="space-y-3 text-sm text-primary-foreground/70">
-              <li><Link href="/services/industrial-building-construction" className="hover:text-accent transition-colors">Industrial Construction</Link></li>
-              <li><Link href="/services/structural-steel-works" className="hover:text-accent transition-colors">Structural Steel Works</Link></li>
-              <li><Link href="/services/rcc-contractor-sanand-ahmedabad" className="hover:text-accent transition-colors">RCC Construction</Link></li>
-              <li><Link href="/services/industrial-warehousing-construction-sanand" className="hover:text-accent transition-colors">Warehousing Solutions</Link></li>
-              <li><Link href="/services/industrial-infrastructure-development-sanand" className="hover:text-accent transition-colors">Infrastructure Development</Link></li>
-              <li><Link href="/services/turnkey-project-management" className="hover:text-accent transition-colors">Turnkey Projects</Link></li>
+              <li>
+                <Link href="/services/industrial-building-construction" className="hover:text-accent transition-colors">
+                  Industrial Construction
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/structural-steel-works" className="hover:text-accent transition-colors">
+                  Structural Steel Works
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/rcc-contractor-sanand-ahmedabad" className="hover:text-accent transition-colors">
+                  RCC Construction
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/industrial-warehousing-construction-sanand" className="hover:text-accent transition-colors">
+                  Warehousing Solutions
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/industrial-infrastructure-development-sanand" className="hover:text-accent transition-colors">
+                  Infrastructure Development
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/turnkey-project-management" className="hover:text-accent transition-colors">
+                  Turnkey Projects
+                </Link>
+              </li>
             </ul>
           </div>
 
+          {/* Contact Info */}
           <div>
             <h3 className="text-lg font-bold mb-6 font-headline text-white">Contact Info</h3>
             <ul className="space-y-4 text-sm text-primary-foreground/70">
               <li className="flex items-start gap-3">
                 <MapPin className="h-5 w-5 text-accent shrink-0" />
-                <span className="leading-relaxed">K-403 Radhe Sky Line, Opp SBI Bank, 80ft TP Road, Sanand, Ahmedabad</span>
+                <span className="leading-relaxed">
+                  K-403 Radhe Sky Line,<br />
+                  Opp SBI Bank, 80ft TP Road,<br />
+                  Sanand, Ahmedabad - 382110
+                </span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="h-5 w-5 text-accent shrink-0" />
