@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -59,13 +58,17 @@ export default function ServiceDetailClient({ slug }: ServiceDetailClientProps) 
         })
         e.currentTarget.reset()
       } else {
-        throw new Error("Failed")
+        toast({
+          variant: "destructive",
+          title: "Email Configuration Error",
+          description: result.error || "Please ensure SMTP credentials are set in .env file.",
+        })
       }
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Error",
-        description: "Failed to send inquiry. Please try again or contact us via WhatsApp.",
+        description: "Failed to send inquiry. Please contact us via WhatsApp or check server setup.",
       })
     } finally {
       setIsSubmitting(false)

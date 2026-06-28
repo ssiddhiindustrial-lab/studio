@@ -1,4 +1,3 @@
-
 "use client"
 
 import * as React from "react"
@@ -53,13 +52,17 @@ export default function ContactPage() {
         })
         e.currentTarget.reset()
       } else {
-        throw new Error("Failed")
+        toast({
+          variant: "destructive",
+          title: "Email Error",
+          description: result.error || "Could not send inquiry. Check SMTP settings.",
+        })
       }
     } catch (error) {
       toast({
         variant: "destructive",
         title: "Submission Error",
-        description: "Could not send inquiry at this time. Please try again or call us directly.",
+        description: "An unexpected error occurred. Please call us directly.",
       })
     } finally {
       setIsSubmitting(false)

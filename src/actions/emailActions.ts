@@ -1,4 +1,3 @@
-
 'use server';
 
 import nodemailer from 'nodemailer';
@@ -12,10 +11,19 @@ export async function sendInquiryEmail(formData: {
   message: string;
   sourcePage: string;
 }) {
+  // Check if env variables are present
+  if (!process.env.SMTP_HOST || !process.env.SMTP_USER || !process.env.SMTP_PASS) {
+    console.error("Missing SMTP configuration in environment variables.");
+    return { 
+      success: false, 
+      error: "Server configuration error: SMTP details missing in .env file." 
+    };
+  }
+
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST,
-    port: Number(process.env.SMTP_PORT),
-    secure: false, // false for port 587 (STARTTLS)
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
     auth: {
       user: process.env.SMTP_USER,
       pass: process.env.SMTP_PASS,
@@ -27,7 +35,7 @@ export async function sendInquiryEmail(formData: {
   });
 
   const mailOptions = {
-    from: `"Siddhi Industrial Services" <${process.env.SMTP_USER}>`,
+    from: `"Siddhi Website Inquiry" <${process.env.SMTP_USER}>`,
     to: "ssiddhiindustrial@gmail.com",
     replyTo: formData.email,
     subject: `New Inquiry: ${formData.projectType || 'General'} from ${formData.name}`,
@@ -59,8 +67,11 @@ export async function sendInquiryEmail(formData: {
   try {
     await transporter.sendMail(mailOptions);
     return { success: true };
-  } catch (error) {
+  } catch (error: any) {
     console.error("Email send error detail:", error);
-    return { success: false, error: "SMTP Error: Could not send email" };
+    return { 
+      success: false, 
+      error: error.message || "SMTP Error: Could not send email. Please check server logs." 
+    };
   }
 }
