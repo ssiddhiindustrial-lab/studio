@@ -43,30 +43,23 @@ export default function ContactPage() {
       sourcePage: "Contact Page"
     }
 
-    try {
-      const result = await sendInquiryEmail(data)
-      if (result.success) {
-        toast({
-          title: "Inquiry Sent Successfully",
-          description: "Our engineering team will get back to you within 24 hours.",
-        })
-        e.currentTarget.reset()
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Email Error",
-          description: result.error || "Could not send inquiry. Check SMTP settings.",
-        })
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Submission Error",
-        description: "An unexpected error occurred. Please call us directly.",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+    // Try sending email in background (won't block WhatsApp redirect)
+    sendInquiryEmail(data).catch(err => console.error("Background email failed:", err));
+
+    // Generate WhatsApp Message
+    const whatsappNumber = "919157187484";
+    const text = `*New Website Inquiry*%0A%0A*Name:* ${data.name}%0A*Company:* ${data.company || 'N/A'}%0A*Email:* ${data.email}%0A*Phone:* ${data.phone}%0A*Project Type:* ${data.projectType}%0A*Message:* ${data.message}`;
+    
+    // Redirect to WhatsApp
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+
+    toast({
+      title: "Opening WhatsApp...",
+      description: "Redirecting you to send the inquiry directly to our team.",
+    })
+
+    setIsSubmitting(false)
+    e.currentTarget.reset()
   }
 
   const handleAiEstimate = async () => {
@@ -225,7 +218,7 @@ export default function ContactPage() {
                     {isSubmitting ? (
                       <> <Loader2 className="mr-2 h-5 w-5 animate-spin" /> Processing... </>
                     ) : (
-                      <> <Send className="mr-2 h-5 w-5" /> Send Inquiry </>
+                      <> <Send className="mr-2 h-5 w-5" /> Send Inquiry via WhatsApp </>
                     )}
                   </Button>
                 </form>

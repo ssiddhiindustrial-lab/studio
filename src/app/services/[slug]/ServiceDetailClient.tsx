@@ -49,30 +49,22 @@ export default function ServiceDetailClient({ slug }: ServiceDetailClientProps) 
       sourcePage: `Service: ${service.title}`
     }
 
-    try {
-      const result = await sendInquiryEmail(data)
-      if (result.success) {
-        toast({
-          title: "Inquiry Received",
-          description: `Our team will contact you regarding ${service.title} shortly.`,
-        })
-        e.currentTarget.reset()
-      } else {
-        toast({
-          variant: "destructive",
-          title: "Email Configuration Error",
-          description: result.error || "Please ensure SMTP credentials are set in .env file.",
-        })
-      }
-    } catch (error) {
-      toast({
-        variant: "destructive",
-        title: "Error",
-        description: "Failed to send inquiry. Please contact us via WhatsApp or check server setup.",
-      })
-    } finally {
-      setIsSubmitting(false)
-    }
+    // Background email
+    sendInquiryEmail(data).catch(err => console.error("Background email failed:", err));
+
+    // WhatsApp Redirect
+    const whatsappNumber = "919157187484";
+    const text = `*New Service Inquiry*%0A%0A*Service:* ${service.title}%0A*Name:* ${data.name}%0A*Email:* ${data.email}%0A*Phone:* ${data.phone}%0A*Details:* ${data.message}`;
+    
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+
+    toast({
+      title: "Opening WhatsApp...",
+      description: "Redirecting to our expert team for faster communication.",
+    })
+
+    setIsSubmitting(false)
+    e.currentTarget.reset()
   }
 
   return (
@@ -224,7 +216,7 @@ export default function ServiceDetailClient({ slug }: ServiceDetailClientProps) 
                   {isSubmitting ? (
                     <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Submitting...</>
                   ) : (
-                    <><Send className="mr-2 h-5 w-5" /> Submit Inquiry</>
+                    <><Send className="mr-2 h-5 w-5" /> Submit Inquiry via WhatsApp</>
                   )}
                 </Button>
                 <p className="text-[10px] text-center text-muted-foreground uppercase tracking-wider">Response within 24 business hours</p>
