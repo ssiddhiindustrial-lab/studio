@@ -21,8 +21,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// The direct link to your logo on Google Drive
-const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
+// Direct direct link with cache buster to force browser refresh
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-?v=2";
 
 export const metadata: Metadata = {
   title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
@@ -49,6 +49,7 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
+      { url: faviconUrl, sizes: 'any' },
       { url: faviconUrl, sizes: '32x32', type: 'image/png' },
       { url: faviconUrl, sizes: '16x16', type: 'image/png' }
     ],
@@ -65,10 +66,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
-        {/* Explicitly setting favicon to override any file system favicon.ico */}
-        <link rel="icon" href={faviconUrl} />
-        <link rel="shortcut icon" href={faviconUrl} />
+        {/* Aggressive favicon override for main domain and cache issues */}
+        <link rel="icon" href={faviconUrl} sizes="any" />
+        <link rel="icon" type="image/png" sizes="32x32" href={faviconUrl} />
+        <link rel="icon" type="image/png" sizes="16x16" href={faviconUrl} />
         <link rel="apple-touch-icon" href={faviconUrl} />
+        <link rel="shortcut icon" href={faviconUrl} />
+        <meta name="msapplication-TileImage" content={faviconUrl} />
         
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-RPWX95J37V"
