@@ -1,3 +1,4 @@
+
 "use client"
 
 import * as React from "react"
@@ -36,13 +37,12 @@ export function Navbar() {
       <div className="container mx-auto px-4 py-2">
         <div className="flex items-center justify-between h-16 md:h-24">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href="/" className="flex items-center" aria-label="Siddhi Industrial Services Home">
             <div className="relative h-12 w-48 md:h-20 md:w-72">
               <Image 
                 src={logoUrl} 
                 alt="Siddhi Industrial Services Logo" 
                 fill 
-                unoptimized
                 className="object-contain object-left"
                 priority
               />
@@ -60,7 +60,7 @@ export function Navbar() {
                       pathname.startsWith("/services")
                         ? "text-accent"
                         : "text-foreground/80 hover:text-accent hover:bg-accent/5"
-                    )}>
+                    )} aria-label="Toggle Services Menu">
                       {link.name} <ChevronDown className="h-4 w-4" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent align="start" className="w-80 p-2 shadow-2xl border-t-4 border-t-accent">
@@ -78,7 +78,7 @@ export function Navbar() {
                                 "p-2 rounded-md",
                                 pathname === `/services/${service.slug}` ? "bg-accent text-white" : "bg-primary/5 text-primary"
                               )}>
-                                <service.icon className="h-5 w-5" />
+                                <service.icon className="h-5 w-5" aria-hidden="true" />
                               </div>
                               <span className="font-bold text-sm tracking-tight leading-tight">
                                 {service.title}
@@ -113,6 +113,7 @@ export function Navbar() {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/10 hover:text-accent focus:outline-none"
+              aria-label={isOpen ? "Close Menu" : "Open Menu"}
             >
               {isOpen ? (
                 <X className="block h-6 w-6" aria-hidden="true" />
@@ -156,7 +157,7 @@ export function Navbar() {
                             : "border-border text-muted-foreground hover:text-accent hover:border-accent"
                         )}
                       >
-                        <service.icon className="h-4 w-4" />
+                        <service.icon className="h-4 w-4" aria-hidden="true" />
                         {service.title}
                       </Link>
                     ))}

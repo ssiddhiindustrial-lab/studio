@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,18 +24,18 @@
     --muted: 212 15% 92%;
     --muted-foreground: 212 20% 45%;
     
-    /* Safety Orange (#FF8C00) */
-    --accent: 33 100% 50%;
-    --accent-foreground: 33 100% 10%;
+    /* Safety Orange (#E67E00) - Slightly darker for better accessibility contrast */
+    --accent: 33 100% 45%;
+    --accent-foreground: 33 100% 5%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
     --border: 212 20% 90%;
     --input: 212 20% 90%;
-    --ring: 33 100% 50%;
+    --ring: 33 100% 45%;
     
-    --radius: 0.5rem;
+    --radius: 0.75rem;
   }
 
   .dark {
@@ -56,7 +57,7 @@
     --muted: 212 30% 18%;
     --muted-foreground: 212 15% 65%;
     
-    --accent: 33 100% 50%;
+    --accent: 33 100% 45%;
     --accent-foreground: 212 41% 10%;
     
     --destructive: 0 62.8% 30.6%;
@@ -64,7 +65,7 @@
     
     --border: 212 30% 18%;
     --input: 212 30% 18%;
-    --ring: 33 100% 50%;
+    --ring: 33 100% 45%;
   }
 }
 

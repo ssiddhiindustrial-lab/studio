@@ -136,7 +136,7 @@ export default async function Home() {
             src={hero.imageUrl}
             alt="Industrial building construction site in Sanand GIDC Ahmedabad by Siddhi Industrial Services"
             fill
-            unoptimized
+            sizes="100vw"
             className="object-cover opacity-40 grayscale"
             priority
           />
@@ -204,7 +204,7 @@ export default async function Home() {
             {coreServices.map((service, i) => (
               <div key={i} className="bg-white p-8 rounded-xl shadow-sm border hover:shadow-md transition-all group text-center flex flex-col items-center w-full">
                 <div className="w-14 h-14 bg-secondary rounded-lg flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
-                  <service.icon className="h-8 w-8" />
+                  <service.icon className="h-8 w-8" aria-hidden="true" />
                 </div>
                 <h3 className="text-xl font-bold mb-3 text-primary font-headline">{service.title}</h3>
                 <p className="text-muted-foreground text-sm leading-relaxed mb-6">
@@ -236,7 +236,7 @@ export default async function Home() {
                     src={project.imageUrl}
                     alt={`${project.name} - industrial construction project by Siddhi Industrial Services`}
                     fill
-                    unoptimized
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute top-4 right-4 bg-accent text-accent-foreground px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-lg">
@@ -300,8 +300,8 @@ export default async function Home() {
       <section className="py-20 bg-white w-full flex flex-col items-center">
         <div className="container mx-auto px-4 flex justify-center">
           <div className="bg-accent rounded-3xl p-12 md:p-20 text-center relative overflow-hidden group max-w-6xl w-full flex flex-col items-center">
-            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" />
-            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" />
+            <div className="absolute top-0 right-0 -mt-10 -mr-10 w-64 h-64 bg-white/10 rounded-full blur-3xl" aria-hidden="true" />
+            <div className="absolute bottom-0 left-0 -mb-10 -ml-10 w-64 h-64 bg-primary/10 rounded-full blur-3xl" aria-hidden="true" />
             
             <div className="relative z-10 max-w-3xl space-y-8 flex flex-col items-center">
               <h2 className="text-4xl md:text-6xl font-bold text-accent-foreground font-headline">Partner with a Leading Commercial Construction Company</h2>
