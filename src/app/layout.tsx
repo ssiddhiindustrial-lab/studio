@@ -21,8 +21,8 @@ const spaceGrotesk = Space_Grotesk({
   variable: '--font-space-grotesk',
 });
 
-// Using the official logo ID for the favicon
-const faviconUrl = "https://lh3.googleusercontent.com/d/1FoiTdu48Dr-5jonDN_rkLsh_s15F8bBn";
+// Updated favicon URL based on user provided Drive ID
+const faviconUrl = "https://lh3.googleusercontent.com/d/1cgARgM8YucIbgZEHoW5OLJrIAuMmKih-";
 
 export const metadata: Metadata = {
   title: 'Industrial Civil Contractors in Ahmedabad | Siddhi Industrial Services',
